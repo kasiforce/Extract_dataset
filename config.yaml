@@ -2,17 +2,17 @@
 base_url: "https://arxiv.paperswithcode.com/api/v0/papers/"
 user_name: ""
 repo_name: "Extract_dataset"
-max_results: 20
+max_results: 2
 
 
 # file paths
-download_papers_path: './papers_benchmark'
-papers_metadata_path: 'papers_metadata_benchmark.csv'
+download_papers_path: './papers'
+papers_metadata_path: 'papers_metadata.csv'
 
 
 # keywords to search
 keywords:
-    "LLM Testing":
+    "LLM Coding":
         filters: [["llm", "large language model"],
                   ["code generation"],
                   ] # 列表之间用AND连接，列表内每个词用OR连接
