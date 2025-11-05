@@ -7,9 +7,8 @@ import yaml
 import logging
 import argparse
 from datetime import datetime
-import requests
 
-from utls import save_last_position
+from utils import save_last_position
 
 logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
@@ -174,8 +173,8 @@ def get_daily_papers(topic, query, max_results=2, download_dir="./papers", jsonl
     client = arxiv.Client()
     search_engine = arxiv.Search(
         query=query,
-        sort_by=arxiv.SortCriterion.SubmittedDate,
-        max_results=max_results
+        # sort_by=arxiv.SortCriterion.SubmittedDate
+        sort_by=arxiv.SortCriterion.Relevance
     )
 
     # 遍历搜索结果中的每一篇论文
