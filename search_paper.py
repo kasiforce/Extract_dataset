@@ -9,20 +9,18 @@ import argparse
 from datetime import datetime
 import requests
 
+from utls import save_last_position
+
 logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
                     level=logging.INFO)
 
-base_url = "https://arxiv.paperswithcode.com/api/v0/papers/"
-github_url = "https://api.github.com/search/repositories"
-arxiv_url = "http://arxiv.org/"
-
 
 def load_config(config_file: str) -> dict:
-    '''
+    """
     config_file: input config file path
     return: a dict of configuration
-    '''
+    """
 
     def pretty_filters(**config) -> dict:
         keywords = dict()
@@ -41,9 +39,8 @@ def load_config(config_file: str) -> dict:
                         else:
                             terms.append(term)
                     ret.append('(' + OR.join(terms) + ')')
-                # 如果filter_item是字符串，则直接使用（为了向后兼容，但不建议）
+                # 如果filter_item是字符串，则直接使用
                 else:
-                    # 注意：这里假设字符串已经格式正确，但最好还是用列表的列表
                     ret.append(filter_item)
             return AND.join(ret)
 
@@ -60,23 +57,16 @@ def load_config(config_file: str) -> dict:
 
 def get_authors(authors, first_author=False):
     output = str()
-    if first_author == False:
+    if not first_author:
         output = ", ".join(str(author) for author in authors)
+        return output
     else:
-        output = authors[0]
-    return output
-
-
-def sort_papers(papers):
-    output = dict()
-    keys = list(papers.keys())
-    keys.sort(reverse=True)
-    for key in keys:
-        output[key] = papers[key]
-    return output
-
-
-import requests
+        # 返回第一作者，确保是字符串
+        first_author_obj = authors[0]
+        if hasattr(first_author_obj, 'name'):
+            return first_author_obj.name
+        else:
+            return str(first_author_obj)
 
 
 def download_paper_pdf(result, download_dir="./papers"):
@@ -85,7 +75,7 @@ def download_paper_pdf(result, download_dir="./papers"):
 
     @param result: arxiv.Result - arXiv论文结果对象
     @param download_dir: str - PDF下载目录路径
-    @return: tuple - (成功状态, PDF文件路径, 错误信息)
+    @return: pdf_path: str - PDF文件路径
     """
     try:
         # 获取论文ID（移除版本后缀）
@@ -115,16 +105,15 @@ def download_paper_pdf(result, download_dir="./papers"):
         return None
 
 
-def save_paper_metadata(result, topic, query, pdf_path=None, csv_file="papers_metadata.csv"):
+def save_paper_metadata(result, topic, query, pdf_path=None, jsonl_file="papers_metadata.jsonl"):
     """
-    保存论文元数据到CSV文件
+    保存论文元数据到JSONL文件
 
     @param result: arxiv.Result - arXiv论文结果对象
     @param topic: str - 论文主题/类别名称
     @param query: str - 搜索查询字符串
-    @param pdf_path: str - PDF文件路径（可选）
-    @param csv_file: str - CSV元数据文件路径
-    @return: tuple - (成功状态, 错误信息)
+    @param pdf_path: str - PDF文件路径
+    @param jsonl_file: str - JSONL元数据文件路径
     """
     try:
         # 提取论文的基本信息
@@ -145,40 +134,30 @@ def save_paper_metadata(result, topic, query, pdf_path=None, csv_file="papers_me
         # 获取当前时间作为下载时间
         download_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        # 初始化CSV文件（如果不存在）
-        if not os.path.exists(csv_file):
-            with open(csv_file, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.writer(f)
-                # 写入CSV表头
-                writer.writerow([
-                    'topic', 'paper_id', 'title', 'authors', 'first_author',
-                    'primary_category', 'publish_time', 'update_time',
-                    'comments', 'abstract', 'pdf_path', 'paper_url',
-                    'download_time', 'query'
-                ])
+        # 构建论文元数据字典
+        paper_metadata = {
+            'paper_id': paper_key,  # 论文ID
+            'title': paper_title,  # 标题
+            'abstract': paper_abstract,  # 摘要
+            'paper_url': paper_url,  # 论文URL
+            'authors': paper_authors,  # 所有作者
+            'first_author': paper_first_author,  # 第一作者
+            'primary_category': primary_category,  # 主要分类
+            'topic': topic,  # 主题
+            'pdf_path': pdf_path if pdf_path else "",  # PDF文件路径
+            'publish_time': str(publish_time),  # 发布日期
+            'update_time': str(update_time),  # 更新日期
+            'comments': comments if comments else "",  # 评论（处理None值）
+            'download_time': download_time,  # 下载时间
+            'query': query  # 搜索查询
+        }
 
-        # 准备CSV行数据
-        csv_row = [
-            topic,  # 主题
-            paper_key,  # 论文ID
-            paper_title,  # 标题
-            paper_authors,  # 所有作者
-            paper_first_author,  # 第一作者
-            primary_category,  # 主要分类
-            str(publish_time),  # 发布日期
-            str(update_time),  # 更新日期
-            comments if comments else "",  # 评论（处理None值）
-            paper_abstract,  # 摘要
-            pdf_path if pdf_path else "",  # PDF文件路径
-            paper_url,  # 论文URL
-            download_time,  # 下载时间
-            query  # 搜索查询
-        ]
-
-        # 写入CSV文件
-        with open(csv_file, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(csv_row)
+        # 以追加模式写入JSONL文件
+        with open(jsonl_file, 'a', encoding='utf-8') as f:
+            # 将字典转换为JSON字符串并写入文件，末尾添加换行符
+            f.write(json.dumps(paper_metadata, ensure_ascii=False) + '\n')
+            current_position = f.tell()
+            save_last_position(current_position)
 
         logging.info(f"保存元数据: {paper_key} - {paper_title}")
 
@@ -186,17 +165,16 @@ def save_paper_metadata(result, topic, query, pdf_path=None, csv_file="papers_me
         logging.error(f"保存元数据失败: {e}")
 
 
-def get_daily_papers(topic, query, max_results=2, download_dir="./papers", csv_file="papers_metadata.csv"):
+def get_daily_papers(topic, query, max_results=2, download_dir="./papers", jsonl_file="papers_metadata.jsonl"):
     """
-    @param topic: str
-    @param query: str
+    根据query检索论文
     """
 
     success = 0
     client = arxiv.Client()
     search_engine = arxiv.Search(
         query=query,
-        sort_by=arxiv.SortCriterion.Relevance,
+        sort_by=arxiv.SortCriterion.SubmittedDate,
         max_results=max_results
     )
 
@@ -207,9 +185,9 @@ def get_daily_papers(topic, query, max_results=2, download_dir="./papers", csv_f
             # 下载PDF文件
             pdf_path = download_paper_pdf(result, download_dir)
 
-            # 保存元数据到CSV
+            # 保存元数据到jsonl
             if pdf_path is not None:
-                save_paper_metadata(result, topic, query, pdf_path, csv_file)
+                save_paper_metadata(result, topic, query, pdf_path, jsonl_file)
                 success += 1
                 if success >= max_results:
                     break
@@ -219,8 +197,8 @@ def get_daily_papers(topic, query, max_results=2, download_dir="./papers", csv_f
 
     return success
 
-def demo(**config):
 
+def search(**config):
     keywords = config['kv']
     max_results = config['max_results']
     download_papers_path = config['download_papers_path']
@@ -230,7 +208,7 @@ def demo(**config):
     for topic, keyword in keywords.items():
         logging.info(f"Keyword: {topic}")
         success_download = get_daily_papers(topic, query=keyword, max_results=max_results,
-                         download_dir=download_papers_path, csv_file=papers_metadata_path)
+                                            download_dir=download_papers_path, jsonl_file=papers_metadata_path)
         logging.info(f"Download {success_download} new papers")
     logging.info(f"GET daily papers end")
 
@@ -242,4 +220,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     config = load_config(args.config_path)
     config = {**config}
-    demo(**config)
+    search(**config)
