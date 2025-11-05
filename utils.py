@@ -1,7 +1,3 @@
-import os
-import yaml
-
-
 def save_last_position(position):
     """保存jsonl文件当前处理位置"""
     with open("process_state.txt", 'w') as f:
