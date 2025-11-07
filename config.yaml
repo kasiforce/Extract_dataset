@@ -11,9 +11,17 @@ papers_metadata_path: 'papers_metadata.jsonl'
 
 
 # keywords to search
+# 列表之间用AND连接，列表内每个词用OR连接
 keywords:
     "LLM Coding":
         filters: [["llm", "large language model"],
-                  ["code generation", "test generation"],
-                  ] # 列表之间用AND连接，列表内每个词用OR连接
-
+                  ["code generation"],
+                  ] 
+    "LLM Testing":
+        filters: [["llm", "large language model"],
+                  ["unit test", "test generation"],
+                  ]
+    "LLM Translation":
+        filters: [["llm", "large language model"],
+                  ["code translation"],
+                  ]
