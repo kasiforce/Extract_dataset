@@ -1,0 +1,2085 @@
+[
+    {
+        "type": "text",
+        "text": "CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation ",
+        "text_level": 1,
+        "bbox": [
+            91,
+            101,
+            906,
+            151
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shuai Lu∗ Peking University ",
+        "bbox": [
+            169,
+            165,
+            292,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Daya Guo∗ Sun Yat-sen University ",
+        "bbox": [
+            421,
+            166,
+            578,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shuo Ren∗ Beihang University ",
+        "bbox": [
+            700,
+            166,
+            833,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Junjie Huang∗ Beihang University ",
+        "bbox": [
+            165,
+            209,
+            295,
+            241
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Alexey Svyatkovskiy Microsoft ",
+        "bbox": [
+            415,
+            208,
+            583,
+            239
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ambrosio Blanco Microsoft Research Asia ",
+        "bbox": [
+            684,
+            209,
+            849,
+            239
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Colin Clement Microsoft ",
+        "bbox": [
+            171,
+            252,
+            289,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Dawn Drain Microsoft ",
+        "bbox": [
+            447,
+            252,
+            549,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Daxin Jiang Microsoft ",
+        "bbox": [
+            717,
+            252,
+            815,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Duyu Tang Microsoft Research Asia ",
+        "bbox": [
+            148,
+            294,
+            313,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ge Li Peking University ",
+        "bbox": [
+            436,
+            294,
+            560,
+            325
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lidong Zhou Microsoft Research Asia ",
+        "bbox": [
+            684,
+            292,
+            849,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Linjun Shou Microsoft ",
+        "bbox": [
+            179,
+            337,
+            281,
+            367
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Long Zhou Microsoft Research Asia ",
+        "bbox": [
+            418,
+            337,
+            581,
+            368
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Michele Tufano Microsoft ",
+        "bbox": [
+            702,
+            337,
+            830,
+            367
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ming Gong Microsoft ",
+        "bbox": [
+            184,
+            377,
+            277,
+            409
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ming Zhou Microsoft Research Asia ",
+        "bbox": [
+            418,
+            377,
+            581,
+            409
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nan Duan Microsoft Research Asia ",
+        "bbox": [
+            686,
+            377,
+            849,
+            409
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neel Sundaresan Microsoft ",
+        "bbox": [
+            163,
+            417,
+            299,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shao Kun Deng Microsoft ",
+        "bbox": [
+            434,
+            417,
+            563,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shengyu Fu Microsoft ",
+        "bbox": [
+            717,
+            419,
+            815,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shujie Liu Microsoft Research Asia ",
+        "bbox": [
+            416,
+            459,
+            580,
+            489
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            498,
+            181,
+            512
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Benchmark datasets have a significant impact on accelerating research in programming language tasks. In this paper, we introduce CodeXGLUE, a benchmark dataset to foster machine learning research for program understanding and generation. CodeXGLUE includes a collection of 10 tasks across 14 datasets and a platform for model evaluation and comparison. CodeXGLUE also features three baseline systems, including the BERT-style, GPT-style, and Encoder-Decoder models, to make it easy for researchers to use the platform. The availability of such data and baselines can help the development and validation of new methods that can be applied to various program understanding and generation problems ",
+        "bbox": [
+            84,
+            517,
+            480,
+            667
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "KEYWORDS ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            681,
+            187,
+            695
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "program understanding, machine learning, naturalness of software ",
+        "bbox": [
+            84,
+            700,
+            480,
+            713
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 INTRODUCTION ",
+        "text_level": 1,
+        "bbox": [
+            88,
+            728,
+            254,
+            742
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Evans Data Corporation2 estimated that there were 23.9 million professional developers in 2019 and that the number was expected to reach 28.7 million in 2024. With the population of developers growing at such a rate, code intelligence that leverages artificial intelligence (AI) to help software developers improve the productivity of the development process is becoming increasingly important. ",
+        "bbox": [
+            86,
+            747,
+            480,
+            829
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "It is commonly accepted that benchmarks have a significant impact on the growth of applied AI research. In this paper, we focus on establishing a benchmark dataset for code intelligence. ",
+        "bbox": [
+            516,
+            500,
+            911,
+            540
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Automated program understanding and generation could increase the productivity of software developers. In fact, developers who want to find code written by others with the same intent can leverage code search systems [23, 35, 58, 85] to automatically retrieve semantically relevant codes through natural language queries. Similarly, developers who are confused about what to write next can use code completion systems [4, 8, 9, 31, 62, 63, 72, 73] to automatically complete the following tokens based on the edits made to the code. Finally, when developers want to implement the Java code in Python, code-to-code translation systems [11, 41, 46, 54] can help translate their code from one programming language (Python) to another (Java). ",
+        "bbox": [
+            517,
+            541,
+            913,
+            705
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In recent years, researchers have increasingly applied statistical models, including neural nets, to code intelligence tasks. Very recently, the application of pretrained models that learn from big programming language data has been inspired by the great success of pretrained models like BERT [16] and GPT [69] in natural language processing (NLP). These models, including CodeBERT [18] and IntelliCode Compose [72], have led to further improvements in code understanding and generation problems, but they lack a benchmark suite that covers a wide range of tasks. The use of ImageNet [15] for computer vision and the use of GLUE [81] for NLP have shown that a diversified benchmark dataset has a significant impact on the growth of applied AI research. ",
+        "bbox": [
+            517,
+            707,
+            913,
+            872
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/f92e3cd4e3acea835533b916a9ecd470c319e435343e0f9fb54f89a934b58aaa.jpg",
+        "table_caption": [
+            "Table 1: A brief summary of CodeXGLUE, which includes tasks, datasets, languages, sizes in various states, and baseline systems. Highlighted datasets are newly introduced. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Category</td><td>Task</td><td>Dataset Name</td><td>Language</td><td>Train/Dev/Test Size</td><td>Baselines</td></tr><tr><td rowspan=\"8\">Code-Code</td><td>Clone Detection</td><td>BigCloneBench [71]</td><td>Java</td><td>900K/416K/416K</td><td rowspan=\"5\">CodeBERT</td></tr><tr><td>Defect Detection</td><td>POJ-104 [52] Devign [99]</td><td>C/C++ C</td><td>32K/8K/12K 21K/2.7K/2.7K</td></tr><tr><td></td><td>CT-all</td><td>Python,Java,PHP,</td><td>-1-/176K</td></tr><tr><td rowspan=\"2\">Cloze Test</td><td></td><td>JavaScript,Ruby,Go Python,Java,PHP,</td><td></td></tr><tr><td>CT-max/min [18]</td><td>JavaScript,Ruby,Go</td><td>-1-12.6K</td></tr><tr><td>Code Completion</td><td>PY150 [62] Github Java Corpus[4]</td><td>Python Java</td><td>100K/5K/50K 13K/7K/8K</td><td>CodeGPT</td></tr><tr><td>Code Repair</td><td>Bugs2Fix [75]</td><td>Java</td><td>98K/12K/12K</td><td>Encoder-</td></tr><tr><td>Code Translation</td><td>CodeTrans</td><td>Java-C#</td><td>10K/0.5K/1K</td><td rowspan=\"2\">Decoder</td></tr><tr><td rowspan=\"2\">NL Code Search Text-Code</td><td>CodeSearchNet [35], AdvTest</td><td>Python</td><td>251K/9.6K/19K</td></tr><tr><td>CodeSearchNet [35], WebQueryTest</td><td>Python</td><td>251K/9.6K/1K</td><td>CodeBERT</td></tr><tr><td></td><td>Text-to-Code Generation</td><td>CONCODE [38]</td><td>Java</td><td>100K/2K/2K</td><td>CodeGPT</td></tr><tr><td>Code-Text</td><td>Code Summarization</td><td>CodeSearchNet [35]</td><td>Python,Java,PHP, JavaScript,Ruby,Go</td><td>908K/45K/53K</td><td rowspan=\"2\">Encoder- Decoder</td></tr><tr><td>Text-Text</td><td>Documentation Translation</td><td>Microsoft Docs</td><td>English-Latvian/Danish /Norwegian/Chinese</td><td>156K/4K/4K</td></tr></table>",
+        "bbox": [
+            156,
+            147,
+            841,
+            435
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To address this problem, we introduce CodeXGLUE, a machine learning benchmark dataset for program understanding and generation research that includes 14 datasets3, a collection of 10 diversified programming language understanding and generation tasks, and a platform for model evaluation and comparison. CodeXGLUE supports the following tasks: ",
+        "bbox": [
+            86,
+            458,
+            482,
+            540
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• code-code (clone detection [10, 52, 71, 84, 89, 93, 97], defect detection [47, 57, 61, 82, 83, 99], cloze test [18], code completion [4, 8, 9, 31, 62, 63, 72, 73], code repair [2, 28, 30, 75, 76, 78], and code-to-code translation [11, 41, 46, 54]) • text-code (natural language code search [23, 35, 85], textto-code generation [12, 26, 36, 38, 87, 90, 94, 95]) • code-text (code summarization [3, 12, 19, 34, 37, 80, 85–87]) • text-text (documentation translation [40]) ",
+        "bbox": [
+            111,
+            546,
+            482,
+            656
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "CodeXGLUE includes eight previously proposed datasets — BigCloneBench [71], POJ-104 [52], Devign [99], PY150 [62], Github Java Corpus [4], Bugs2Fix [75], CONCODE [38], and CodeSearchNet [35]— but also newly introduced datasets that are highlighted in Table 1. The datasets are chosen or created based on the consideration that the task has clear definition, and the volume of the dataset could support the development and evaluation of data-driven machine learning methods. The datasets created by us include (1) two cloze test test sets that cover 6 programming languages, (2) two linelevel code completion test sets in Java and Python, respectively, (3) a code-to-code translation dataset between Java and C#, (4) two natural language code search test sets with web queries and normalized function and variable names, respectively, and (5) a documentation translation dataset that covers five natural languages. ",
+        "bbox": [
+            86,
+            664,
+            482,
+            856
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To make it easy for participants, we provide three baseline models to help perform the tasks, including a BERT-style pretrained model (in this case, CodeBERT) to supports code understanding problems, a GPT-style pretrained model, which we call CodeGPT, to help solve completion and generation problems, and an EncoderDecoder framework that tackles sequence-to-sequence generation problems. ",
+        "bbox": [
+            517,
+            458,
+            913,
+            554
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2 TASKS OVERVIEW ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            575,
+            702,
+            589
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this section, we provide a definition for each task. ",
+        "bbox": [
+            519,
+            594,
+            831,
+            607
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Clone detection [52, 71]. The task is to measure the semantic similarity between codes. This includes two subtasks: binary classification between a pair of codes and code retrieval, where the goal is to find semantically similar codes. ",
+        "bbox": [
+            517,
+            618,
+            913,
+            672
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Defect detection [99]. The objective is to identify whether a body of source code contains defects that may be used to attack software systems, such as resource leaks, use-after-free vulnerabilities, and DoS attack. ",
+        "bbox": [
+            516,
+            674,
+            913,
+            728
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cloze test [18]. This aims to predict the masked token of a code and includes two subtasks. The first one is to measure the accuracy of predicting the masked token from the whole vocabulary. The other is to test the semantic reasoning ability by distinguishing between “max” and $\\ \" \\mathrm { m i n } \\ \"$ . ",
+        "bbox": [
+            516,
+            729,
+            911,
+            797
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Code completion [4, 62]. It aims to predict following tokens based on a code context. Its subtasks are token-level completion and line-level completion. The former checks whether the next one token has been predicted correctly, while the latter tests the goodness of the generated line. ",
+        "bbox": [
+            517,
+            799,
+            911,
+            867
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Code translation [54]. It involves translating a code from one programming language to a different one. ",
+        "bbox": [
+            516,
+            868,
+            911,
+            895
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Code search [35]. It measures the semantic relatedness between texts and codes and is composed of two subtasks. The first one is to find the most relevant code in a collection of codes according to a natural language query. The second subtask entails the analysis of a query-code pair to predict whether the code answers the query or not. ",
+        "bbox": [
+            86,
+            107,
+            480,
+            189
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Code repair [75]. Its goal is to refine the code by fixing the bugs automatically. ",
+        "bbox": [
+            86,
+            190,
+            480,
+            217
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Text-to-code generation [38]. This aims to generate a code via a natural language description. ",
+        "bbox": [
+            84,
+            218,
+            480,
+            244
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Code summarization [37]. The objective is to generate the natural language comment for a code. ",
+        "bbox": [
+            84,
+            246,
+            480,
+            272
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Documentation translation [40]. It aims to translate code documentation from one natural language to different one. ",
+        "bbox": [
+            84,
+            273,
+            482,
+            300
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3 DATASETS ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            319,
+            204,
+            333
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In this section, we describe the datasets included in CodeXGLUE. Datasets are chosen or created based on the criterion that the volume of the dataset could support the development and evaluation of data-driven machine learning methods. ",
+        "bbox": [
+            84,
+            338,
+            482,
+            392
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1 Clone detection ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            411,
+            254,
+            426
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Clone detection includes two subtasks. The first subtask is to predict whether two given codes have the same semantics. We use the BigCloneBench [71] dataset for the subtask. The second subtask aims to retrieve semantically similar codes given a code as the query and we use the dataset POJ-104 [52] to perform it. ",
+        "bbox": [
+            84,
+            429,
+            480,
+            498
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "BigCloneBench is a widely used large code clone benchmark that contains over 6,000,000 true clone pairs and 260,000 false clone pairs from 10 different functionalities. The dataset provided by Wang et al. [84] is filtered by discarding code fragments without any tagged true or false clone pairs, leaving it with 9,134 Java code fragments. Finally, the dataset includes 901,028/415,416/415,416 examples for training, validation and testing, respectively. ",
+        "bbox": [
+            84,
+            500,
+            480,
+            595
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "POJ-104 dataset [52] comes from a pedagogical programming open judge (OJ) system that automatically judges the validity of submitted source code for specific problems by running the code. We use the POJ-104 dataset, which consists of 104 problems and includes 500 student-written $\\mathrm { C } / \\mathrm { C } + +$ programs for each problem. Different from that of the BigCloneBench dataset, the task of POJ104 aims to retrieve other programs that solve the same problem given a program. We group the datasets in three subsets based on the number of problems they are required to solve (64/16/24) for training, validation, and testing. ",
+        "bbox": [
+            86,
+            597,
+            482,
+            734
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.2 Defect detection ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            752,
+            259,
+            767
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For the task of defect detection, Zhou et al. [99] provide the Devign dataset that includes 27,318 manually-labeled functions collected from two large C programming language open-source projects popular among developers and diversified in functionality, i.e., QEMU and FFmpeg. The dataset was created by collecting security-related commits and extracting vulnerable or non-vulnerable functions from the labeled commits. Since Zhou et al. [99] did not provide official training/validation/testing sets for the two projects, we randomly shuffle the dataset and split $8 0 \\% / 1 0 \\% / 1 0 \\%$ of the dataset for training/validation/testing. The task is formulated as a binary classification to predict whether a function is vulnerable. ",
+        "bbox": [
+            86,
+            771,
+            480,
+            895
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            517,
+            107,
+            911,
+            133
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.3 Cloze test ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            147,
+            637,
+            161
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 1 shows two examples of the cloze test (CT) task in code domain, which aims to assess models’ ability to understand a code by asking those models to predict the masked code from several candidates. We focus on two subtasks: CT-all with candidates from a filtered vocabulary and CT-maxmin with the candidates “max” and $\" \\mathrm { m i n } ^ { \\mathrm { * } }$ . ",
+        "bbox": [
+            517,
+            166,
+            913,
+            247
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/28a1b63cd6a70b077d1e605cbf928253fe2197f050d6ca87e0a716ae142ac7a0.jpg",
+        "image_caption": [
+            "Figure 1: Two examples in the cloze test dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            524,
+            265,
+            903,
+            492
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We use the validation and testing sets of CodeSearchNet [35] to create CT-all and CT-maxmin datasets for six programming languages, i.e., Go, Java, JavaScript (JS), PHP, Python and Ruby. ",
+        "bbox": [
+            516,
+            544,
+            911,
+            585
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "CT-all. To less introduce lengthy variable names and avoid the issue caused by the use of different tokenizers, we select target cloze words by retaining unique words after Byte Pair Encoding [67], and we remove meaningless tokens like punctuations with handcrafted rules. At last, 930 tokens are selected among six languages in total. We select codes containing the 930 tokens and manually set threshold values of token occurrence to balance the frequency of the 930 tokens in CT-all. ",
+        "bbox": [
+            517,
+            593,
+            913,
+            704
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "CT-maxmin. To further evaluate models’ ability to understand code semantics, we introduce CT-maxmin to test how well model can distinguish the difference between max and min. CT-maxmin comes from the dataset used for the PL-Probing task in CodeBERT[18], which includes codes containing the keywords of max or min. ",
+        "bbox": [
+            517,
+            712,
+            923,
+            781
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The data statistics are listed in Table 2. ",
+        "bbox": [
+            534,
+            782,
+            766,
+            795
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.4 Code completion ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            808,
+            697,
+            823
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We use two influential datasets for code completion, PY150 in python and Github Java Corpus in Java. Both datasets can help achieve token-level code completion. We move further by creating two test sets for the line-level code completion task from the two corpora. The task is to complete an unfinished line. Models should be capable of predicting code sequences of arbitrary token types and code structures. ",
+        "bbox": [
+            517,
+            827,
+            913,
+            895
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/856f77ac4181145a3e774120688cb2f714fc66e5242d046595800fb0d704ff1c.jpg",
+        "table_caption": [
+            "Table 2: Data statistics about the cloze test datasets. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Task</td><td>CT-all</td><td>CT-maxmin</td></tr><tr><td>Go</td><td>25,282</td><td>152</td></tr><tr><td>Java</td><td>40,492</td><td>482</td></tr><tr><td>JavaScript</td><td>13,837</td><td>272</td></tr><tr><td>PHP</td><td>51,930</td><td>407</td></tr><tr><td>Python</td><td>40,137</td><td>1,264</td></tr><tr><td>Ruby</td><td>4,437</td><td>38</td></tr><tr><td>All</td><td>176,115</td><td>2,615</td></tr></table>",
+        "bbox": [
+            166,
+            133,
+            397,
+            266
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            287,
+            480,
+            314
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "PY150 is a Python dataset [62] containing 150,000 Python source files collected from Github. We follow the data split in Raychev et al. [62], resulting in 100,000 files for training and 50,000 files for testing, consisting 76.3M tokens and 37.2M tokens, respectively. We preprocess the corpora by tokenizing source codes, removing comments, replacing strings with length of more than 15 characters with empty strings, and adding a special token $\\langle E O L \\rangle$ (end-of-line) to mark the ending of a line explicitly. For line-level code completion, we create 10,000 examples from different files in the test set of PY150 for testing. Since we intend to test model’s ability to autocomplete an arbitrary line, we select the line to be predicted at random. We generate a test case by ensuring that there is sufficient context, i.e., at least $1 5 \\%$ of the whole file. Models are expected to generate the following line ended by $\\langle E O L \\rangle$ given the context. The average number of tokens in input and output are 489.11 and 6.56, respectively. Figure 2 shows an example of line-level code completion. ",
+        "bbox": [
+            86,
+            315,
+            482,
+            550
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/bcaa09a5b4a46966467474795fab20a4fb6a32876735c7b8fdc45d43e8d86b38.jpg",
+        "image_caption": [
+            "Figure 2: An example in the line-level code completion dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            93,
+            564,
+            473,
+            685
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Github Java Corpus is a Java dataset mined by Allamanis and Sutton [4], and it collects over 14 thousand Java projects from Github. We follow the settings established by Hellendoorn and Devanbu [29] as well as Karampatsis et al. [42], using $1 \\%$ of the subset in the corpus. We have 12,934/7,189/8,268 files for training/validation/testing, consisting of $1 5 . 8 \\mathrm { M } / 3 . 8 \\mathrm { M } / 5 . 3 \\mathrm { M }$ tokens, respectively. We do the same preprocessing conducted on PY150, but we don’t add the special token $\\langle E O L \\rangle$ since in Java the symbols ; and $\\}$ are used to mark the ending of a code statement. For linelevel code completion, we create 3,000 examples for testing from different files in the test set of the corpus. Similarly to the process we follow for Python, the line to be predicted is selected at random from the test file. The average numbers of tokens are 350.62 and 10.49 in input and output, respectively. ",
+        "bbox": [
+            86,
+            742,
+            482,
+            895
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            517,
+            107,
+            911,
+            148
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.5 Code translation ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            161,
+            694,
+            176
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The training data for code translation is the code pairs with equivalent functionality in two programming languages. In this paper, we provide a dataset consisting of parallel codes between Java and C#. We did not use the dataset of Lachaux et al. [46] because they did not have the data for supervised model training. Following Nguyen et al. [54] and Chen et al. [11], we use the data collected from several open-source projects, i.e., Lucene4, $\\mathrm { P O I ^ { 5 } }$ , $\\mathrm { J G i t } ^ { 6 }$ and $\\mathrm { A n t l r } ^ { 7 }$ . We do not use Itext8 and $\\boldsymbol { \\mathrm { J } \\mathrm { T } \\boldsymbol { S } } ^ { 9 }$ due to the license problem. Those projects are originally developed in Java and then ported to $C \\#$ . They are well-established systems with long developing histories and with both Java and $\\mathrm { C } \\#$ versions in use. ",
+        "bbox": [
+            517,
+            180,
+            913,
+            330
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The following step is to mine paired functions or methods from those projects. According to our observation, the directory structures and function or method names of the two versions are identical or similar when they are applied to the same project. Therefore, following Nguyen et al. [54], we conservatively search for the functions having the same signatures in the classes with the same/similar names and included in the same/similar directory structures of both versions. We discard duplicate code pairs and the codes having multiple targets searched with the above method. After this step, we remove the pairs whose number of overlapping tokens was less than 1/3 of the sentence length. To make our data more scalable for further syntactic and semantic analysis, we also remove the functions with null function body according to their abstract syntax tree (AST). Then we build the data-flow graph [25] for each function, which represents the dependency between two variables and provides valuable semantic information for code understanding. Finally, a function with no data-flow extracted from the AST of a specific function is also discarded. ",
+        "bbox": [
+            517,
+            333,
+            913,
+            580
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "At last, the total number of paired functions or methods is 11,800. We randomly select 500 pairs of functions for the development set and another 1,000 pairs for the test set. The average lengths of the Java and $C \\#$ functions after tokenization are 38.51 and 46.16, respectively 10. An example of the mined translation pairs from ${ \\mathrm { C } } \\#$ to Java is shown in Figure 3. ",
+        "bbox": [
+            517,
+            582,
+            913,
+            664
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.6 Code search ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            676,
+            658,
+            691
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Code search includes two subtasks. The first one is to find the most relevant code from a collection of candidates given a natural language query. We create a challenging testing set, called CodeSearchNet AdvTest, from CodeSearchNet corpus [35] for performing this task. An example of this dataset is shown in Figure 4. The second subtask is to predict whether a code answers a given query. We provide a testing set WebQueryTest of real user queries. Two examples of the dataset are illustrated in Figure 5. ",
+        "bbox": [
+            517,
+            695,
+            913,
+            806
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c134a657c8d4caf0b622104926e2e9feb1a843a28e6e6a8ebaa5600259e476a.jpg",
+        "image_caption": [
+            "Figure 3: An example in the code translation dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            91,
+            106,
+            472,
+            361
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "CodeSearchNet AdvTest is a Python dataset from the CodeSearchNet [35] corpus. Each example includes a function paired with a document. We follow Husain et al. [35] to take the first paragraph of the documentation as the query for the corresponding function. To improve the quality of the dataset, we filter it by removing the following examples. ",
+        "bbox": [
+            86,
+            425,
+            480,
+            507
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "(1) Examples whose code could not be parsed into abstract syntax   \ntree. (2) Examples whose document tokens number is shorter than 3   \nor larger than 256. (3) Examples whose document contains special tokens such as   \n“http://\". (4) Examples whose document is empty or not written in English. ",
+        "bbox": [
+            84,
+            508,
+            482,
+            606
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "At the end of the process, we obtain a dataset with 251,820 / 9,604 / 19,210 examples for training/validation/testing. After normalizing function or variable names with special tokens, we observe that the Mean Reciprocal Rank (MRR) scores of RoBERTa [50] and CodeBERT [18] for the code search task on the CodesearchNet [35] dataset drop from 0.809 to 0.419 and from 0.869 to 0.507, respectively, in Python programming language. To better test the understanding and generalization abilities of the model, we normalize function and variable names in testing and development sets like ?? ?????? for the function name and ???????? for the i-th variable name. Figure 4 shows an example in CodeSearchNet AdvTest dataset. The task aims to search source codes from candidates for a natural language query. In contrast to the testing phase of previous works [18, 35] that only involved 1,000 candidates, we use the entire testing set for each query, which makes CodeSearchNet AdvTest dataset more difficult. The training set for this task comes from the filtered CodeSearchNet dataset [35]. ",
+        "bbox": [
+            86,
+            606,
+            482,
+            839
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "WebQueryTest: Most code search datasets use code documentations or questions from online communities for software developers as queries, but these are different from real user search queries. To fix this discrepancy, we provide WebQueryTest, a testing set of real code search for Python. The problem is formulated as a binary classification task and as a complementary setting to the retrieval scenario. Given a pair of query and code function, a model needs to classify whether the code function can answer the query or not. ",
+        "bbox": [
+            84,
+            840,
+            480,
+            895
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/4aa03f8d888328b080e7f3f52262a9a9817debc95bf3d9743a99c1aeb745ce85.jpg",
+        "image_caption": [
+            "Figure 4: An example in the CodeSearchNet AdvTest dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            522,
+            106,
+            901,
+            320
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            516,
+            378,
+            911,
+            434
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The data creation process can be divided into two stages: data collection and annotation. We first collect real user queries from the web query logs of a commercial search engine and we keep the queries with “python”. Inspired by Yan et al. [91], we design some heuristics based on keyword exact matching to filter out queries without the code search intent. Then we select candidate codes for each query from the Python validation and testing sets in CodeSearchNet. To shrink the candidates to be annotated for each query, we select the top two functions with the highest query-code similarity computed by a CodeBERT-based code retrieval model, which is trained on 148K automated-minded Python Stack Overflow Question-Code (StaQC) [92] with the default parameters provided by Feng et al. [18]. ",
+        "bbox": [
+            517,
+            434,
+            911,
+            614
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We use a two-stage annotation schema to label each instance. The first step is to judge whether the query has a code-search intent. Instances labeled as \"-1\" are those without code search intent. The second step is to assess whether the code (with its documentation) can answer the query. Instances labeled as \"1\" are those where the code can answer the query. Otherwise, they are labeled as $^ { * } 0 ^ { * }$ . Two examples are illustrated in Figure 5. We invite 13 developers proficient in Python to label 1,300 instances, with each annotator dealing with 100 of them. Discussions are allowed during annotation. Finally, the numbers of instances with labels -1, 0 and 1 are 254, 642 and 422, respectively. Since we are more interested in query-code matching, we include only the categories 0 and 1 in our final test set. The training and validation sets we use for this task are from the original CodeSearchNet dataset [35]. ",
+        "bbox": [
+            517,
+            616,
+            913,
+            808
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3.7 Code repair ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            821,
+            653,
+            837
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Code repair aims to fix bugs in the code automatically. We use the dataset released by Tufano et al. [75]. The source is buggy Java functions, whereas the target is the corresponding fixed functions. To build this dataset, they first download every public GitHub event between March 2011 and October 2017 from GitHub Archive11 and use the Google BigQuery APIs to identify all Java-file commits having a message containing the patterns [21]: (“fix” or “solve”) and (“bug” or “issue” or “problem” or “error”). For each bug-fixing commit, they extract the source code before and after the fixing process by using the GitHub Compare $\\mathrm { \\ A P I ^ { 1 2 } }$ to collect the buggy (pre-commit) and the fixed (post-commit) codes. Subsequently, they normalize all the names of the variables and custom methods, which greatly limits the vocabulary size and enables the model to focus on learning bug-fixing patterns. Then, they filter out the pairs that contain lexical or syntactic errors in either the buggy or fixed code, as well as the pairs with more than 100 atomic AST modification actions between the buggy and the fixed versions. To achieve this, they employ the GumTree Spoon AST Diff tool [17]. Finally, they divide the whole dataset into two subsets (small with tokens $\\le 5 0$ and medium with tokens $> 5 0$ and $\\leq 1 0 0$ ) based on the code length. For the small subset, the numbers of training, development, and test samples are 46,680, 5,835, and 5,835, respectively. For the medium subset, the numbers are 52,364, 6,545, and 6,545, respectively. ",
+        "bbox": [
+            517,
+            840,
+            911,
+            895
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/2bc9ad8c48e48d02b268c7f9665e8bee903cb1dacce894092773ac1ce6f11ec2.jpg",
+        "image_caption": [
+            "Figure 5: Two examples in the WebQueryTest dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            94,
+            108,
+            472,
+            309
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            86,
+            366,
+            482,
+            630
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.8 Text-to-code generation ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            642,
+            320,
+            657
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "To carry out this task, we use CONCODE [38], a widely used code generation dataset, which is collected from about 33,000 Java projects on GitHub. It contains 100,000 examples for training and 4,000 examples for validation and testing. Each example is a tuple consisting of NL descriptions, code environments and code snippets. The dataset is tasked with generating class member functions from natural language descriptions (Javadoc-style method comments) and class environments. Class environment is the programmatic context provided by the rest of the class, including other member variables and member functions in the class. ",
+        "bbox": [
+            86,
+            661,
+            482,
+            799
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.9 Code summarization ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            813,
+            297,
+            827
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For code summarization, we use the CodeSearchNet dataset [35], which includes six programming languages; i.e., Python, Java, JavaScript, ",
+        "bbox": [
+            84,
+            832,
+            504,
+            858
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "PHP, Ruby, and Go. The data comes from publicly available opensource non-fork GitHub repositories and each documentation is the first paragraph. We observe that some documents contain content unrelated to the function, such as a link “http://...\" that refers to external resources and an HTML image tag “<img ...>\" that inserts an image. Therefore, we filter the dataset to improve its quality with the same four rules mentioned in Section 3.6. ",
+        "bbox": [
+            517,
+            107,
+            911,
+            203
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The statistics about the filtered CodeSearchNet dataset used in CodeXGLUE are listed in Table 3. ",
+        "bbox": [
+            517,
+            204,
+            911,
+            231
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/09a708b8787d9dd0957d3955724f1ff0adb291337c67fd166737f3e80fc92078.jpg",
+        "table_caption": [
+            "Table 3: Data statistics about the filtered CodeSearchNet dataset for the code summarization task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Language</td><td>Training</td><td>Dev</td><td>Testing</td></tr><tr><td>Go</td><td>167,288</td><td>7,325</td><td>8,122</td></tr><tr><td>Java</td><td>164,923</td><td>5,183</td><td>10,955</td></tr><tr><td>JavaScript</td><td>58,025</td><td>3,885</td><td>3,291</td></tr><tr><td>PHP</td><td>241,241</td><td>12,982</td><td>14,014</td></tr><tr><td>Python</td><td>251,820</td><td>13,914</td><td>14,918</td></tr><tr><td>Ruby</td><td>24,927</td><td>1,400</td><td>1,261</td></tr></table>",
+        "bbox": [
+            581,
+            286,
+            846,
+            400
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.10 Documentation translation ",
+        "text_level": 1,
+        "bbox": [
+            519,
+            431,
+            787,
+            446
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Documentation translation aims to translate code documentation automatically from one natural language (e.g., English) to another natural language (e.g., Chinese), as shown in Figure 7. The dataset we use is crawled from Microsoft Documentation13, including software and code description documents in different languages. We focus on low-resource language pairs, where parallel data is scarce, and introduce multilingual machine translation tasks, e.g., English $\\Leftrightarrow$ Latvian, Danish, Norwegian, and Chinese. To improve the data quality, we filter the corpus by removing the following examples. ",
+        "bbox": [
+            517,
+            450,
+            913,
+            574
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "(1) Pairs whose source sentence is the same as the target sentence; (2) Pairs whose length of source language or target language is less than three words; (3) Pairs whose length ratio between source and target languages is larger than three; (4) Pairs whose word alignment ratio computed by fast_align14 is less than 0.6. ",
+        "bbox": [
+            516,
+            575,
+            913,
+            685
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The final training data includes 43K, 19K, 44K, and 50K sentence pairs for English $\\Leftrightarrow$ Latvian, English $\\Leftrightarrow$ Danish, English $\\Leftrightarrow \\mathrm { N o r } \\cdot$ wegian, and English $\\Leftrightarrow$ Chinese, respectively. In addition, each language pair has 1K development and test sentence pairs, respectively. ",
+        "bbox": [
+            517,
+            685,
+            913,
+            755
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4 BASELINE SYSTEMS",
+        "text_level": 1,
+        "bbox": [
+            517,
+            766,
+            714,
+            780
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We provide three types of baseline models to perform the previously mentioned tasks, including a BERT-style pretrained model (in this case, CodeBERT), which supports program understanding problems, a GPT-style pretrained model called CodeGPT that helps us solve completion and generation problems, and an Encoder-Decoder ",
+        "bbox": [
+            517,
+            785,
+            911,
+            854
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/c722878b2f2269151d2dd3710a702ae361cc933eec8edfa8e5b9ab38c2231b1d.jpg",
+        "image_caption": [
+            "Figure 6: Three pipelines, including CodeBERT, CodeGPT, and Encoder-Decoder, are provided. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            88,
+            104,
+            901,
+            405
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/c8027aa2a44e6c879ce2c1d5e9a039914d83f340b09833b31c15a3ecc660748e.jpg",
+        "image_caption": [
+            "Figure 7: An English-to-Chinese example in the documentation translation dataset. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            93,
+            454,
+            473,
+            569
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "framework that tackles sequence-to-sequence generation problems.   \nAn illustration of these three pipelines is shown in Figure 6. ",
+        "bbox": [
+            84,
+            642,
+            482,
+            670
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.1 CodeBERT ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            683,
+            215,
+            698
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "To carry out code understanding tasks like clone detection, defect detection, cloze test, and code search, we use CodeBERT [18] as our encoder. This is a bimodal pretrained model based on Transformer with 12 layers, 768 dimensional hidden states, and 12 attention heads for programming language (PL) and natural language (NL). Feng et al. [18] pretrain CodeBERT by masked language modeling and replaced token detection objectives on the CodeSearchNet dataset [35], which includes 2.4M functions with document pairs for six programming languages. The model supports different types of the sequence input like text/code and code/code with a special token [??????] in front of the sequence and a special symbol [??????] to split two kinds of data types. ",
+        "bbox": [
+            86,
+            702,
+            482,
+            867
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.2 CodeGPT ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            454,
+            635,
+            469
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We provide CodeGPT, which is a Transformer-based language model pretrained on programming language (PL), to support the code completion and the text-to-code generation tasks. CodeGPT has the same model architecture and training objective of GPT-2 [59], which consists of 12 layers of Transformer decoders. More model settings are listed in Table 4. We pretrain monolingual models on Python and Java corpora from the CodeSearchNet dataset [35], which includes 1.1M Python functions and 1.6M Java methods. Each function in training dataset has a function signature and a function body. Some functions also contain a natural language documentation. ",
+        "bbox": [
+            517,
+            473,
+            913,
+            625
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We train two CodeGPT models for each programming language. One model is pretrained from scratch, so that the BPE (byte pair encoder) [67] vocabulary is newly obtained on the code corpus and the model parameters are randomly initialized. The other model is a domain-adaptive one, which uses the GPT-2 model as the starting point and is continually trained on the code corpus. As a result, the second model has the same GPT-2 vocabulary and natural language understanding ability. We refer to this model as CodeGPT-adapted, and regard it as the default one for the code completion and text-to-code generation tasks. Both models are publicly available at https://huggingface.co/microsoft/CodeGPTsmall-java and https://huggingface.co/microsoft/CodeGPT-smalljava-adaptedGPT2. 15 ",
+        "bbox": [
+            517,
+            626,
+            913,
+            804
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/2c86cfcebd19d932c86b8e928978b0f275a6eb76a3c665b4729cbf2138f3f4a6.jpg",
+        "table_caption": [
+            "Table 4: Parameters of CodeBERT and CodeGPT models. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>CodeBERT</td><td>CodeGPT</td></tr><tr><td>Number of layers</td><td>12</td><td>12</td></tr><tr><td>Max length of position</td><td>512</td><td>1,024</td></tr><tr><td>Embedding size</td><td>768</td><td>768</td></tr><tr><td>Attention heads</td><td>12</td><td>12</td></tr><tr><td>Attention head size</td><td>64</td><td>64</td></tr><tr><td>Vocabulary size</td><td>50,265</td><td>50,000</td></tr><tr><td>Total number of parameters</td><td>125M</td><td>124M</td></tr></table>",
+        "bbox": [
+            112,
+            131,
+            454,
+            258
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4.3 Encoder-Decoder ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            279,
+            266,
+            294
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For sequence-to-sequence generation problems like code repair, code translation, code summarization, and documentation translation, we provide an Encoder-Decoder framework. We initialize the encoder using CodeBERT [18] and use a randomly initialized Transformer with 6 layers, 768 dimensional hidden states and 12 attention heads as the decoder in all settings. ",
+        "bbox": [
+            86,
+            297,
+            482,
+            380
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5 EXPERIMENT ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            392,
+            232,
+            406
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In this section, we report accuracy numbers of the baseline systems on 10 tasks. We will also show how long it takes to train the model and to do inference on the model. ",
+        "bbox": [
+            84,
+            411,
+            480,
+            452
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5.1 Clone Detection ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            464,
+            258,
+            479
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the BigCloneBench and POJ-104 datasets for clone detection. The task of the BigCloneBench dataset is formulated as a binary classification to predict whether a given pair of codes has the same semantics, with the F1 score used as the evaluation metric. The task of the POJ-104 dataset aims to retrieve 499 codes for a given code from the development/test set for validation/testing, with the Mean Average Precision (MAP) as the evaluation metric. The overall score of the clone detection task is the average value of F1 and MAP scores. ",
+        "bbox": [
+            86,
+            483,
+            482,
+            607
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/b4904cfafdd020b8ff067a7aecdfd65f90507d6c124e90d2e2b6d150161dfcd5.jpg",
+        "table_caption": [
+            "Table 5: Results on the clone detection task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">BigCloneBench POJ-104</td></tr><tr><td>Model</td><td>F1</td><td>MAP Overall</td></tr><tr><td>RtvNN</td><td>1.0</td><td>- -</td></tr><tr><td>Deckard</td><td>3.0</td><td>- -</td></tr><tr><td>CDLH</td><td>82.0</td><td>- -</td></tr><tr><td>ASTNN</td><td>93.0</td><td>- -</td></tr><tr><td>FA-AST-GMN</td><td>95.0</td><td>-</td></tr><tr><td>TBCCD</td><td>95.0</td><td>- -</td></tr><tr><td>code2vec*</td><td>-</td><td>1.98 -</td></tr><tr><td>NCC*</td><td>- 54.19</td><td></td></tr><tr><td>Aroma*</td><td>55.12 -</td><td>-</td></tr><tr><td>MISIM-GNN*</td><td>- 82.45</td><td>-</td></tr><tr><td>RoBERTa</td><td>94.9</td><td>79.96 87.4</td></tr><tr><td>CodeBERT</td><td>96.5 84.29</td><td>90.4</td></tr></table>",
+        "bbox": [
+            114,
+            650,
+            452,
+            876
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Results. Results achieved by different models are shown in Table 5. RtvNN [89] trains a recursive autoencoder to learn representations for AST. Deckard [39] computes vectors for structural information within ASTs and uses a Locality Sensitive Hashing (LSH) [14] to cluster similar vectors. CDLH [88] learns representations of code fragments via AST-based LSTM. ASTNN [97] uses RNNs to encode AST subtrees for statements. It feeds the encodings of all statement trees into an RNN to learn representation for a program. FA-AST-GMN [84] uses GNNs over a flow-augmented AST to leverage explicit control and data flow information. TBCCD [96] proposes a position-aware character embedding and uses treebased convolution to capture both the structural information of a code fragment from its AST and lexical information from code tokens. Code2vec [6] learns representations of code snippets by aggregating multiple syntactic paths into a single vector. NCC [7] encodes programs by leveraging both the underlying data flow and control flow of the programs. Aroma [51] is a code recommendation engine that takes a partial code snippet and recommends a small set of succinct code snippets that contain the query snippet. MISIM-GNN [93] learns a structural representation of code from context-aware semantic structure designed specifically to lift semantic meaning from the code syntax. ",
+        "bbox": [
+            517,
+            106,
+            913,
+            410
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In this experiment, we use pretrained models like RoBERTa [50] and CodeBERT [18] to encode source code and take the representation to calculate semantic relevance of two codes through a feed forward network or inner product. Although CodeBERT does not leverage code structure that has proven to be effective in terms of code similarity measure [7, 84, 88, 93, 97], the model still performs better than RoBERTa on the task of clone detection, achieving the overall score of 90.4. These experimental results demonstrate that pretraining is useful for clone detection. There is room for further improvement if code structure is further leveraged. ",
+        "bbox": [
+            517,
+            411,
+            913,
+            549
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5.2 Defect Detection ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            561,
+            694,
+            577
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the dataset mentioned in Section 3.2 for defect detection, which aims to predict whether a source code contains defects that may be used to attack software systems. The evaluation metric is accuracy score. We use the CodeBERT baseline to encode source code and take the representation of source code to calculate the probability of being exposed to vulnerabilities. ",
+        "bbox": [
+            517,
+            580,
+            913,
+            662
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 7 shows the results of the models we implemented. We use Bidirectional LTSM (BiLTSM) [32], TextCNN [43], RoBERTa [50], and CodeBERT [18] to encode the representation of a source code, respectively. Then, a two-layer feed forward network followed by a softmax layer is used to calculate the probability of encountering vulnerabilities. As shown in the results, CodeBERT achieve a 62.1 accuracy score, resulting in state-of-the-art performance. However, the improvement achieved by the pretrained models is limited compared with TextCNN. A potential direction to improve these pretrained models is to incorporate information from code structures such as Abstract Syntax Tree, data flow, control flow, etc. ",
+        "bbox": [
+            517,
+            671,
+            924,
+            823
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5.3 Cloze test ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            835,
+            638,
+            851
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use CT-all and CT-maxmin datasets for the cloze test task. Models are expected to predict the masked code token by leveraging documentation and the context of code. Accuracy are reported for each language, with the macro-average accuracy scores for all languages as the overall evaluation metric. ",
+        "bbox": [
+            516,
+            854,
+            911,
+            895
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/f1bfdc8fad86909d2e8ad5ee71833fbc3ebac83ba1fa3f935942001dac13c25c.jpg",
+        "table_caption": [
+            "Table 6: Results on the cloze test task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"6\">CT-all</td><td colspan=\"6\">CT-maxmin</td><td rowspan=\"2\">Overall</td></tr><tr><td>Ruby</td><td>JS</td><td>Go</td><td>Python</td><td>Java</td><td>PHP</td><td>Ruby</td><td>JS</td><td>Go</td><td>Python</td><td>Java</td><td>PHP</td></tr><tr><td>RoBERTa</td><td>47.44</td><td>59.96</td><td>40.77</td><td>54.35</td><td>50.73</td><td>60.16</td><td>73.68</td><td>64.71</td><td>71.71</td><td>59.18</td><td>59.75</td><td>69.78</td><td>62.45</td></tr><tr><td>CodeBERT(MLM)</td><td>80.17</td><td>81.77</td><td>83.31</td><td>87.21</td><td>80.63</td><td>85.05</td><td>86.84</td><td>86.40</td><td>90.79</td><td>82.20</td><td>90.46</td><td>88.21</td><td>85.66</td></tr></table>",
+        "bbox": [
+            129,
+            133,
+            870,
+            205
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/c3ffdf7d4ca7ca4e3123bc7491a14d6e6fc7861baafccd956a0480a40a520a6f.jpg",
+        "table_caption": [
+            "Table 7: Results on the defect detection task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Accuracy</td></tr><tr><td>BiLSTM</td><td>59.37</td></tr><tr><td>TextCNN</td><td>60.69</td></tr><tr><td>RoBERTa</td><td>61.05</td></tr><tr><td>CodeBERT</td><td>62.08</td></tr></table>",
+        "bbox": [
+            202,
+            252,
+            361,
+            338
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            361,
+            480,
+            388
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 6 shows the results on the CT-all and CT-maxmin datasets. We report the performance of RoBERTa [50] and CodeBERT (Masked Language Modeling, MLM) [18], which is initialized with RoBERTa and further trained with the masked language modeling objective. The results demonstrate that CodeBERT performs better than RoBERTa that only learns from natural language. ",
+        "bbox": [
+            86,
+            397,
+            482,
+            479
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5.4 Code completion ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            492,
+            264,
+            507
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the PY150 and Github Java Corpus datasets for token-level and line-level code completion tasks. The token-level task is to predict the next token given context of previous tokens, and predictions are evaluated according to token-level accuracy; whereas the line-level task entails the completion of a whole-line of code, and the quality of the code is evaluated through the metrics known as exact match accuracy and Levenshtein edit similarity [72]. Levenshtein edit similarity measures how many single character edits are required to transform one string into another. This is a critical evaluation metric for the code completion scenario as it measures how much effort it takes for developers to correct an error in the code. The score on each dataset is the average value of the accuracy on token-level completion and the edit similarity on line-level completion. The overall score of code completion task is calculated by averaging the scores on both datasets. ",
+        "bbox": [
+            86,
+            511,
+            482,
+            718
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 8 shows the results of all models on both datasets. We fine-tune LSTM [32], Transformer [77], GPT-2 [59], CodeGPT and CodeGPT-adapted to generate following tokens. CodeGPT and CodeGPT-adapted models are described in Section 4.2. CodeGPTadapted achieves a state-of-the-art performance with the overall score of 71.28. ",
+        "bbox": [
+            84,
+            727,
+            486,
+            809
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5.5 Code search ",
+        "text_level": 1,
+        "bbox": [
+            84,
+            821,
+            225,
+            837
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the CodeSearchNet AdvTest and WebQueryTest datasets mentioned in Section 3.6 for code search. To improve efficiency, we separately encode text and code to perform code search. For the CodeSearchNet AdvTest dataset, the task is to find the most relevant code from a collection of candidates given a query and it is evaluated through the Mean Reciprocal Rank (MRR) metric. For the WebQueryTest dataset, the task is formulated as a binary classification to predict whether a code can answer a given query and we use the F1 and accuracy scores as evaluation metrics. The overall score for code search is the average of the values recorded for the two subtasks. ",
+        "bbox": [
+            84,
+            840,
+            482,
+            895
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            517,
+            228,
+            913,
+            324
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 9 presents the results on the CodeSearchNet AdvTest and WebQueryTest datasets. We report the performance of RoBERTa [50] and CodeBERT [18]. The table shows that CodeBERT performs better than RoBERTa. ",
+        "bbox": [
+            517,
+            332,
+            913,
+            387
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5.6 Text-to-code generation ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            400,
+            751,
+            415
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the CONCODE dataset for text-to-code generation. Models are expected to generate source codes of Java class member functions, given natural language descriptions and class environments. We report the exact match accuracy, the BLEU score [56], and the CodeBLEU score [65]. We use the CodeBLEU score as the overall evaluation metric. ",
+        "bbox": [
+            517,
+            419,
+            913,
+            501
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 10 presents the results on the CONCODE test set. Seq2Seq [70] is an RNN-based sequence to sequence model. Seq2Action $^ +$ MAML [26] combines a context-aware retrieval model with model-agnostic meta-learning (MAML). Iyer-Simp $\\bf { + \\ 2 0 0 }$ idoms [36] extracts code idioms and applies idioms-based decoding. We also report the performance of pretrained models, including GPT-2 [59], CodeGPT, and CodeGPT-adapted. CodeGPTadapted achieves the CodeBLEU score of 35.98, resulting in a stateof-the-art performance. ",
+        "bbox": [
+            516,
+            508,
+            913,
+            633
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5.7 Code translation ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            645,
+            694,
+            660
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the dataset we build as described in Section 3.5. The dataset contains matching samples of Java and $\\mathrm { C } \\#$ functions. We report the exact match accuracy, the BLEU score [56] and the CodeBLEU score [65] on this task. CodeBLEU is used as the overall evaluation metric. ",
+        "bbox": [
+            517,
+            664,
+            913,
+            732
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 12 shows the results of models on both translation directions. The Naive method directly copies the source code as the translation result. PBSMT is short for phrase-based statistical machine translation [44]. Transformer uses the same number of layers and hidden size as the pretrained models. The table shows that Transformer initialized with CodeBERT and fine-tuned with the matching sample pairs produces the best result. ",
+        "bbox": [
+            517,
+            741,
+            913,
+            838
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5.8 Code repair ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            849,
+            655,
+            864
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the dataset originally released by Tufano et al. [75], which is described in Section 3.7. The dataset contains two subsets established according to the length of the Java functions: small $\\le ~ 5 0$ and $5 0 < m e d i u m \\le 1 0 0$ . We report the exact match accuracy, the BLEU score [56] and the CodeBLEU score [65] on this task. The exact match accuracy is used as the overall evaluation metric. ",
+        "bbox": [
+            517,
+            868,
+            913,
+            895
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/b2cadf8ed39d0ef4cc9e58178d0956d796c39e5463017a6fe6808c60bbe482ee.jpg",
+        "table_caption": [
+            "Table 8: Results on the code completion task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"3\">Model</td><td colspan=\"3\">PY150</td><td colspan=\"3\">Github Java Corpus</td><td rowspan=\"3\">Overall</td></tr><tr><td>token-level</td><td colspan=\"2\">line-level</td><td>token-level</td><td colspan=\"2\">line-level</td></tr><tr><td>Accuracy</td><td>EM</td><td>Edit Sim</td><td>Accuracy</td><td>EM</td><td>Edit Sim</td></tr><tr><td>LSTM</td><td>58.00</td><td>17.93</td><td>50.05</td><td>56.02</td><td>10.30</td><td>41.55</td><td>51.41</td></tr><tr><td>Transformer</td><td>73.26</td><td>36.65</td><td>67.51</td><td>64.16</td><td>15.33</td><td>50.39</td><td>63.83</td></tr><tr><td>GPT-2</td><td>74.22</td><td>38.55</td><td>68.94</td><td>74.89</td><td>24.30</td><td>60.70</td><td>69.69</td></tr><tr><td>CodeGPT</td><td>74.93</td><td>39.11</td><td>69.69</td><td>76.45</td><td>25.30</td><td>61.54</td><td>70.65</td></tr><tr><td>CodeGPT-adapted</td><td>75.11</td><td>39.65</td><td>69.84</td><td>77.13</td><td>26.43</td><td>63.03</td><td>71.28</td></tr></table>",
+        "bbox": [
+            204,
+            131,
+            794,
+            268
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/086b2eb3198bacc4ae485979c25c6d3d728a5bb717b021883e6ccaf6395a1c7a.jpg",
+        "table_caption": [
+            "Table 9: Results on the code search task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">AdvTest</td><td colspan=\"3\">WebQueryTest</td></tr><tr><td>Model</td><td>MRR</td><td>F1</td><td>Accuracy</td><td>Overall</td></tr><tr><td>RoBERTa</td><td>18.33</td><td>57.49</td><td>40.92</td><td>33.63</td></tr><tr><td>CodeBERT</td><td>27.19</td><td>58.95</td><td>47.80</td><td>40.28</td></tr></table>",
+        "bbox": [
+            116,
+            314,
+            450,
+            390
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/d1ba54197d64f8f1e32e3dc15910bfd219d04c1a1b5a32edcb764c8d57bb59a8.jpg",
+        "table_caption": [
+            "Table 10: Results on the text-to-code generation task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>EM</td><td>BLEU</td><td>CodeBLEU</td></tr><tr><td>Seq2Seq</td><td>3.05</td><td>21.31</td><td>26.39</td></tr><tr><td>Seq2Action+MAML</td><td>10.05</td><td>24.40</td><td>29.46</td></tr><tr><td>Iyer-Simp+200 idoms</td><td>12.20</td><td>26.60</td><td>-</td></tr><tr><td>GPT-2</td><td>17.35</td><td>25.37</td><td>29.69</td></tr><tr><td>CodeGPT</td><td>18.25</td><td>28.69</td><td>32.71</td></tr><tr><td>CodeGPT-adapted</td><td>20.10</td><td>32.79</td><td>35.98</td></tr></table>",
+        "bbox": [
+            117,
+            433,
+            447,
+            545
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            568,
+            480,
+            636
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Results. The Naive method directly copies the buggy code as the repair result. As for Transformer, we use the same number of layers and hidden size as the pretrained models. With regard to the CodeBERT method, we initialize the Transformer encoder with pretrained CodeBERT model and randomly initialize the parameters of the decoder and the source-to-target attention. Then we use the training data to fine-tune the whole model. As shown in the table, Transformer with CodeBERT initialization achieves the best performance among all models. ",
+        "bbox": [
+            84,
+            643,
+            480,
+            767
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5.9 Code Summarization ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            780,
+            299,
+            795
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the dataset mentioned in Section 3.9 for code summarization. To evaluate the models, we follow Feng et al. [18], who use smoothed BLEU score [49] as evaluation metric, because this is suitable for evaluating short documents. We use the encoderdecoder pipeline to tackle this problem. The max length of input and inference are set as 256 and 128, respectively. We use the Adam optimizer to update the models’ parameters. The learning rate and the batch size are 5e-5 and 32, respectively. We tune the hyperparameters and perform early stopping on the development set. ",
+        "bbox": [
+            86,
+            799,
+            482,
+            896
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            517,
+            290,
+            913,
+            316
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 13 shows the results achieved by different models in code summarization. Seq2Seq is an RNN-based sequence to sequence model. Transformer and RoBERTa use the same setting as CodeBERT, but the encoder is initialized randomly and by RoBERTa [50], respectively. All models use Byte Pair Encoding (BPE) [66] vocabulary. In this experiment, CodeBERT obtains a $1 . 3 \\%$ gain in the BLEU score over RoBERTa and achieves the state-of-the-art performance on six programming languages. ",
+        "bbox": [
+            517,
+            338,
+            913,
+            450
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5.10 Documentation translation ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            463,
+            787,
+            478
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Setting. We use the Microsoft Docs dataset for text-to-text translation tasks, which focus on low-resource multilingual translation between English (EN) and other languages, including Latvian (LA), Danish (DA), Norwegian (NO), and Chinese (ZH). Following Johnson et al. [40], we train a single multilingual model as our baseline. To distinguish between different translation pairs, we add an language token (e.g., $\\left. 2 e n \\right.$ , $\\left. 2 z h \\right. )$ at the beginning of the source sentence to indicate the target language the model should translate. We initialize the encoder of the multilingual translation model with XLM-R [13]. Models are evaluated through BLEU [56] score, and the overall score for documentation translation is the average BLEU score on the eight translation directions. ",
+        "bbox": [
+            517,
+            482,
+            913,
+            647
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Results. Table 14 shows the results achieved by the models on eight translation directions. Transformer Baseline is the multilingual translation model [40]. pretrained Transformer initializes the encoder of Transformer Baseline with XLM-R[13]. In terms of overall performance on the eight translation directions, Transformer Baseline and pretrained Transformer obtain the BLEU score of 52.67 and 66.16, respectively. Experimental results demonstrate that pretraining achieves a 13.49 improvement in BLEU score over strong baseline model. Figure 8 shows how long it takes to train the model and to do inference on the model, as well as in other tasks. ",
+        "bbox": [
+            516,
+            656,
+            913,
+            808
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "6 RELATED WORK ",
+        "text_level": 1,
+        "bbox": [
+            517,
+            821,
+            687,
+            835
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Benchmark datasets have been playing a central role in the growth of applied AI research. For example, the LibriSpeech [55] and the SQuAD [60] datasets drive the development of data-driven models for automatic speech recognition and reading comprehension of text, respectively. With the growing demand for testing models’ generalization ability on a wide range of applications, researchers have created or assembled datasets that cover many tasks. Representative samples of these datasets include ImageNet [15] for computer vision, GLUE [81] for natural language understanding, XTREME [33] and XGLUE [48] for cross-lingual natural language processing. To the best of our knowledge, CodeXGLUE is the first diversified benchmark dataset that can be applied to various code intelligence problems. ",
+        "bbox": [
+            516,
+            840,
+            911,
+            895
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/44f920495d73cea5b7318bee0dd591d8169b0b9e23a232058adea9df08a9625a.jpg",
+        "table_caption": [
+            "Table 11: Results on the code repair task. ",
+            "Table 12: Results on the code translation task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Method</td><td colspan=\"3\">small</td><td colspan=\"3\">medium</td><td rowspan=\"2\">Overall</td></tr><tr><td>BLEU</td><td>Acc</td><td>CodeBLEU</td><td>BLEU</td><td>Acc</td><td>CodeBLEU</td></tr><tr><td>Naive</td><td>78.06</td><td>0.000</td><td>-</td><td>90.91</td><td>0.000</td><td></td><td>0.000</td></tr><tr><td>LSTM</td><td>76.76</td><td>0.100</td><td>-</td><td>72.08</td><td>0.025</td><td>-</td><td>0.063</td></tr><tr><td>Transformer</td><td>77.21</td><td>0.147</td><td>73.31</td><td>89.25</td><td>0.037</td><td>81.72</td><td>0.092</td></tr><tr><td>CodeBERT</td><td>77.42</td><td>0.164</td><td>75.58</td><td>91.07</td><td>0.052</td><td>87.52</td><td>0.108</td></tr></table>",
+        "bbox": [
+            238,
+            131,
+            758,
+            236
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/db5ce8dcf17f5a3709b5ed1fb5df27bd3f11b7db323be65e705c4531c978e26c.jpg",
+        "table_caption": [
+            "Table 13: Results on the code summarization task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Method</td><td colspan=\"3\">Java→C#</td><td colspan=\"3\">C#→Java</td><td rowspan=\"2\">Overall</td></tr><tr><td>BLEU</td><td>Acc</td><td>CodeBLEU</td><td>BLEU</td><td>Acc</td><td>CodeBLEU</td></tr><tr><td>Naive</td><td>18.54</td><td>0.000</td><td>-</td><td>18.69</td><td>0.000</td><td>-</td><td>-</td></tr><tr><td>PBSMT</td><td>43.53</td><td>0.125</td><td>42.71</td><td>40.06</td><td>0.161</td><td>43.48</td><td>43.10</td></tr><tr><td>Transformer</td><td>55.84</td><td>0.330</td><td>63.74</td><td>50.47</td><td>0.379</td><td>61.59</td><td>62.67</td></tr><tr><td>RoBERTa (code)</td><td>77.46</td><td>0.561</td><td>83.07</td><td>71.99</td><td>0.579</td><td>80.18</td><td>81.63</td></tr><tr><td>CodeBERT</td><td>79.92</td><td>0.590</td><td>85.10</td><td>72.14</td><td>0.580</td><td>79.41</td><td>82.26</td></tr></table>",
+        "bbox": [
+            230,
+            272,
+            767,
+            390
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/cf2daa1fac7ccae7ea72b8d162618cea5da73e4284297802f5a0b72251b48cb2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Ruby</td><td>Javascript</td><td>Go</td><td>Python</td><td>Java</td><td>PHP</td><td>Overall</td></tr><tr><td>Seq2Seq</td><td>9.64</td><td>10.21</td><td>13.98</td><td>15.93</td><td>15.09</td><td>21.08</td><td>14.32</td></tr><tr><td>Transformer</td><td>11.18</td><td>11.59</td><td>16.38</td><td>15.81</td><td>16.26</td><td>22.12</td><td>15.56</td></tr><tr><td>RoBERTa</td><td>11.17</td><td>11.90</td><td>17.72</td><td>18.14</td><td>16.47</td><td>24.02</td><td>16.57</td></tr><tr><td>CodeBERT</td><td>12.16</td><td>14.90</td><td>18.07</td><td>19.06</td><td>17.65</td><td>25.16</td><td>17.83</td></tr></table>",
+        "bbox": [
+            253,
+            428,
+            745,
+            512
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/74c3514dd25f87acc62890ba8c11fdb92b4be15a6bad14467b80973364175f2c.jpg",
+        "table_caption": [
+            "Figure 8: Training and inference time costs for each task, evaluated on two P100 GPUs. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Task</td><td rowspan=1 colspan=1>Dataset Name</td><td rowspan=1 colspan=1>Language</td><td rowspan=1 colspan=1>Training Cost</td><td rowspan=1 colspan=1>Inference Cost</td></tr><tr><td rowspan=2 colspan=1>Clone Detection</td><td rowspan=1 colspan=1>BigCloneBench</td><td rowspan=1 colspan=1>Java</td><td rowspan=1 colspan=1>3 hours training on P100 x2</td><td rowspan=1 colspan=1>2 hours on p100 x2</td></tr><tr><td rowspan=1 colspan=1>POJ-104</td><td rowspan=1 colspan=1>C/C++</td><td rowspan=1 colspan=1>2 hours training on P100 x2</td><td rowspan=1 colspan=1>10 minutes on p100 x2</td></tr><tr><td rowspan=1 colspan=1>Defect Detection</td><td rowspan=1 colspan=1>Devign</td><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>1 hour on P100 x2</td><td rowspan=1 colspan=1>2 minutes on p100 x2</td></tr><tr><td rowspan=2 colspan=1>Cloze Test</td><td rowspan=1 colspan=1>CT-all</td><td rowspan=1 colspan=1>Python, Java, PHP, JavaScript, Ruby, Go</td><td rowspan=1 colspan=1>N/A</td><td rowspan=1 colspan=1>30 minutes on P100-16G x2</td></tr><tr><td rowspan=1 colspan=1>CT-max/min</td><td rowspan=1 colspan=1>Python, Java, PHP, JavaScript, Ruby, Go</td><td rowspan=1 colspan=1>N/A</td><td rowspan=1 colspan=1>1 minute on P100-16G x2</td></tr><tr><td rowspan=2 colspan=1>Code Completion</td><td rowspan=1 colspan=1>PY150</td><td rowspan=1 colspan=1>Python</td><td rowspan=1 colspan=1>25 hours on P100 x2</td><td rowspan=1 colspan=1>30 minutes on P100 x2</td></tr><tr><td rowspan=1 colspan=1>GitHub Java Corpus</td><td rowspan=1 colspan=1>Java</td><td rowspan=1 colspan=1>2 hours on P100 x2</td><td rowspan=1 colspan=1>10 minutes on P100 x2</td></tr><tr><td rowspan=1 colspan=1>Code Repair</td><td rowspan=1 colspan=1>Bugs2Fix</td><td rowspan=1 colspan=1>Java</td><td rowspan=1 colspan=1>24 hours on P100 ×2</td><td rowspan=1 colspan=1>20 minutes on P100 x2</td></tr><tr><td rowspan=1 colspan=1>Code Translation</td><td rowspan=1 colspan=1>CodeTrans</td><td rowspan=1 colspan=1>Java-C#</td><td rowspan=1 colspan=1>20 hours on P100 x2</td><td rowspan=1 colspan=1>5 minutes on P100 x2</td></tr><tr><td rowspan=2 colspan=1>NL Code Search</td><td rowspan=1 colspan=1>CodeSearchnet,AdvTest</td><td rowspan=1 colspan=1>Python</td><td rowspan=1 colspan=1>5 hours on P100 x2</td><td rowspan=1 colspan=1>7 minutes on p100 x2</td></tr><tr><td rowspan=1 colspan=1>CodeSearchNet,WebQueryTest</td><td rowspan=1 colspan=1>Python</td><td rowspan=1 colspan=1>5 hours on P100 x2</td><td rowspan=1 colspan=1>1 minute on P100 ×2</td></tr><tr><td rowspan=1 colspan=1>Text-to-CodeGeneration</td><td rowspan=1 colspan=1>CONCODE</td><td rowspan=1 colspan=1>Java</td><td rowspan=1 colspan=1>30 hours on P100 x2</td><td rowspan=1 colspan=1>20 minutes on P100 x2</td></tr><tr><td rowspan=1 colspan=1>Code Summarization</td><td rowspan=1 colspan=1>CodeSearchNet</td><td rowspan=1 colspan=1>Python, Java, PHP, JavaScript, Ruby, Go</td><td rowspan=1 colspan=1>On average, 12 hours foreach PL on P100x2</td><td rowspan=1 colspan=1>On average, 1 hour for each PLon p100x2</td></tr><tr><td rowspan=1 colspan=1>DocumentationTranslation</td><td rowspan=1 colspan=1>Microsoft Docs</td><td rowspan=1 colspan=1>English-Latvian/Danish/Norwegian/Chinese</td><td rowspan=1 colspan=1>30 hours on P100x2</td><td rowspan=1 colspan=1>55 minutes on P100x2</td></tr></table>",
+        "bbox": [
+            99,
+            527,
+            898,
+            794
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/b996ad234666a6c5701dc2ade2302f4c3be6582a244dc748f3d3f04b1899c9b6.jpg",
+        "table_caption": [
+            "Table 14: Results on the documentation translation task. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Task</td><td>Transformer Baseline</td><td>pretrained Transformer</td></tr><tr><td>EN → DA</td><td>53.31</td><td>67.09</td></tr><tr><td>EN → LA</td><td>37.85</td><td>51.92</td></tr><tr><td>EN → NO</td><td>53.84</td><td>68.00</td></tr><tr><td>EN → ZH</td><td>59.90</td><td>70.60</td></tr><tr><td>DA → EN</td><td>58.73</td><td>67.02</td></tr><tr><td>LA → EN</td><td>50.37</td><td>68.30</td></tr><tr><td>NO → EN</td><td>57.73</td><td>71.84</td></tr><tr><td>ZH → EN</td><td>50.00</td><td>64.47</td></tr><tr><td>Overall</td><td>52.67</td><td>66.16</td></tr></table>",
+        "bbox": [
+            130,
+            133,
+            431,
+            314
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            339,
+            482,
+            464
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Many tasks related to machine learning for software engineering [1] have sufficient amount of data to support the development of data-driven methods, but are not covered by CodeXGLUE. We plan to extend to these tasks in the future. For example, the idiom mining task [5, 36] is to extract code idioms, which are syntactic fragments that recur across software projects and serve a single semantic purpose [5]. Bug localization [27, 61, 76] is to point the error location when a program fails tests. The test case generation task [22, 74] is to generate unit test cases automatically. The program synthesis [20, 45, 53, 64, 68, 79, 98] extends the text-to-code generation task aims to generate programs from a specification [24], such as pseudocode, natural language description, and input/output examples. ",
+        "bbox": [
+            86,
+            465,
+            482,
+            643
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "7 CONCLUSION ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            656,
+            232,
+            671
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "With CodeXGLUE, we seek to support the development of models that can be applied to various program understanding and generation problems, with the goal of increasing the productivity of software developers. We encourage researchers to participate in the open challenge to make progress in code intelligence. Moving forward, we are planning to extend CodeXGLUE to more programming languages and downstream tasks while continuing to develop advanced pretrained models by exploring new model structures, introducing new pretraining tasks, using different types of data, and more. ",
+        "bbox": [
+            86,
+            675,
+            482,
+            813
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            827,
+            200,
+            840
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "[1] Miltiadis Allamanis, Earl T. Barr, Premkumar Devanbu, and Charles Sutton. 2018. A Survey of Machine Learning for Big Code and Naturalness. ACM Comput. Surv. 51, 4, Article 81 (July 2018), 37 pages. https://doi.org/10.1145/3212695   \n[2] Miltiadis Allamanis, Marc Brockschmidt, and Mahmoud Khademi. 2017. Learning to represent programs with graphs. arXiv preprint arXiv:1711.00740 (2017).   \n[3] Miltiadis Allamanis, Hao Peng, and Charles Sutton. 2016. A convolutional attention network for extreme summarization of source code. In International conference on machine learning. 2091–2100.   \n[4] Miltiadis Allamanis and Charles Sutton. 2013. Mining Source Code Repositories at Massive Scale using Language Modeling. In 2013 10th Working Conference on Mining Software Repositories (MSR). IEEE, 207–216. [5] Miltiadis Allamanis and Charles Sutton. 2014. Mining idioms from source code. In Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering. 472–483.   \n[6] Uri Alon, Meital Zilberstein, Omer Levy, and Eran Yahav. 2019. code2vec: Learning distributed representations of code. Proceedings of the ACM on Programming Languages 3, POPL (2019), 1–29.   \n[7] Tal Ben-Nun, Alice Shoshana Jakobovits, and Torsten Hoefler. 2018. Neural code comprehension: A learnable representation of code semantics. In Advances in Neural Information Processing Systems. 3585–3597.   \n[8] Pavol Bielik, Veselin Raychev, and Martin Vechev. 2016. PHOG: Probabilistic Model for Code. In Proceedings of the 33rd International Conference on International Conference on Machine Learning - Volume 48 (New York, NY, USA) (ICML’16). JMLR.org, 2933–2942.   \n[9] Marcel Bruch, Martin Monperrus, and Mira Mezini. 2009. Learning from Examples to Improve Code Completion Systems. In Proceedings of the 7th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering (Amsterdam, The Netherlands) (ESEC/FSE ’09). Association for Computing Machinery, New York, NY, USA, 213–222. https://doi.org/10.1145/1595696.1595728   \n[10] L. Büch and A. Andrzejak. 2019. Learning-Based Recursive Aggregation of Abstract Syntax Trees for Code Clone Detection. In 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER). 95–104. https://doi.org/10.1109/SANER.2019.8668039   \n[11] Xinyun Chen, Chang Liu, and Dawn Song. 2018. Tree-to-tree neural networks for program translation. In Advances in neural information processing systems. 2547–2557.   \n[12] Colin B Clement, Dawn Drain, Jonathan Timcheck, Alexey Svyatkovskiy, and Neel Sundaresan. 2020. PyMT5: multi-mode translation of natural language and Python code with transformers. arXiv preprint arXiv:2010.03150 (2020).   \n[13] Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Unsupervised cross-lingual representation learning at scale. arXiv preprint arXiv:1911.02116 (2019).   \n[14] Mayur Datar, Nicole Immorlica, Piotr Indyk, and Vahab S Mirrokni. 2004. Localitysensitive hashing scheme based on p-stable distributions. In Proceedings of the twentieth annual symposium on Computational geometry. 253–262.   \n[15] Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. 2009. Imagenet: A large-scale hierarchical image database. In 2009 IEEE conference on computer vision and pattern recognition. Ieee, 248–255.   \n[16] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 (2018).   \n[17] Jean-Rémy Falleri, Floréal Morandat, Xavier Blanc, Matias Martinez, and Martin Monperrus. 2014. Fine-grained and accurate source code differencing. In Proceedings of the 29th ACM/IEEE international conference on Automated software engineering. 313–324.   \n[18] Zhangyin Feng, Daya Guo, Duyu Tang, Nan Duan, Xiaocheng Feng, Ming Gong, Linjun Shou, Bing Qin, Ting Liu, Daxin Jiang, et al. 2020. Codebert: A pre-trained model for programming and natural languages. arXiv preprint arXiv:2002.08155 (2020).   \n[19] Patrick Fernandes, Miltiadis Allamanis, and Marc Brockschmidt. 2018. Structured neural summarization. arXiv preprint arXiv:1811.01824 (2018).   \n[20] John K. Feser, Swarat Chaudhuri, and Isil Dillig. 2015. Synthesizing Data Structure Transformations from Input-Output Examples. In Proceedings of the 36th ACM SIGPLAN Conference on Programming Language Design and Implementation (Portland, OR, USA) (PLDI ’15). Association for Computing Machinery, New York, NY, USA, 229–239. https://doi.org/10.1145/2737924.2737977   \n[21] Michael Fischer, Martin Pinzger, and Harald Gall. 2003. Populating a release history database from version control and bug tracking systems. In International Conference on Software Maintenance, 2003. ICSM 2003. Proceedings. IEEE, 23–32.   \n[22] Gordon Fraser and Andrea Arcuri. 2011. Evosuite: automatic test suite generation for object-oriented software. In Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on Foundations of software engineering. 416–419.   \n[23] Xiaodong Gu, Hongyu Zhang, and Sunghun Kim. 2018. Deep Code Search. In Proceedings of the 40th International Conference on Software Engineering (Gothenburg, Sweden) (ICSE ’18). Association for Computing Machinery, New York, NY, USA, 933–944. https://doi.org/10.1145/3180155.3180167   \n[24] Sumit Gulwani, Oleksandr Polozov, Rishabh Singh, et al. 2017. Program synthesis. Foundations and Trends® in Programming Languages 4, 1-2 (2017), 1–119.   \n[25] Daya Guo, Shuo Ren, Shuai Lu, Zhangyin Feng, Duyu Tang, Shujie Liu, Long Zhou, Nan Duan, Jian Yin, Daxin Jiang, et al. 2020. GraphCodeBERT: Pre-training Code Representations with Data Flow. arXiv preprint arXiv:2009.08366 (2020).   \n[26] Daya Guo, Duyu Tang, Nan Duan, Ming Zhou, and Jian Yin. 2019. Coupling Retrieval and Meta-Learning for Context-Dependent Semantic Parsing. arXiv preprint arXiv:1906.07108 (2019).   \n[27] Rahul Gupta, Aditya Kanade, and Shirish Shevade. 2019. Neural Attribution for Semantic Bug-Localization in Student Programs. In Advances in Neural Information Processing Systems. 11884–11894.   \n[28] Rahul Gupta, Soham Pal, Aditya Kanade, and Shirish Shevade. 2017. DeepFix: Fixing Common C Language Errors by Deep Learning. In Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (San Francisco, California, USA) (AAAI’17). AAAI Press, 1345–1351.   \n[29] Vincent J Hellendoorn and Premkumar Devanbu. 2017. Are deep neural networks the best choice for modeling source code?. In Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering. 763–773.   \n[30] Vincent J Hellendoorn, Charles Sutton, Rishabh Singh, Petros Maniatis, and David Bieber. 2019. Global relational models of source code. In International Conference on Learning Representations.   \n[31] Abram Hindle, Earl T Barr, Zhendong Su, Mark Gabel, and Premkumar Devanbu. 2012. On the naturalness of software. In 2012 34th International Conference on Software Engineering (ICSE). IEEE, 837–847.   \n[32] Sepp Hochreiter and Jürgen Schmidhuber. 1997. Long short-term memory. Neural computation 9, 8 (1997), 1735–1780.   \n[33] Junjie Hu, Sebastian Ruder, Aditya Siddhant, Graham Neubig, Orhan Firat, and Melvin Johnson. 2020. Xtreme: A massively multilingual multi-task benchmark for evaluating cross-lingual generalization. arXiv preprint arXiv:2003.11080 (2020).   \n[34] Xing Hu, Ge Li, Xin Xia, David Lo, Shuai Lu, and Zhi Jin. 2018. Summarizing Source Code with Transferred API Knowledge. In Proceedings of the 27th International Joint Conference on Artificial Intelligence (Stockholm, Sweden) (IJCAI’18). AAAI Press, 2269–2275.   \n[35] Hamel Husain, Ho-Hsiang Wu, Tiferet Gazit, Miltiadis Allamanis, and Marc Brockschmidt. 2019. Codesearchnet challenge: Evaluating the state of semantic code search. arXiv preprint arXiv:1909.09436 (2019).   \n[36] Srinivasan Iyer, Alvin Cheung, and Luke Zettlemoyer. 2019. Learning programmatic idioms for scalable semantic parsing. arXiv preprint arXiv:1904.09086 (2019).   \n[37] Srinivasan Iyer, Ioannis Konstas, Alvin Cheung, and Luke Zettlemoyer. 2016. Summarizing source code using a neural attention model. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2073–2083.   \n[38] Srinivasan Iyer, Ioannis Konstas, Alvin Cheung, and Luke Zettlemoyer. 2018. Mapping language to code in programmatic context. arXiv preprint arXiv:1808.09588 (2018).   \n[39] Lingxiao Jiang, Ghassan Misherghi, Zhendong Su, and Stephane Glondu. 2007. Deckard: Scalable and accurate tree-based detection of code clones. In 29th International Conference on Software Engineering (ICSE’07). IEEE, 96–105.   \n[40] Melvin Johnson, Mike Schuster, Quoc V Le, Maxim Krikun, Yonghui Wu, Zhifeng Chen, Nikhil Thorat, Fernanda Viégas, Martin Wattenberg, Greg Corrado, et al. 2017. Google’s multilingual neural machine translation system: Enabling zeroshot translation. Transactions of the Association for Computational Linguistics 5 (2017), 339–351.   \n[41] Svetoslav Karaivanov, Veselin Raychev, and Martin Vechev. 2014. Phrase-Based Statistical Translation of Programming Languages. In Proceedings of the 2014 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming Software (Portland, Oregon, USA) (Onward! 2014). Association for Computing Machinery, New York, NY, USA, 173–184. https://doi.org/10.1145/ 2661136.2661148   \n[42] Rafael-Michael Karampatsis, Hlib Babii, Romain Robbes, Charles Sutton, and Andrea Janes. 2020. Big Code! $\\lfloor =$ Big Vocabulary: Open-Vocabulary Models for Source Code. arXiv preprint arXiv:2003.07914 (2020).   \n[43] Yoon Kim. 2014. Convolutional neural networks for sentence classification. arXiv preprint arXiv:1408.5882 (2014).   \n[44] Philipp Koehn, Franz J Och, and Daniel Marcu. 2003. Statistical phrase-based translation. Technical Report. UNIVERSITY OF SOUTHERN CALIFORNIA MARINA DEL REY INFORMATION SCIENCES INST.   \n[45] Sumith Kulal, Panupong Pasupat, Kartik Chandra, Mina Lee, Oded Padon, Alex Aiken, and Percy S Liang. 2019. Spoc: Search-based pseudocode to code. In Advances in Neural Information Processing Systems. 11906–11917.   \n[46] Marie-Anne Lachaux, Baptiste Roziere, Lowik Chanussot, and Guillaume Lample. 2020. Unsupervised Translation of Programming Languages. arXiv preprint arXiv:2006.03511 (2020).   \n[47] Yi Li, Shaohua Wang, Tien N Nguyen, and Son Van Nguyen. 2019. Improving bug detection via context-based code representation learning and attention-based neural networks. Proceedings of the ACM on Programming Languages 3, OOPSLA (2019), 1–30.   \n[48] Yaobo Liang, Nan Duan, Yeyun Gong, Ning Wu, Fenfei Guo, Weizhen Qi, Ming Gong, Linjun Shou, Daxin Jiang, Guihong Cao, et al. 2020. Xglue: A new benchmark dataset for cross-lingual pre-training, understanding and generation. arXiv preprint arXiv:2004.01401 (2020).   \n[49] Chin-Yew Lin and Franz Josef Och. 2004. Orange: a method for evaluating automatic evaluation metrics for machine translation. In COLING 2004: Proceedings of the 20th International Conference on Computational Linguistics. 501–507.   \n[50] Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692 (2019).   \n[51] Sifei Luan, Di Yang, Celeste Barnaby, Koushik Sen, and Satish Chandra. 2019. Aroma: Code recommendation via structural code search. Proceedings of the ACM on Programming Languages 3, OOPSLA (2019), 1–28.   \n[52] Lili Mou, Ge Li, Lu Zhang, Tao Wang, and Zhi Jin. 2016. Convolutional neural networks over tree structures for programming language processing. In Proceedings of the Thirtieth AAAI Conference on Artificial Intelligence. 1287–1293.   \n[53] Arvind Neelakantan, Quoc V Le, and Ilya Sutskever. 2015. Neural programmer: Inducing latent programs with gradient descent. arXiv preprint arXiv:1511.04834 (2015).   \n[54] Anh Tuan Nguyen, Tung Thanh Nguyen, and Tien N Nguyen. 2015. Divide-andconquer approach for multi-phase statistical migration for source code (t). In 2015 30th IEEE/ACM International Conference on Automated Software Engineering (ASE). IEEE, 585–596.   \n[55] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur. 2015. Librispeech: an asr corpus based on public domain audio books. In 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 5206–5210.   \n[56] Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. BLEU: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting of the Association for Computational Linguistics. 311–318.   \n[57] Michael Pradel and Koushik Sen. 2018. DeepBugs: A Learning Approach to Name-Based Bug Detection. Proc. ACM Program. Lang. 2, OOPSLA, Article 147 (Oct. 2018), 25 pages. https://doi.org/10.1145/3276517   \n[58] Varot Premtoon, James Koppel, and Armando Solar-Lezama. 2020. Semantic Code Search via Equational Reasoning. In Proceedings of the 41st ACM SIGPLAN Conference on Programming Language Design and Implementation (London, UK) (PLDI 2020). Association for Computing Machinery, New York, NY, USA, 1066–1082. https://doi.org/10.1145/3385412.3386001   \n[59] Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. OpenAI blog 1, 8 (2019), 9.   \n[60] Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. Squad: $^ { 1 0 0 , 0 0 0 + }$ questions for machine comprehension of text. arXiv preprint arXiv:1606.05250 (2016).   \n[61] Baishakhi Ray, Vincent Hellendoorn, Saheel Godhane, Zhaopeng Tu, Alberto Bacchelli, and Premkumar Devanbu. 2016. On the\" naturalness\" of buggy code. In 2016 IEEE/ACM 38th International Conference on Software Engineering (ICSE). IEEE, 428–439.   \n[62] Veselin Raychev, Pavol Bielik, and Martin Vechev. 2016. Probabilistic Model for Code with Decision Trees. ACM SIGPLAN Notices (2016), 731–747.   \n[63] Veselin Raychev, Martin Vechev, and Eran Yahav. 2014. Code Completion with Statistical Language Models. In Proceedings of the 35th ACM SIGPLAN Conference on Programming Language Design and Implementation (Edinburgh, United Kingdom) (PLDI ’14). Association for Computing Machinery, New York, NY, USA, 419–428. https://doi.org/10.1145/2594291.2594321   \n[64] Scott Reed and Nando De Freitas. 2015. Neural programmer-interpreters. arXiv preprint arXiv:1511.06279 (2015).   \n[65] Shuo Ren, Daya Guo, Shuai Lu, Long Zhou, Shujie Liu, Duyu Tang, Ming Zhou, Ambrosio Blanco, and Shuai Ma. 2020. CodeBLEU: a Method for Automatic Evaluation of Code Synthesis. arXiv preprint arXiv:2009.10297 (2020).   \n[66] Rico Sennrich, Barry Haddow, and Alexandra Birch. 2015. Neural machine translation of rare words with subword units. arXiv preprint arXiv:1508.07909 (2015).   \n[67] Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Neural Machine Translation of Rare Words with Subword Units. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1715–1725.   \n[68] Rishabh Singh and Sumit Gulwani. 2015. Predicting a correct program in programming by example. In International Conference on Computer Aided Verification. Springer, 398–414.   \n[69] Irene Solaiman, Miles Brundage, Jack Clark, Amanda Askell, Ariel Herbert-Voss, Jeff Wu, Alec Radford, Gretchen Krueger, Jong Wook Kim, Sarah Kreps, et al. 2019. Release strategies and the social impacts of language models. arXiv preprint arXiv:1908.09203 (2019).   \n[70] Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014. Sequence to sequence learning with neural networks. In Advances in neural information processing systems. 3104– 3112.   \n[71] Jeffrey Svajlenko, Judith F Islam, Iman Keivanloo, Chanchal K Roy, and Mohammad Mamun Mia. 2014. Towards a big data curated benchmark of inter-project code clones. In 2014 IEEE International Conference on Software Maintenance and Evolution. IEEE, 476–480.   \n[72] Alexey Svyatkovskiy, Shao Kun Deng, Shengyu Fu, and Neel Sundaresan. 2020. IntelliCode Compose: Code Generation Using Transformer. arXiv preprint arXiv:2005.08025 (2020).   \n[73] Alexey Svyatkovskiy, Ying Zhao, Shengyu Fu, and Neel Sundaresan. 2019. Pythia: ai-assisted code completion system. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 2727–2735.   \n[74] Michele Tufano, Dawn Drain, Alexey Svyatkovskiy, Shao Kun Deng, and Neel Sundaresan. 2020. Unit Test Case Generation with Transformers. arXiv preprint arXiv:2009.05617 (2020).   \n[75] Michele Tufano, Cody Watson, Gabriele Bavota, Massimiliano Di Penta, Martin White, and Denys Poshyvanyk. 2019. An empirical study on learning bug-fixing patches in the wild via neural machine translation. ACM Transactions on Software Engineering and Methodology (TOSEM) 28, 4 (2019), 1–29.   \n[76] Marko Vasic, Aditya Kanade, Petros Maniatis, David Bieber, and Rishabh Singh. 2019. Neural program repair by jointly learning to localize and repair. arXiv preprint arXiv:1904.01720 (2019).   \n[77] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in neural information processing systems. 5998–6008.   \n[78] Panagiotis Vekris, Benjamin Cosman, and Ranjit Jhala. 2016. Refinement Types for TypeScript. In Proceedings of the 37th ACM SIGPLAN Conference on Programming Language Design and Implementation (Santa Barbara, CA, USA) (PLDI ’16). Association for Computing Machinery, New York, NY, USA, 310–325. https://doi.org/10.1145/2908080.2908110   \n[79] Murali Vijayaraghavan, Chaudhuri Swarat, and Jermaine Chris. 2017. Bayesian Sketch Learning for Program Synthesis. CoRR.—-2017.—-Vol. abs/1703.05698.—- 1703.05698 (2017).   \n[80] Yao Wan, Zhou Zhao, Min Yang, Guandong Xu, Haochao Ying, Jian Wu, and Philip S Yu. 2018. Improving automatic source code summarization via deep reinforcement learning. In Proceedings of the 33rd ACM/IEEE International Conference on Automated Software Engineering. 397–407.   \n[81] Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. Glue: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461 (2018).   \n[82] Song Wang, Devin Chollak, Dana Movshovitz-Attias, and Lin Tan. 2016. Bugram: bug detection with n-gram language models. In Proceedings of the 31st IEEE/ACM International Conference on Automated Software Engineering. 708–719.   \n[83] Song Wang, Taiyue Liu, and Lin Tan. 2016. Automatically Learning Semantic Features for Defect Prediction. In Proceedings of the 38th International Conference on Software Engineering (Austin, Texas) (ICSE ’16). Association for Computing Machinery, New York, NY, USA, 297–308. https://doi.org/10.1145/2884781.2884804   \n[84] Wenhan Wang, Ge Li, Bo Ma, Xin Xia, and Zhi Jin. 2020. Detecting Code Clones with Graph Neural Network and Flow-Augmented Abstract Syntax Tree. In 2020 IEEE 27th International Conference on Software Analysis, Evolution and Reengineering (SANER). IEEE, 261–271.   \n[85] Wenhua Wang, Yuqun Zhang, Zhengran Zeng, and Guandong Xu. 2020. TranSˆ 3: A Transformer-based Framework for Unifying Code Summarization and Code Search. arXiv preprint arXiv:2003.03238 (2020).   \n[86] Yanlin Wang, Lun Du, Ensheng Shi, Yuxuan Hu, Shi Han, and Dongmei Zhang. 2020. CoCoGUM: Contextual Code Summarization with Multi-Relational GNN on UMLs.   \n[87] Bolin Wei, Ge Li, Xin Xia, Zhiyi Fu, and Zhi Jin. 2019. Code generation as a dual task of code summarization. In Advances in Neural Information Processing Systems. 6563–6573.   \n[88] Huihui Wei and Ming Li. 2017. Supervised Deep Features for Software Functional Clone Detection by Exploiting Lexical and Syntactical Information in Source Code.. In IJCAI. 3034–3040.   \n[89] Martin White, Michele Tufano, Christopher Vendome, and Denys Poshyvanyk. 2016. Deep learning code fragments for code clone detection. In 2016 31st IEEE/ACM International Conference on Automated Software Engineering (ASE). IEEE, 87–98.   \n[90] Frank F Xu, Zhengbao Jiang, Pengcheng Yin, Bogdan Vasilescu, and Graham Neubig. 2020. Incorporating external knowledge through pre-training for natural language to code generation. arXiv preprint arXiv:2004.09015 (2020).   \n[91] S. Yan, H. Yu, Y. Chen, B. Shen, and L. Jiang. 2020. Are the Code Snippets What We Are Searching for? A Benchmark and an Empirical Study on Code Search with Natural-Language Queries. In 2020 IEEE 27th International Conference on Software Analysis, Evolution and Reengineering (SANER). 344–354. https: //doi.org/10.1109/SANER48275.2020.9054840   \n[92] Ziyu Yao, Daniel S Weld, Wei-Peng Chen, and Huan Sun. 2018. StaQC: A Systematically Mined Question-Code Dataset from Stack Overflow. In Proceedings of the 2018 World Wide Web Conference. 1693–1703.   \n[93] Fangke Ye, Shengtian Zhou, Anand Venkat, Ryan Marucs, Nesime Tatbul, Jesmin Jahan Tithi, Paul Petersen, Timothy Mattson, Tim Kraska, Pradeep Dubey, et al. 2020. MISIM: An End-to-End Neural Code Similarity System. arXiv preprint arXiv:2006.05265 (2020).   \n[94] Pengcheng Yin, Bowen Deng, Edgar Chen, Bogdan Vasilescu, and Graham Neubig. 2018. Learning to Mine Aligned Code and Natural Language Pairs from Stack Overflow. In International Conference on Mining Software Repositories (MSR). ACM, 476–486. https://doi.org/10.1145/3196398.3196408   \n[95] Pengcheng Yin and Graham Neubig. 2017. A syntactic neural model for generalpurpose code generation. arXiv preprint arXiv:1704.01696 (2017).   \n[96] Hao Yu, Wing Lam, Long Chen, Ge Li, Tao Xie, and Qianxiang Wang. 2019. Neural detection of semantic code clones via tree-based convolution. In 2019 IEEE/ACM 27th International Conference on Program Comprehension (ICPC). IEEE, 70–80.   \n[97] Jian Zhang, Xu Wang, Hongyu Zhang, Hailong Sun, Kaixuan Wang, and Xudong Liu. 2019. A novel neural source code representation based on abstract syntax tree. In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE). IEEE, 783–794.   \n[98] Ruiqi Zhong, Mitchell Stern, and Dan Klein. 2020. Semantic Scaffolds for Pseudocode-to-Code Generation. arXiv preprint arXiv:2005.05927 (2020).   \n[99] Yaqin Zhou, Shangqing Liu, Jingkai Siow, Xiaoning Du, and Yang Liu. 2019. Devign: Effective vulnerability identification by learning comprehensive program semantics via graph neural networks. In Advances in Neural Information Processing Systems. 10197–10207. ",
+        "bbox": [
+            89,
+            844,
+            480,
+            895
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            516,
+            89,
+            913,
+            897
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            112,
+            482,
+            893
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            516,
+            106,
+            913,
+            890
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            111,
+            480,
+            895
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            516,
+            109,
+            913,
+            280
+        ],
+        "page_idx": 13
+    }
+]

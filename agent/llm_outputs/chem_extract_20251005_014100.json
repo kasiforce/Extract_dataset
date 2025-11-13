@@ -1,0 +1,171 @@
+{
+  "document_id": "Elucidation of mesopore-organic molecules interactions in mesoporous TiO2 photocatalysts to improve photocatalytic activity",
+  "reaction_name": "Sol-gel synthesis and calcination of mesoporous titanium dioxide (TiO2) photocatalysts",
+  "precursors": [
+    {
+      "name": "titanyl sulfate",
+      "raw": "titanyl sulfate TiOSO4·xH2O",
+      "amount": null,
+      "moles": null,
+      "equivalents": null,
+      "purity": "99.5% (AR)",
+      "role": "precursor"
+    }
+  ],
+  "solvents": [
+    {
+      "name": "ethanol",
+      "raw": "in a mixture of 80% v/v ethanol and 20% v/v water",
+      "volume": null,
+      "concentration": "80% v/v in solvent mixture"
+    },
+    {
+      "name": "water",
+      "raw": "in a mixture of 80% v/v ethanol and 20% v/v water",
+      "volume": null,
+      "concentration": "20% v/v in solvent mixture"
+    }
+  ],
+  "catalysts": [],
+  "additives": [
+    {
+      "name": "aqueous ammonia",
+      "raw": "the hydrolysed slurry was rinsed with 0.1 M aqueous ammonia a few times",
+      "amount": null,
+      "concentration": "0.1 M",
+      "role": "washing/base"
+    }
+  ],
+  "stoichiometry": null,
+  "apparatus": [],
+  "atmosphere": null,
+  "temperature": [
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 100,
+      "unit": "°C",
+      "stage": "calcination (TiO2-100)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 200,
+      "unit": "°C",
+      "stage": "calcination (TiO2-200)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 300,
+      "unit": "°C",
+      "stage": "calcination (TiO2-300)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 400,
+      "unit": "°C",
+      "stage": "calcination (TiO2-400)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 500,
+      "unit": "°C",
+      "stage": "calcination (TiO2-500)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 600,
+      "unit": "°C",
+      "stage": "calcination (TiO2-600)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 700,
+      "unit": "°C",
+      "stage": "calcination (TiO2-700)"
+    },
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 800,
+      "unit": "°C",
+      "stage": "calcination (TiO2-800)"
+    }
+  ],
+  "time": [
+    {
+      "raw": "calcination at a certain temperature within 100–800 °C for 1 h",
+      "value": 1,
+      "unit": "h",
+      "step": "calcination (all standard samples)"
+    },
+    {
+      "raw": "calcined at 600 °C for 3 h is named as TiO2-600-3",
+      "value": 3,
+      "unit": "h",
+      "step": "calcination (TiO2-600-3)"
+    }
+  ],
+  "pH": null,
+  "workup": {
+    "quench": null,
+    "extraction": null,
+    "washing": "Hydrolysed slurry rinsed with 0.1 M aqueous ammonia a few times",
+    "drying_agent": null,
+    "concentration_method": null
+  },
+  "isolation": {
+    "method": null,
+    "yield": null,
+    "physical_state": null,
+    "purification": null
+  },
+  "characterization": [
+    {
+      "technique": "XRD",
+      "raw": "XRD patterns of the TiO2 photocatalysts",
+      "details": "Anatase phase <700 °C; rutile appears at 800 °C"
+    },
+    {
+      "technique": "N2 sorption (BET/PSD)",
+      "raw": "N2 adsorption/desorption isotherms; BET surface area; pore size distribution",
+      "details": "Type IV isotherms for 500–700 °C; mesopores 2–14 nm"
+    },
+    {
+      "technique": "SEM",
+      "raw": "SEM images of TiO2-200 and TiO2-600",
+      "details": "10–20 nm primary particles; aggregates 0.1–5 μm"
+    },
+    {
+      "technique": "FTIR",
+      "raw": "FTIR spectra showing sulfate species and Ti–O–Ti bands",
+      "details": "Sulfate bands diminish with higher calcination temperature"
+    },
+    {
+      "technique": "UV–vis DRS",
+      "raw": "UV–vis diffusion reflectance spectra (DRS) and Tauc plots",
+      "details": "Eg ~3.21–3.24 eV; visible absorption for low-temp samples due to SO3"
+    }
+  ],
+  "notes": null,
+  "extraction_hints": [
+    {
+      "field": "solvents",
+      "hint": "“in a mixture of 80% v/v ethanol and 20% v/v water”"
+    },
+    {
+      "field": "precursors",
+      "hint": "“hydrolysis of titanyl sulfate TiOSO4·xH2O”"
+    },
+    {
+      "field": "temperature",
+      "hint": "“calcination at ... 100–800 °C for 1 h”"
+    },
+    {
+      "field": "time",
+      "hint": "“for 1 h” and “600 °C for 3 h”"
+    },
+    {
+      "field": "workup",
+      "hint": "“rinsed with 0.1 M aqueous ammonia a few times”"
+    }
+  ],
+  "confidence": 0.78
+}
