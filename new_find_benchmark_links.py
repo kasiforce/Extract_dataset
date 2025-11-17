@@ -138,6 +138,26 @@ def build_benchmark_finder_prompt(text_content: str) -> tuple[str, str]:
         "value": "【请用中文描述】数据集的许可证 (例如 'MIT', '仅供学术研究')",
         "source_quote": "原文中提及许可证的句子 (例如 'The dataset is released under the MIT License.')"
       },
+      "task_granularity": { 
+        "value": "【中文描述】(例如 '代码生成', '代码补全', '代码修复')", 
+        "source_quote": "原文中描述任务粒度的句子 (例如 'This task involves generating the full function body...')" 
+      },
+      "evaluation_metrics": { 
+        "value": "【中文描述】(例如 'pass@1, pass@10', 'CodeBLEU')", 
+        "source_quote": "原文中提到具体评估指标的句子 (例如 'We evaluate functional correctness using pass@1.')" 
+      },
+      "input_modality": { 
+        "value": "【中文描述】(例如 '自然语言', '代码与自然语言')", 
+        "source_quote": "原文中描述输入类型的句子 (例如 'The input is a natural language docstring...')" 
+      },
+      "output_modality": { 
+        "value": "【中文描述】(例如 '代码', '自然语言')", 
+        "source_quote": "原文中描述期望输出的句子 (例如 'The model is expected to output a block of Python code.')" 
+      },
+      "execution_environment": { 
+        "value": "【中文描述】(例如 '标准库', '需要特定依赖')", 
+        "source_quote": "原文中描述执行环境的句子 (例如 'The generated code is executed in a sandboxed environment with no external libraries.')" 
+      }
       "unique_features": {
         "value": "【请用中文描述】该基准的独特之处或额外信息 (即'额外列')",
         "source_quote": "原文中描述其特殊性的句子 (例如 'Unlike previous benchmarks, RMCBench focuses on malicious code generation.')"
@@ -207,7 +227,8 @@ def flatten_extracted_data(nested_data: dict, source_paper: str) -> dict:
         "evaluation_method", "context_dependency", "problem_domain", 
         "problem_difficulty", "language", "data_size", "source_type",
         "last_updated", "build_type", "contamination_status", 
-        "dataset_license", "unique_features"
+        "dataset_license", "task_granularity", "evaluation_metrics", "input_modality",
+        "output_modality", "execution_environment","unique_features"
     ]
     
     for field in all_fields:
@@ -234,8 +255,8 @@ def flatten_extracted_data(nested_data: dict, source_paper: str) -> dict:
 if __name__ == "__main__":
     script_path = Path(__file__).resolve()
     project_root = script_path.parent
-    
-    papers_folder = project_root / "papers_info/2102.04664v2_output" # mineru输出文件夹
+
+    papers_folder = project_root / "papers_info\\2310.06266v2_output" # 请根据需要修改为论文存放路径
     results_folder = project_root / "results"
     results_folder.mkdir(exist_ok=True)
 
@@ -297,7 +318,8 @@ if __name__ == "__main__":
             "evaluation_method", "context_dependency", "problem_domain", 
             "problem_difficulty", "language", "data_size", "source_type",
             "last_updated", "build_type", "contamination_status", 
-            "dataset_license", "unique_features" # "额外列"
+            "dataset_license", "task_granularity", "evaluation_metrics", "input_modality",
+            "output_modality", "execution_environment", "unique_features" # "额外列"
         ]
         
         # 动态生成带引述的完整列列表 (实现请求 3)
@@ -312,7 +334,7 @@ if __name__ == "__main__":
         final_columns = existing_columns_ordered + other_columns
         df = df[final_columns]
 
-        output_filename = results_folder / "new_detailed_benchmarks_info.csv"
+        output_filename = results_folder / "benchmarks_database_1113.csv"
         df.to_csv(output_filename, index=False, encoding='utf-8-sig')
 
         print(f"\n✅ 全部处理完成！从 {len(input_files)} 个路径中（已跳过文件夹）识别出 {len(all_found_benchmarks_flat)} 条基准信息。")

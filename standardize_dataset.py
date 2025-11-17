@@ -29,7 +29,7 @@ def build_normalization_prompt(raw_data: Dict[str, Any]) -> tuple[str, str]:
 
     **规范化规则 (必须严格遵守):**
 
-    1.  **"raw_data_size"** (例如: "164个问题", "约1000+", "N/A"):
+    1.  **"raw_data_size"** (例如: "164个问题", "约1000+"):
         - 规范为 `{"quantity": <number | null>, "unit": "<string | null>"}`
         - `quantity` 是核心数值 (例如 164, 1000, 3135.95)。
         - `unit` **仅仅**是 **quantity 的直接计量单位** (例如 "个问题", "条提示", "GB", "TB", "个样本")。
@@ -47,16 +47,25 @@ def build_normalization_prompt(raw_data: Dict[str, Any]) -> tuple[str, str]:
         - 例如: "pass@k 和 CodeBLEU" -> `["pass@k", "CodeBLEU"]`
         - 如果找不到，返回空列表 `[]`。
 
-    4.  **"raw_problem_difficulty"** (任务难度):
-        - 这是一个“单选”分类字段。
-        - 必须从以下 **中文枚举值** 中选择一个最接近的：
-          `"入门级"`, `"竞赛级"`, `"工程级"`, `"未知"`
-        - 如果无法分类，返回 `"未知"`。
+    4.  **"raw_language"**, **"raw_dimension"**, **"raw_evaluation_method"**, **"raw_evaluation_metrics"**, **"raw_problem_domain"**, **"raw_source_type"**:
+        - 这些是“多选”字段。
+        - 规范为 **JSON列表 (Array)**，包含所有提取到的中文关键词。
+        - 例如: "Python, C++ 和多语言" -> `["Python", "C++", "多语言"]`
+        - 例如: "pass@1, pass@10 和 CodeBLEU" -> `["pass@1", "pass@10", "CodeBLEU"]`
+        - 如果找不到，返回空列表 `[]`。
 
-    5.  **"raw_context_dependency"** (上下文依赖):
-        - 这是一个“单选”分类字段。
-        - 必须从以下 **中文枚举值** 中选择一个最接近的：
-          `"单函数"`, `"单文件"`, `"多文件/项目级"`, `"未知"`
+    5.  **"raw_problem_difficulty"**, **"raw_context_dependency"**, **"raw_task_granularity"**, **"raw_input_modality"**, **"raw_output_modality"**, **"raw_execution_environment"**, **"raw_dataset_license"**, **"raw_contamination_status"**:
+        - 这些是“单选”分类字段。
+        - 规范为 **中文枚举值** (从以下对应列表选一个最接近的):
+        - `problem_difficulty`: `"入门级"`, `"竞赛级"`, `"工程级"`, `"未知"`
+        - `context_dependency`: `"单函数"`, `"单文件"`, `"多文件/项目级"`, `"未知"`
+        - `task_granularity`: `"代码生成"`, `"代码补全"`, `"代码修复"`, `"代码翻译"`, `"代码总结"`, `"未知"`
+        - `input_modality`: `"自然语言"`, `"代码与自然语言"`, `"代码与图像"`, `"未知"`
+        - `output_modality`: `"代码"`, `"自然语言"`, `"JSON"`, `"未知"`
+        - `execution_environment`: `"标准库"`, `"需要特定依赖"`, `"Docker容器"`, `"未知"`
+        - `dataset_license`: `"MIT"`, `"Apache 2.0"`, `"GPL-3.0"`, `"BSD"`, `"CC-BY-SA 4.0"`, `"仅供学术研究"`, `"未知"`
+        - `contamination_status`: `"高污染风险"`, `"抗污染设计"`, `"未知"`
+        - 如果无法分类，返回 `"未知"`。
 
     6.  **"raw_dataset_license"** (数据集许可证):
         - 这是一个“单选”分类字段。
@@ -72,9 +81,14 @@ def build_normalization_prompt(raw_data: Dict[str, Any]) -> tuple[str, str]:
       "evaluation_method": ["<string>", "..."],
       "problem_domain": ["<string>", "..."],
       "source_type": ["<string>", "..."],
-      "problem_difficulty": "<'入门级' | '竞赛级' | '工程级' | '未知'>",
-      "context_dependency": "<'单函数' | '单文件' | '多文件/项目级' | '未知'>",
-      "dataset_license": "<'MIT' | 'Apache 2.0' | 'GPL-3.0' | ... | '未知'>"
+      "problem_difficulty": "<中文枚举值>",
+      "context_dependency": "<中文枚举值>",
+      "task_granularity": "<中文枚举值>",
+      "input_modality": "<中文枚举值>",
+      "output_modality": "<中文枚举值>",
+      "execution_environment": "<中文枚举值>",
+      "dataset_license": "<标准标识符>",
+      "contamination_status": "<中文枚举值>"
     }
     """
     
@@ -140,12 +154,12 @@ def normalize_row_fields(row: pd.Series, fields_to_normalize: list) -> Dict[str,
 def main():
     script_path = Path(__file__).resolve()
     project_root = script_path.parent
-    
     results_folder = project_root / "results"
-    # 输入文件
-    input_csv_path = results_folder / "new_detailed_benchmarks_info.csv"
-    # 输出文件
-    output_csv_path = results_folder / "new_detailed_benchmarks_standardized_info.csv"
+    
+    # 输入文件：提取脚本的输出
+    input_csv_path = results_folder / "benchmarks_database_1113.csv"
+    # 输出文件：本脚本的最终产物 (JSON)
+    output_json_path = results_folder / "benchmarks_database_1113_normalized.json"
 
     if not input_csv_path.exists():
         print(f"错误：未找到输入文件 {input_csv_path}")
@@ -155,101 +169,56 @@ def main():
     print(f"正在读取原始CSV文件: {input_csv_path}")
     df = pd.read_csv(input_csv_path)
 
-    # --- 核心改进 ---
     # 定义我们希望LLM规范化的所有列
     fields_to_normalize = [
-        'data_size', 'last_updated', 'language', 'dimension',
-        'evaluation_method', 'problem_domain', 'source_type',
-        'problem_difficulty', 'context_dependency', 'dataset_license'
+        'data_size', 'last_updated', 'language', 'dimension', 'evaluation_method',
+        'evaluation_metrics', 'problem_domain', 'source_type', 'problem_difficulty',
+        'context_dependency', 'task_granularity', 'input_modality',
+        'output_modality', 'execution_environment', 'dataset_license',
+        'contamination_status'
     ]
     
-    # 检查这些列是否存在
-    missing_cols = [col for col in fields_to_normalize if col not in df.columns]
-    if missing_cols:
-        print(f"警告：原始CSV文件中缺少以下列，将跳过对它们的规范化: {missing_cols}")
-        fields_to_normalize = [col for col in fields_to_normalize if col in df.columns]
-
-    if not fields_to_normalize:
-        print("没有找到任何可以规范化的列。程序退出。")
-        return
-
     print(f"开始规范化以下列: {fields_to_normalize}")
     print(f"总共需要处理 {len(df)} 行数据... (这将调用 {len(df)} 次API，请耐心等待)")
 
-    normalized_data_list = []
-    
+    final_results_list = []
     total_rows = len(df)
+
     for index, row in df.iterrows():
         print(f"\n--- 正在处理第 {index + 1}/{total_rows} 行 (Benchmark: {row.get('benchmark_name')}) ---")
-        raw_values = {field: row.get(field) for field in fields_to_normalize}
-        print(f"原始数据: {raw_values}")
         
-        normalized_result_dict = normalize_row_fields(row, fields_to_normalize)
+        # 1. 获取原始数据 (所有列)
+        original_data_dict = row.to_dict()
+        
+        # 2. 获取需要规范化的字段的原始值
+        raw_values_for_prompt = {field: row.get(field) for field in fields_to_normalize if field in df.columns}
+        print(f"原始数据: {raw_values_for_prompt}")
+        
+        # 3. 调用LLM进行规范化
+        normalized_result_dict = normalize_row_fields(row, [f for f in fields_to_normalize if f in df.columns])
         print(f"规范化结果: {normalized_result_dict}")
         
-        normalized_data_list.append(normalized_result_dict)
+        # 4. 将规范化结果合并回原始数据字典
+        original_data_dict.update(normalized_result_dict)
         
-        # 速率限制
-        time.sleep(1) # 1秒/次调用。如果你的API限制更宽松，可以调低
+        # 5. 添加到最终列表
+        final_results_list.append(original_data_dict)
+        
+        time.sleep(1) # 速率限制
 
-    # --- 整合数据 ---
+    # --- 整合数据 (已更新为 JSON 输出) ---
     print("\n--- 规范化完成，正在整合数据 ---")
     
-    normalized_df = pd.DataFrame(normalized_data_list, index=df.index)
-    df_combined = pd.concat([df, normalized_df], axis=1)
-
-    # --- 动态构建最终列顺序 ---
-    final_cols = ['source_paper', 'benchmark_name', 'dataset_url', 'task_description']
-    
-    # 规范化的字段
-    normalized_map = {
-        'data_size': ['data_size_quantity', 'data_size_unit'],
-        'last_updated': ['last_updated_year', 'last_updated_month', 'last_updated_day'],
-        'language': ['language_normalized'],
-        'dimension': ['dimension_normalized'],
-        'evaluation_method': ['evaluation_method_normalized'],
-        'problem_domain': ['problem_domain_normalized'],
-        'source_type': ['source_type_normalized'],
-        'problem_difficulty': ['problem_difficulty_normalized'],
-        'context_dependency': ['context_dependency_normalized'],
-        'dataset_license': ['dataset_license_normalized']
-    }
-    
-    # 先添加原始列和规范化后的列
-    for raw_col in fields_to_normalize:
-        if raw_col in df_combined.columns:
-            final_cols.append(raw_col) # 添加原始列 (例如 "164个问题")
-            for norm_col in normalized_map.get(raw_col, []):
-                if norm_col in df_combined.columns:
-                    final_cols.append(norm_col) # 添加规范化列 (例如 164)
-    
-    # 添加所有带 _quote 的溯源列
-    quote_cols = [col for col in df_combined.columns if col.endswith('_quote')]
-    final_cols.extend(quote_cols)
-    
-    # 添加任何剩余的列 (例如 error, unique_features 等)
-    other_cols = [col for col in df_combined.columns if col not in final_cols]
-    final_cols.extend(other_cols)
-    
-    # 确保没有重复的列
-    final_cols_dedup = list(dict.fromkeys(final_cols))
-    df_combined = df_combined[final_cols_dedup]
-
-    # 5. 保存到新的CSV文件
-    df_combined.to_csv(output_csv_path, index=False, encoding='utf-8-sig')
+    # 5. 保存到新的JSON文件
+    with open(output_json_path, 'w', encoding='utf-8') as f:
+        json.dump(final_results_list, f, ensure_ascii=False, indent=2)
 
     print(f"\n✅ 全部处理完成！")
-    print(f"已将规范化后的数据库保存到: {output_csv_path}")
+    print(f"已将规范化后的数据库保存到: {output_json_path}")
     
-    print("\n规范化数据预览 (相关列):")
-    preview_cols = [
-        'data_size', 'data_size_quantity', 'data_size_unit', 
-        'last_updated', 'last_updated_year',
-        'problem_difficulty', 'problem_difficulty_normalized',
-        'language', 'language_normalized'
-    ]
-    preview_cols_exist = [col for col in preview_cols if col in df_combined.columns]
-    print(df_combined[preview_cols_exist].head().to_markdown(index=False))
+    if final_results_list:
+        print("\n规范化数据预览 (第一条记录):")
+        print(json.dumps(final_results_list[0], indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
