@@ -6,12 +6,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    - cron:  "0 12 * * *"  # Runs At 12:00
+    - cron:  "0 0 * * *"  # Runs At 00:00
 env:
 
   GITHUB_USER_NAME: kasiforce # your github id
   GITHUB_USER_EMAIL: 2819407652@qq.com # your email address
   
+permissions:
+  contents: write 
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,14 +42,17 @@ jobs:
 
       - name: Run daily arxiv 
         run: |
-          python SearchPaper.py
+          python run.py
           
       - name: Push new arxiv-daily
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Github Action Automatic Update Arxiv Papers"
-          files: ./paper papers_metadata.jsonl
+          files: |
+            papers/
+            papers_metadata.jsonl
+            process_state.txt
           rebase: 'true'
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}

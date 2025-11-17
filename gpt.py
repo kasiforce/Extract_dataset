@@ -1,9 +1,9 @@
 import openai  # 导入openai库，用于与OpenAI的API进行交互
 from openai import OpenAI  # 从openai库中导入OpenAI类
 import time  # 导入time模块，用于处理时间相关操作
-import json
+import os
 from utils import safe_json_loads
-
+api_key = os.environ["MY_API_KEY"]
 
 def call_chatgpt(prompt, model='gpt-5-mini', temperature=0., top_p=1.0,
                  max_tokens=1024):
@@ -18,7 +18,7 @@ def call_chatgpt(prompt, model='gpt-5-mini', temperature=0., top_p=1.0,
     - max_tokens: 生成文本的最大token数。
     """
 
-    client = OpenAI(api_key="sk-WhZar4Km8tqMhzsRhzHn5oIvd6yzP7TZrMMGzkcgF4CDiTRJ",
+    client = OpenAI(api_key=api_key,
                     base_url="https://api.agicto.cn/v1")  # 创建OpenAI客户端实例
 
     try:
