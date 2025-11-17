@@ -1,4 +1,3 @@
-# TODO: add papers by configuration file
 base_url: "https://arxiv.paperswithcode.com/api/v0/papers/"
 user_name: ""
 repo_name: "Extract_dataset"
@@ -10,18 +9,21 @@ download_papers_path: './papers'
 papers_metadata_path: 'papers_metadata.jsonl'
 
 
-# keywords to search
+# categories to search
 # 列表之间用AND连接，列表内每个词用OR连接
-keywords:
-    "LLM Coding":
-        filters: [["llm", "large language model"],
-                  ["code generation"],
-                  ] 
-    "LLM Testing":
-        filters: [["llm", "large language model"],
-                  ["unit test", "test generation"],
-                  ]
-    "LLM Translation":
-        filters: [["llm", "large language model"],
-                  ["code translation"],
-                  ]
+categories:
+    - cs.SE # software engineering
+
+#论文的分类
+topic:
+    - Code Pre-Training
+    - Code Instruction-Tuning
+    - Code Alignment
+    - Code Prompting
+    - Code Completion
+    - Code Summarization
+    - Code Debug
+    - Code Editing
+    - Code Translation
+    - Code Testing
+
