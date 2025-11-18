@@ -4,6 +4,8 @@ import re  # 导入正则表达式库
 from openai import OpenAI
 import pandas as pd
 from pathlib import Path
+import time
+from typing import Set, List, Dict, Any
 
 # --- 1. 配置 (已改进) ---
 # 最佳实践：从环境变量读取API Key，而不是硬编码。
@@ -154,6 +156,10 @@ def build_benchmark_finder_prompt(text_content: str) -> tuple[str, str]:
         "value": "【中文描述】(例如 '代码', '自然语言')", 
         "source_quote": "原文中描述期望输出的句子 (例如 'The model is expected to output a block of Python code.')" 
       },
+      "task_io_type": { 
+        "value": "【中文描述】任务的输入输出类型 (例如 '文本到代码', '代码到代码','代码到文本')", 
+        "source_quote": "原文中描述输入输出模态的句子 (例如 '...synthesizing programs from docstrings.')" 
+      },
       "execution_environment": { 
         "value": "【中文描述】(例如 '标准库', '需要特定依赖')", 
         "source_quote": "原文中描述执行环境的句子 (例如 'The generated code is executed in a sandboxed environment with no external libraries.')" 
@@ -228,7 +234,7 @@ def flatten_extracted_data(nested_data: dict, source_paper: str) -> dict:
         "problem_difficulty", "language", "data_size", "source_type",
         "last_updated", "build_type", "contamination_status", 
         "dataset_license", "task_granularity", "evaluation_metrics", "input_modality",
-        "output_modality", "execution_environment","unique_features"
+        "output_modality", "task_io_type","execution_environment","unique_features"
     ]
     
     for field in all_fields:
@@ -250,67 +256,113 @@ def flatten_extracted_data(nested_data: dict, source_paper: str) -> dict:
 
     return flat_data
 
+def load_existing_csv(csv_path: Path) -> (pd.DataFrame, Set[str]):
+    """
+    加载现有的原始CSV，返回DataFrame和已处理过的 'source_paper' 路径集合。
+    """
+    if not csv_path.exists():
+        print(f"未找到现有CSV数据库：{csv_path}。将创建新文件。")
+        return pd.DataFrame(), set()
+    try:
+        df = pd.read_csv(csv_path)
+        if 'source_paper' not in df.columns:
+             print("警告：现有CSV没有 'source_paper' 列，将重新处理所有文件。")
+             return pd.DataFrame(), set()
+        # 将路径规范化为 posix 格式 (/)，以便跨平台比较
+        processed_paths = set(Path(p).as_posix() for p in df['source_paper'].astype(str))
+        print(f"成功加载原始CSV，已包含 {len(df)} 条记录。")
+        return df, processed_paths
+    except pd.errors.EmptyDataError:
+        print(f"警告：原始CSV文件 {csv_path} 为空。将创建新文件。")
+        return pd.DataFrame(), set()
+    except Exception as e:
+        print(f"加载 {csv_path} 失败: {e}。将创建新文件。")
+        return pd.DataFrame(), set()
+
 
 # --- 6. 主程序 (已更新) ---
 if __name__ == "__main__":
-    script_path = Path(__file__).resolve()
-    project_root = script_path.parent
+    try:
+        script_path = Path(__file__).resolve()
+        project_root = script_path.parent
+    except NameError:
+        # 适应 .ipynb/.py 交互式环境
+        project_root = Path.cwd() 
 
-    papers_folder = project_root / "papers_info\\2310.06266v2_output" # 请根据需要修改为论文存放路径
+    papers_folder = project_root / "new_papers_info" # 现在指向正确的父文件夹
     results_folder = project_root / "results"
     results_folder.mkdir(exist_ok=True)
 
+    # 定义输出文件名
+    output_filename = results_folder / "benchmarks_database_1113.csv"
+
+    df_existing, processed_paths = load_existing_csv(output_filename)
+    print(f"已处理的文件: {len(processed_paths)} 个")
     print(f"正在文件夹 '{papers_folder}' 及其所有子文件夹中递归搜索 .md 文件...")
     #查找 .md 文件
     input_files = list(papers_folder.glob("**/*.md")) 
 
     if not input_files:
         print(f"错误：在 '{papers_folder}' 及其子文件夹中没有找到任何 .md 文件。")
-    else:
-        print(f"成功找到 {len(input_files)} 个文件，准备开始处理...")
+        exit()
 
-    all_found_benchmarks_flat = []
-
+    # 过滤出需要处理的新文件
+    new_files_to_process = []
     for file_path in input_files:
-        relative_path = file_path.relative_to(papers_folder)
+        # 将路径规范化为 posix 格式 (/)，以便与 set 中的路径比较
+        relative_path_str = file_path.relative_to(papers_folder).as_posix()
         
-        # 检查路径是否为文件 (避免读取mineru创建的.md结尾的文件夹)
-        if file_path.is_file():
-            print(f"\n--- 正在处理文件: {relative_path} ---")
-            try:
-                # 1. 读取完整文本
-                full_text = file_path.read_text(encoding='utf-8')
-                
-                # 2. 预处理文本 (减少Token)
-                text_snippet = preprocess_text(full_text)
+        if file_path.is_file() and relative_path_str not in processed_paths:
+            new_files_to_process.append((file_path, relative_path_str))
 
-                # 3. 调用LLM提取嵌套数据
-                nested_benchmark_info = find_benchmark_info_in_text(text_snippet)
-                
-                # 4. 扁平化数据
-                flat_benchmark_info = flatten_extracted_data(nested_benchmark_info, str(relative_path))
-                
-                print("提取结果 (扁平化):", json.dumps(flat_benchmark_info, indent=2, ensure_ascii=False))
+    if not new_files_to_process:
+        print("没有找到需要提取的新文件。所有文件均已处理。")
+        exit() # 正常退出
 
-                # 5. 添加到总列表 (只添加有基准名称的)
-                if flat_benchmark_info.get("benchmark_name"):
-                    all_found_benchmarks_flat.append(flat_benchmark_info)
-                elif "error" in flat_benchmark_info:
-                     print(f"处理文件 {relative_path} 时遇到错误，已跳过。")
-                else:
-                    print(f"在文件 {relative_path} 中未提取到 benchmark_name，已跳过。")
-                     
-            except Exception as e:
-                print(f"读取或处理文件 '{relative_path}' 时发生未知错误: {e}")
-        else:
-            # 如果是文件夹，则跳过
-            print(f"\n--- 正在跳过文件夹: {relative_path} ---")
+    print(f"成功找到 {len(input_files)} 个总文件，其中 {len(new_files_to_process)} 个是新文件。准备开始处理...")
+          
+    new_benchmarks_flat = [] # 只存储新文件的结果
+
+    # 只循环处理新文件
+    for file_path, relative_path_str in new_files_to_process:
         
-        print("-" * 30)
+        print(f"\n--- 正在处理新文件: {relative_path_str} ---")
+        try:
+            full_text = file_path.read_text(encoding='utf-8')
+            text_snippet = preprocess_text(full_text)
+            nested_benchmark_info = find_benchmark_info_in_text(text_snippet)
+            
+            # 使用 relative_path_str 确保路径格式一致
+            flat_benchmark_info = flatten_extracted_data(nested_benchmark_info, relative_path_str)
+            
+            print("提取结果 (扁平化):", json.dumps(flat_benchmark_info, indent=2, ensure_ascii=False))
+
+            if flat_benchmark_info.get("benchmark_name"):
+                new_benchmarks_flat.append(flat_benchmark_info)
+            elif "error" in flat_benchmark_info:
+                 print(f"处理文件 {relative_path_str} 时遇到错误，已跳过。")
+            else:
+                print(f"在文件 {relative_path_str} 中未提取到 benchmark_name，已跳过。")
+                 
+        except Exception as e:
+            print(f"读取或处理文件 '{relative_path_str}' 时发生未知错误: {e}")
+        
+        time.sleep(1) # 增加速率限制，防止API过载
+
+    # --- 保存结果（合并） ---
+    if new_benchmarks_flat:
+        df_new = pd.DataFrame(new_benchmarks_flat)
+        
+        # 合并旧数据和新数据
+        df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+        
+        print(f"\n✅ 成功提取 {len(new_benchmarks_flat)} 条新记录。")
+    else:
+        print("\n❌ 未能从新文件中成功提取任何数据。")
+        df_combined = df_existing # 即使没有新数据，也要确保后续步骤能运行
 
     # --- 保存结果 (列顺序已更新) ---
-    if all_found_benchmarks_flat:
-        df = pd.DataFrame(all_found_benchmarks_flat)
+    if not df_combined.empty:
         
         # 定义基础列 (丰富了维度)
         base_columns = [
@@ -319,28 +371,31 @@ if __name__ == "__main__":
             "problem_difficulty", "language", "data_size", "source_type",
             "last_updated", "build_type", "contamination_status", 
             "dataset_license", "task_granularity", "evaluation_metrics", "input_modality",
-            "output_modality", "execution_environment", "unique_features" # "额外列"
+            "output_modality", "task_io_type", "execution_environment", "unique_features" # "额外列"
         ]
         
         # 动态生成带引述的完整列列表 (实现请求 3)
         desired_columns = ['source_paper']
         for col in base_columns:
-            desired_columns.append(col)
-            desired_columns.append(f"{col}_quote") # 为每个字段添加引述列
+            if col in df_combined.columns: # 检查列是否存在
+                desired_columns.append(col)
+                if f"{col}_quote" in df_combined.columns:
+                    desired_columns.append(f"{col}_quote") # 为每个字段添加引述列
         
         # 排序
-        existing_columns_ordered = [col for col in desired_columns if col in df.columns]
-        other_columns = [col for col in df.columns if col not in existing_columns_ordered]
+        existing_columns_ordered = [col for col in desired_columns if col in df_combined.columns]
+        other_columns = [col for col in df_combined.columns if col not in existing_columns_ordered]
         final_columns = existing_columns_ordered + other_columns
-        df = df[final_columns]
+        # 确保只使用 df_combined 中实际存在的列
+        final_columns_existing = [col for col in final_columns if col in df_combined.columns]
+        df_combined = df_combined[final_columns]
 
-        output_filename = results_folder / "benchmarks_database_1113.csv"
-        df.to_csv(output_filename, index=False, encoding='utf-8-sig')
+        df_combined.to_csv(output_filename, index=False, encoding='utf-8-sig')
 
-        print(f"\n✅ 全部处理完成！从 {len(input_files)} 个路径中（已跳过文件夹）识别出 {len(all_found_benchmarks_flat)} 条基准信息。")
-        print(f"数据集已保存到: {output_filename}")
+        print(f"数据集已更新并保存到: {output_filename}")
+        print(f"数据库总条目数: {len(df_combined)}")
         print("\n结果预览 (前5行，部分核心列):")
         preview_cols = ['source_paper', 'benchmark_name', 'dataset_url', 'task_description', 'evaluation_method', 'context_dependency']
-        print(df.head()[preview_cols].to_markdown(index=False))
+        print(df_combined.head()[preview_cols].to_markdown(index=False))
     else:
         print(f"\n❌ 未能从 {len(input_files)} 个路径中成功识别出有效的代码评测基准信息。")
