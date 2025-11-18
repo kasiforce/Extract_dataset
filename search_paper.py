@@ -153,7 +153,7 @@ class PaperSearch:
             paper_title = result.title
             paper_url = f"https://arxiv.org/abs/{paper_key}"
             paper_abstract = result.summary.replace("\n", " ")
-            paper_authors = result.authors
+            paper_authors = [author.name for author in result.authors]
             paper_first_author = self.get_authors(result.authors, first_author=True)
             primary_category = result.primary_category
             publish_time = result.published.date()
