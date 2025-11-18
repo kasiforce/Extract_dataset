@@ -521,4 +521,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing...');
     loadMonthsIndex();
 });
-
