@@ -108,14 +108,14 @@ class HTMLGenerator:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyPaper - AI/ML/CV/NLP 最新论文</title>
+    <title>DailyPaper - LLM4SE 最新论文</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>📚 DailyPaper</h1>
-            <p class="subtitle">每日自动更新 AI/ML/CV/NLP 领域最新论文</p>
+            <p class="subtitle">每日自动更新 LLM4SE 领域最新论文</p>
             <p class="update-time">最后更新: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC</p>
         </div>
     </header>
@@ -141,16 +141,16 @@ class HTMLGenerator:
                 <label class="filter-label">🏷️ 研究领域：</label>
                 <div class="filters category-filters">
                     <button class="filter-btn category-btn active" data-category="all">全部 ({len(self.papers)})</button>
-                    <button class="filter-btn category-btn" data-category="Code Completion">Computer Vision ({complete_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Editing">NLP ({edit_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Debug">Machine Learning ({debug_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Summarization">Robotics ({summary_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Prompting">Multimodal ({prompt_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Alignment">Computer Vision ({align_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Translation">NLP ({translate_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Testing">Machine Learning ({test_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Pre-Training">Robotics ({pretrain_count})</button>
-                    <button class="filter-btn category-btn" data-category="Code Instruction-Tuning">Robotics ({tune_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Completion">Code Completion ({complete_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Editing">Code Editing ({edit_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Debug">Code Debug ({debug_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Summarization">Code Summarization ({summary_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Prompting">Code Prompting ({prompt_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Alignment">Code Alignment ({align_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Translation">Code Translation ({translate_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Testing">Code Testing ({test_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Pre-Training">Code Pre-Training ({pretrain_count})</button>
+                    <button class="filter-btn category-btn" data-category="Code Instruction-Tuning">Code Instruction-Tuning ({tune_count})</button>
                 </div>
             </div>
             <div class="filter-group">
