@@ -248,9 +248,9 @@
       "Sherry Shi",
       "Renyao Wei",
       "Michele Tufano",
-      "Jos茅 Cambronero",
+      "José Cambronero",
       "Runxiang Cheng",
-      "Franjo Ivan膷i膰",
+      "Franjo Ivančić",
       "Pat Rondon"
     ],
     "first_author": "Sherry Shi",
@@ -293,12 +293,12 @@
     "abstract": "Static Code Analysis (SCA) tools, while invaluable for identifying potential coding problems, functional bugs, or vulnerabilities, often generate an overwhelming number of warnings, many of which are non-actionable. This overload of alerts leads to ``alert fatigue'', a phenomenon where developers become desensitized to warnings, potentially overlooking critical issues and ultimately hindering productivity and code quality. Analyzing these warnings and training machine learning models to identify and filter them requires substantial datasets, which are currently scarce, particularly for Java. This scarcity impedes efforts to improve the accuracy and usability of SCA tools and mitigate the effects of alert fatigue. In this paper, we address this gap by introducing a novel methodology for collecting and categorizing SCA warnings, effectively distinguishing actionable from non-actionable ones. We further leverage this methodology to generate a large-scale dataset of over 1 million entries of Java source code warnings, named NASCAR: (Non-)Actionable Static Code Analysis Reports. To facilitate follow-up research in this domain, we make both the dataset and the tools used to generate it publicly available.",
     "arxiv_url": "https://arxiv.org/abs/2511.10323",
     "authors": [
-      "D谩vid K贸sz贸",
-      "Tam谩s Aladics",
+      "Dávid Kószó",
+      "Tamás Aladics",
       "Rudolf Ferenc",
-      "P茅ter Heged疟s"
+      "Péter Hegedűs"
     ],
-    "first_author": "D谩vid K贸sz贸",
+    "first_author": "Dávid Kószó",
     "primary_category": "cs.SE",
     "tag": [
       "Code Debug"
@@ -317,7 +317,7 @@
     "arxiv_url": "https://arxiv.org/abs/2511.10271",
     "authors": [
       "Xin Sun",
-      "Daniel St氓hl",
+      "Daniel Ståhl",
       "Kristian Sandahl",
       "Christoph Kessler"
     ],
@@ -417,7 +417,7 @@
     "abstract": "LLMs now tackle a wide range of software-related tasks, yet we show that their performance varies markedly both across and within these tasks. Routing user queries to the appropriate LLMs can therefore help improve response quality while reducing cost. Prior work, however, has focused mainly on general-purpose LLM routing via black-box models. We introduce Routesplain, the first LLM router for software-related tasks, including multilingual code generation and repair, input/output prediction, and computer science QA. Unlike existing routing approaches, Routesplain first extracts human-interpretable concepts from each query (e.g., task, domain, reasoning complexity) and only routes based on these concepts, thereby providing intelligible, faithful rationales. We evaluate Routesplain on 16 state-of-the-art LLMs across eight software-related tasks; Routesplain outperforms individual models both in terms of accuracy and cost, and equals or surpasses all black-box baselines, with concept-level intervention highlighting avenues for further router improvements.",
     "arxiv_url": "https://arxiv.org/abs/2511.09373",
     "authors": [
-      "Adam 艩torek",
+      "Adam Štorek",
       "Vikas Upadhyay",
       "Marianne Menglin Liu",
       "Daniel W. Peterson",
@@ -426,7 +426,7 @@
       "Fahad Shah",
       "Dan Roth"
     ],
-    "first_author": "Adam 艩torek",
+    "first_author": "Adam Štorek",
     "primary_category": "cs.SE",
     "tag": [
       "Code Prompting"
