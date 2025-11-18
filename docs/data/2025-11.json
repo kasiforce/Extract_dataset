@@ -1,0 +1,539 @@
+[
+  {
+    "id": "2511.11411",
+    "title": "SCRUTINEER: Detecting Logic-Level Usage Violations of Reusable Components in Smart Contracts",
+    "abstract": "Smart Contract Reusable Components(SCRs) play a vital role in accelerating the development of business-specific contracts by promoting modularity and code reuse. However, the risks associated with SCR usage violations have become a growing concern. One particular type of SCR usage violation, known as a logic-level usage violation, is becoming especially harmful. This violation occurs when the SCR adheres to its specified usage rules but fails to align with the specific business logic of the current context, leading to significant vulnerabilities. Detecting such violations necessitates a deep semantic understanding of the contract's business logic, including the ability to extract implicit usage patterns and analyze fine-grained logical behaviors. To address these challenges, we propose SCRUTINEER, the first automated and practical system for detecting logic-level usage violations of SCRs. First, we design a composite feature extraction approach that produces three complementary feature representations, supporting subsequent analysis. We then introduce a Large Language Model-powered knowledge construction framework, which leverages comprehension-oriented prompts and domain-specific tools to extract logic-level usage and build the SCR knowledge base. Next, we develop a Retrieval-Augmented Generation-driven inspector, which combines a rapid retrieval strategy with both comprehensive and targeted analysis to identify potentially insecure logic-level usages. Finally, we implement a logic-level usage violation analysis engine that integrates a similarity-based checker and a snapshot-based inference conflict checker to enable accurate and robust detection. We evaluate SCRUTINEER from multiple perspectives on 3 ground-truth datasets. The results show that SCRUTINEER achieves a precision of 80.77%, a recall of 82.35%, and an F1-score of 81.55% in detecting logic-level usage violations of SCRs.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11411",
+    "authors": [
+      "Xingshuang Lin",
+      "Binbin Zhao",
+      "Jinwen Wang",
+      "Qinge Xie",
+      "Xibin Zhao",
+      "Shouling Ji"
+    ],
+    "first_author": "Xingshuang Lin",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.11411v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:53:38"
+  },
+  {
+    "id": "2511.11125",
+    "title": "Utilizing LLMs for Industrial Process Automation: A Case Study on Modifying RAPID Programs",
+    "abstract": "How to best use Large Language Models (LLMs) for software engineering is covered in many publications in recent years. However, most of this work focuses on widely-used general purpose programming languages. The utility of LLMs for software within the industrial process automation domain, with highly-specialized languages that are typically only used in proprietary contexts, is still underexplored. Within this paper, we study enterprises can achieve on their own without investing large amounts of effort into the training of models specific to the domain-specific languages that are used. We show that few-shot prompting approaches are sufficient to solve simple problems in a language that is otherwise not well-supported by an LLM and that is possible on-premise, thereby ensuring the protection of sensitive company data.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11125",
+    "authors": [
+      "Salim Fares",
+      "Steffen Herbold"
+    ],
+    "first_author": "Salim Fares",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": false,
+    "conference": "ICSE",
+    "pdf_url": "https://arxiv.org/pdf/2511.11125v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:53:58"
+  },
+  {
+    "id": "2511.11055",
+    "title": "Data Race Detection by Digest-Driven Abstract Interpretation (Extended Version)",
+    "abstract": "Sound static analysis can prove the absence of data races by establishing that no two conflicting memory accesses can occur at the same time. We repurpose the concept of digests -- summaries of computational histories originally introduced to bring tunable concurrency-sensitivity to thread-modular value analysis by abstract interpretation, extending this idea to race detection: We use digests to capture the conditions under which conflicting accesses may not happen in parallel. To formalize this, we give a definition of data races in the thread-modular local trace semantics and show how exclusion criteria for potential conflicts can be expressed as digests. We report on our implementation of digest-driven data race detection in the static analyzer Goblint, and evaluate it on the SV-COMP benchmark suite. Combining the lockset digest with digests reasoning on thread ids and thread joins increases the number of correctly solved tasks by more than a factor of five compared to lockset reasoning alone.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11055",
+    "authors": [
+      "Michael Schwarz",
+      "Julian Erhard"
+    ],
+    "first_author": "Michael Schwarz",
+    "primary_category": "cs.PL",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": "appear at VMCAI'26",
+    "pdf_url": "https://arxiv.org/pdf/2511.11055v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:55:54"
+  },
+  {
+    "id": "2511.11019",
+    "title": "PATCHEVAL: A New Benchmark for Evaluating LLMs on Patching Real-World Vulnerabilities",
+    "abstract": "Software vulnerabilities are increasing at an alarming rate. However, manual patching is both time-consuming and resource-intensive, while existing automated vulnerability repair (AVR) techniques remain limited in effectiveness. Recent advances in large language models (LLMs) have opened a new paradigm for AVR, demonstrating remarkable progress. To examine the capability of LLMs in AVR, several vulnerability benchmarks have been proposed recently. However, they still suffer from key limitations of outdated vulnerabilities, limited language coverage, unreliable patch validation, and insufficient reproducibility. To overcome these challenges, we introduce PATCHEVAL, a multilingual benchmark for Go, JavaScript, and Python, languages for which existing benchmarks remain unexplored. PATCHEVAL curates a dataset of 1,000 vulnerabilities drawn from CVEs reported between 2015 and 2025, covering 65 distinct CWEs. A subset of 230 CVEs is further equipped with runtime sandbox environments, enabling patch verification through both security tests and functionality tests. To provide a systematic comparison of LLM-based vulnerability repair, we evaluate a series of state-of-the-art LLMs and agents, presenting an in-depth analysis that empirically yields key insights to guide future research in AVR.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11019",
+    "authors": [
+      "Zichao Wei",
+      "Jun Zeng",
+      "Ming Wen",
+      "Zeliang Yu",
+      "Kai Cheng",
+      "Yiding Zhu",
+      "Jingyi Guo",
+      "Shiqi Zhou",
+      "Le Yin",
+      "Xiaodong Su",
+      "Zhechao Ma"
+    ],
+    "first_author": "Zichao Wei",
+    "primary_category": "cs.CR",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.11019v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:56:09"
+  },
+  {
+    "id": "2511.11018",
+    "title": "Automata-Based Steering of Large Language Models for Diverse Structured Generation",
+    "abstract": "Large language models (LLMs) are increasingly tasked with generating structured outputs. While structured generation methods ensure validity, they often lack output diversity, a critical limitation that we confirm in our preliminary study. We propose a novel method to enhance diversity in automaton-based structured generation. Our approach utilizes automata traversal history to steer LLMs towards novel structural patterns. Evaluations show our method significantly improves structural and content diversity while maintaining comparable generation efficiency. Furthermore, we conduct a case study showcasing the effectiveness of our method in generating diverse test cases for testing open-source libraries.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11018",
+    "authors": [
+      "Xiaokun Luan",
+      "Zeming Wei",
+      "Yihao Zhang",
+      "Meng Sun"
+    ],
+    "first_author": "Xiaokun Luan",
+    "primary_category": "cs.CL",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.11018v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:56:18"
+  },
+  {
+    "id": "2511.11012",
+    "title": "Beyond Accuracy: Behavioral Dynamics of Agentic Multi-Hunk Repair",
+    "abstract": "Automated program repair has traditionally focused on single-hunk defects, overlooking multi-hunk bugs that are prevalent in real-world systems. Repairing these bugs requires coordinated edits across multiple, disjoint code regions, posing substantially greater challenges. We present the first systematic study of LLM-driven coding agents (Claude Code, Codex, Gemini-cli, and Qwen Code) on this task. We evaluate these agents on 372 multi-hunk bugs from the Hunk4J dataset, analyzing 1,488 repair trajectories using fine-grained metrics that capture localization, repair accuracy, regression behavior, and operational dynamics. Results reveal substantial variation: repair accuracy ranges from 25.8% (Qwen Code) to 93.3% (Claude Code) and consistently declines with increasing bug dispersion and complexity. High-performing agents demonstrate superior semantic consistency, achieving positive regression reduction, whereas lower-performing agents often introduce new test failures. Notably, agents do not fail fast; failed repairs consume substantially more resources (39%-343% more tokens) and require longer execution time (43%-427%). Additionally, we developed Maple to provide agents with repository-level context. Empirical results show that Maple improves the repair accuracy of Gemini-cli by 30% through enhanced localization. By analyzing fine-grained metrics and trajectory-level analysis, this study moves beyond accuracy to explain how coding agents localize, reason, and act during multi-hunk repair.",
+    "arxiv_url": "https://arxiv.org/abs/2511.11012",
+    "authors": [
+      "Noor Nashid",
+      "Daniel Ding",
+      "Keheliya Gallaba",
+      "Ahmed E. Hassan",
+      "Ali Mesbah"
+    ],
+    "first_author": "Noor Nashid",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.11012v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:56:28"
+  },
+  {
+    "id": "2511.10899",
+    "title": "From Proof to Program: Characterizing Tool-Induced Reasoning Hallucinations in Large Language Models",
+    "abstract": "Tool-augmented Language Models (TaLMs) can invoke external tools to solve problems beyond their parametric capacity. However, it remains unclear whether these tool-enabled gains reflect trustworthy reasoning. Focusing on the Code Interpreter tool, we show that even when tools are selected and executed correctly, TaLMs treat tool outputs as substitutes for reasoning, producing solutions that appear correct but lack coherent justification. We term this failure mode Tool-Induced Myopia (TIM), and study it using PYMATH, a benchmark of 1,679 competition-level mathematical problems for which Python code is helpful but not sufficient. We further develop a multi-dimensional evaluation suite to quantify reasoning degradation in TaLMs relative to their non-tool counterparts. Our findings reveal that while TaLMs achieve up to a 19.3 percentage point gain in final-answer accuracy, their reasoning behavior consistently deteriorates (e.g., non-tool LLMs win up to 41.5% more often in pairwise comparisons of the reasoning process). This degradation intensifies with tool use; the more frequently a model invokes tools, the less coherent its reasoning becomes. Moreover, tool use shifts errors from arithmetic mistakes toward global reasoning failures (logic, assumption, creativity); with TIM present in ~55% of high-risk cases. Finally, we propose a preference-optimization-based framework that realigns TaLMs to use tools as assistive evidence, improving both final-answer accuracy and reasoning depth under tool use. Codes and data are available at: https://github.com/megagonlabs/TIM.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10899",
+    "authors": [
+      "Farima Fatahi Bayat",
+      "Pouya Pezeshkpour",
+      "Estevam Hruschka"
+    ],
+    "first_author": "Farima Fatahi Bayat",
+    "primary_category": "cs.CL",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10899v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:56:42"
+  },
+  {
+    "id": "2511.10876",
+    "title": "Architecting software monitors for control-flow anomaly detection through large language models and conformance checking",
+    "abstract": "Context: Ensuring high levels of dependability in modern computer-based systems has become increasingly challenging due to their complexity. Although systems are validated at design time, their behavior can be different at run-time, possibly showing control-flow anomalies due to \"unknown unknowns\".   Objective: We aim to detect control-flow anomalies through software monitoring, which verifies run-time behavior by logging software execution and detecting deviations from expected control flow.   Methods: We propose a methodology to develop software monitors for control-flow anomaly detection through Large Language Models (LLMs) and conformance checking. The methodology builds on existing software development practices to maintain traditional V&V while providing an additional level of robustness and trustworthiness. It leverages LLMs to link design-time models and implementation code, automating source-code instrumentation. The resulting event logs are analyzed via conformance checking, an explainable and effective technique for control-flow anomaly detection.   Results: We test the methodology on a case-study scenario from the European Railway Traffic Management System / European Train Control System (ERTMS/ETCS), which is a railway standard for modern interoperable railways. The results obtained from the ERTMS/ETCS case study demonstrate that LLM-based source-code instrumentation can achieve up to 84.775% control-flow coverage of the reference design-time process model, while the subsequent conformance checking-based anomaly detection reaches a peak performance of 96.610% F1-score and 93.515% AUC.   Conclusion: Incorporating domain-specific knowledge to guide LLMs in source-code instrumentation significantly allowed obtaining reliable and quality software logs and enabled effective control-flow anomaly detection through conformance checking.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10876",
+    "authors": [
+      "Francesco Vitale",
+      "Francesco Flammini",
+      "Mauro Caporuscio",
+      "Nicola Mazzocca"
+    ],
+    "first_author": "Francesco Vitale",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Editing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10876v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:56:55"
+  },
+  {
+    "id": "2511.10865",
+    "title": "Towards a Human-in-the-Loop Framework for Reliable Patch Evaluation Using an LLM-as-a-Judge",
+    "abstract": "Reliable evaluation is crucial for advancing Automated Program Repair (APR), but prevailing benchmarks rely on execution-based evaluation methods (unit test pass@k), which fail to capture true patch validity. Determining validity can require costly manual annotation. To reduce this cost, we introduce a human-in-the-loop approach to LLM-based patch validity judgment. Inspired by the observation that human judgment is better aligned when using a shared rubric, we first employ an LLM to generate a per-bug rubric, followed by a one-time human review and optional refinement to this rubric, and then employ an LLM to judge patches using the refined rubric. We apply this approach to assign binary validity labels to patches for issues found by Google sanitizer tools. Our results show that this approach yields substantial agreement with human consensus (Cohen's kappa 0.75), high recall (0.94) and high precision (0.80), when considering patches that have unanimous agreement from 3 human raters on the validity labels. On the full dataset including patches where human raters disagree, we find this approach can still be further improved (Cohen's kappa 0.57, recall 0.93, precision 0.65) and identify possible future directions.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10865",
+    "authors": [
+      "Sherry Shi",
+      "Renyao Wei",
+      "Michele Tufano",
+      "José Cambronero",
+      "Runxiang Cheng",
+      "Franjo Ivančić",
+      "Pat Rondon"
+    ],
+    "first_author": "Sherry Shi",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10865v1",
+    "published": "2025-11-14",
+    "update_time": "2025-11-14",
+    "download_time": "2025-11-17 23:57:07"
+  },
+  {
+    "id": "2511.10860",
+    "title": "HPCAgentTester: A Multi-Agent LLM Approach for Enhanced HPC Unit Test Generation",
+    "abstract": "Unit testing in High-Performance Computing (HPC) is critical but challenged by parallelism, complex algorithms, and diverse hardware. Traditional methods often fail to address non-deterministic behavior and synchronization issues in HPC applications. This paper introduces HPCAgentTester, a novel multi-agent Large Language Model (LLM) framework designed to automate and enhance unit test generation for HPC software utilizing OpenMP and MPI. HPCAgentTester employs a unique collaborative workflow where specialized LLM agents (Recipe Agent and Test Agent) iteratively generate and refine test cases through a critique loop. This architecture enables the generation of context-aware unit tests that specifically target parallel execution constructs, complex communication patterns, and hierarchical parallelism. We demonstrate HPCAgentTester's ability to produce compilable and functionally correct tests for OpenMP and MPI primitives, effectively identifying subtle bugs that are often missed by conventional techniques. Our evaluation shows that HPCAgentTester significantly improves test compilation rates and correctness compared to standalone LLMs, offering a more robust and scalable solution for ensuring the reliability of parallel software systems.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10860",
+    "authors": [
+      "Rabimba Karanjai",
+      "Lei Xu",
+      "Weidong Shi"
+    ],
+    "first_author": "Rabimba Karanjai",
+    "primary_category": "cs.DC",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10860v1",
+    "published": "2025-11-13",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:57:18"
+  },
+  {
+    "id": "2511.10323",
+    "title": "A Large-Scale Collection Of (Non-)Actionable Static Code Analysis Reports",
+    "abstract": "Static Code Analysis (SCA) tools, while invaluable for identifying potential coding problems, functional bugs, or vulnerabilities, often generate an overwhelming number of warnings, many of which are non-actionable. This overload of alerts leads to ``alert fatigue'', a phenomenon where developers become desensitized to warnings, potentially overlooking critical issues and ultimately hindering productivity and code quality. Analyzing these warnings and training machine learning models to identify and filter them requires substantial datasets, which are currently scarce, particularly for Java. This scarcity impedes efforts to improve the accuracy and usability of SCA tools and mitigate the effects of alert fatigue. In this paper, we address this gap by introducing a novel methodology for collecting and categorizing SCA warnings, effectively distinguishing actionable from non-actionable ones. We further leverage this methodology to generate a large-scale dataset of over 1 million entries of Java source code warnings, named NASCAR: (Non-)Actionable Static Code Analysis Reports. To facilitate follow-up research in this domain, we make both the dataset and the tools used to generate it publicly available.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10323",
+    "authors": [
+      "Dávid Kószó",
+      "Tamás Aladics",
+      "Rudolf Ferenc",
+      "Péter Hegedűs"
+    ],
+    "first_author": "Dávid Kószó",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": "Under publication to Nature Scientific Data journal",
+    "pdf_url": "https://arxiv.org/pdf/2511.10323v1",
+    "published": "2025-11-13",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:57:51"
+  },
+  {
+    "id": "2511.10271",
+    "title": "Quality Assurance of LLM-generated Code: Addressing Non-Functional Quality Characteristics",
+    "abstract": "In recent years, LLMs have been widely integrated into software engineering workflows, supporting tasks like code generation. However, while these models often generate functionally correct outputs, we still lack a systematic understanding and evaluation of their non-functional qualities. Existing studies focus mainly on whether generated code passes the tests rather than whether it passes with quality. Guided by the ISO/IEC 25010 quality model, this study conducted three complementary investigations: a systematic review of 108 papers, two industry workshops with practitioners from multiple organizations, and an empirical analysis of patching real-world software issues using three LLMs. Motivated by insights from both the literature and practitioners, the empirical study examined the quality of generated patches on security, maintainability, and performance efficiency. Across the literature, we found that security and performance efficiency dominate academic attention, while maintainability and other qualities are understudied. In contrast, industry experts prioritize maintainability and readability, warning that generated code may accelerate the accumulation of technical debt. In our evaluation of functionally correct patches generated by three LLMs, improvements in one quality dimension often come at the cost of others. Runtime and memory results further show high variance across models and optimization strategies. Overall, our findings reveal a mismatch between academic focus, industry priorities, and model performance, highlighting the urgent need to integrate quality assurance mechanisms into LLM code generation pipelines to ensure that future generated code not only passes tests but truly passes with quality.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10271",
+    "authors": [
+      "Xin Sun",
+      "Daniel Ståhl",
+      "Kristian Sandahl",
+      "Christoph Kessler"
+    ],
+    "first_author": "Xin Sun",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Quality Assurance"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10271v1",
+    "published": "2025-11-13",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:58:06"
+  },
+  {
+    "id": "2511.10049",
+    "title": "Continuous Benchmark Generation for Evaluating Enterprise-scale LLM Agents",
+    "abstract": "The rapid adoption of AI agents across domains has made systematic evaluation crucial for ensuring their usefulness and successful production deployment. Evaluation of AI agents typically involves using a fixed set of benchmarks and computing multiple evaluation metrics for the agent. While sufficient for simple coding tasks, these benchmarks fall short for enterprise-scale agents, where services and requirements evolve continuously and ground-truth examples are sparse. We propose a process of benchmark generation that helps evolve the benchmarks as the requirements change and perform robust evaluation of evolving AI agents. We instantiate this approach for a case study of service migration from one deployment platform to another at a large public enterprise. Our approach relies on semi-structured documents where developers express the high-level intent, and uses state-of-the-art LLMs to generate benchmarks from just a small number of such documents. Overall, this process results in a maintainable evaluation framework, enabling rapid feedback on agent performance and facilitating targeted improvements.",
+    "arxiv_url": "https://arxiv.org/abs/2511.10049",
+    "authors": [
+      "Divyanshu Saxena",
+      "Rishikesh Maurya",
+      "Xiaoxuan Ou",
+      "Gagan Somashekar",
+      "Shachee Mishra Gupta",
+      "Arun Iyer",
+      "Yu Kang",
+      "Chetan Bansal",
+      "Aditya Akella",
+      "Saravan Rajmohan"
+    ],
+    "first_author": "Divyanshu Saxena",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Agent Evaluation and Continuous Benchmark Generation for LLM Agents"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.10049v1",
+    "published": "2025-11-13",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:58:18"
+  },
+  {
+    "id": "2511.09964",
+    "title": "EnvTrace: Simulation-Based Semantic Evaluation of LLM Code via Execution Trace Alignment -- Demonstrated at Synchrotron Beamlines",
+    "abstract": "Evaluating large language models (LLMs) for instrument control requires methods that go beyond standard, stateless algorithmic benchmarks, since the behavior of physical systems cannot be fully captured by unit tests alone. Here we introduce EnvTrace, a simulation-based method that evaluates execution traces to assess semantic code equivalence. EnvTrace is demonstrated with a beamline control-logic digital twin to facilitate the evaluation of instrument control code, with the digital twin itself also enabling the pre-execution validation of live experiments. Over 30 LLMs were evaluated using trace alignment to generate a multi-faceted score for functional correctness across key behavioral dimensions, showing that many top-tier models can approach human-level performance in rapid control-code generation. This is a first step toward a broader vision where LLMs and digital twins work symbiotically: LLMs providing intuitive control and agentic orchestration, and digital twins offering safe and high-fidelity environments, paving the way towards autonomous embodied AI.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09964",
+    "authors": [
+      "Noah van der Vleuten",
+      "Anthony Flores",
+      "Shray Mathur",
+      "Max Rakitin",
+      "Thomas Hopkins",
+      "Kevin G. Yager",
+      "Esther H. R. Tsai"
+    ],
+    "first_author": "Noah van der Vleuten",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09964v1",
+    "published": "2025-11-13",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:58:29"
+  },
+  {
+    "id": "2511.09794",
+    "title": "Evaluating Software Process Models for Multi-Agent Class-Level Code Generation",
+    "abstract": "Modern software systems require code that is not only functional but also maintainable and well-structured. Although Large Language Models (LLMs) are increasingly used to automate software development, most studies focus on isolated, single-agent function-level generation. This work examines how process structure and role specialization shape multi-agent LLM workflows for class-level code generation. We simulate a Waterfall-style development cycle covering Requirement, Design, Implementation, and Testing using three LLMs (GPT-4o-mini, DeepSeek-Chat, and Claude-3.5-Haiku) on 100 Python tasks from the ClassEval benchmark. Our findings show that multi-agent workflows reorganize, rather than consistently enhance, model performance. Waterfall-style collaboration produces cleaner and more maintainable code but often reduces functional correctness (-37.8\\% for GPT-4o-mini and -39.8\\% for DeepSeek-Chat), with Claude-3.5-Haiku as a notable exception (+9.5\\%). Importantly, process constraints shift failure characteristics: structural issues such as missing code decrease, while semantic and validation errors become more frequent. Among all stages, Testing exerts the strongest influence by improving verification coverage but also introducing new reasoning failures, whereas Requirement and Design have comparatively modest effects. Overall, this study provides empirical evidence that software process structure fundamentally alters how LLMs reason, collaborate, and fail, revealing inherent trade-offs between rigid workflow discipline and flexible problem-solving in multi-agent code generation.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09794",
+    "authors": [
+      "Wasique Islam Shafin",
+      "Md Nakhla Rafi",
+      "Zhenhao Li",
+      "Tse-Hsun Chen"
+    ],
+    "first_author": "Wasique Islam Shafin",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Completion"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09794v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-17 23:58:40"
+  },
+  {
+    "id": "2511.09373",
+    "title": "Routesplain: Towards Faithful and Intervenable Routing for Software-related Tasks",
+    "abstract": "LLMs now tackle a wide range of software-related tasks, yet we show that their performance varies markedly both across and within these tasks. Routing user queries to the appropriate LLMs can therefore help improve response quality while reducing cost. Prior work, however, has focused mainly on general-purpose LLM routing via black-box models. We introduce Routesplain, the first LLM router for software-related tasks, including multilingual code generation and repair, input/output prediction, and computer science QA. Unlike existing routing approaches, Routesplain first extracts human-interpretable concepts from each query (e.g., task, domain, reasoning complexity) and only routes based on these concepts, thereby providing intelligible, faithful rationales. We evaluate Routesplain on 16 state-of-the-art LLMs across eight software-related tasks; Routesplain outperforms individual models both in terms of accuracy and cost, and equals or surpasses all black-box baselines, with concept-level intervention highlighting avenues for further router improvements.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09373",
+    "authors": [
+      "Adam Štorek",
+      "Vikas Upadhyay",
+      "Marianne Menglin Liu",
+      "Daniel W. Peterson",
+      "Anshul Mittal",
+      "Sujeeth Bharadwaj",
+      "Fahad Shah",
+      "Dan Roth"
+    ],
+    "first_author": "Adam Štorek",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09373v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-17 23:58:52"
+  },
+  {
+    "id": "2511.09268",
+    "title": "Decoding the Configuration of AI Coding Agents: Insights from Claude Code Projects",
+    "abstract": "Agentic code assistants are a new generation of AI systems capable of performing end-to-end software engineering tasks. While these systems promise unprecedented productivity gains, their behavior and effectiveness depend heavily on configuration files that define architectural constraints, coding practices, and tool usage policies. However, little is known about the structure and content of these configuration artifacts. This paper presents an empirical study of the configuration ecosystem of Claude Code, one of the most widely used agentic coding systems. We collected and analyzed 328 configuration files from public Claude Code projects to identify (i) the software engineering concerns and practices they specify and (ii) how these concerns co-occur within individual files. The results highlight the importance of defining a wide range of concerns and practices in agent configuration files, with particular emphasis on specifying the architecture the agent should follow.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09268",
+    "authors": [
+      "Helio Victor F. Santos",
+      "Vitor Costa",
+      "Joao Eduardo Montandon",
+      "Marco Tulio Valente"
+    ],
+    "first_author": "Helio Victor F. Santos",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Agent Configuration"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09268v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-17 23:59:08"
+  },
+  {
+    "id": "2511.09231",
+    "title": "Leveraging Large Language Models for Use Case Model Generation from Software Requirements",
+    "abstract": "Use case modeling employs user-centered scenarios to outline system requirements. These help to achieve consensus among relevant stakeholders. Because the manual creation of use case models is demanding and time-consuming, it is often skipped in practice. This study explores the potential of Large Language Models (LLMs) to assist in this tedious process. The proposed method integrates an open-weight LLM to systematically extract actors and use cases from software requirements with advanced prompt engineering techniques. The method is evaluated using an exploratory study conducted with five professional software engineers, which compares traditional manual modeling to the proposed LLM-based approach. The results show a substantial acceleration, reducing the modeling time by 60\\%. At the same time, the model quality remains on par. Besides improving the modeling efficiency, the participants indicated that the method provided valuable guidance in the process.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09231",
+    "authors": [
+      "Tobias Eisenreich",
+      "Nicholas Friedlaender",
+      "Stefan Wagner"
+    ],
+    "first_author": "Tobias Eisenreich",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Requirements Modeling (Use Case Model Generation)"
+    ],
+    "benchmark": false,
+    "conference": "Intelligent Software Engineering Workshop (ISE 2025) at ASE 2025",
+    "pdf_url": "https://arxiv.org/pdf/2511.09231v2",
+    "published": "2025-11-12",
+    "update_time": "2025-11-13",
+    "download_time": "2025-11-17 23:59:20"
+  },
+  {
+    "id": "2511.09223",
+    "title": "AILINKPREVIEWER: Enhancing Code Reviews with LLM-Powered Link Previews",
+    "abstract": "Code review is a key practice in software engineering, where developers evaluate code changes to ensure quality and maintainability. Links to issues and external resources are often included in Pull Requests (PRs) to provide additional context, yet they are typically discarded in automated tasks such as PR summarization and code review comment generation. This limits the richness of information available to reviewers and increases cognitive load by forcing context-switching. To address this gap, we present AILINKPREVIEWER, a tool that leverages Large Language Models (LLMs) to generate previews of links in PRs using PR metadata, including titles, descriptions, comments, and link body content. We analyzed 50 engineered GitHub repositories and compared three approaches: Contextual LLM summaries, Non-Contextual LLM summaries, and Metadata-based previews. The results in metrics such as BLEU, BERTScore, and compression ratio show that contextual summaries consistently outperform other methods. However, in a user study with seven participants, most preferred non-contextual summaries, suggesting a trade-off between metric performance and perceived usability. These findings demonstrate the potential of LLM-powered link previews to enhance code review efficiency and to provide richer context for developers and automation in software engineering.   The video demo is available at https://www.youtube.com/watch?v=h2qH4RtrB3E, and the tool and its source code can be found at https://github.com/c4rtune/AILinkPreviewer.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09223",
+    "authors": [
+      "Panya Trakoolgerntong",
+      "Tao Xiao",
+      "Masanari Kondo",
+      "Chaiyong Ragkhitwetsagul",
+      "Morakot Choetkiertikul",
+      "Pattaraporn Sangaroonsilp",
+      "Yasutaka Kamei"
+    ],
+    "first_author": "Panya Trakoolgerntong",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Summarization"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09223v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-17 23:59:31"
+  },
+  {
+    "id": "2511.09212",
+    "title": "Leveraging Self-Paced Learning for Software Vulnerability Detection",
+    "abstract": "Software vulnerabilities are major risks to software systems. Recently, researchers have proposed many deep learning approaches to detect software vulnerabilities. However, their accuracy is limited in practice. One of the main causes is low-quality training data (i.e., source code). To this end, we propose a new approach: SPLVD (Self-Paced Learning for Software Vulnerability Detection). SPLVD dynamically selects source code for model training based on the stage of training, which simulates the human learning process progressing from easy to hard. SPLVD has a data selector that is specifically designed for the vulnerability detection task, which enables it to prioritize the learning of easy source code. Before each training epoch, SPLVD uses the data selector to recalculate the difficulty of the source code, select new training source code, and update the data selector. When evaluating SPLVD, we first use three benchmark datasets with over 239K source code in which 25K are vulnerable for standard evaluations. Experimental results demonstrate that SPLVD achieves the highest F1 of 89.2%, 68.7%, and 43.5%, respectively, outperforming the state-of-the-art approaches. Then we collect projects from OpenHarmony, a new ecosystem that has not been learned by general LLMs, to evaluate SPLVD further. SPLVD achieves the highest precision of 90.9%, demonstrating its practical effectiveness.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09212",
+    "authors": [
+      "Zeru Cheng",
+      "Yanjing Yang",
+      "He Zhang",
+      "Lanxin Yang",
+      "Jinghao Hu",
+      "Jinwei Xu",
+      "Bohan Liu",
+      "Haifeng Shen"
+    ],
+    "first_author": "Zeru Cheng",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09212v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-18 00:00:22"
+  },
+  {
+    "id": "2511.09134",
+    "title": "One Signature, Multiple Payments: Demystifying and Detecting Signature Replay Vulnerabilities in Smart Contracts",
+    "abstract": "Smart contracts have significantly advanced blockchain technology, and digital signatures are crucial for reliable verification of contract authority. Through signature verification, smart contracts can ensure that signers possess the required permissions, thus enhancing security and scalability. However, lacking checks on signature usage conditions can lead to repeated verifications, increasing the risk of permission abuse and threatening contract assets. We define this issue as the Signature Replay Vulnerability (SRV). In this paper, we conducted the first empirical study to investigate the causes and characteristics of the SRVs. From 1,419 audit reports across 37 blockchain security companies, we identified 108 with detailed SRV descriptions and classified five types of SRVs. To detect these vulnerabilities automatically, we designed LASiR, which utilizes the general semantic understanding ability of Large Language Models (LLMs) to assist in the static taint analysis of the signature state and identify the signature reuse behavior. It also employs path reachability verification via symbolic execution to ensure effective and reliable detection. To evaluate the performance of LASiR, we conducted large-scale experiments on 15,383 contracts involving signature verification, selected from the initial dataset of 918,964 contracts across four blockchains: Ethereum, Binance Smart Chain, Polygon, and Arbitrum. The results indicate that SRVs are widespread, with affected contracts holding $4.76 million in active assets. Among these, 19.63% of contracts that use signatures on Ethereum contain SRVs. Furthermore, manual verification demonstrates that LASiR achieves an F1-score of 87.90% for detection. Ablation studies and comparative experiments reveal that the semantic information provided by LLMs aids static taint analysis, significantly enhancing LASiR's detection performance.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09134",
+    "authors": [
+      "Zexu Wang",
+      "Jiachi Chen",
+      "Zewei Lin",
+      "Wenqing Chen",
+      "Kaiwen Ning",
+      "Jianxing Yu",
+      "Yuming Feng",
+      "Yu Zhang",
+      "Weizhe Zhang",
+      "Zibin Zheng"
+    ],
+    "first_author": "Zexu Wang",
+    "primary_category": "cs.CR",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": "ICSE2026",
+    "pdf_url": "https://arxiv.org/pdf/2511.09134v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-18 00:00:36"
+  },
+  {
+    "id": "2511.09122",
+    "title": "Vendor-Aware Industrial Agents: RAG-Enhanced LLMs for Secure On-Premise PLC Code Generation",
+    "abstract": "Programmable Logic Controllers are operated by proprietary code dialects; this makes it challenging to train coding assistants. Current LLMs are trained on large code datasets and are capable of writing IEC 61131-3 compatible code out of the box, but they neither know specific function blocks, nor related project code. Moreover, companies like Mitsubishi Electric and their customers do not trust cloud providers. Hence, an own coding agent is the desired solution to cope with this. In this study, we present our work on a low-data domain coding assistant solution for industrial use. We show how we achieved high quality code generation without fine-tuning large models and by fine-tuning small local models for edge device usage. Our tool lets several AI models compete with each other, uses reasoning, corrects bugs automatically and checks code validity by compiling it directly in the chat interface. We support our approach with an extensive evaluation that comes with code compilation statistics and user ratings. We found that a Retrieval-Augmented Generation (RAG) supported coding assistant can work in low-data domains by using extensive prompt engineering and directed retrieval.",
+    "arxiv_url": "https://arxiv.org/abs/2511.09122",
+    "authors": [
+      "Joschka Kersting",
+      "Michael Rummel",
+      "Gesa Benndorf"
+    ],
+    "first_author": "Joschka Kersting",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Completion"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.09122v1",
+    "published": "2025-11-12",
+    "update_time": "2025-11-12",
+    "download_time": "2025-11-18 00:00:46"
+  }
+]
