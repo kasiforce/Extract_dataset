@@ -5,7 +5,7 @@ import pandas as pd
 from pathlib import Path
 
 # --- 1. 配置 ---
-DEEPSEEK_API_KEY = "sk-3bdc2cad9f3c46d48b6cf38eab7cee2f"
+DEEPSEEK_API_KEY = "sk"
 
 # 检查密钥是否已填写
 if not DEEPSEEK_API_KEY or DEEPSEEK_API_KEY == "sk-...":
