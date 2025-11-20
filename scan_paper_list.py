@@ -1,23 +1,24 @@
 import json
 import os
 import arxiv
+import yaml
 from datetime import datetime
 from tempfile import NamedTemporaryFile
 
 from utils import load_last_position, save_last_position
-from search_paper import download_paper_pdf, get_authors
+from search_paper import *
 
 
-def scan_paper_jsonl(**config):
+def scan_paper_jsonl(paper_search):
     """扫描papers_metadata.jsonl文件是否有手动添加的论文"""
-
     print("--- 正在扫描论文列表 ---")
-    paper_jsonl = config['papers_metadata_path']
-    if not os.path.exists(paper_jsonl):
-        return
+    paper_jsonl = paper_search.config['papers_metadata_path']
     current_position = load_last_position()
+    target_dir = os.path.dirname(paper_jsonl)
+
     # 创建临时文件
-    with NamedTemporaryFile(mode='w', delete=False, encoding='utf-8', suffix='.jsonl') as temp_file:
+    with NamedTemporaryFile(mode='w', delete=False, suffix='.jsonl',
+                            dir=target_dir, encoding='utf-8') as temp_file:
         temp_path = temp_file.name
 
         try:
@@ -52,50 +53,66 @@ def scan_paper_jsonl(**config):
                         for result in client.results(search_engine):
 
                             try:
-                                # 下载PDF文件
-                                pdf_path = download_paper_pdf(result, config['download_papers_path'])
-
-                                # 保存元数据到jsonl
-
-                                # 提取论文的基本信息
+                                # 判断是否有重复论文
                                 paper_id = result.get_short_id()
                                 ver_pos = paper_id.find('v')
                                 paper_key = paper_id[0:ver_pos] if ver_pos != -1 else paper_id
+                                if paper_key in paper_search.paper:
+                                    break
 
+                                # 判断论文是否为LLM4SE
                                 paper_title = result.title
-                                paper_url = f"https://arxiv.org/abs/{paper_key}"
-                                paper_abstract = result.summary.replace("\n", " ")
-                                paper_authors = get_authors(result.authors)
-                                paper_first_author = get_authors(result.authors, first_author=True)
-                                primary_category = result.primary_category
-                                publish_time = result.published.date()
-                                update_time = result.updated.date()
-                                comments = result.comment
-                                keywords = config['kv']
-                                topic = list(keywords.keys())[0]
+                                paper_abstract = result.summary
+                                content = paper_title + '\n' + paper_abstract
+                                system_prompt, user_prompt = paper_search.build_benchmark_finder_prompt(content)
+                                messages = [
+                                    {"role": "system", "content": system_prompt},
+                                    {"role": "user", "content": user_prompt}
+                                ]
 
-                                # 获取当前时间作为下载时间
-                                download_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                resp = call_chatgpt(messages)
 
-                                # 构建论文元数据字典
-                                paper_metadata = {
-                                    'paper_id': paper_key,  # 论文ID
-                                    'title': paper_title,  # 标题
-                                    'abstract': paper_abstract,  # 摘要
-                                    'paper_url': paper_url,  # 论文URL
-                                    'authors': paper_authors,  # 所有作者
-                                    'first_author': paper_first_author,  # 第一作者
-                                    'primary_category': primary_category,  # 主要分类
-                                    'topic': topic,  # 主题
-                                    'pdf_path': pdf_path if pdf_path else "",  # PDF文件路径
-                                    'publish_time': str(publish_time),  # 发布日期
-                                    'update_time': str(update_time),  # 更新日期
-                                    'comments': comments if comments else "",  # 评论（处理None值）
-                                    'download_time': download_time,  # 下载时间
-                                    'query': query  # 搜索查询
-                                }
+                                if resp['topic']:
+                                    # 下载PDF文件
+                                    pdf_path = paper_search.download_paper_pdf(result, paper_search.config['download_papers_path'])
 
-                                temp_file.write(json.dumps(paper_metadata, ensure_ascii=False) + '\n')
+                                    # 保存元数据到jsonl
+                                    # 提取论文的基本信息
+                                    paper_title = result.title
+                                    paper_url = f"https://arxiv.org/abs/{paper_key}"
+                                    paper_abstract = result.summary.replace("\n", " ")
+                                    paper_authors = [author.name for author in result.authors]
+                                    paper_first_author = paper_search.get_authors(result.authors, first_author=True)
+                                    primary_category = result.primary_category
+                                    publish_time = result.published.date()
+                                    update_time = result.updated.date()
+                                    comment = result.comment if result.comment else None
+                                    journal_ref = result.journal_ref if hasattr(result, 'journal_ref') and result.journal_ref else None
+                                    conference = paper_search.extract_venue_from_journal_ref(journal_ref) or \
+                                                 paper_search.extract_venue_from_comment(comment)
+
+                                    # 获取当前时间作为下载时间
+                                    download_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                                    # 构建论文元数据字典
+                                    paper_metadata = {
+                                        'id': paper_key,  # 论文ID
+                                        'title': paper_title,  # 标题
+                                        'abstract': paper_abstract,  # 摘要
+                                        'arxiv_url': paper_url,  # 论文URL
+                                        'authors': paper_authors,  # 所有作者
+                                        'first_author': paper_first_author,  # 第一作者
+                                        'primary_category': primary_category,  # 主要分类
+                                        'tag': [resp['topic']],  # 主题
+                                        "benchmark": resp['benchmark'],  # 是否benchmark相关
+                                        "conference": conference,  # 会议/期刊
+                                        'pdf_url': result.pdf_url,  # PDF路径
+                                        'published': str(publish_time),  # 发布日期
+                                        'update_time': str(update_time),  # 更新日期
+                                        'download_time': download_time,  # 下载时间
+                                    }
+
+                                    temp_file.write(json.dumps(paper_metadata, ensure_ascii=False) + '\n')
 
                             except Exception as e:
                                 print(f"处理{result.get_short_id()}论文时出错: {e}")

@@ -6,7 +6,7 @@ import logging
 import argparse
 from datetime import datetime
 from gpt import call_chatgpt
-from utils import save_last_position
+from utils import save_last_position, load_last_position
 import requests
 logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
@@ -17,6 +17,8 @@ class PaperSearch:
     def __init__(self, config_path):
         self.config = self.load_config(config_path)
         logging.info(self.config)
+        self.paper = []
+        self.get_recent_paper(self.config['papers_metadata_path'])
 
     # def load_config(config_file: str) -> dict:
     #     """
@@ -61,6 +63,30 @@ class PaperSearch:
         with open(config_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
 
+    def get_recent_paper(self, file_path):
+        """读取papers_metadata.jsonl文件从头到指定位置的内容"""
+        last_position = load_last_position()
+        current_position = 0
+
+        with open(file_path, 'r', encoding='utf-8') as f:
+            while current_position < last_position:
+                line = f.readline()
+                if not line:  # 文件结束
+                    break
+
+                current_position = f.tell()  # 获取当前文件位置
+
+                # 如果读取这行后超过目标位置，说明这行不完整
+                if current_position > last_position:
+                    break
+
+                try:
+                    item = json.loads(line.strip())
+                    self.paper.append(item['id'])
+                except json.JSONDecodeError:
+                    print(f"警告：无法解析JSON行: {line}")
+                    continue
+
     def get_authors(self, authors, first_author=False):
         output = str()
         if not first_author:
@@ -98,7 +124,7 @@ class PaperSearch:
             pdf_path = os.path.join(str(download_dir), str(pdf_filename))
 
             # 检查PDF是否已存在
-            if os.path.exists(pdf_path):
+            if paper_key in self.paper:
                 logging.info(f"PDF已存在: {pdf_filename}")
                 return None
 
@@ -217,15 +243,13 @@ class PaperSearch:
                 paper_abstract = result.summary
                 content = paper_title + '\n' + paper_abstract
                 system_prompt, user_prompt = self.build_benchmark_finder_prompt(content)
-                # print(system_prompt)
-                # print(user_prompt)
                 messages = [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ]
-                # print(messages)
+
                 resp = call_chatgpt(messages)
-                print(resp)
+
                 if resp['topic']:
                     # 下载PDF文件
                     pdf_path = self.download_paper_pdf(result, download_dir)

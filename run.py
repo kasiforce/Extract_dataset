@@ -1,18 +1,24 @@
-from search_paper import *
+import argparse
+
+from search_paper import PaperSearch
 from scan_paper_list import scan_paper_jsonl
+from gen_html import HTMLGenerator
 
 
 def run_paper_pipeline(config_path='config.yaml'):
     """运行完整的论文处理流水线"""
     try:
+        search = PaperSearch(config_path)
+        paper_meta_path = search.config['papers_metadata_path']
+        # 处理手动添加到jsonl文件中的论文
+        scan_paper_jsonl(search)
+        # 更新已处理论文
+        search.get_recent_paper(paper_meta_path)
 
-        # 加载配置
-        config = load_config(config_path)
-        config = {**config}
+        search.search()
 
-        scan_paper_jsonl(**config)
-
-        search(**config)
+        html_gen = HTMLGenerator(paper_meta_path)
+        html_gen.run()
 
     except Exception as e:
         print(f"论文处理流水线执行失败: {e}")

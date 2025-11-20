@@ -586,5 +586,150 @@
     "published": "2025-11-12",
     "update_time": "2025-11-12",
     "download_time": "2025-11-18 00:00:46"
+  },
+  {
+    "id": "2511.14528",
+    "title": "LLM-Assisted Thematic Analysis: Opportunities, Limitations, and Recommendations",
+    "abstract": "[Context] Large Language Models (LLMs) are increasingly used to assist qualitative research in Software Engineering (SE), yet the methodological implications of this usage remain underexplored. Their integration into interpretive processes such as thematic analysis raises fundamental questions about rigor, transparency, and researcher agency. [Objective] This study investigates how experienced SE researchers conceptualize the opportunities, risks, and methodological implications of integrating LLMs into thematic analysis. [Method] A reflective workshop with 25 ISERN researchers guided participants through structured discussions of LLM-assisted open coding, theme generation, and theme reviewing, using color-coded canvases to document perceived opportunities, limitations, and recommendations. [Results] Participants recognized potential efficiency and scalability gains, but highlighted risks related to bias, contextual loss, reproducibility, and the rapid evolution of LLMs. They also emphasized the need for prompting literacy and continuous human oversight. [Conclusion] Findings portray LLMs as tools that can support, but not substitute, interpretive analysis. The study contributes to ongoing community reflections on how LLMs can responsibly enhance qualitative research in SE.",
+    "arxiv_url": "https://arxiv.org/abs/2511.14528",
+    "authors": [
+      "Tatiane Ornelas",
+      "Allysson Allex Araújo",
+      "Júlia Araújo",
+      "Marina Araújo",
+      "Bianca Trinkenreich",
+      "Marcos Kalinowski"
+    ],
+    "first_author": "Tatiane Ornelas",
+    "primary_category": "cs.SE",
+    "tag": [
+      "LLM-Assisted Qualitative Analysis"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.14528v1",
+    "published": "2025-11-18",
+    "update_time": "2025-11-18",
+    "download_time": "2025-11-19 17:52:21"
+  },
+  {
+    "id": "2511.14224",
+    "title": "KTester: Leveraging Domain and Testing Knowledge for More Effective LLM-based Test Generation",
+    "abstract": "Automated unit test generation using large language models (LLMs) holds great promise but often struggles with generating tests that are both correct and maintainable in real-world projects. This paper presents KTester, a novel framework that integrates project-specific knowledge and testing domain knowledge to enhance LLM-based test generation. Our approach first extracts project structure and usage knowledge through static analysis, which provides rich context for the model. It then employs a testing-domain-knowledge-guided separation of test case design and test method generation, combined with a multi-perspective prompting strategy that guides the LLM to consider diverse testing heuristics. The generated tests follow structured templates, improving clarity and maintainability. We evaluate KTester on multiple open-source projects, comparing it against state-of-the-art LLM-based baselines using automatic correctness and coverage metrics, as well as a human study assessing readability and maintainability. Results demonstrate that KTester significantly outperforms existing methods across six key metrics, improving execution pass rate by 5.69% and line coverage by 8.83% over the strongest baseline, while requiring less time and generating fewer test cases. Human evaluators also rate the tests produced by KTester significantly higher in terms of correctness, readability, and maintainability, confirming the practical advantages of our knowledge-driven framework.",
+    "arxiv_url": "https://arxiv.org/abs/2511.14224",
+    "authors": [
+      "Anji Li",
+      "Mingwei Liu",
+      "Zhenxi Chen",
+      "Zheng Pei",
+      "Zike Li",
+      "Dekun Dai",
+      "Yanlin Wang",
+      "Zibin Zheng"
+    ],
+    "first_author": "Anji Li",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.14224v1",
+    "published": "2025-11-18",
+    "update_time": "2025-11-18",
+    "download_time": "2025-11-19 17:53:19"
+  },
+  {
+    "id": "2511.14022",
+    "title": "Keeping Code-Aware LLMs Fresh: Full Refresh, In-Context Deltas, and Incremental Fine-Tuning",
+    "abstract": "Modern codebases evolve continuously: files are renamed or deleted; public APIs drift; behavior shifts within otherwise familiar modules. A model trained yesterday to map a developer's natural-language question to the exact set of repository file paths that matter will degrade tomorrow, even if the questions themselves look unchanged. In this paper we study, at system scale and across several widely used repositories, how to keep such a model fresh without surrendering retention on earlier code. We frame freshness as a form of domain drift between a base snapshot and the current HEAD, and we compare three families of update strategies: (A) Full Refresh, retraining the entire model at the new snapshot; (B) In-Context Learning (ICL) that injects recent deltas (raw git diffs or concise English summaries) at inference; and (C) Incremental Fine-Tuning (Inc-FT) on delta-derived training sets, with carefully controlled NEW:OLD mixing to mitigate catastrophic forgetting. We contribute an alias-aware evaluation protocol that credits rename while never rewarding deleted paths, and a practical Forgetting Probe that quantifies residual emissions of obsolete paths. Across Flask, SQLAlchemy, Pandas, and Poetry, Inc-FT with old-aware mixes delivers the best overall balance on mixed sets, ICL with English delta summaries delivers the fastest new-code lift when training is not feasible, and Full Refresh remains the ceiling when maximum NEW accuracy matters. We also compare Git-diff Inc-FT to full-file Inc-FT, showing that diffs excel in rename/delete-heavy windows while full-file context wins in behavior-change-heavy windows.",
+    "arxiv_url": "https://arxiv.org/abs/2511.14022",
+    "authors": [
+      "Pradeep Kumar Sharma",
+      "Ishaan Puri",
+      "Mantinder Jit Singh",
+      "Swapnil Shivaprasad",
+      "Hritvik Shrivastava"
+    ],
+    "first_author": "Pradeep Kumar Sharma",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Model Maintenance"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.14022v1",
+    "published": "2025-11-18",
+    "update_time": "2025-11-18",
+    "download_time": "2025-11-19 17:55:27"
+  },
+  {
+    "id": "2511.14002",
+    "title": "FlakyGuard: Automatically Fixing Flaky Tests at Industry Scale",
+    "abstract": "Flaky tests that non-deterministically pass or fail waste developer time and slow release cycles. While large language models (LLMs) show promise for automatically repairing flaky tests, existing approaches like FlakyDoctor fail in industrial settings due to the context problem: providing either too little context (missing critical production code) or too much context (overwhelming the LLM with irrelevant information). We present FlakyGuard, which addresses this problem by treating code as a graph structure and using selective graph exploration to find only the most relevant context. Evaluation on real-world flaky tests from industrial repositories shows that FlakyGuard repairs 47.6 % of reproducible flaky tests with 51.8 % of the fixes accepted by developers. Besides it outperforms state-of-the-art approaches by at least 22 % in repair success rate. Developer surveys confirm that 100 % find FlakyGuard's root cause explanations useful.",
+    "arxiv_url": "https://arxiv.org/abs/2511.14002",
+    "authors": [
+      "Chengpeng Li",
+      "Farnaz Behrang",
+      "August Shi",
+      "Peng Liu"
+    ],
+    "first_author": "Chengpeng Li",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": "ASE 2025",
+    "pdf_url": "https://arxiv.org/pdf/2511.14002v1",
+    "published": "2025-11-18",
+    "update_time": "2025-11-18",
+    "download_time": "2025-11-19 17:55:35"
+  },
+  {
+    "id": "2511.15665",
+    "title": "Quantum-Guided Test Case Minimization for LLM-Based Code Generation",
+    "abstract": "Precisely controlling Large Language Models (LLMs) to generate efficient and concise code is a central challenge in software engineering. We introduce a framework based on Test-Driven Development (TDD) that transforms code specification into a combinatorial optimization task. The framework first prompts an LLM to generate a test suite, then formulates the Test Case Minimization (TCM) problem as a Quadratic Unconstrained Binary Optimization (QUBO) model. This QUBO paradigm is compatible with both classical solvers and emerging hardware such as quantum annealers. Experimentally, quantum annealing solves the core TCM task 16 times faster than simulated annealing. This performance underpins our end-to-end framework, which reduces total token consumption by 36.5\\% and significantly improves code quality. This work demonstrates a powerful synergy between generative AI and combinatorial optimization in software engineering, highlighting the critical importance of precise model formulation.",
+    "arxiv_url": "https://arxiv.org/abs/2511.15665",
+    "authors": [
+      "Huixiang Zhang",
+      "Mahzabeen Emu"
+    ],
+    "first_author": "Huixiang Zhang",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": "This is a preprint version, full paper has been accepted in IEEE CASCON 2025 and...",
+    "pdf_url": "https://arxiv.org/pdf/2511.15665v1",
+    "published": "2025-11-19",
+    "update_time": "2025-11-19",
+    "download_time": "2025-11-20 17:35:51"
+  },
+  {
+    "id": "2511.15293",
+    "title": "A Viable Paradigm of Software Automation: Iterative End-to-End Automated Software Development",
+    "abstract": "Software development automation is a long-term goal in software engineering. With the development of artificial intelligence (AI), more and more researchers are exploring approaches to software automation. They view AI systems as tools or assistants in software development, still requiring significant human involvement. Another initiative is ``vibe coding'', where AI systems write and repeatedly revise most (or even all) of the code. We foresee these two development paths will converge towards the same destination: AI systems participate in throughout the software development lifecycle, expanding boundaries of full-stack software development. In this paper, we present a vision of an iterative end-to-end automated software development paradigm AutoSW. It operates in an analyze-plan-implement-deliver loop, where AI systems as human partners become first-class actors, translating human intentions expressed in natural language into executable software. We explore a lightweight prototype across the paradigm and initially execute various representative cases. The results indicate that AutoSW can successfully deliver executable software, providing a feasible direction for truly end-to-end automated software development.",
+    "arxiv_url": "https://arxiv.org/abs/2511.15293",
+    "authors": [
+      "Jia Li",
+      "Zhi Jin",
+      "Kechi Zhang",
+      "Huangzhao Zhang",
+      "Jiaru Qian",
+      "Tiankuo Zhao"
+    ],
+    "first_author": "Jia Li",
+    "primary_category": "cs.SE",
+    "tag": [
+      "End-to-End Automated Software Development"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.15293v1",
+    "published": "2025-11-19",
+    "update_time": "2025-11-19",
+    "download_time": "2025-11-20 17:36:38"
   }
 ]
