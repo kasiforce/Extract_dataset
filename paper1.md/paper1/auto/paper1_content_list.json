@@ -1,0 +1,1194 @@
+[
+    {
+        "type": "text",
+        "text": "Elucidation of mesopore-organic molecules interactions in mesoporous $\\mathrm { T i O } _ { 2 }$ photocatalysts to improve photocatalytic activity ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            206,
+            778,
+            249
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Xuan Hao Lin a, Ye Wu a, Jiao Xiang a, Da He a, Sam Fong Yau Li a,b,c,∗ ",
+        "bbox": [
+            52,
+            258,
+            615,
+            276
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "a Department of Chemistry, National University of Singapore, 3 Science Drive 3, Singapore 117543, Singapore   \nb NUS Environmental Research Institute (NERI), #02-01, T-Lab Building (TL), 5A Engineering Drive 1, Singapore 117411, Singapore   \nc Shenzhen Engineering Laboratory for Eco-efficient Polysilicate Materials, School of Environment and Energy, Peking University Shenzhen Graduate School,   \nShenzhen 518055, China ",
+        "bbox": [
+            52,
+            283,
+            811,
+            325
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "a r t i c l e i n f o ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            355,
+            213,
+            369
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "a b s t r a c t ",
+        "text_level": 1,
+        "bbox": [
+            336,
+            355,
+            445,
+            368
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Article history:   \nReceived 3 February 2016   \nReceived in revised form 1 June 2016   \nAccepted 7 June 2016   \nAvailable online 7 June 2016 ",
+        "bbox": [
+            50,
+            382,
+            243,
+            435
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords:   \nMesoporous   \nMesopore   \n$\\mathrm { T i O } _ { 2 }$ photocatalyst   \nReverse osmosis concentrate   \nFluorescein ",
+        "bbox": [
+            52,
+            450,
+            201,
+            514
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mesoporous $\\mathrm { T i O } _ { 2 }$ photocatalysts were synthesized and characterized by $\\Nu _ { 2 }$ sorption, XRD, SEM and spectroscopic methods. Formation of the mesopores was attributed to the decomposition of entrapped inorganic ions, which was reported before. Fluorescein molecules were used as model substrate molecules. To investigate interactions between mesopores and fluorescein molecules, a novel two-phase method to differentiate mesopore encapsulation from external surface adsorption was developed in this study, which was also not reported before. This novel two-phase method could be widely applied to study other mesoporous materials. Results showed that fluorescein molecules could enter and exit from the mesopores freely. Fluorescein molecules sealed inside the mesopores could still be photocatalytically degraded to reaction intermediates, i.e. carboxylic acids and final products. Furthermore, it was found that when the mesopores were intentionally sealed by chloroform, photocatalytic activity for the degradation of reverse osmosis concentrate (ROC) decreased. When the mesopores were open the dissolved organic compounds (DOC) in ROC could go into the mesopores and their photocatalytic degradation products could also come out from the mesopores. Correlation of photocatalytic activity to surface area and mesopore volume was investigated. Formation mechanism of mesopores was elucidated. Interactions between the mesopores and fluorescein molecules are also described. ",
+        "bbox": [
+            332,
+            382,
+            929,
+            562
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$^ { © }$ 2016 Elsevier B.V. All rights reserved. ",
+        "bbox": [
+            700,
+            563,
+            927,
+            575
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            621,
+            159,
+            634
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Increasing demand for purified water was partially satisfied by the reverse osmosis (RO) membrane technology in the desalination plants, municipal wastewater treatment plants (WWTP) and industrial WWTP [1]. Waste, i.e. RO Concentrate (ROC), was also generated when purified water was generated using RO membrane [2]. Currently most ROC is discharged to water bodies which poses potential serious threat to the ecosystems [3]. From different membrane concentrate sources, the compositions and corresponding treatment strategies of ROC are different. RO brine from desalination plants contains high chloride content. Current treatment methods include evaporation ponds and wind-aided intensified evaporation. RO brine from industrial WWTP (e.g. mining industries) tends to have high inorganic (e.g. sulfate in mining industries) ",
+        "bbox": [
+            53,
+            648,
+            475,
+            818
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "content and thus could be treated using eutectic freeze crystallization (EFC). ROC from municipal WWTP has higher organic contents, and hence advanced oxidation processes (AOPs) are promising treatment methods. The organic contaminants in municipal RO effluents include natural organic matters (NOM), detergents, personal care products, pharmaceuticals, and so on [4]. AOPs include photooxidation, sonolysis, electrooxidation, Fenton’s reaction, and photocatalysis [1,4–17]. Photooxidation and Fenton’s reaction were reported to have relative medium to high costs of chemical consumables. Sonolysis efficiency was not satisfactory. Toxic by-products were the concerns of electroxidation. Among the AOPs, photocatalysis is a promising method with low cost and high efficiency but without toxic by-products. ",
+        "bbox": [
+            505,
+            621,
+            929,
+            791
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Titanium dioxide $\\mathrm { T i O } _ { 2 }$ has been used as photocatalysts for wastewater purification, organic synthesis, solar cells, surface selfcleaning and air purification, etc. [18–20]. $\\mathrm { T i O } _ { 2 }$ was reported to have high efficiency in ROC treatment [4]. Mesopores were reported to improve the photocatalytic activity of $\\mathrm { T i O } _ { 2 }$ [21–23]. Well-known mesoporous materials include MCM-41, MCM-48, SBA-15, etc. which were discovered in the early 1990s [24–26]. ",
+        "bbox": [
+            505,
+            794,
+            929,
+            885
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mesoporous materials were reported to improve electron and mass transfers [27–30]. Over the past two decades, the research of mesoporous $\\mathrm { T i O } _ { 2 }$ was mainly focused on new synthesis methods and improved photocatalytic activities [21,22,31–38]. Some researchers explored potential applications in solar cells (anode), ${ \\bf C } { \\bf O } _ { 2 }$ capture, DNA separation, dye adsorption, and catalysis for synthesis [32,39–46]. However there have been little research on the interactions of mesopores and organic molecules, which would be important for the understanding of photocatalytic activity with mesopores [28]. When there were mesopores in $\\mathrm { T i O } _ { 2 }$ , its activity was found to be improved. In most cases, $\\mathrm { T i O } _ { 2 }$ with mesopores also had higher surface areas (SA). It was not clear whether the improved activities were due to higher SA or presence of mesopores. The possible interactions between mesopores and substrate molecules have not been elucidated. In this report, we synthesized mesoporous $\\mathrm { T i O } _ { 2 }$ by a sol-gel method. The mesopores were formed by the decomposition of sulfate ions. This novel mesopore forming method (without any surfactants or other templates) in $\\mathrm { T i O } _ { 2 }$ is reported here. We investigated and confirmed the mass transfer in $\\mathrm { T i O } _ { 2 }$ mesopores using fluorescence spectroscopy and Fourier transform infrared spectroscopy (FTIR). We also investigated the relationships among SA, mesopore volume, mass transfer by mesopores and improved photocatalytic activity. To investigate the mesopore-molecule interactions, a novel two-phase method (chloroform-water) to differentiate mesopore encapsulation from external surface adsorption was developed and reported. This novel two-phase method could be also applied in the investigation of interactions between other porous materials and organic molecules (adsorbents/reactants/substrates), which will be of importance for the understanding of catalytic mechanisms. ",
+        "bbox": [
+            70,
+            69,
+            494,
+            462
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. Experimental ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            481,
+            183,
+            494
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Details of the photocatalytic reaction setup, ROC sample characteristics & analysis and catalyst characterization methods were described previously [47,48]. ",
+        "bbox": [
+            70,
+            508,
+            494,
+            547
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.1. Materials ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            563,
+            159,
+            576
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Titanyl sulfate $( 9 9 . 5 \\%$ , AR), ethanol $9 5 \\%$ , Reagent grade), ammonia $2 5 \\%$ (AR), fluorescein $( 9 9 . 9 \\%$ , AR), chloroform $9 9 . 9 \\%$ , AR) and sodium hydroxide $( 9 9 . 9 \\%$ , AR) were obtained from Sigma-Aldrich. Municipal ROC sample (5 l) was obtained from a Singapore WWTP and stored in a refrigerator at $4 ^ { \\circ } \\mathsf C$ for all the experiments here. ",
+        "bbox": [
+            70,
+            590,
+            495,
+            655
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.2. Catalyst preparation ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            673,
+            226,
+            686
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\mathrm { T i O } _ { 2 }$ photocatalysts were prepared using the sol-gel method from the hydrolysis of titanyl sulfate $\\mathrm { T i O S O } _ { 4 } { \\cdot } \\mathbf { x } \\mathrm { H } _ { 2 } 0$ in a mixture of $8 0 \\% \\mathrm { v / v }$ ethanol and $2 0 \\% \\mathrm { v } / \\mathrm { v }$ water and further calcination at a certain temperature within $1 0 0 { - } 8 0 0 ^ { \\circ } \\mathrm { C }$ for $^ { 1 \\mathrm { h } }$ [47,49]. The final catalysts were named as $\\mathrm { T i O } _ { 2 }$ -100, $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300, $\\mathrm { T i O } _ { 2 }$ - 400, $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -700 and $\\mathrm { T i O } _ { 2 }$ -800 respectively according to their calcination temperature. The number behind $\\mathrm { T i O } _ { 2 }$ represents the calcination temperature. The number after the temperature represents the time of calcination, e.g. the catalysts calcined at $6 0 0 ^ { \\circ } \\mathsf C$ for $^ { 3 \\mathrm { h } }$ is named as $\\mathrm { T i O } _ { 2 }$ -600-3. ",
+        "bbox": [
+            70,
+            699,
+            494,
+            778
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/1cf308809428f6f9b971247d7935a6181fa9c82cd241bde0f8503058bce4150b.jpg",
+        "image_caption": [
+            "Fig. 1. Molecular structure of fluorescein dye. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            613,
+            66,
+            857,
+            262
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            522,
+            300,
+            947,
+            353
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.3. Preparation of fluorescein solution ",
+        "text_level": 1,
+        "bbox": [
+            524,
+            368,
+            763,
+            380
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To obtain better sensitivity for the detection of molecules interacted with $\\mathrm { T i O } _ { 2 }$ a well-known fluorescent compound – fluorescein dye was used as a model molecule. Molecular structure of fluorescein is shown in Fig. 1. When excited at $2 5 4 \\mathrm { n m }$ , fluorescein molecule emits fluorescence band from 490 to $7 0 0 \\mathrm { n m }$ peaked at $5 2 1 \\mathrm { n m }$ . Fluorescein is not soluble in water and most solvents including chloroform, cyclohexane, etc. It is soluble in alkaline water. $0 . 8 2 4 0 { \\mathrm { g } }$ of NaOH and $0 . 5 3 3 ^ { \\mathrm { g } }$ of fluorescein were dissolved in deionized (DI) water with a final volume of $5 . 0 \\mathrm { m l }$ . The prepared fluorescein solution was 0.3208 M. ",
+        "bbox": [
+            524,
+            394,
+            946,
+            525
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2.4. Encapsulating fluorescein molecules into $T i O _ { 2 }$ mesopores ",
+        "text_level": 1,
+        "bbox": [
+            522,
+            540,
+            900,
+            553
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To explore the interactions between mesopores and fluorescein molecules, a novel two-phase method was developed to differentiate external surface adsorption from mesopore encapsulation. $0 . 0 0 4 0 { \\mathrm { g } }$ of mesoporous $\\mathrm { T i O } _ { 2 } – 6 0 0$ catalyst was soaked in $1 0 0 \\mu \\mathrm { l }$ of 0.3208 M fluorescein solution for $3 0 \\mathrm { { m i n } }$ (Scheme 1). Then it was centrifuged, rinsed with $6 0 0 \\mu \\mathrm { l }$ of DI water once to remove excess fluorescein and dried at $5 0 ^ { \\circ } \\mathsf C$ for 2 h. 0.5 ML of chloroform $\\left( \\mathrm { C H C l } _ { 3 } \\right)$ ) was added to the dried fluorescein-loaded catalyst sample with soaking time of $6 0 \\mathrm { { m i n } }$ to ensure chloroform went into the mesopores. Chloroform was used to seal the fluorescein molecules (if any) inside the mesopores and prevent it from rinsing off by DI water. Chloroform and water did not dissolve each other. Excess chloroform was removed and the sample was rinsed with $2 \\mathrm { m l }$ of DI water for 3 times until the fluorescence of the rinsing solution was low enough indicating no adsorbed fluorescein molecules on the external surface of mesoporous $\\mathrm { T i O } _ { 2 }$ -600. The rinsing solutions were named as “Encap 1st rinse”, “Encap 2nd rinse” and “Encap 3rd rinse”. The fluorescein-encapsulated $\\mathrm { T i O } _ { 2 }$ - 600 sample (wet slurry) was named as “fluo-encap- $. \\mathrm { T i O } _ { 2 } ^ { \\cdot }$ ”. A Gilden Photonics FluoroSENS fluorescence spectrometer was used for fluorescence analysis: excitation wavelength $2 5 4 \\mathrm { n m }$ , and emission wavelength scanning range was $4 7 0 { - } 7 4 0 \\mathrm { n m }$ . All liquid samples for fluorescence measurement did not contain any catalysts after centrifuge. ",
+        "bbox": [
+            524,
+            567,
+            947,
+            778
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/367b909ea56d9e229d9c0ed0bee6f59ed933d9f47e9f01c321c5b92380fd5df6.jpg",
+        "image_caption": [
+            "Scheme 1. Encapsulating fluorescein molecules into the mesopores of $\\mathrm { T i O } _ { 2 }$ -600 photocatalyst. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            253,
+            795,
+            761,
+            918
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            52,
+            68,
+            475,
+            172
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.5. Release of encapsulated fluorescein from mesopores ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            186,
+            398,
+            199
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The above fluorescein-encapsulated sample, “fluo-encap- $. \\mathrm { T i O } _ { 2 } ^ { \\cdot }$ , was dried at $5 0 ^ { \\circ } \\mathsf C$ for $^ { 1 \\mathrm { h } }$ , and then $2 . 0 \\mathrm { m l }$ of $1 0 . 0 \\mathrm { m M } \\mathrm { \\ N a O H }$ was added to it with soaking time $^ { 1 \\mathrm { h } }$ to extract out the fluorescein molecules from the mesopores of $\\mathrm { T i O } _ { 2 }$ -600. The solution was centrifuged (named as “fluorescein released from mesopores”) and analysed with fluorescence measurement. ",
+        "bbox": [
+            52,
+            213,
+            475,
+            291
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.6. Photocatalytic degradation of encapsulated fluorescein ",
+        "text_level": 1,
+        "bbox": [
+            55,
+            305,
+            413,
+            317
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$3 . 5 \\mathrm { m l }$ DI water was added to the above fluoresceinencapsulated (wet slurry) sample – “fluo-encap- $\\cdot \\mathrm { T i O } _ { 2 } ^ { \\cdot }$ ”. Then with slow stirring at $2 0 \\mathrm { r p m }$ (low rpm was employed to prevent chloroform from coming out of the mesopores), it was irradiated with monochromatic UV $3 6 5 \\mathrm { n m }$ for $^ { 2 \\mathrm { h } }$ $( 8 . 4 0 7 \\times 1 0 ^ { 1 5 }$ photons/S ml; $1 8 \\mathrm { m W } / \\mathrm { c m } ^ { 2 } .$ ). The irradiated sample was centrifuged. The top layer was named as “Solution immediate-after-reaction” and analysed with fluorescence measurement. The reacted and centrifuged catalyst was dried at $5 0 ^ { \\circ } \\mathsf { C }$ for $^ { 1 \\mathrm { h } }$ , soaked with $2 . 0 \\mathrm { m l } 0 . 0 1 \\mathrm { M } \\mathrm { N a O H }$ solution for $^ { 1 \\mathrm { h } }$ and then centrifuged. The centrifuged solution was named as “Extraction of the catalyst after reaction”. The same experiment without irradiation was conducted for a comparison (Fig. S3) and it showed no degradation of fluorescein. ",
+        "bbox": [
+            53,
+            331,
+            475,
+            501
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.7. Control sample-1 with adsorbed fluorescein in the mesopores and on external surface ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            517,
+            455,
+            542
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$0 . 0 0 4 0 { \\mathrm { g } }$ of mesoporous $\\mathrm { T i O } _ { 2 }$ -600 catalyst was soaked in $1 0 0 \\mu \\mathrm { l }$ of 0.0321 M fluorescein solution for $3 0 \\mathrm { { m i n } }$ . Then it was centrifuged, rinsed with $6 0 0 \\mu \\mathrm { l }$ of DI water once to remove excess fluorescein and dried at $5 0 ^ { \\circ } \\mathsf C$ for $^ { 2 \\mathrm { h } }$ . It was labelled as “Control sample-1”. ",
+        "bbox": [
+            52,
+            556,
+            475,
+            607
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.8. Control sample-2 with sealed mesopores and cleaned external surface ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            621,
+            406,
+            648
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$0 . 0 0 4 0 { \\mathrm { g } }$ of mesoporous $\\mathrm { T i O } _ { 2 }$ -600 catalyst was soaked in $0 . 5 \\mathrm { m l }$ of chloroform for $3 0 \\mathrm { { m i n } }$ to allow the solvent to penetrate into and seal the mesopores, and then excess solvent was removed. $1 0 0 \\mu \\mathrm { l }$ of 0.3208 M fluorescein solution was added to the sample and kept for $3 0 \\mathrm { { m i n } }$ . Then it was centrifuged, rinsed with $6 0 0 \\mu \\mathrm { l }$ of DI water once to remove excess fluorescein, followed by several DI water rinsing till very low fluorescence from the rinsing solution. This is to ensure that (1) fluorescein adsorbed on the external surface of $\\mathrm { T i O } _ { 2 }$ -600 catalyst could be completely removed and (2) with the mesopores sealed by chloroform the fluorescein molecules could not penetrate into the mesopores anymore. It was labelled as “Control sample- $2 \"$ . ",
+        "bbox": [
+            52,
+            662,
+            475,
+            805
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.9. FTIR samples ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            819,
+            161,
+            832
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3 FTIR samples were prepared, i.e. dried fluo-encap- $\\cdot \\mathrm { T i O } _ { 2 }$ kept in an $8 0 ^ { \\circ } \\mathrm { C } .$ -oven for $^ { 8 \\mathrm { h } }$ , control sample-1, and control sample-2. ",
+        "bbox": [
+            52,
+            846,
+            475,
+            871
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.10. Photocatalytic activity of pore-sealed $T i O _ { 2 }$ -600 catalyst ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            886,
+            428,
+            899
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$0 . 0 5 0 0 { \\mathrm { g } }$ of $\\mathrm { T i O } _ { 2 }$ -600 catalyst was soaked in $0 . 5 \\mathrm { m l }$ of chloroform for $3 0 \\mathrm { { m i n } }$ to seal the mesopores with solvent. Then excess solvent was removed. Immediately the sample was rinsed with DI water 3 times to ensure complete removal of excess solvent and to wet the catalyst so that highly volatile $\\mathrm { C H C l } _ { 3 }$ in the mesopores did not evaporate before ROC sample was added. Then $5 0 \\mathrm { m l }$ of ROC was added and irradiated with monochromatic 365 nm UV light $( 6 . 4 6 7 \\times 1 0 ^ { 1 5 }$ photons/S ml; $1 8 \\mathrm { m W } / \\mathrm { c m } ^ { 2 } .$ ). Sampling intervals were 0, 1, 2, 4, and $^ { 6 \\mathrm { h } }$ . ",
+        "bbox": [
+            52,
+            911,
+            475,
+            938
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            505,
+            68,
+            929,
+            158
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3. Results ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            180,
+            574,
+            192
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1. Characterization ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            206,
+            636,
+            218
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1.1. XRD ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            233,
+            573,
+            244
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The prepared photocatalysts calcined below $7 0 0 ^ { \\circ } \\mathsf C$ were all nano-sized anatase phase (Fig. 2). With the increased calcination temperature, peak intensities increased indicating higher crystallinity of the catalysts. This could be due to the decomposition of impurities (mainly sulfate species originated from titanyl sulfate) at calcination, i.e. the higher calcination temperature the more impurities degraded. Their 5 characteristic peaks were assigned to anatase planes (101), $( 1 0 3 ) + ( 0 0 4 ) + ( 1 1 2 ) , ( 2 0 0 ) , ( 1 0 5 ) + ( 2 1 1 )$ and (118) at 2\u0003 angle 25.4, 38.0, 48.1, 54.7, and $6 2 . 9 ^ { \\circ }$ . At low calcination temperature $( 1 0 0 - 4 0 0 ^ { \\circ } { \\mathsf { C } } )$ , the XRD peaks were broadened due to insufficient diffraction from nano crystals to cancel each other beyond the Bragg’s angles. $\\mathrm { T i O } _ { 2 } – 6 0 0$ and $\\mathrm { T i O } _ { 2 } – 6 0 0 – 3$ calcined at $6 0 0 ^ { \\circ } \\mathsf C$ for 1 and $^ { 3 \\mathrm { h } }$ did not have significantly different XRD intensities, which indicated that calcination time did not have much impact on the catalyst crystallinity. Rutile phase started to show up when calcination temperature was increased to $8 0 0 ^ { \\circ } \\mathrm { C }$ . The 3 rutile peaks of $\\mathrm { T i O } _ { 2 }$ -800 were assigned to planes (110), (101) and (111) at 2\u0003 angle 27.5, 36.2 and $4 0 . 7 ^ { \\circ }$ . ",
+        "bbox": [
+            505,
+            247,
+            929,
+            482
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1.2. $N _ { 2 }$ sorption isotherms ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            503,
+            680,
+            515
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$\\Nu _ { 2 }$ adsorption/desorption isotherms provided material porosity and surface area information. Isotherms of $\\mathrm { T i O } _ { 2 }$ -100, $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }  – 3 0 0$ and $\\mathrm { T i O } _ { 2 } { \\cdot } 4 0 0$ were basically type II isotherms (Fig. 3a) due to minimum hysteresis. The reversible Type II isotherm is the normal form of isotherm obtained with a non-porous or macroporous adsorbent [50]. The Type II isotherm represents unrestricted monolayer-multilayer adsorption. Point B (located at around $\\mathrm { P / P _ { 0 } }$ 0.1), the beginning of the almost linear middle section of the isotherm, is often taken to indicate the stage at which monolayer coverage is complete and multilayer adsorption about to begin. Although the isotherms of $\\mathrm { T i O } _ { 2 }$ -100, $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300 and $\\mathrm { T i O } _ { 2 }$ - 400 were type II isotherms, some hysteresis loops (small loop volume) could also be been from their isotherms. This indicated these 4 catalysts also had some mesopores. In this sense, these isotherms could also be classified as type IV isotherms. Isotherms of $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3 and $\\mathrm { T i O } _ { 2 }$ -700 were obvious type IV isotherms (Fig. 3b). Characteristic features of the Type IV isotherm are its hysteresis loop, which is associated with capillary condensation taking place in mesopores, and the limiting uptake over a range of high $\\mathrm { P / P } _ { 0 }$ . The initial part of the Type IV isotherm is attributed to monolayer-multilayer adsorption since it follows the same path as the corresponding part of a Type II isotherm. Hysteresis appearing in the multilayer range of physisorption isotherms is usually associated with capillary condensation in mesopore structures. The hysteresis loops of $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3 and $\\mathrm { T i O } _ { 2 }$ -700 were type H2 loops. Many porous adsorbents, such as inorganic oxide gels and porous glasses, tend to give Type H2 loops, but in such systems the distribution of pore size and shape is not well-defined. Indeed, the H2 loop is especially difficult to interpret: in the past it was attributed to a difference in mechanism between condensation and evaporation processes occurring in pores with narrow necks and wide bodies (often referred to as ‘ink bottle’ pores), but it is now recognised that this provides an over-simplified picture and the role of network effects must be taken into account. Isotherm of $\\mathrm { T i O } _ { 2 }$ -800 was type V isotherm (Fig. 3b). The Type $\\mathsf { V }$ isotherm is uncommon; it is related to weak adsorbent-adsorbate interaction, but is obtained with certain porous adsorbents. ",
+        "bbox": [
+            505,
+            517,
+            929,
+            936
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a6f05084817628f1bca5e4c99a6ea9485e83062b290ebd7e6511febc1e4a456.jpg",
+        "image_caption": [
+            "Fig. 2. X-ray diffraction (XRD) patterns of the $\\mathrm { T i O } _ { 2 }$ photocatalysts. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            255,
+            68,
+            761,
+            370
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            411,
+            494,
+            489
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.1.3. Pore size distribution, pore volume and BET surface area ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            511,
+            455,
+            524
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Fig. 4a shows the pore size distribution (PSD) of the catalysts $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3 and $\\mathrm { T i O } _ { 2 }$ -700. The PSDs were derived from desorption plot of the $\\Nu _ { 2 }$ sorption isotherms in Fig. 3. These 4 catalysts had quite narrow individual PSD, their pore sizes mainly fell into the mesopore range of $2 { - } 1 4 \\mathrm { n m }$ (Fig. 4a). Their PSD peaks were centred at 3.6, 6.2, 7.4 and $1 0 . 6 \\mathrm { n m }$ respectively. Estimated fluorescein molecule dimension is $1 . 0 { - } 1 . 3 \\mathrm { n m }$ . Fig. 4b showed the pore volumes of micro-, meso- and macro- pores for the catalysts calcined at different temperature. It is obvious the mesopores were the majority with the $\\mathrm { T i O } _ { 2 }$ catalysts calcined at $2 0 0 { - } 7 0 0 ^ { \\circ } C ,$ , while micropores and macropores were the minorities. ",
+        "bbox": [
+            70,
+            524,
+            494,
+            669
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Generally micropores are referred to pores less than $2 \\mathrm { n m }$ , mesopores are in the range of $2 { - } 5 0 \\mathrm { n m }$ , and macropores are larger than $5 0 \\mathrm { n m }$ . Table 1 listed the pore volumes of micro-, meso- and macropores of individual catalysts. Catalysts $\\mathrm { T i O } _ { 2 } { - } 5 0 0$ , $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ - 600-3 and $\\mathrm { T i O } _ { 2 }$ -700 had significantly larger volumes of mesopores than other catalysts $\\mathrm { T i O } _ { 2 }$ -100, $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300, $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -700 (Fig. S5). BET surface area $( S _ { \\mathrm { B E T } } )$ increased to the highest $( 1 5 4 . 9 \\mathrm { m } ^ { 2 } / \\mathrm { g } )$ when calcination temperature increased from 100 to $3 0 0 ^ { \\circ } \\mathsf C ,$ , and then decreased when calcination temperature further increased (Table 1, Fig. S5). $S _ { \\mathrm { B E T } }$ values were high with the catalysts $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300, $\\mathrm { T i O } _ { 2 } – 4 0 0$ and $\\mathrm { T i O } _ { 2 }$ -500, while mesopore volumes were high with the catalysts $\\mathrm { T i O } _ { 2 }  – 5 0 0$ , $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ - 600-3 and $\\mathrm { T i O } _ { 2 } – 7 0 0$ . This information is important in correlating photocatalytic activity and $S _ { \\mathrm { B E T } }$ or mesopore volume. ",
+        "bbox": [
+            524,
+            411,
+            947,
+            595
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3.1.4. SEM & FTIR ",
+        "text_level": 1,
+        "bbox": [
+            524,
+            617,
+            636,
+            630
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "From the SEM photographs of $\\mathrm { T i O } _ { 2 }  – 2 0 0$ , its primary nanoparticles formed secondary aggregates/agglomerates (Fig. 5a). The size range of its aggregates/agglomerates was $0 . 1 \\mathrm { - } 5 \\mu \\mathrm { m }$ . $\\mathrm { T i O } _ { 2 }$ -600 contained primary sphere-shaped nanoparticles with a size range of $1 0 { - } 2 0 \\mathrm { n m }$ (Fig. 5b). FTIR spectrum discloses chemical bonding information. Broad peak centred at around $3 7 7 0 \\mathrm { c m } ^ { - 1 }$ was assigned to Ti OH [2,47,48]. Peak at $3 4 2 0 \\mathrm { c m } ^ { - 1 }$ was assigned to $\\mathrm { O - H }$ stretching, while peak at $3 1 5 9 \\mathrm { c m } ^ { - 1 }$ was assigned to $\\mathrm { O - H }$ stretching hydrogen-bonded to sulfate species (Fig. 5c). $1 6 3 6 \\mathrm { c m } ^ { - 1 }$ was assigned to $_ \\mathrm { H - O - H }$ bending. 1390, 1215, 1148 and $1 0 5 1 \\mathrm { c m } ^ { - 1 }$ were assigned to $( \\mathrm { M O } ) \\mathrm { S O } _ { 3 } \\mathrm { H } .$ , $( \\mathsf { M O } ) _ { 2 } \\mathsf { S O } _ { 2 }$ or $( \\mathrm { M O } ) _ { 3 } \\mathrm { S } { = } \\mathrm { O }$ . Peak at $5 9 4 \\mathrm { c m } ^ { - 1 }$ (likely $5 4 4 \\mathrm { c m } ^ { - 1 }$ also) was assigned to Ti O Ti asymmetric stretching. The FTIR spectra showed that $\\mathrm { T i O } _ { 2 }$ -200 had more impurities, i.e. sulfate species than $\\mathrm { T i O } _ { 2 }$ -600. Stretching vibration of $\\mathrm { T i } { - } S 0 _ { 4 }$ Ti bonds located at $1 0 5 1 \\mathrm { c m } ^ { - 1 }$ indicated that some of these sulfate species were bonded to $\\mathrm { T i ^ { 4 + } }$ . Sulfate species started to decompose from ${ \\sim } 2 0 0 ^ { \\circ } \\mathrm { C }$ . This was the reason why $\\mathrm { T i O } _ { 2 }$ -600 has less sulfate species than $\\mathrm { T i O } _ { 2 }$ -200. More FTIR spectra are shown in Fig. S4. With higher calcination temperature, more sulfate species were degraded. ",
+        "bbox": [
+            522,
+            631,
+            947,
+            670
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/b8b290edc81237114bd026fbd8ba43ade1795d7c63b185925849d41c9c3ba5c8.jpg",
+        "image_caption": [
+            "Fig. 3. $\\Nu _ { 2 }$ adsorption/desorption isotherms of the photocatalysts (a) $\\mathrm { T i O } _ { 2 }$ -100, $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300 and $\\mathrm { T i O } _ { 2 }$ -400; (b) $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3, $\\mathrm { T i O } _ { 2 }$ -700, and $\\mathrm { T i O } _ { 2 }$ -800. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            689,
+            915,
+            916
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/60a19f0e8ea1c77c4319c388db0e20f6c1107562dbdc0996dc772ca3c0f9748d.jpg",
+        "image_caption": [
+            "Fig. 4. (a) Pore size distribution of $\\mathrm { T i O } _ { 2 }$ -400, $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3, $\\mathrm { T i O } _ { 2 }$ -700, and $\\mathrm { T i O } _ { 2 }$ -800; (b) Volume of micropores, mesopores and macropores with different calcination temperature. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            85,
+            69,
+            897,
+            291
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            53,
+            343,
+            475,
+            567
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3.1.5. UV–vis DRS and band gap ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            591,
+            252,
+            602
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "All 3 catalysts $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 } { \\cdot } 4 0 0$ and $\\mathrm { T i O } _ { 2 }$ -600 strongly absorbed UV light with wavelength less than $3 5 0 \\mathrm { n m }$ due to charge transfer from $0 ^ { 2 - }$ to $\\mathrm { T i ^ { 4 + } }$ at 220 and $2 8 8 \\mathrm { n m }$ or interband transition at $3 4 0 \\mathrm { n m }$ , i.e. vertical transition without involving phonons (Fig. 6a) [51]. $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -600 partially absorbed light with wavelength 350–420 nm – the Urbach tail region, where the transitions involved phonons. $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -600 did not absorb any light within visible region $\\chi > 4 2 0 \\mathrm { n m }$ ). $\\mathrm { T i O } _ { 2 }$ -100 did not absorbed visible light also. However, $\\mathrm { T i O } _ { 2 }  – 2 0 0$ $\\mathrm { T i O } _ { 2 }  – 3 0 0$ also) absorbed some visible light within $4 0 0 { - } 8 0 0 \\mathrm { n m }$ . The appearance of $\\mathrm { T i O } _ { 2 }$ -200 (cid:) $\\mathrm { T i O } _ { 2 }$ -300 also) was yellowish while both $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -600 were white. The reason could be originated from the decomposition of sulfate species (Eqs. (1) & (2)). The sulfate species decomposed to $S 0 _ { 3 }$ gas when calcined at ${ } { > } 2 0 0 ^ { \\circ } \\mathrm { C }$ and the released $S 0 _ { 3 }$ gas could be partially adsorbed on $\\mathrm { T i O } _ { 2 }$ (physic-sorption) or formed bonding with $\\mathrm { T i O } _ { 2 }$ (chemi-sorption). Another possibility was that S-doped $\\mathrm { T i O } _ { 2 }$ was formed. However, the indirect bandgap $\\mathtt { E _ { g } }$ of $\\mathrm { T i O } _ { 2 }$ -200 was $3 . 2 1 \\mathrm { e V }$ equitable to UV light wavelength $3 8 7 \\mathrm { n m }$ which ruled out the possibility of S-doped $\\mathrm { T i O } _ { 2 }$ $\\mathrm { ~ E _ { g } ~ } 2 . 4 \\mathrm { - } 3 . 0 \\mathrm { } \\mathrm { e V } )$ [52]. All 3 catalysts $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -600 had similar $\\mathrm { E _ { g } } 3 . 2 1 \\mathrm { - } 3 . 2 4 \\mathrm { e V }$ (Fig. 6b). Therefore, the yellowish color of $\\mathrm { T i O } _ { 2 }$ -200 ( $\\mathrm { T i O } _ { 2 }$ -300 also) and their absorbance in visible region were mainly due to the physically-adsorbed or chemically-bonded $S 0 _ { 3 }$ which left when the calcination temperature was higher than $4 0 0 ^ { \\circ } \\mathsf C$ . ",
+        "bbox": [
+            52,
+            604,
+            475,
+            774
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            505,
+            343,
+            929,
+            488
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "img_path": "images/2eb6350b1a3af7657346485c56cbf06457a30ae39e928704c05d4d292a3b07d3.jpg",
+        "text": "$$\n\\begin{array} { r l } & { \\mathsf { H } _ { 2 } \\mathsf { S O } _ { 4 } \\stackrel { > 3 0 0 ^ { \\circ } \\mathsf { C } } {  } \\mathsf { S O } _ { 3 } \\mathsf { H } _ { 2 } 0 } \\\\ & { ( \\mathsf { N H } _ { 4 } ) _ { 2 } \\mathsf { S O } _ { 4 } \\stackrel { > 2 0 0 ^ { \\circ } \\mathsf { C } } {  } \\mathsf { N H } _ { 4 } \\mathsf { H S O } _ { 3 } + \\mathsf { N H } _ { 3 } \\stackrel { > 2 5 0 ^ { \\circ } \\mathsf { C } } {  } \\mathsf { S O } _ { 3 } + 2 \\mathsf { N H } _ { 3 } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            500,
+            491,
+            840,
+            539
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3.2. Photocatalytic activity ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            551,
+            673,
+            563
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RO Concentrate (ROC) with 26.09 ppm of total organic content (TOC) was used to test the photocatalytic activities of catalysts [47]. The photocatalytic activities of the $\\mathrm { T i O } _ { 2 }$ catalysts increased from $\\mathrm { T i O } _ { 2 }$ -100 to $\\mathrm { T i O } _ { 2 }$ -600 with increased calcination temperature (Fig. 7a–c). When the calcination temperature further increased from 600 to $7 0 0 ^ { \\circ } \\mathsf C$ , the activity slightly decreased. At the optimum calcination temperature $6 0 0 ^ { \\circ } \\mathsf C ,$ if the calcination time increased from 1 to $^ { 3 \\mathrm { h } }$ , the activity decreased. However, when the calcination temperature was as high as $8 0 0 ^ { \\circ } \\mathsf C$ , the activity of $\\mathrm { T i O } _ { 2 }$ -800 was very low, even lower than $\\mathrm { T i O } _ { 2 }$ -100. From $\\mathrm { T i O } _ { 2 }$ -100 to $\\mathrm { T i O } _ { 2 }$ -600, reasons for the enhanced activity could be complicated. The enhanced activity could be due to less impurity, higher crystallinity, increased particle size, higher ratio of surface/bulk core sulfate species, larger SA, more pores, and so on [47]. Fig. 7d shows a strong correlation between activity and pore volume, either mesopore volume or total pore volume. The higher pore volume the higher activities these catalysts had. $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -3 and $\\mathrm { T i O } _ { 2 }$ -700 had high mesopore volume and total pore volume (Table 1). They also had high activities (Fig. 7a–c). $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300 and $\\mathrm { T i O } _ { 2 } – 4 0 0$ had medium mesopore volume and medium activities. $\\mathrm { T i O } _ { 2 }$ -100 and $\\mathrm { T i O } _ { 2 }$ -800 had low mesopore volume and low activities. It could be argued that the higher activities could be due to the increased $S _ { \\mathrm { B E T } }$ from the pores. However, $S _ { \\mathrm { B E T } }$ had some correlation with activity but not very well. $\\mathrm { T i O } _ { 2 }$ -500 had high $S _ { \\mathrm { B E T } }$ and high activity (Table 1, Fig. 7a–c). $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -300 and $\\mathrm { T i O } _ { 2 }$ -400 had high $S _ { \\mathrm { B E T } }$ but medium activities. $\\mathrm { T i O } _ { 2 }$ -600 and $\\mathrm { T i O } _ { 2 }$ -600-3 had medium $S _ { \\mathrm { B E T } }$ but high activities. $\\mathrm { T i O } _ { 2 }$ -700 had low $S _ { \\mathrm { B E T } }$ but high activity. Therefore $S _ { \\mathrm { B E T } }$ did not correlate well with activity. Instead mesopore volume correlated very well with activity. ",
+        "bbox": [
+            505,
+            577,
+            929,
+            774
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/8c72d000a9f7f8e0e14ec0bbd1a4b6de6d77864e3414877173f7b55cd693f02e.jpg",
+        "table_caption": [
+            "Table 1 Textual properties of photocatalysts. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Catalysts</td><td>Calc. temp. (C)</td><td>Calc. time (h)</td><td>BET surface area SBeT (m2/g)</td><td>Micropore volume (cm³/g)</td><td>Mesopore volume (cm³/g)</td><td>Macropore Volume (cm³/g)</td></tr><tr><td>TiO2-100</td><td>100</td><td>1</td><td>73.9</td><td>0.0173</td><td>0.0285</td><td>0.0124</td></tr><tr><td>TiO2-200</td><td>200</td><td>1</td><td>144.6</td><td>0.0343</td><td>0.0419</td><td>0.0131</td></tr><tr><td>TiO2-300</td><td>300</td><td>1</td><td>154.9</td><td>0.0290</td><td>0.0495</td><td>0.0157</td></tr><tr><td>TiO2-400</td><td>400</td><td>1</td><td>146.9</td><td>0.0019</td><td>0.0860</td><td>0.0140</td></tr><tr><td>TiO2-500</td><td>500</td><td>1</td><td>134.3</td><td>0.0000</td><td>0.1340</td><td>0.0110</td></tr><tr><td>TiO2-600</td><td>600</td><td>1</td><td>69.7</td><td>0.0031</td><td>0.1440</td><td>0.0150</td></tr><tr><td>TiO2-600-3</td><td>600</td><td>3</td><td>60.9</td><td>0.0028</td><td>0.1420</td><td>0.0180</td></tr><tr><td>TiO2-700</td><td>700</td><td>1</td><td>31.2</td><td>0.0021</td><td>0.1100</td><td>0.0140</td></tr><tr><td>TiO2-800</td><td>800</td><td>1</td><td>2.7</td><td>0.0018</td><td>0.0120</td><td>0.0080</td></tr></table>",
+        "bbox": [
+            48,
+            817,
+            929,
+            939
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/20d8d21f6de5aadbd78226cd563b735cf9b026ff142dc7d3af6c5bb70a7dafdd.jpg",
+        "image_caption": [
+            "Fig. 5. SEM images of (a) $\\mathrm { T i O } _ { 2 }$ -200 and (b) $\\mathrm { T i O } _ { 2 }$ -600; (c) FTIR spectra of $\\mathrm { T i O } _ { 2 }$ -200 and $\\mathrm { T i O } _ { 2 }$ -600. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            105,
+            70,
+            909,
+            547
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            587,
+            495,
+            653
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            522,
+            587,
+            947,
+            654
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/c3bd625433e2b52e6f9f0732bc6c5b570eef6ec868782a751eb9e292ba4908f2.jpg",
+        "image_caption": [
+            "Fig. 6. (a) UV–vis diffusion reflectance spectra (DRS) and (b) Tauc plots of the photocatalysts $\\mathrm { T i O } _ { 2 }$ -200, $\\mathrm { T i O } _ { 2 }$ -400 and $\\mathrm { T i O } _ { 2 }$ -600. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            682,
+            917,
+            915
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/d028968255d7c5c284aa0fc2f7bc91dded5f4c0f8dc6b2a808785951c425d654.jpg",
+        "image_caption": [
+            "Fig. 7. (a, b) Photocatalytic activity (DOC Conversion of ROC) of the $\\mathrm { T i O } _ { 2 }$ catalysts; (c) Photocatalytic activity with different calcination temperature; (d) Correlation of photocatalytic activity with mesopore volume and total pore volume. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            84,
+            70,
+            897,
+            537
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            52,
+            587,
+            475,
+            640
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.3. Encapsulating fluorescein molecules into $T i O _ { 2 }$ mesopores and their release ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            662,
+            455,
+            687
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Fluorescein molecules (Fig. 1) have strong fluorescence emission from 470 to $7 4 0 \\mathrm { n m }$ peaked at $5 2 1 \\mathrm { n m }$ when excited at $2 5 4 \\mathrm { n m }$ (Fig. 8a). In encapsulating experiments (Section 2.4), after the catalyst $\\mathrm { T i O } _ { 2 }$ -600 was soaked with fluorescein solution and then dried the mesopores (with or without fluorescein molecules) were sealed/protected with $\\mathrm { C H C l } _ { 3 }$ to prevent release of the fluorescein molecules. To remove the adsorbed fluorescein molecules on external surface (pores protected by $\\mathrm { C H C l } _ { 3 }$ ), the catalyst was rinsed with DI water 3 times. The fluorescence spectra of the 1st, 2nd and 3rd rinse showed that their emission intensity decreased from $1 . 1 \\times 1 0 ^ { 6 }$ to $3 . 0 \\times 0 ^ { 4 }$ cps and then to less than 2000 cps (background level), which meant that the adsorbed fluorescein molecules had been completely removed from the external surface (Fig. 8b and c). In other words, the external surface was cleaned to be without any more fluorescein molecules. After the mesopores were opened again when $\\mathrm { C H C l } _ { 3 }$ evaporated, the catalyst was soaked in DI water so that fluorescein molecules (if any) could be released to water. The fluorescence intensity of the soaked water was $1 . 0 \\times 1 0 ^ { 4 }$ cps at $5 2 1 \\mathrm { n m }$ much higher than the background level, which indicated the release of fluorescein molecules from mesopores to water (Fig. 8c). So the encapsulating experiment proved that fluorescein molecules in aqueous solution could go in the mesopores and come out of the mesopores freely. Besides model fluorescein molecules, this could also extend to other molecules and substrates. ",
+        "bbox": [
+            53,
+            701,
+            475,
+            938
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            505,
+            587,
+            929,
+            665
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Besides evidence from fluorescence spectrum based on aqueous solution, FTIR spectrum could also provide evidence based on chemical bond vibrations of catalyst powder. On $\\mathrm { T i O } _ { 2 }$ -600, 4 FTIR peaks at 1636, 1390, 1148 and $1 0 5 1 \\mathrm { c m } ^ { - 1 }$ could be seen (Fig. 9). $1 6 3 6 \\mathrm { c m } ^ { - 1 }$ was assigned to in-plane bending of H O H. $1 3 9 0 \\mathrm { c m } ^ { - 1 }$ was assigned to $S { - } 0 { - } \\mathrm { H }$ out-of-plane bending. $1 1 4 8 \\mathrm { c m } ^ { - 1 }$ and $1 0 5 1 \\mathrm { c m } ^ { - 1 }$ were assigned to $- S O _ { 4 }$ and $\\mathrm { T i } { - } S 0 _ { 4 }$ Ti stretching, respectively. When fluorescein molecules were adsorbed inside the mesopores and on the external surface of $\\mathrm { T i O } _ { 2 }$ -600 (Control sample-1), an additional peak at $1 3 4 5 \\mathrm { c m } ^ { - 1 }$ showed up. $1 3 4 5 \\mathrm { c m } ^ { - 1 }$ could be assigned to the breathing vibrations of the conjugated benzene rings of fluorescein molecules. When fluorescein molecules were adsorbed onto the external surface of $\\mathrm { T i O } _ { 2 } – 6 0 0$ and then washed away from the external surface, control sample-2 did not have a peak at $1 3 4 5 \\mathrm { c m } ^ { - 1 }$ indicating complete desorption of fluorescein molecules with the cleaning steps. Control sample-2 was to prove that the cleaning steps used could remove fluorescein molecules from the external surface of $\\mathrm { T i O } _ { 2 }$ -600. Such cleaning method was used to clean the external surface to obtain the dried “fluo-encap- $\\cdot \\mathrm { T i O } _ { 2 }$ ” sample. When fluorescein molecules were adsorbed inside the mesopores only but with clean external surface, the “fluo-encap- $\\cdot \\mathrm { T i O } _ { 2 }$ ” sample also had a peak at $1 3 4 5 \\mathrm { c m } ^ { - 1 }$ indicating encapsulating of fluorescein molecules inside the mesopores. ",
+        "bbox": [
+            505,
+            667,
+            929,
+            930
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/814d9cbb6ac2d78da03e2b3313a402faaa24c02e2b959f35f48bd8cdfd4a36d8.jpg",
+        "image_caption": [
+            "Fig. 8. Fluorescence emission spectra of (a) $0 . 1 1 7 4 \\mathrm { m M }$ fluorescein basic solution at $\\mathsf { p H } 1 2 . 0$ , excitation $2 5 4 \\mathrm { n m }$ , emission peak $5 2 1 \\mathrm { n m }$ ; (b) 1st rinsing solution from the encapsulating process (Section 2.4); (c) 2nd & 3rd rinse solution from the encapsulating process (Section 2.4) and the solution with released fluorescein molecules from mesopores of $\\mathrm { T i O } _ { 2 }$ -600 (Section 2.5); (d) The solution immediate-after-reaction and the aqueous extract of the catalyst after reaction (Section 2.6). "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            69,
+            914,
+            539
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa4066f5518326411320c98822997ec077ae279b9000af02c1742de15445a04c.jpg",
+        "image_caption": [
+            "Fig. 9. FTIR spectra of $\\mathrm { T i O } _ { 2 }$ -600, dried fluo-encap- $\\cdot \\mathrm { T i O } _ { 2 }$ , control sample-1 and control sample-2. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            253,
+            635,
+            759,
+            886
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/5bfd26720a460a549e20ce0b40c1cfec3eaa34fbb91dd78c36b830d8ff3ca314.jpg",
+        "image_caption": [
+            "Fig. 10. Photocatalytic activities of the catalysts $\\mathrm { T i O } _ { 2 }$ -600 with mesopores open or sealed (Section 2.10) "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            226,
+            68,
+            754,
+            369
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/fbbcabfa310ccab7178f074862310e6d2e149cd62001306b07daa6cff60ae8fa.jpg",
+        "image_caption": [
+            "Fig. 11. Proposed mesopore formation mechanism of the photocatalysts $\\mathrm { T i O } _ { 2 }$ -500, $\\mathrm { T i O } _ { 2 }$ -600, $\\mathrm { T i O } _ { 2 }$ -600-3 and $\\mathrm { T i O } _ { 2 }$ -700. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            126,
+            427,
+            826,
+            644
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/52cfb72ed2f3e7a99f4f59d6cc95002fc98a030ea8cedb2b886fff731c853cea.jpg",
+        "image_caption": [
+            "Fig. 12. Illustrative interactions between mesopores and fluorescein molecules, including H-bonding, electrostatic force, van der waals force and charge transfer. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            184,
+            699,
+            794,
+            906
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            68,
+            492,
+            119
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3.4. Photocatalytic degradation of encapsulated fluorescein molecules ",
+        "text_level": 1,
+        "bbox": [
+            68,
+            138,
+            435,
+            162
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "It is also interesting to know whether the encapsulated fluorescein molecules interact with the holding mesopores. We probed such interactions using photocatalytic reaction. After the fluorescein molecules were sealed inside the mesopores of $\\mathrm { T i O } _ { 2 }$ -600 by $\\mathrm { C H C l } _ { 3 }$ , the catalyst was dispersed in DI water and irradiated with UV light for $^ { 2 \\mathrm { h } }$ (Section 2.6). Although $\\mathrm { C H C l } _ { 3 }$ could also be slowly and photocatalytically degraded into carbon dioxide and chloride ions, both species did not interfere the fluorescence of fluorescein. Therefore, the slow photocatalytic degradation of chloroform is not discussed here. If the fluorescein molecules did not interact with the mesopores, it should be possible to detect them (fluorescence spectra $5 2 1 \\mathrm { n m }$ ) either in the “solution immediateafter-reaction” (if mesopores opened during irradiation) or in the “aqueous extract of the catalyst after reaction” (if mesopores still sealed during irradiation). But they were not detected either in the “solution immediate-after-reaction” or “aqueous extract of the catalyst after reaction”, which implied that they photocatalytically degraded (Fig. 8d). Instead, some carboxylic acid-like compounds were detected at $6 8 0 { - } 6 9 0 \\mathrm { n m }$ in the fluorescence spectra of both the “solution immediate-after-reaction” and the “extraction of the catalyst after reaction”. Carboxylic acids were the most common intermediate degradation products of organic compounds by photocatalysis. This implied that fluorescein molecules sealed inside the mesopores of $\\mathrm { T i O } _ { 2 }$ -600 by $\\mathrm { C H C l } _ { 3 }$ solvent photocatalytically degraded to some intermediate carboxylic acids and final ${ \\bf C } { \\bf O } _ { 2 }$ and $\\mathrm { H } _ { 2 } \\mathrm { O } .$ . After fluorescein degradation, intermediates and final products might diffuse from the mesopores to solution. Although mesopores were sealed by $\\mathrm { C H C l } _ { 3 }$ solvent, adsorbed $0 _ { 2 }$ and $_ { \\mathrm { H } _ { 2 } \\mathrm { O } }$ molecules on the walls of mesopores could still react with photogenerated electrons $( \\mathsf { e } ^ { - } )$ and holes $\\left( \\mathrm { h } ^ { + } \\right)$ to produce hydroxyl radicals $\\bullet _ { \\mathrm { O H } }$ , which further oxidized fluorescein molecules to degradation intermediates and final products. ",
+        "bbox": [
+            70,
+            177,
+            494,
+            598
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3.5. Photocatalytic activity of pore-sealed $T i O _ { 2 }$ -600 catalyst ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            616,
+            436,
+            630
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "When mesopores of $\\mathrm { T i O } _ { 2 }$ -600 were sealed by chloroform, its photocatalytic activity decreased $2 3 . 3 2 \\%$ on 6 h photocatalytic degradation of the organic contaminants of ROC (Fig. 10). This indicated for the catalyst $\\mathrm { T i O } _ { 2 } – 6 0 0 2 3 . 3 2 \\%$ activity was attributed to its mesopores and $7 6 . 6 8 \\%$ activity was attributed to its external surface. This also partially explained why $\\mathrm { T i O } _ { 2 }$ -600 had better activity than $\\mathrm { T i O } _ { 2 }$ -300 while it had smaller SA $\\left( 6 9 . 7 \\mathrm { m } ^ { 2 } / \\mathrm { g } \\right)$ than $\\mathrm { T i O } _ { 2 }$ -300 $( 1 5 4 . 9 \\mathrm { m } ^ { 2 } / \\mathrm { g } )$ . ",
+        "bbox": [
+            70,
+            643,
+            494,
+            749
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4. Discussion ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            767,
+            163,
+            779
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.1. Pore formation mechanism ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            794,
+            265,
+            805
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The $\\mathrm { T i O } _ { 2 }$ catalysts were prepared from the hydrolysis of $\\mathrm { T i O S O _ { 4 } }$ . Although the hydrolysed slurry was rinsed with $0 . 1 \\mathsf { M }$ aqueous ammonia a few times, in the final $\\mathrm { T i O } _ { 2 }$ catalysts sulfur were detected. In $\\mathrm { T i O } _ { 2 } – 4 0 0 , 3 . 7 9 \\%$ wt of S were quantitatively determined by ICP-MS [47]. With higher calcination temperature, the S content decreased. $\\mathrm { T i O } _ { 2 }$ -600 and $\\mathrm { T i O } _ { 2 }$ -700 had $1 . 3 8 \\%$ wt and $0 . 1 2 \\%$ wt of S content. The decreased S content with increased calcination temperature indicated sulfate species decomposed at calcination. When sulfate species gradually decomposed above $2 0 0 ^ { \\circ } \\mathsf C$ , $S 0 _ { 3 }$ gas molecules were generated (Eqs. (1) & (2)). Calcined at $1 0 0 ^ { \\circ } \\mathsf C$ , $\\mathrm { T i O } _ { 2 }$ - 100 was white. But when they were calcined at 200 and $3 0 0 ^ { \\circ } \\mathsf C$ $\\mathrm { T i O } _ { 2 }$ -200 and $\\mathrm { T i O } _ { 2 }  – 3 0 0$ were yellowish. When the $S O _ { 3 }$ gas pressure was not high, $S 0 _ { 3 }$ molecules could be encapsulated and hold inside the $\\mathrm { T i O } _ { 2 }$ particles or be adsorbed on the particle surface. The encapsulated or adsorbed $S 0 _ { 3 }$ could be the reason why $\\mathrm { T i O } _ { 2 }$ -200 and $\\mathrm { T i O } _ { 2 }$ -300 were yellowish. When calcination temperature was higher than $4 0 0 ^ { \\circ } \\mathsf C$ , the catalysts were white again implying the removal of $S 0 _ { 3 }$ from the encapsulation or the surface. At higher calcination temperature, the $S 0 _ { 3 }$ gas pressure was high enough to break through the surrounded $\\mathrm { T i O } _ { 2 }$ and created mesopores (Fig. 11). This explained why $\\mathrm { T i O } _ { 2 }  – 5 0 0$ , $\\mathrm { T i O } _ { 2 }$ -600 and $\\mathrm { T i O } _ { 2 }$ -600- 3 had more mesopores than $\\mathrm { T i O } _ { 2 }$ -400, $\\mathrm { T i O } _ { 2 }$ -300, $\\mathrm { T i O } _ { 2 }$ -200 and $\\mathrm { T i O } _ { 2 }$ -100. When the calcination temperature further went up to be closer to $7 0 0 { - } 8 0 0 ^ { \\circ } C$ (the anatase-to-rutile phase transformation range), the mesopores might collapse causing decrease of mesopore volume. The proposed mechanism of the mesopore formation as described above is illustrated in Fig. 11. Evidences from catalyst color, mesopore volume and S content supported the proposed mesopore formation mechanism. ",
+        "bbox": [
+            70,
+            819,
+            494,
+            938
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            524,
+            68,
+            946,
+            330
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.2. Pore-molecule interaction ",
+        "text_level": 1,
+        "bbox": [
+            524,
+            358,
+            712,
+            370
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Spectroscopic evidences from fluorescence and FTIR spectrum proved that fluorescein molecules could go into and come out from the mesopores of the $\\mathrm { T i O } _ { 2 }$ catalysts. Photocatalytic degradation of the encapsulated fluorescein molecules and decreased activity of the mesopore-sealed $\\mathrm { T i O } _ { 2 }$ catalyst implied strong interactions between the mesopores and fluorescein molecules or other substrates. There were 4 possible interactions between fluorescein molecules and the mesopores of $\\mathrm { T i O } _ { 2 }$ : hydrogen-bonding, van der waals force, electrostatic force and charge (photo-generated electrons and holes) transfer (Fig. 12). H-bonding may exist between Ti OH groups and functional groups $( - 0 \\mathrm { H } , - 0$ , COOH, ${ \\mathsf { C } } { \\mathrm { - } } 0 { \\mathrm { - } } { \\mathsf { C } } $ and so on) of fluorescein molecules. Van der waals force was weak but may exist between fluorescein and $\\mathrm { T i O } _ { 2 }$ when they were close enough, such as in the case of adsorption. Electrostatic forces could be mainly attributed to the carboxylate groups and the protonated $\\mathrm { T i } { - } \\mathrm { O H } _ { 2 } { ^ + }$ . Charge transfer may exist between fluorescein and $\\mathrm { T i O } _ { 2 }$ or OH radical, which was supported by the photocatalytic degradation of encapsulated fluorescein molecules and decreased activity of the mesopore-sealed $\\mathrm { T i O } _ { 2 }$ catalyst. ",
+        "bbox": [
+            524,
+            384,
+            946,
+            634
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5. Conclusions ",
+        "text_level": 1,
+        "bbox": [
+            522,
+            662,
+            625,
+            674
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Mesopores were formed in $\\mathrm { T i O } _ { 2 }$ catalysts due to the decomposition of entrapped sulfate species during calcination. Calcined at $5 0 0 { - } 7 0 0 ^ { \\circ } C$ for $^ { 1 \\mathrm { h } }$ , $\\mathrm { T i O } _ { 2 }$ catalysts showed typical mesoporous $\\Nu _ { 2 }$ adsorption/desorption Type $_ { \\mathrm { I V } }$ isotherms. Evidences of mesopore formation mechanism were from the catalyst color, mesopore volume and S content. We developed and proved a novel two-phase approach to study the mass transfer and interactions between molecules and pores excluding external surface. Mass transfer between mesopores and fluorescein model molecules was evidenced by fluorescence and FTIR spectroscopy. Photocatalytic activities of the $\\mathrm { T i O } _ { 2 }$ catalysts correlated very well with their mesopore volumes but did not correlate well with their surface area. When mesopores of $\\mathrm { T i O } _ { 2 }$ -600 was sealed by chloroform, its photocatalytic activity for the degradation of organics in ROC decreased $2 3 . 3 2 \\%$ . Interactions between fluorescein molecules and mesopores were confirmed by the photocatalytic degradation of encapsulated fluorescein molecules and decreased activity of the mesopore-sealed $\\mathrm { T i O } _ { 2 }$ catalyst. There were four types of possible interactions between fluorescein molecules and the mesopores of $\\mathrm { T i O } _ { 2 }$ : hydrogen-bonding, van der waals force, electrostatic force and charge (photo-generated electrons and holes) transfer. ",
+        "bbox": [
+            524,
+            687,
+            947,
+            938
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            50,
+            68,
+            477,
+            93
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgements ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            108,
+            184,
+            121
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We acknowledge the financial support from the National University of Singapore, National Research Foundation and Economic Development Board (SPORE, COY-15-EWI-RCFSA/N197-1), and Ministry of Education (R-143-000-519-112 and R-143-000- 582-112). We thank the Shenzhen Development and Reform Commission (SZ DRC) for supporting our collaborative project with Peking University Shenzhen Graduate School. ",
+        "bbox": [
+            52,
+            134,
+            475,
+            225
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Appendix A. Supplementary data ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            240,
+            277,
+            253
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Supplementary data associated with this article can be found, in the online version, at 10.1016/j.apcatb.2016.06.023. ",
+        "bbox": [
+            53,
+            267,
+            477,
+            292
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            52,
+            307,
+            126,
+            320
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "[1] A. Perez-Gonzalez, A.M. Urtiaga, R. Ibanez, I. Ortiz, Water Res. 46 (2012) 267–283.   \n[2] X.H. Lin, D. Sriramulu, S.F.Y. Li, Water Res. 68 (2015) 831–838.   \n[3] X.Y. Li, L.W. Zhang, C.W. Wang, Advances in Environmental Science and Engineering, Pts 1-6, in: R. Iranpour, J. Zhao, A. Wang, F.L. Yang, X. Li (Eds.), Trans Tech Publications Ltd., Stafa-Zurich, 2012, pp. 3470–3475.   \n[4] P. Westerhoff, H. Moon, D. Minakata, J. Crittenden, Water Res. 43 (2009) 3992–3998.   \n[5] A.Y. Bagastyo, J. Keller, Y. Poussade, D.J. Batstone, Water Res. 45 (2011) 2415–2427.   \n[6] A.Y. Bagastyo, J. Radjenovic, Y. Mu, R.A. Rozendal, D.J. Batstone, K. Rabaey, Water Res. 45 (2011) 4951–4959.   \n[7] S. Ben Abdelmelek, J. Greaves, K.P. Ishida, W.J. Cooper, W.H. Song, Environ. Sci. Technol. 45 (2011) 3665–3671.   \n[8] J. Benner, E. Salhi, T. Ternes, U. von Gunten, Water Res. 42 (2008) 3003–3012.   \n[9] B.P. Chaplin, G. Schrader, J. Farrell, Environ. Sci. Technol. 44 (2010) 4264–4269.   \n[10] E. Dialynas, D. Mantzavinos, E. Diamadopoulos, Water Res. 42 (2008) 4603–4608.   \n[11] D. Hermosilla, N. Merayo, R. Ordonez, A. Blanco, Waste Manage. 32 (2012) 1236–1243.   \n[12] R.M. Huang, J.Y. He, J. Zhao, Q. Luo, C.M. Huang, Environ. Technol. 32 (2011) 515–522.   \n[13] L.Y. Lee, H.Y. Ng, S.L. Ong, G. Tao, K. Kekre, B. Viswanath, W. Lay, H. Seah, Water Res. 43 (2009) 4769–4777.   \n[14] K. Liu, F.A. Roddick, L.H. Fan, Water Res. 46 (2012) 3229–3239.   \n[15] J. Radjenouic, A. Bagastyo, R.A. Rozendal, Y. Mu, J. Keller, K. Rabaey, Water Res. 45 (2011) 1579–1586.   \n[16] C.X. Zhao, P. Gu, H.Y. Cui, G.H. Zhang, Water Res. 46 (2012) 218–226.   \n[17] T. Zhou, T.T. Lim, S.S. Chin, A.G. Fane, Chem. Eng. J. 166 (2011) 932–939.   \n[18] O. Carp, C.L. Huisman, A. Reller, Prog. Solid State Chem. 32 (2004) 33–177.   \n[19] A. Fujishima, X.T. Zhang, D.A. Tryk, Surf. Sci. Rep. 63 (2008) 515–582.   \n[20] J.M. Herrmann, Top. Catal. 34 (2005) 49–65.   \n[21] X. Li, P.W. Liu, Y. Mao, M.Y. Xing, J.L. Zhang, Appl. Catal. B-Environ. 164 (2015) 352–359.   \n[22] Y.Z. Wang, S.P. Zhu, X.R. Chen, Y.G. Tang, Y.F. Jiang, Z.G. Peng, H.Y. Wang, Appl. Surf. Sci. 307 (2014) 263–271.   \n[23] J.C. Yu, J.G. Yu, J.C. Zhao, Appl. Catal. B-Environ. 36 (2002) 31–43.   \n[24] D.M. Antonelli, J.Y. Ying, Angew. Chem. Int. Ed. Engl. 34 (1995) 2014–2017.   \n[25] J.S. Beck, J.C. Vartuli, W.J. Roth, M.E. Leonowicz, C.T. Kresge, K.D. Schmitt, C.T.W. Chu, D.H. Olson, E.W. Sheppard, S.B. McCullen, J.B. Higgins, J.L. Schlenker, J. Am. Chem. Soc. 114 (1992) 10834–10843.   \n[26] C.T. Kresge, M.E. Leonowicz, W.J. Roth, J.C. Vartuli, J.S. Beck, Nature 359 (1992) 710–712.   \n[27] J. Du, X.Y. Lai, N.L. Yang, J. Zhai, D. Kisailus, F.B. Su, D. Wang, L. Jiang, ACS Nano 5 (2011) 590–596.   \n[28] K. Naito, T. Tachikawa, M. Fujitsuka, T. Majima, J. Am. Chem. Soc. 131 (2009) 934.   \n[29] S. Ruhle, T. Dittrich, J. Phys. Chem. B 110 (2006) 3883–3888.   \n[30] J.D. Zhang, M. Oyama, Electrochem. Solid State Lett. 8 (2005) E49–E52.   \n[31] E.L. Crepaldi, G. Soler-Illia, D. Grosso, F. Cagnol, F. Ribot, C. Sanchez, J. Am. Chem. Soc. 125 (2003) 9770–9786.   \n[32] M.C. Kimling, D.H. Chen, R.A. Caruso, J. Mater. Chem. A 3 (2015) 3768–3776.   \n[33] C. Liu, Y.J. Li, P. Xu, M. Li, M.X. Zeng, Mater. Chem. Phys. 149 (2015) 69–76.   \n[34] L.J. Lu, F. Teng, SenTapas, D.Y. Qi, L.Z. Wang, J.L. Zhang, Appl. Catal. B-Environ. 163 (2015) 9–15.   \n[35] B.K. Mutuma, G.N. Shao, W.D. Kim, H.T. Kim, J. Colloid Interface Sci. 442 (2015) 1–7.   \n[36] M. Myilsamy, V. Murugesan, M. Mahalakshmi, J. Nanosci. Nanotechnol. 15 (2015) 4664–4675.   \n[37] W.J. Ren, Z.H. Ai, F.L. Jia, L.Z. Zhang, X.X. Fan, Z.G. Zou, Appl. Catal. B-Environ. 69 (2007) 138–144.   \n[38] H. Tong, N. Enomoto, M. Inada, Y. Tanaka, J. Hojo, Mater. Lett. 141 (2015) 259–262.   \n[39] J.M. Amarilla, E. Morales, J. Sanz, I. Sobrados, P. Tartaj, J. Power Sources 273 (2015) 368–374.   \n[40] D.H. Chen, F.Z. Huang, Y.B. Cheng, R.A. Caruso, Adv. Mater. 21 (2009) 2206-.   \n[41] S. Chowdhury, G.K. Parshetti, R. Balasubramanian, Chem. Eng. J. 263 (2015) 374–384.   \n[42] B.B. Hu, Q.W. Tang, B.L. He, L. Lin, H.Y. Chen, J. Power Sources 267 (2014) 445–451.   \n[43] S.G. Jeon, J.Y. Yang, K.W. Park, G.J. Kim, Bull. Korean Chem. Soc. 35 (2014) 3583–3589.   \n[44] J. Jin, S.Z. Huang, J. Liu, Y. Li, D.S. Chen, H.E. Wang, Y. Yu, L.H. Chen, B.L. Su, J. Mater. Chem. A 2 (2014) 9699–9708.   \n[45] D.A. Kotadia, S.S. Soni, Appl. Catal. A-Gen. 488 (2014) 231–238.   \n[46] M. Zukalova, A. Zukal, L. Kavan, M.K. Nazeeruddin, P. Liska, M. Gratzel, Nano Lett. 5 (2005) 1789–1792.   \n[47] X.H. Lin, S.F.Y. Li, Appl. Catal. B-Environ. 170–171 (2015) 263–272.   \n[48] X.H. Lin, S.F.Y. Li, Desalination 344 (2014) 206–211.   \n[49] X.H. Lin, S.N. Lee, W. Zhang, S.F.Y. Li, J. Hazard. Mater. 303 (2016) 64–75.   \n[50] K.S.W. Sing, D.H. Everett, R.A.W. Haul, L. Moscou, R.A. Pierotti, J. Rouquerol, T. Siemieniewska, Pure Appl. Chem. 57 (1985) 603–619.   \n[51] R.J. Lu, X. Xu, J.P. Chang, Y. Zhu, S.L. Xu, F.Z. Zhang, Appl. Catal. B-Environ. 111 (2012) 389–396.   \n[52] T. Ohno, M. Akiyoshi, T. Umebayashi, K. Asai, T. Mitsui, M. Matsumura, Appl. Catal. A-Gen. 265 (2004) 115–121. ",
+        "bbox": [
+            53,
+            331,
+            477,
+            634
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            502,
+            64,
+            929,
+            638
+        ],
+        "page_idx": 10
+    }
+]

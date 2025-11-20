@@ -1,0 +1,1909 @@
+[
+    {
+        "type": "text",
+        "text": "The Stack: 3 TB of permissively licensed source code ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            99,
+            658,
+            151
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Denis Kocetkov∗ ServiceNow Research ",
+        "bbox": [
+            116,
+            183,
+            254,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Raymond Li∗ ServiceNow Research ",
+        "bbox": [
+            116,
+            224,
+            256,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Loubna Ben Allal∗ Hugging Face ",
+        "bbox": [
+            116,
+            267,
+            267,
+            295
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jia Li Independent Researcher ",
+        "bbox": [
+            116,
+            309,
+            274,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chenghao Mou Independent Researcher ",
+        "bbox": [
+            117,
+            352,
+            274,
+            380
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Carlos Muñoz Ferrandis Hugging Face ",
+        "bbox": [
+            117,
+            395,
+            315,
+            422
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yacine Jernite Hugging Face ",
+        "bbox": [
+            116,
+            438,
+            235,
+            465
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Margaret Mitchell Hugging Face ",
+        "bbox": [
+            116,
+            479,
+            267,
+            507
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sean Hughes ServiceNow ",
+        "bbox": [
+            116,
+            522,
+            223,
+            550
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Thomas Wolf Hugging Face ",
+        "bbox": [
+            117,
+            565,
+            228,
+            593
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Dzmitry Bahdanau ServiceNow Research ",
+        "bbox": [
+            116,
+            607,
+            276,
+            635
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Leandro von Werra‡ Hugging Face ",
+        "bbox": [
+            116,
+            650,
+            284,
+            678
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Harm de Vries‡∗ ServiceNow Research ",
+        "bbox": [
+            116,
+            693,
+            254,
+            719
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract ",
+        "text_level": 1,
+        "bbox": [
+            460,
+            752,
+            537,
+            770
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Large Language Models (LLMs) play an ever-increasing role in the field of Artificial Intelligence (AI)–not only for natural language processing but also for code understanding and generation. To stimulate open and responsible research on LLMs for code, we introduce The Stack, a 3.1 TB dataset consisting of permissively licensed source code in 30 programming languages. We describe how we collect the full dataset, construct a permissively licensed subset, present a data governance plan, discuss limitations, and show promising results on text2code benchmarks by training 350M-parameter decoders on different Python subsets. We find that (1) near-deduplicating the data significantly boosts performance across all experiments, and (2) it is possible to match previously reported HumanEval and MBPP performance using only permissively licensed data. We make the dataset available at https://hf.co/BigCode, provide a tool called \"Am I in The Stack\" (https://hf.co/spaces/bigcode/in-the-stack) for developers to search The Stack for copies of their code, and provide a process for code to be removed from the dataset by following the instructions at https://www.bigcode-project.org/docs/about/the-stack/. ",
+        "bbox": [
+            173,
+            792,
+            823,
+            900
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            173,
+            103,
+            825,
+            208
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            233,
+            259,
+            251
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Large Language Models (LLMs) have emerged as a powerful tool for Natural Language Processing (NLP) (Brown et al., 2020; Bommasani et al., 2021; Zhang et al., 2022; Chowdhery et al., 2022; BigScience Workshop, 2022). These large transformer models are pre-trained on large internet corpora and have shown impressive zero and few-shot performance on numerous NLP tasks, often by prompting the model with a natural language description of the task at hand (Brown et al., 2020). More recently, researchers have started exploring LLMs for coding applications (Chen et al., 2021; Fried et al., 2022; Nijkamp et al., 2022). Code LLMs are trained on large collections of source code and enable the synthesis of programs from both natural language descriptions and other code snippets. Such models can assist professional developers with programming tasks, for example, by auto-completing code snippets, generating docstrings for a given function signature and body, or suggesting unit tests for a codebase. ",
+        "bbox": [
+            116,
+            265,
+            882,
+            416
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "One of the challenges faced by researchers working on code LLMs is the lack of openness and transparency around the development of these systems. While a handful of papers on code LLMs has been published, they do not always give full insight into the development process. Some research groups have made their code LLMs available through a paid API service (Chen et al., 2021) or a commercial product1. Other groups have published the model weights (Nijkamp et al., 2022; Fried et al., 2022) but did not release the training data. It is, therefore, difficult for researchers to fully reproduce these models because they first need to investigate the nuanced details of the data processing. For example, several groups have reported that (near) deduplication of the training data is an important preprocessing step for both natural language (Kandpal et al., 2022; Hernandez et al., 2022) and source code (Allamanis, 2019). Instead of letting research groups independently iterate over such preprocessing details, we argue that the research community would make progress faster if high-quality pre-training datasets, supported by data cards (Gebru et al., 2021; Bender & Friedman, 2018), were more broadly shared. ",
+        "bbox": [
+            114,
+            424,
+            882,
+            604
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We believe openness around the pre-training data is also important given the ongoing legal discussions around the use of open-source code repositories for training (commercial) LLMs. Some have argued that machine learning models are a derivative work of the training material, and that therefore the resulting models and inferred outputs must comply with the terms of any licenses on the training material. This argument has been made most forcefully by advocates of copyleft licenses (Kuhn, 2022), but has also been made for permissive licenses (Butterick, 2022). Others have taken the position that code LLM developers likely benefit from copyright law exceptions, such as fair use under U.S. copyright law, when using available code repositories for model training purposes (Rothchild & Rothchild, 2022). But even if regulations currently permit the use of public source code for training ML models, it is worth discussing whether these practices align with the ethical values of society and the broader research community. For example, one could argue that code creators should have the rights to meaningfully control whether their data is included in the training set (Jernite et al., 2022). One could also have ethical concerns around the inclusion of Personally Identifiable Information (PII) and malicious code in the training data, as code LLMs might output such sensitive data (Carlini et al., 2021; Kandpal et al., 2022) or unsafe programs (Khlaaf et al., 2022) during deployment. We believe open datasets benefit from external scrutiny in addressing such data issues, as researchers can investigate the dataset and report issues directly to the maintainers. ",
+        "bbox": [
+            116,
+            613,
+            882,
+            853
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this paper, we take a step towards open and responsible research on code LLMs and release The Stack, a large dataset of permissively licensed source code. By releasing a dataset that can be shared, inspected, and used for pre-training, we hope to make the LLM development process more reproducible and transparent. This work describes how we collected the data from Github and present evidence that the dataset is a useful resource for developing competitive code LLMs. More specifically, we make the following contributions: ",
+        "bbox": [
+            117,
+            862,
+            875,
+            892
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/9f8ab460de297233c0154dce9b15c74ee4ac2d8e6901558d57d6d45895881e2d.jpg",
+        "table_caption": [
+            "Table 1: The size of The Stack (in GB) compared to other source code datasets used for pre-training LLMs. $^ \\dagger$ indicates the dataset is publicly released. The Stack is more than three times the size of CodeParrot, the next-largest released code dataset. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Language</td><td>The Stack†</td><td>CodeParrot†</td><td>AlphaCode</td><td>CodeGen</td><td>PolyCoder†</td></tr><tr><td>Assembly</td><td>2.36</td><td>0.78</td><td></td><td></td><td></td></tr><tr><td>Batchfile</td><td>1.00</td><td>0.7</td><td></td><td></td><td></td></tr><tr><td>C</td><td>222.88</td><td>183.83</td><td></td><td>48.9</td><td>55</td></tr><tr><td>C#</td><td>128.37</td><td>36.83</td><td>38.4</td><td></td><td>21</td></tr><tr><td>C++</td><td>192.84</td><td>87.73</td><td>290.5</td><td>69.9</td><td>52</td></tr><tr><td>CMake</td><td>1.96</td><td>0.54</td><td></td><td></td><td></td></tr><tr><td>CSS</td><td>145.33</td><td>22.67</td><td></td><td></td><td></td></tr><tr><td>Dockerfile</td><td>1.95</td><td>0.71</td><td></td><td></td><td></td></tr><tr><td>FORTRAN</td><td>3.10</td><td>1.62</td><td></td><td></td><td></td></tr><tr><td>GO</td><td>118.37</td><td>19.28</td><td>19.8</td><td>21.4</td><td>15</td></tr><tr><td>Haskell</td><td>6.95</td><td>1.85</td><td></td><td></td><td></td></tr><tr><td>HTML</td><td>746.33</td><td>118.12</td><td></td><td></td><td></td></tr><tr><td>Java</td><td>271.43</td><td>107.7</td><td>113.8</td><td>120.3</td><td>41</td></tr><tr><td>JavaScript</td><td>486.20</td><td>87.82</td><td>88</td><td>24.7</td><td>22</td></tr><tr><td>Julia</td><td>3.09</td><td>0.29</td><td></td><td></td><td></td></tr><tr><td>Lua</td><td>6.58</td><td>2.81</td><td>2.9</td><td></td><td></td></tr><tr><td>Makefile</td><td>5.09</td><td>2.92</td><td></td><td></td><td></td></tr><tr><td>Markdown</td><td>164.61</td><td>23.09</td><td></td><td></td><td></td></tr><tr><td>Perl</td><td>5.50</td><td>4.7</td><td></td><td></td><td></td></tr><tr><td>PHP</td><td>183.19</td><td>61.41</td><td>64</td><td></td><td>13</td></tr><tr><td>PowerShell</td><td>3.37</td><td>0.69</td><td></td><td></td><td></td></tr><tr><td>Python</td><td>190.73</td><td>52.03</td><td>54.3</td><td>55.9 (217.3)</td><td>16</td></tr><tr><td>Ruby</td><td>23.82</td><td>10.95</td><td>11.6</td><td></td><td>4.1</td></tr><tr><td>Rust</td><td>40.35</td><td>2.68</td><td>2.8 4.1</td><td></td><td>3.5</td></tr><tr><td>Scala</td><td>14.87</td><td>3.87</td><td></td><td></td><td>1.8</td></tr><tr><td>Shell</td><td>8.69</td><td>3.01</td><td></td><td></td><td></td></tr><tr><td>SQL</td><td>18.15</td><td>5.67</td><td></td><td></td><td></td></tr><tr><td>TeX</td><td>4.65</td><td>2.15</td><td></td><td></td><td></td></tr><tr><td>TypeScript</td><td>131.46</td><td>24.59</td><td>24.90</td><td></td><td>9.20</td></tr><tr><td>Visual Basic</td><td>2.73</td><td>1.91</td><td></td><td></td><td></td></tr><tr><td>Total</td><td>3135.95</td><td>872.95</td><td>715.1</td><td>314.1</td><td>253.6</td></tr></table>",
+        "bbox": [
+            165,
+            98,
+            826,
+            611
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            116,
+            685,
+            882,
+            731
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• We present The Stack, a large dataset with 3.1 TB of permissively licensed source code in 30 programming languages. We release this dataset along with a near-deduplicated version at https: //hf.co/BigCode.   \n• We train 350M decoder-only transformers on several python subsets of the data and find that removing near-duplicates significantly boosts performance in all experiments. We show it is possible to reproduce text2code performance of Codex (Chen et al., 2021) and CodeGen (Nijkamp et al., 2022) by only using permissively licensed data. We outperform these models by a large margin if we train on the all-license version of the dataset.   \n• We acknowledge that some developers do not wish their code to be used for pre-training LLMs and, therefore, start experimenting with giving developers the possibility to have their data removed from ",
+        "bbox": [
+            155,
+            748,
+            885,
+            924
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "the dataset. We present the details of this opt-out process in a data governance plan in Section 3.2. We also provide further instructions for removal requests at https://www.bigcode-project.org/ docs/about/the-stack/. ",
+        "bbox": [
+            173,
+            103,
+            880,
+            147
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2 Related Work ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            178,
+            271,
+            195
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Code LLMs A growing body of research has trained large-scale transformer models on source code. Several groups have explored decoder-only models with a causal language modeling objective (Chen et al., 2021; Austin et al., 2021; Nijkamp et al., 2022; Christopoulou et al., 2022; Izadi et al., 2022; Xu et al., 2022) and generally found that larger models are increasingly capable of synthesizing programs from natural language descriptions. A few studies have used such decoder-only models for code-infilling tasks via a causal masking mechanism (Fried et al., 2022; Bavarian et al., 2022). Researchers have also investigated encoder masked language models (Feng et al., 2020; Kanade et al., 2020) and encoder-decoder architectures with various training objectives (Li et al., 2022; Ahmad et al., 2021; Wang et al., 2021; Roziere et al., 2021). ",
+        "bbox": [
+            116,
+            217,
+            882,
+            338
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Datasets for pre-training code LLMs GitHub has been a frequently used resource for pretraining largescale code LLMs. Google BigQuery $^ 2$ provides a snapshot of permissively licensed repositories on GitHub and can be filtered through a SQL query. AlphaCode (Li et al., 2022), BLOOM (Laurençon et al., 2022), CodeGen (Nijkamp et al., 2022), and InCoder (Fried et al., 2022) all included this resource in their pretraining dataset. A snapshot of this GitHub data is also publicly available on the HuggingFace hub $^ { 3 }$ as the GitHub-Code dataset under the CodeParrot project. PolyCoder (Xu et al., 2022) collected a code dataset by scraping GitHub repositories and released a catalog of their downloaded repositories and files. We compare our work against these code datasets in Table 1 and elaborate more on these differences in Section 3.3. ",
+        "bbox": [
+            114,
+            363,
+            882,
+            484
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Another frequently used resource is the CodeSearchNet corpus (Husain et al., 2019). This corpus first collected a large number of public and permissive repositories from GitHub, which were then further processed with treesitter $^ 4$ to extract pairs of functions (methods) and docstrings. The dataset contains such pairs for six programming languages: Go, Java, JavaScript, Python, PHP and Ruby. CodeBERT (Feng et al., 2020) and CodeT5 (Wang et al., 2021) used this dataset for pre-training. ",
+        "bbox": [
+            116,
+            492,
+            882,
+            568
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Some studies have reported results by training on non-public datasets. Codex (Chen et al., 2021) collected 179 GB of python files from 54M public GitHub repositories, but did not release the data nor disclose information regarding the licensing. CodeGen collected a private GitHub dataset of 217.3 GB of permissively licensed python files. They fine-tuned models on this dataset after pre-training on the Pile (Gao et al., 2020) and the GitHub snapshot on BigQuery. While CodeGen open-sourced the model weights, they did not release the private python dataset. ",
+        "bbox": [
+            116,
+            575,
+            882,
+            666
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Deduplication Recent studies have shown that deduplicating the training set can significantly improve the performance of LLMs. Lee et al. (2021) show that training corpora for language models contain many nearduplicates, and that LLM performance improves when long repetitive substrings are removed. Hernandez et al. (2022) also found that repeating even a small portion of the training data can significantly hurt model performance, potentially due to a fraction of its capacity being consumed by data memorization. Data duplication is even more present in code datasets, since it is common practice to reuse and clone code repositories of others. Indeed, Lopes et al. (2017) observed that a large proportion of GitHub data consists of clones, resulting in a high ratio of exact and near-duplicates. Allamanis (2019) study the effect of code duplication on machine learning models and show that it can result in highly inflated performance metrics. However, many existing code LLMs (Nijkamp et al., 2022; Xu et al., 2022; Li et al., 2022) only apply exact deduplication, which leaves a large number of near-duplicates in the training data. ",
+        "bbox": [
+            116,
+            691,
+            882,
+            858
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/5a511fae3c245847697bc22aa044077b9423eb9f68cef1672d5eb2e5fcf1b64e.jpg",
+        "table_caption": [
+            "Table 2: The top 20 detected licenses in the collected repositories. We took the highest confidence prediction per repository. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>SPDX identifier</td><td>Number of repos (in M)</td><td>Percentage</td></tr><tr><td>notf found</td><td>112.51</td><td>81.91</td></tr><tr><td>MIT</td><td>13.16</td><td>9.58</td></tr><tr><td>Apache-2.0</td><td>3.72</td><td>2.71</td></tr><tr><td>BSD-3-Clause</td><td>0.76</td><td>0.55</td></tr><tr><td>error</td><td>0.58</td><td>0.42</td></tr><tr><td>GPL-3.0-only</td><td>0.55</td><td>0.4</td></tr><tr><td>GPL-3.0-or-later</td><td>0.55</td><td>0.4</td></tr><tr><td>deprecated _GPL-3.0+</td><td>0.55</td><td>0.4</td></tr><tr><td>deprecated_ _GPL-3.0</td><td>0.55</td><td>0.4</td></tr><tr><td>GPL-3.0</td><td>0.52</td><td>0.38</td></tr><tr><td>Unlicense</td><td>0.38</td><td>0.28</td></tr><tr><td>CC0-1.0</td><td>0.29</td><td>0.21</td></tr><tr><td>GPL-2.0-or-later</td><td>0.28</td><td>0.2</td></tr><tr><td>deprecated_GPL-2.0</td><td>0.28</td><td>0.2</td></tr><tr><td>BSD-2-Clause</td><td>0.24</td><td>0.17</td></tr><tr><td>CC-BY-4.0</td><td>0.2</td><td>0.15</td></tr><tr><td>CC-BY-3.0</td><td>0.13</td><td>0.1</td></tr><tr><td>GPL-2.0</td><td>0.11</td><td>0.08</td></tr><tr><td>MPL-2.0</td><td>0.1</td><td>0.07</td></tr><tr><td>AGPL-3.0</td><td>0.09</td><td>0.06</td></tr></table>",
+        "bbox": [
+            238,
+            101,
+            758,
+            434
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3 Dataset ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            492,
+            220,
+            508
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We describe how we collect the code dataset and create permissively licensed and near-deduplicated subsets in Section 3.1. We present a data governance plan in Section 3.2 and further analyze the data in Section 3.3. ",
+        "bbox": [
+            119,
+            525,
+            882,
+            556
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3.1 Dataset Creation ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            574,
+            285,
+            589
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Dataset Collection We first collected a set of active GitHub repository names from GHArchive5, an open-source project working on archiving and releasing the public GitHub timeline. Note that these archives only contain GitHub events, such as forking a repository and commenting on an issue, and not the code repositories. We extracted unique repository names from the event archives published between January 1st, 2015 and March 31st, 2022. This resulted in a list of 220.92M unique repository names. Next, we ran a distributed compute cluster for a couple of months to clone this list of repositories. We did not successfully download all of these repositories because some of them were deleted or made private. In the end, we successfully downloaded 137.36M repositories, resulting in a clone success rate of over $6 2 \\%$ . All repositories were downloaded between November 2021 and June 2022. ",
+        "bbox": [
+            116,
+            602,
+            882,
+            738
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Note that we do not store binary files as we cannot use this data for pre-training. We provide the exact list of excluded binary file extensions in Appendix C. We also do not store files larger than 1 MB except if the extension is from an approved list of programming language extensions. See Appendix D for the full list. Furthermore, we avoid storing exact file duplicates by using git hashes. All repositories contain 51.76B files, but only 5.28B of them are unique (i.e., slightly more than $1 0 \\%$ ). The uncompressed size of all stored files is 92.36 TB. ",
+        "bbox": [
+            114,
+            746,
+            882,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "License detection We describe how we extract license information for each repository. GHArchive provides license information when the repository owner explicitly sets the code license through the web interface. We find that licenses from GHArchive are available for 26.4M repositories. For the remaining 110.9M repositories, we run the go-license-detector6. This detector scans the repository and returns a list of predictions with the associated file, the SPDX license identifier7, and a confidence score. We found that the detector did not detect a license for more than 80% of the repositories. MIT and Apache 2.0 are the most frequently detected licenses for $9 . 6 \\%$ and 2.7% of the total repositories, respectively. We present the top-20 predicted SPDX identifiers in Table 2. ",
+        "bbox": [
+            116,
+            853,
+            882,
+            898
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            116,
+            103,
+            882,
+            179
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Permissive license dataset We develop a dataset of source code with only permissive licenses, i.e., with minimal restrictions on how the software can be copied, modified, and redistributed. We first provide the list of licenses which we classified as permissive in Appendix A. Note that we intentionally exclude copyleft licenses like GPL, as this community has strongly expressed the concern of machine learning models and inferred outputs violating the terms of their licenses Kuhn (2022). ",
+        "bbox": [
+            116,
+            194,
+            882,
+            270
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "After running all our experiments, it was brought to our attention that licenses such as MPL, LGPL, and EPL were erroneously labeled as permissive when they are in fact weak copyleft licenses. We have removed these weak copyleft license files from The Stack and will release the updated version to the community. The weak copyleft-licensed data is only a small part of the overall dataset (below 0.5% for the Python subset), hence we decided to not rerun experiments as we expect findings to remain unchanged. For the new version of The Stack, we rely on the Blue Oak Council $^ 8$ to classify the set of permissive licenses - see Appendix B for the full list and the updated programming language statistics. ",
+        "bbox": [
+            116,
+            277,
+            882,
+            383
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "One challenge in compiling the permissive license dataset is that each file might be part of multiple repositories. We opt to include a file in the permissive license dataset if at least one the repositories containing the file has a permissive license. With this procedure, we keep permissively-licensed files that were copied into non-permissively licensed repositories. However, it is possible that non-permissively licensed files are part of the dataset if a developer erroneously copied a non-permissively licensed file into a permissively licensed repository. We encourage users of the dataset to report files that might have been misclassified as permissively licensed. ",
+        "bbox": [
+            114,
+            390,
+            882,
+            496
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We mark an individual repository as permissive by using the list of license predictions as follows. We first take the highest confidence prediction for each separate file that the license detector flags as a potential license. We then check whether all predictions are permissive licenses (see the list in A). If so, we classify the repository as permissive. Additionally, empty files, files larger than 1 MB, and files that could not be decoded are removed from the dataset. Finally, we point out that we give developers the opportunity to have their data removed from this dataset by following the instructions at https://www.bigcode-project. org/docs/about/the-stack/. ",
+        "bbox": [
+            116,
+            503,
+            882,
+            609
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Near-deduplication We implement near-deduplication $^ { 9 }$ in our pre-processing pipeline on top of exact deduplication. We first split the files into words/tokens based on non-alphanumeric characters and remove files with fewer than 10 tokens. Next, we compute the MinHash (Broder, 2000; Lee et al., 2021) with 256 permutations of all documents, and use Locality Sensitive Hashing (Har-Peled et al., 2012) to find clusters of duplicates. We further reduce these clusters by ensuring that each file in the original cluster is similar to at least one other file in the reduced cluster. We consider two files similar when their Jaccard similarity exceeds 0.85. We find that in the permissive license dataset, $3 8 . 6 \\%$ of the files are just near-duplicates of other files and are removed, they also represent $5 3 . 7 \\%$ of the volume of the dataset. See Table 3 for a breakdown per programming language. ",
+        "bbox": [
+            114,
+            625,
+            882,
+            762
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.2 Data Governance ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            779,
+            287,
+            794
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "One of the goals of this project is to give developers agency over their source code and let them decide whether or not it can be used to develop and evaluate LLMs, as we acknowledge that not all developers may wish to have their data used for that purpose. Our first step to that end was to select source code with permissive licenses, i.e. those with minimal restrictions on how the software can be copied, modified and redistributed (see Section 3.1). In addition, we are giving developers the ability to have their code removed from the dataset upon request. The process for submitting and enacting removal requests will keep evolving throughout the project as we receive feedback and build up more data governance tools. The following FAQ presents the current state of this process, as well as the planned next steps. ",
+        "bbox": [
+            117,
+            805,
+            879,
+            866
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/22f329b893fa390deed5e16caec9b5c4e92a9d36226a2cedac5e92a378c249d3.jpg",
+        "table_caption": [
+            "Table 3: An overview of the amount of data we collected for 30 popular programming languages. We show the size and number of files for different splits of the data: the all-license, permissive license, and permissive license with near-deduplication. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Language</td><td rowspan=\"2\">All-licenses Size e (GB)</td><td rowspan=\"2\">Files (M)</td><td rowspan=\"2\">Permissive Size (GB)</td><td colspan=\"3\">Perm.+</td></tr><tr><td>Files (M)</td><td>Size (GB)</td><td>near-dedup Files (M)</td></tr><tr><td>Assembly</td><td>36.04</td><td>1.34</td><td>2.36</td><td>0.32</td><td>1.55</td><td>0.24</td></tr><tr><td>Batchfile</td><td>31.05</td><td>2.82</td><td>1.00</td><td>0.42</td><td>0.33</td><td>0.28</td></tr><tr><td>C</td><td>1461.23</td><td>95.57</td><td>222.88</td><td>19.88</td><td>73.21</td><td>10.95</td></tr><tr><td>C#</td><td>644.28</td><td>105.96</td><td>128.37</td><td>20.54</td><td>56.75</td><td>12.79</td></tr><tr><td>C++</td><td>1106.54</td><td>62.72</td><td>192.84</td><td>13.54</td><td>185.60</td><td>7.23</td></tr><tr><td>CMake</td><td>11.25</td><td>3.59</td><td>1.96</td><td>0.56</td><td>0.68</td><td>0.25</td></tr><tr><td>CSS</td><td>1040.53</td><td>50.47</td><td>145.33</td><td>5.73</td><td>35.60</td><td>3.54</td></tr><tr><td>Dockerfile</td><td>3.89</td><td>3.74</td><td>1.95</td><td>1.27</td><td>0.55</td><td>0.65</td></tr><tr><td>FORTRAN</td><td>26.67</td><td>1.21</td><td>3.10</td><td>0.24</td><td>1.77</td><td>0.17</td></tr><tr><td>GO</td><td>271.92</td><td>23.34</td><td>118.37</td><td>12.08</td><td>34.87</td><td>6.17</td></tr><tr><td>Haskell</td><td>15.79</td><td>2.06</td><td>6.95</td><td>0.92</td><td>3.29</td><td>0.64</td></tr><tr><td>HTML</td><td>9491.23</td><td>267.81</td><td>746.33</td><td>32.31</td><td>279.37</td><td>15.55</td></tr><tr><td>Java</td><td>1311.99</td><td>279.16</td><td>271.43</td><td>43.01</td><td>119.19</td><td>26.05</td></tr><tr><td>JavaScript</td><td>5820.23</td><td>209.51</td><td>486.20</td><td>39.28</td><td>220.94</td><td>25.22</td></tr><tr><td>Julia</td><td>21.75</td><td>0.88</td><td>3.09</td><td>0.47</td><td>1.78</td><td>0.34</td></tr><tr><td>Lua</td><td>88.39</td><td>5.18</td><td>6.58</td><td>0.81</td><td>3.60</td><td>0.58</td></tr><tr><td>Makefi le</td><td>39.36</td><td>6.34</td><td>5.09</td><td>1.09</td><td>1.69</td><td>0.62</td></tr><tr><td>Markdown</td><td>706.8</td><td>135.69</td><td>164.61</td><td>28.97</td><td>73.09</td><td>20.91</td></tr><tr><td>Perl</td><td>49.21</td><td>2.74</td><td>5.50</td><td>0.55</td><td>2.16</td><td>0.31</td></tr><tr><td>PHP</td><td>779.66</td><td>115.53</td><td>183.19</td><td>34.18</td><td>90.21</td><td>22.65</td></tr><tr><td>PowerShell</td><td>13.26</td><td>1.39</td><td>3.37</td><td>0.52</td><td>1.66</td><td>0.33</td></tr><tr><td>Python</td><td>737.89</td><td>106.91</td><td>190.73</td><td>23.58</td><td>80.38</td><td>15.03</td></tr><tr><td>Ruby</td><td>78.63</td><td>30.74</td><td>23.82</td><td>6.39</td><td>22.39</td><td>4.12</td></tr><tr><td>Rust</td><td>78.97</td><td>6.3</td><td>40.35</td><td>3.09</td><td>13.65</td><td>1.73</td></tr><tr><td>Scala</td><td>28.37</td><td>6.06</td><td>14.87</td><td>2.64</td><td>6.04</td><td>1.55</td></tr><tr><td>Shell</td><td>71.56</td><td>14.01</td><td>8.69</td><td>3.66</td><td>3.98</td><td>2.49</td></tr><tr><td>SQL</td><td>1438.73</td><td>10.2</td><td>18.15</td><td>1.27</td><td>11.47</td><td>1.00</td></tr><tr><td>TeX</td><td>69.4</td><td>4.01</td><td>4.65</td><td>0.45</td><td>3.56</td><td>0.38</td></tr><tr><td>TypeScript</td><td>4145.01</td><td>75.8</td><td>131.46</td><td>19.44</td><td>120.19</td><td>12.90</td></tr><tr><td>Visual Basic</td><td>28.57</td><td>1.97</td><td>2.73</td><td>0.2</td><td>1.20</td><td>0.12</td></tr><tr><td>Total</td><td>29648.2</td><td>1633.05</td><td>3135.95</td><td>317.41</td><td>1450.75</td><td>194.79</td></tr></table>",
+        "bbox": [
+            174,
+            98,
+            826,
+            623
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            116,
+            695,
+            882,
+            757
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "How do I know my data is in The Stack? We have a developed a tool to help users understand whether their data is in The Stack. See https://hf.co/spaces/bigcode/in-the-stack. ",
+        "bbox": [
+            116,
+            772,
+            877,
+            803
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "How can I request that my data be removed from The Stack? In order to request that data from your repositories be removed from The Stack, we ask that you first fill out the following form with your GitHub username and the email address associated with your git activity. After submitting the form, we will invite you to a private repository on the BigCode organization and ask you to open an issue with the topic “remove my Github repositories from The Stack”. This will verify your Github username and we will mark all public repositories under your username for removal in the next dataset release cycle. The verification process is manual at the moment but we are looking into ways to fully automate it. ",
+        "bbox": [
+            116,
+            818,
+            882,
+            924
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "What data can I request be removed from The Stack? Currently, you can request that we remove all public repositories under the provided username. In future work, we will expand the scope of data removal requests to address requests at a finer granularity (specific repositories, specific files) and to a greater range of contribution types (for example, based on whether a file or repository contains push events associated with your username according to GHArchive). ",
+        "bbox": [
+            116,
+            103,
+            882,
+            179
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Can I also prevent my data from being included in future versions of The Stack? The removal request form will be used to validate removal requests and remove appropriate data. Validated requests and associated code pointers will also be stored in order to ensure that the code does not appear in future versions of The Stack. ",
+        "bbox": [
+            116,
+            194,
+            882,
+            253
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "What happens to my data once I have requested its removal? For as long as we are maintaining The Stack dataset, we will provide regular updates to the dataset to remove data that has been flagged since the last version. The current plan is to update the dataset every 3 months, although the schedule may change based on the volume of requests received. If we are not in a position to continue maintaining the dataset, we plan to stop distributing it in its current format and update its terms of use to limit its range of applications further, including for training new LLMs. Finally, we require that people who download the dataset agree to use the most recent allowed version in order to incorporate the removal requests. ",
+        "bbox": [
+            116,
+            270,
+            882,
+            375
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3.3 Dataset Analysis ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            392,
+            282,
+            407
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To gain more insight into the collected dataset, we first analyze the amount of data per programming language, then compare against other code datasets, and finally present a more extensive analysis on the python subset. ",
+        "bbox": [
+            116,
+            419,
+            882,
+            464
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Data per programming language We present the amount of data available for 30 programming languages in Table 3. We see that the all-license dataset contains over 29 TB of data. Only selecting permissively licensed files reduces the dataset to 3.1 TB, i.e. only roughly 10% of the dataset is kept. For certain programming languages (e.g. SQL, Batchfile, TypeScript), we find that less than 4% of data has a permissive license. We might be able to increase this percentage by adding more licenses to the permissive licenses list (see Appendix A. If we further apply near-deduplication to the permissive license dataset, we end up with 1.4 TB, a reduction of more than 50%. For example, only 37% of HTML is kept when we near-duplicate this data. As can be seen in Figure 1, there are a few programming languages that make up the majority of the dataset. For the permissive license dataset, the four biggest languages–HTML (746 GB), Javascript (486 GB), Java (271 GB), and C (222 GB)–consume more than 55% of the dataset size. ",
+        "bbox": [
+            116,
+            479,
+            882,
+            631
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Comparison with other code datasets We compare The Stack with CodeParrot $^ { 1 0 }$ , AlphaCode(Li et al., 2022), CodeGen(Nijkamp et al., 2022), PolyCoder(Xu et al., 2022) in Table 1. Note that AlphaCode and CodeGen did not release their data but provided statistics on the amount of data per programming language. It is also worth mentioning that CodeParrot includes files with a copyleft license (e.g. GPL) while our permissive license dataset does not. PolyCoder does not filter for license information and also likely contains files with copyleft license. While The Stack and CodeParrot provide source code for 30 programming languages, AlphaCode, PolyCoder, and CodeGen only provide data for 12, 12, and 6 of the languages, respectively. Furthermore, we observe that our dataset is more than 3x the size of CodeParrot, the next largest publicly available code dataset. We also see that our dataset is bigger in size than CodeParrot for each individual programming language. ",
+        "bbox": [
+            114,
+            646,
+            882,
+            797
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Python subset analysis First, we investigate how many configuration and test files are in the Python subset of the permissive license dataset. These config files are abundant in GitHub repositories but do not capture the complex features of source code. To detect them, we look for mentions of keywords such as \"configuration file\" and \"test file\" in the first 5 lines. If these keywords are not present, we see if the occurrence number of either config or test literals is higher than 5% of the number of lines in the file. This filter selects $1 5 \\%$ of the files which represent $2 3 \\%$ of the data by volume. ",
+        "bbox": [
+            116,
+            813,
+            882,
+            902
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/a26f795e79e818cf1c7571fdcbc3cdf90453d7ff517b07ac19b8094715e33fbb.jpg",
+        "image_caption": [
+            "Figure 1: Histogram of the amount of data per programming language for the permissive license dataset. Note that we plot the dataset size on a log scale. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            122,
+            90,
+            875,
+            392
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/b740e12bcfd57826b45d20675ff6e9d8502c848d92e5aad46388a465611ac88f.jpg",
+        "image_caption": [
+            "Figure 2: Histogram of natural languages in docstrings and comments from 10,000 Python files. Note that we plot the number of files on a log scale. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            122,
+            468,
+            875,
+            753
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Next, we estimate the number of valid Python files by using the py_compile module on 10,000 samples from our dataset. We find that only 0.7% of the files do not compile due to syntax errors. Specifically, we find that around $0 . 1 \\%$ of the Python files had tokenization errors (e.g., due to inconsistent use of tabs and spaces). ",
+        "bbox": [
+            114,
+            825,
+            882,
+            886
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Finally, we analyze the docstrings and comments in the files. This data is essential for applications such as documentation generation and natural language to code translation (Chen et al., 2021; Feng et al., 2020). ",
+        "bbox": [
+            114,
+            893,
+            877,
+            924
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We analyze a subset of 10,000 files. We first use the ast and tokenize modules to extract docstrings and comments. We find that they make up $1 8 \\%$ of the volume of the subset and that $2 0 \\%$ of the files had little (less than 20 characters) to no natural text. ",
+        "bbox": [
+            116,
+            103,
+            882,
+            148
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To identify the language of the extracted docstrings and comments, we use a model from the fasttext library11. We find that 94% of the files are in English. Among the other languages, Chinese and French are popular with over 100 samples. We show the full distribution of natural languages in Figure 2. It is important to note that this language detection is imperfect since docstrings often include code examples with English keywords. ",
+        "bbox": [
+            116,
+            156,
+            882,
+            231
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4 Experiments ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            251,
+            259,
+            268
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To better understand the quality of the collected dataset, we investigate the performance of transformer models trained from scratch on several versions of the python subset. We evaluate the models on HumanEval (Chen et al., 2021) and MBPP (Austin et al., 2021) and compare against CodeGen (Nijkamp et al., 2022), InCoder (Fried et al., 2022), and Codex (Chen et al., 2021) models of similar size. We discovered late in the research process that some of the pretraining sets were contaminated with examples from the evaluation benchmarks. As running experiments is expensive and takes long, we decided to re-run only a few experiments to investigate the impact of the data contamination. In addition, we did not rerun experiments after finding out a labelling mistake in the permissive licenses (see Appendix A for full details). The results we present for permissively licensed Python data, therefore, do contain a small fraction (less than $0 . 5 \\%$ ) of weak copyleft licensed data. However, we think our main findings remain unchanged. ",
+        "bbox": [
+            114,
+            284,
+            882,
+            434
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.1 Experimental setup ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            453,
+            302,
+            468
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Datasets We experiment with 4 versions of our python dataset, as well as the python subset of CodeParrot. For our datasets we either use python files from all repositories (all-license) or from repositories with permissive licenses (permissive-license). To this data we either apply near-deduplication (near-dedup) or no further filtering (none). It is worth stressing that the near deduplication process is on top of the exact deduplication that we applied during the dataset collection. For CodeParrot we only experiment with the near-deduplicated version12. ",
+        "bbox": [
+            114,
+            479,
+            882,
+            569
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For all datasets, we follow the filtering methods of Codex (Chen et al., 2021) and remove files with: ",
+        "bbox": [
+            109,
+            577,
+            828,
+            593
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "• an average line length greater than 100 characters   \n• a maximum line length above 1,000 characters   \n• less than 25% of the characters being alphanumeric characters   \n• keywords in the first few lines of the file indicating that the file was likely automatically generated ",
+        "bbox": [
+            151,
+            609,
+            880,
+            704
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Data contamination After training the models, we found that some of the training sets contained examples from the evaluation benchmarks. We detected this contamination issue by searching for exact string matches of the natural language prompts of HumanEval and MBPP. Table 4 shows how many contaminated files were found for each of the subsets. All our subsets contain HumanEval examples but only the python-all-license subsets contain MBPP examples. To investigate the impact of the data contamination, we rerun experiments on the near-deduplicated versions of the python-all-license and python-permissive-license datasets. To this end, we remove the contaminated files from these datasets. Note that we only eliminate files with exact copies of the prompts and thus do not detect paraphrases. ",
+        "bbox": [
+            114,
+            722,
+            882,
+            843
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Evaluation We evaluate models on the HumanEval (Chen et al., 2021) and MBBP (Austin et al., 2021) benchmarks. HumanEval is a text2python benchmark containing 164 programming problems. Each problem ",
+        "bbox": [
+            116,
+            858,
+            880,
+            890
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/59b7e85c0b7000dcfd7b337c5baa60dd1bc86a38e7aaa12028fff36de947397e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dataset</td><td>Filter</td><td>HumanEval</td><td>MBPP</td></tr><tr><td>Python-all-license</td><td>None</td><td>338</td><td>1</td></tr><tr><td rowspan=\"3\">Python-permissive-license</td><td>Near-dedup</td><td>291</td><td>1</td></tr><tr><td>None</td><td>336</td><td>0</td></tr><tr><td>Near-dedup</td><td>292</td><td>0</td></tr><tr><td>CodeParrot</td><td>Near-dedup</td><td>0</td><td>0</td></tr></table>",
+        "bbox": [
+            254,
+            101,
+            736,
+            208
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Table 4: Data contamination per training set. We report the number of files in which we find a natural language prompt of a test example. ",
+        "bbox": [
+            116,
+            224,
+            882,
+            255
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "consists of a function signature, docstring, body, and some test cases that allow to verify the correctness of the generated program. Models are evaluated with the pass $@ k$ metric: $k$ samples are generated for each problem, a problem is solved if at least one of the samples passes the test cases, and the total fraction of problem solved is measured. In practice, we sample 200 programs for each problem, and estimate pass $@ k$ as proposed by Chen et al. (2021). We use nucleus sampling with top- $p = 0 . 9 5$ , temperature $T \\in \\{ 0 . 2 , 0 . 8 \\}$ and report the pass $@ k$ for the best temperature. ",
+        "bbox": [
+            114,
+            270,
+            882,
+            361
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We also evaluate on MBPP (Austin et al., 2021), a text2python benchmark consisting of crowdsourced programming problems. Each problem consists of a short natural language description and 3 unit tests. We evaluate on the test set of 500 examples. While Austin et al. (2021) include all three unit tests in the prompt, Fried et al. (2022) only include a single unit test because they observed that smaller language models (i.e., with a few billion parameters) did not benefit from more unit tests. We follow Fried et al. (2022) and only add the first unit test to the natural language prompt. Besides pass@1, we also evaluate pass@10 and pass $@ 1 0 0$ by sampling 200 programs for each problem. Similarly to HumanEval, we use nucleus sampling with top- $p = 0 . 9 5$ , temperature $T \\in \\{ 0 . 2 , 0 . 8 \\}$ and report the scores for the best temperature. ",
+        "bbox": [
+            116,
+            367,
+            882,
+            489
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Training details We experiment with decoder-only transformers trained via a causal language modeling objective. We opt for a 350M parameter model with 24 layers, a hidden dimension of 1024, 16 attention heads, and a sequence length of 2048. The model is trained for 300K iterations with a global batch size of 384 using Adam (Kingma & Ba, 2015) with $\\beta _ { 1 } = 0 . 9$ , $\\beta _ { 2 } = 0 . 9 5$ , $\\epsilon = 1 0 ^ { - 8 }$ and a weight decay of 0.1. The learning rate set to $3 \\times 1 0 ^ { - 4 }$ is warmed up for 175 steps, then follows a cosine decay. The model processes 235.9B tokens during training. The Byte-Pair Encoding tokenizer was trained on a 50-50 mixture of the Pile (Gao et al., 2020) and Python files from The Stack. We use a fork $^ { 1 3 }$ of Megatron-LM (Shoeybi et al., 2019) for training. ",
+        "bbox": [
+            116,
+            505,
+            882,
+            626
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "4.2 Discussion of results ",
+        "text_level": 1,
+        "bbox": [
+            117,
+            643,
+            310,
+            659
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We report the HumanEval and MBPP results in Table 5 and 6, respectively. ",
+        "bbox": [
+            117,
+            670,
+            660,
+            685
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Near-deduplication improves performance Applying near-deduplication to the training data yields a dramatic improvement, on both the all-license and permissive-license datasets. On the permissive-license dataset, near-deduplication improves HumanEval performance from $2 7 . 2 1 \\%$ to $3 7 . 0 0 \\%$ pass@100 and MBPP performance from $4 4 . 9 9 \\%$ to $5 4 . 6 9 \\%$ pass@100. We see a similar boost in results for the all-license dataset, where HumanEval performance improves from 36.67% to $4 4 . 0 0 \\%$ pass@100 and MBPP performance from $5 3 . 5 9 \\%$ to $6 1 . 0 0 \\%$ pass $@ 1 0 0$ . ",
+        "bbox": [
+            116,
+            703,
+            882,
+            792
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Reproducing performance with permissive licenses We are able to reproduce text2python results of previous work with only permissively licensed source code. On HumanEval, we observe that, without near-deduplication, the performance of the permissive license dataset (27.21% pass@100) is significantly below Codex (36.27% pass $@ 1 0 0$ ) and CodeGen(35.19% pass@100). However, we match Codex and CodeGen performance after applying near-deduplication (37.00% pass@100). On MBPP, we observe similar findings. Without near-deduplication, the performance of the python-permissive dataset (44.99% pass@100) is significantly below CodeGen (51.80% pass@100). However, the near-deduplicated version $( 5 4 . 6 9 \\%$ pass@100) surpasses the CodeGen results. ",
+        "bbox": [
+            116,
+            809,
+            882,
+            900
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/9ddd0943cf5b89829430a4bf49404ed2ccaf66a092f0180ac51737c1e2d2a5ef.jpg",
+        "table_caption": [
+            "Table 5: HumanEval performance of a 350M model on different training sets. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dataset</td><td>Filtering</td><td>Pass@1</td><td>Pass@10</td><td>Pass@100</td></tr><tr><td>Codex (300M)</td><td></td><td>13.17</td><td>20.17</td><td>36.27</td></tr><tr><td>CodeGen (350M)</td><td></td><td>12.76</td><td>23.11</td><td>35.19</td></tr><tr><td>Python all-license</td><td>None</td><td>13.11</td><td>21.77</td><td>36.67</td></tr><tr><td rowspan=\"5\">Python permissive-license</td><td>Near-dedup</td><td>16.60</td><td>27.82</td><td>44.00</td></tr><tr><td>+ Decontamination</td><td>17.34</td><td>27.64</td><td>45.52</td></tr><tr><td>None</td><td>10.99</td><td>15.94</td><td>27.21</td></tr><tr><td>Near-dedup</td><td>13.94</td><td>22.36</td><td>37.00</td></tr><tr><td>+ Decontamination</td><td>12.89</td><td>22.26</td><td>36.01</td></tr><tr><td>CodeParrot</td><td>Near-dedup</td><td>11.23</td><td>18.16</td><td>30.37</td></tr></table>",
+        "bbox": [
+            192,
+            101,
+            799,
+            273
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/b00391f7979f042a2d25674514aea9249f83593d19baf3a1f1c507e095632c8c.jpg",
+        "table_caption": [
+            "Table 6: MBPP performance of a 350M model on different training sets. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Model</td><td>Filtering</td><td>Pass@1</td><td>Pass@10</td><td>Pass@100</td></tr><tr><td>InCoder-1B</td><td></td><td>9.36</td><td>23.37</td><td>45.80</td></tr><tr><td>CodeGen (350M)</td><td></td><td>14.09</td><td>30.07</td><td>51.80</td></tr><tr><td>Python all-license</td><td>None</td><td>17.41</td><td>33.09</td><td>53.59</td></tr><tr><td rowspan=\"4\">Python permissive-license</td><td>Near-dedup</td><td>22.99</td><td>39.62</td><td>61.00</td></tr><tr><td>+ Decontamination</td><td>21.82</td><td>37.55</td><td>58.28</td></tr><tr><td>None</td><td>11.60</td><td>23.13</td><td>44.99</td></tr><tr><td>Near-dedup</td><td>15.94</td><td>31.70</td><td>54.69</td></tr><tr><td>CodeParrot</td><td>Near-dedup</td><td>6.31</td><td>21.50</td><td>45.44</td></tr></table>",
+        "bbox": [
+            192,
+            319,
+            799,
+            479
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            119,
+            527,
+            875,
+            558
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Comparison to CodeParrot We see that training on CodeParrot—another released code dataset— achieves 30.37% pass@100 on HumanEval, which is significantly below the performance of our released dataset (37.00% pass@100). On MBPP, CodeParrot also underperforms our released dataset (45.44% vs 54.69% pass@100). CodeParrot consists of data extracted from BigQuery and is not enough to obtain a competitive model on HumanEval and MBPP. ",
+        "bbox": [
+            116,
+            577,
+            882,
+            652
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Impact of data contamination Surprisingly, we find that removing contaminated files has very little impact on the text2python results. On HumanEval, there is very small drop for the permissive-license dataset $( 3 7 . 0 0 \\%$ vs $3 6 . 0 1 \\%$ pass@100), while there is a small gain for the all-license dataset (44.00% vs $4 5 . 5 2 \\%$ pass@100). We also see a small impact for the all-license dataset on MBPP (61.00% vs $5 8 . 2 8 \\%$ pass $@ 1 0 0$ ). We speculate that the impact of data contamination was minimal because (1) small models are unlikely to memorize training data and (2) there were few contaminated files. ",
+        "bbox": [
+            116,
+            671,
+            882,
+            762
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5 Conclusion and Future Work ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            782,
+            405,
+            801
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "We introduce The Stack, a large dataset of more than 3 TB of permissively licensed source code. This paper described the details of the dataset collection, presented a brief dataset analysis, and showed promising results on the HumanEval benchmark. Our experimental results show that near-deduplication is an important pre-processing step for achieving competitive results on text2code benchmarks. We release all permissively licensed files for 30 common programming languages, along with a near-deduplicated version. In future work, we would like to further improve the released dataset. We are open to releasing data of other programming languages, plan to work on methods for removing PII and malicious code, and start experimenting with giving developers the possibility to have their data removed from the dataset. We hope The Stack will be a useful resource for open and responsible research on Code LLMs. ",
+        "bbox": [
+            116,
+            818,
+            882,
+            924
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            117,
+            103,
+            883,
+            133
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgement We thank Christopher Akiki, Evgenii Zheltonozhskii, Sebastien Paquet, Torsten Scholak, and Luis Villa for their feedback on an early draft of this paper. We also thank Fanny Rancourt and Masoud Hashemi for help with the data cards. Lastly, we are grateful to ServiceNow and Hugging Face for the provided compute resources. ",
+        "bbox": [
+            116,
+            148,
+            882,
+            209
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "6 Limitations ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            101,
+            248,
+            118
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Social Impact of the Dataset The Stack is an output of the BigCode Project $^ { 1 4 }$ . BigCode aims to be responsible by design and by default. The project is conducted in the spirit of Open Science, focused on the responsible development of LLMs for code. ",
+        "bbox": [
+            116,
+            136,
+            882,
+            181
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "With the release of The Stack, we aim to increase access, reproducibility, and transparency of code LLMs in the research community. Work to de-risk and improve on the implementation of ethical best practices of code LLMs is conducted in various BigCode working groups. The Legal, Ethics, and Governance working group has explored topics such as licensing (including copyleft and the intended use of permissively licensed code), attribution of generated code to original code, rights to restrict processing, the inclusion of Personally Identifiable Information (PII), and risks of malicious code, among other topics. This work is ongoing as of October 25th, 2022. ",
+        "bbox": [
+            116,
+            189,
+            883,
+            295
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We expect code LLMs to enable people from diverse backgrounds to write higher quality code and develop low-code applications. Mission-critical software could become easier to maintain as professional developers are guided by code-generating systems on how to write more robust and efficient code. While the social impact is intended to be positive, the increased accessibility of code LLMs comes with certain risks such as over-reliance on the generated code and long-term effects on the software development job market. ",
+        "bbox": [
+            116,
+            303,
+            882,
+            377
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We refer the reader to Section 7 of Chen et al. (2021) for a broader impact analysis of Code LLMs, as well as Khlaaf et al. (2022) for an in-depth risk assessment and hazard analysis of this emerging technology. ",
+        "bbox": [
+            114,
+            385,
+            880,
+            415
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Biases of the Dataset The code collected from GitHub does not contain demographic information or proxy information about the demographics. However, it is not without risks, as the comments within the code may contain harmful or offensive language, which could be learned from the models. ",
+        "bbox": [
+            116,
+            434,
+            882,
+            479
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Widely adopted programming languages like C and Javascript are overrepresented compared to niche programming languages like Julia and Scala. We found that some programming languages such as SQL, Batchfile, TypeScript are less likely to be permissively licensed ( $4 \\%$ vs the average $1 0 \\%$ ). This may result in a biased representation of those languages. Permissively licensed files also tend to be longer. ",
+        "bbox": [
+            116,
+            487,
+            882,
+            547
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We also found that the English language is over represented in the docstrings and comments, as it makes up $9 6 \\%$ of the data for Python files. ",
+        "bbox": [
+            117,
+            556,
+            875,
+            585
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "HTML not WCAG-compliant One of the current limitations of The Stack is that scraped HTML for websites may not be compliant with Web Content Accessibility Guidelines (WCAG). This could have an impact on HTML-generated code that may introduce web accessibility issues. ",
+        "bbox": [
+            116,
+            606,
+            882,
+            650
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Personally Identifiable Information We noted that Personally Identifiable Information (PII) such as names and email addresses are contained in the data. This PII is already exposed to the public on GitHub, however, we do plan to remove PII in future work. ",
+        "bbox": [
+            116,
+            670,
+            882,
+            715
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Malicious code In the context of cyber-security, there is risk that large language models trained on datasets containing ransomware, malware, or other malicious code, could be used to build harmful applications. The ability to spawn new harmful applications by prompting the model using known indicators of compromise (IOCs) could reduce the experience needed for hackers to learn these techniques $^ { 1 5 }$ and increase the risk of Ransomware-as-a-Service kits being developed and distributed, not on the Dark Web, but in the general public domain by citizen-hackers and activists. While more advantaged companies and communities may have resources to manage these new threats, the negative social impact of ransomware on disadvantaged communities and society in general, along with the potential legal consequences for companies that pay ransom to bad actors, is something that requires more consideration. ",
+        "bbox": [
+            116,
+            734,
+            882,
+            871
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "A handful of repositories were removed because they triggered an internal security tool during the downloading phase. However, we did not fully scan the dataset for malware and, as such, warn future users of the potential for malicious code bases in The Stack. Please report your findings of malicious code to contact@bigcode-project.org so that it can be removed in a future release. ",
+        "bbox": [
+            116,
+            103,
+            882,
+            164
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Data licensing While we did our best to filter for permissively licensed source code, it is possible that the license detector incorrectly classified a number of repositories. Please reach out to contact@ bigcode-project.org in case you encounter files that do not have a permissive license. We also stress that The Stack is a compilation of source files—including attribution and license notices—in the form of a dataset. Each source file in The Stack carries its own permissive license which should be respected by users of the dataset. ",
+        "bbox": [
+            116,
+            180,
+            882,
+            271
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Model limitations We show promising text2code results for smaller models on the python dataset. More research is necessary to find out whether strong results can be obtained for larger models and other programming languages than Python. ",
+        "bbox": [
+            116,
+            287,
+            882,
+            333
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            354,
+            214,
+            371
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Wasi Ahmad, Saikat Chakraborty, Baishakhi Ray, and Kai-Wei Chang. Unified pre-training for program understanding and generation. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 2655–2668, Online, June 2021. Association for Computational Linguistics. URL https://www.aclweb.org/anthology/2021. naacl-main.211. ",
+        "bbox": [
+            116,
+            380,
+            883,
+            455
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Miltiadis Allamanis. The adverse effects of code duplication in machine learning models of code. In Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software, Onward! 2019, pp. 143–153, New York, NY, USA, 2019. Association for Computing Machinery. ISBN 9781450369954. doi: 10.1145/3359591.3359735. URL https://doi.org/10.1145/3359591.3359735. ",
+        "bbox": [
+            116,
+            468,
+            883,
+            544
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk Michalewski, David Dohan, Ellen Jiang, Carrie Cai, Michael Terry, Quoc Le, et al. Program synthesis with large language models. arXiv preprint arXiv:2108.07732, 2021. ",
+        "bbox": [
+            116,
+            556,
+            883,
+            602
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Mohammad Bavarian, Heewoo Jun, Nikolas Tezak, John Schulman, Christine McLeavey, Jerry Tworek, and Mark Chen. Efficient training of language models to fill in the middle, 2022. URL https://arxiv.org/ abs/2207.14255. ",
+        "bbox": [
+            116,
+            613,
+            883,
+            660
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Emily M. Bender and Batya Friedman. Data statements for natural language processing: Toward mitigating system bias and enabling better science. Transactions of the Association for Computational Linguistics, 6:587–604, 2018. doi: 10.1162/tacl_a_00041. URL https://aclanthology.org/Q18-1041. ",
+        "bbox": [
+            114,
+            671,
+            883,
+            718
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "BigScience Workshop. BLOOM (revision 4ab0472), 2022. URL https://huggingface.co/bigscience/ bloom. ",
+        "bbox": [
+            114,
+            729,
+            877,
+            761
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von Arx, Michael S. Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, Erik Brynjolfsson, Shyamal Buch, Dallas Card, Rodrigo Castellon, Niladri S. Chatterji, Annie S. Chen, Kathleen Creel, Jared Quincy Davis, Dorottya Demszky, Chris Donahue, Moussa Doumbouya, Esin Durmus, Stefano Ermon, John Etchemendy, Kawin Ethayarajh, Li Fei-Fei, Chelsea Finn, Trevor Gale, Lauren Gillespie, Karan Goel, Noah D. Goodman, Shelby Grossman, Neel Guha, Tatsunori Hashimoto, Peter Henderson, John Hewitt, Daniel E. Ho, Jenny Hong, Kyle Hsu, Jing Huang, Thomas Icard, Saahil Jain, Dan Jurafsky, Pratyusha Kalluri, Siddharth Karamcheti, Geoff Keeling, Fereshte Khani, Omar Khattab, Pang Wei Koh, Mark S. Krass, Ranjay Krishna, Rohith Kuditipudi, and et al. On the opportunities and risks of foundation models. CoRR, abs/2108.07258, 2021. URL https://arxiv.org/abs/2108.07258. ",
+        "bbox": [
+            117,
+            772,
+            882,
+            924
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Andrei Z Broder. Identifying and filtering near-duplicate documents. In Annual symposium on combinatorial pattern matching, pp. 1–10. Springer, 2000. ",
+        "bbox": [
+            112,
+            103,
+            882,
+            133
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are few-shot learners. arXiv preprint arXiv:2005.14165, 2020. ",
+        "bbox": [
+            114,
+            147,
+            883,
+            193
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Matthew Butterick. This CoPilot is stupid and wants to kill me. https://matthewbutterick.com/chron/ this-copilot-is-stupid-and-wants-to-kill-me.html, 2022. ",
+        "bbox": [
+            114,
+            205,
+            879,
+            237
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Nicholas Carlini, Florian Tramer, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Ulfar Erlingsson, Alina Oprea, and Colin Raffel. Extracting training data from large language models. In USENIX Security Symposium, 2021. URL https://arxiv.org/abs/ 2012.07805. ",
+        "bbox": [
+            114,
+            250,
+            883,
+            310
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, Alex Ray, Raul Puri, Gretchen Krueger, Michael Petrov, Heidy Khlaaf, Girish Sastry, Pamela Mishkin, Brooke Chan, Scott Gray, Nick Ryder, Mikhail Pavlov, Alethea Power, Lukasz Kaiser, Mohammad Bavarian, Clemens Winter, Philippe Tillet, Felipe Petroski Such, Dave Cummings, Matthias Plappert, Fotios Chantzis, Elizabeth Barnes, Ariel HerbertVoss, William Hebgen Guss, Alex Nichol, Alex Paino, Nikolas Tezak, Jie Tang, Igor Babuschkin, Suchir Balaji, Shantanu Jain, William Saunders, Christopher Hesse, Andrew N. Carr, Jan Leike, Josh Achiam, Vedant Misra, Evan Morikawa, Alec Radford, Matthew Knight, Miles Brundage, Mira Murati, Katie Mayer, Peter Welinder, Bob McGrew, Dario Amodei, Sam McCandlish, Ilya Sutskever, and Wojciech Zaremba. Evaluating large language models trained on code. 2021. ",
+        "bbox": [
+            116,
+            324,
+            882,
+            477
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, Parker Schuh, Kensen Shi, Sasha Tsvyashchenko, Joshua Maynez, Abhishek Rao, Parker Barnes, Yi Tay, Noam Shazeer, Vinodkumar Prabhakaran, Emily Reif, Nan Du, Ben Hutchinson, Reiner Pope, James Bradbury, Jacob Austin, Michael Isard, Guy Gur-Ari, Pengcheng Yin, Toju Duke, Anselm Levskaya, Sanjay Ghemawat, Sunipa Dev, Henryk Michalewski, Xavier Garcia, Vedant Misra, Kevin Robinson, Liam Fedus, Denny Zhou, Daphne Ippolito, David Luan, Hyeontaek Lim, Barret Zoph, Alexander Spiridonov, Ryan Sepassi, David Dohan, Shivani Agrawal, Mark Omernick, Andrew M. Dai, Thanumalayan Sankaranarayana Pillai, Marie Pellat, Aitor Lewkowycz, Erica Moreira, Rewon Child, Oleksandr Polozov, Katherine Lee, Zongwei Zhou, Xuezhi Wang, Brennan Saeta, Mark Diaz, Orhan Firat, Michele Catasta, Jason Wei, Kathy Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel. Palm: Scaling language modeling with pathways. CoRR, abs/2204.02311, 2022. doi: 10.48550/arXiv.2204.02311. URL https://doi.org/10.48550/arXiv.2204. 02311. ",
+        "bbox": [
+            117,
+            489,
+            883,
+            685
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Fenia Christopoulou, Gerasimos Lampouras, Milan Gritta, Guchun Zhang, Yinpeng Guo, Zhongqi Li, Qi Zhang, Meng Xiao, Bo Shen, Lin Li, Hao Yu, Li Yan, Pingyi Zhou, Xin Wang, Yuchi Ma, Ignacio Iacobacci, Yasheng Wang, Guangtai Liang, Jiansheng Wei, Xin Jiang, Qianxiang Wang, and Qun Liu. Pangu-coder: Program synthesis with function-level language modeling, 2022. URL https: //arxiv.org/abs/2207.11280. ",
+        "bbox": [
+            116,
+            699,
+            882,
+            776
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Zhangyin Feng, Daya Guo, Duyu Tang, Nan Duan, Xiaocheng Feng, Ming Gong, Linjun Shou, Bing Qin, Ting Liu, Daxin Jiang, and Ming Zhou. CodeBERT: A pre-trained model for programming and natural languages. In Findings of the Association for Computational Linguistics: EMNLP 2020, pp. 1536–1547, Online, November 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.findings-emnlp. 139. URL https://aclanthology.org/2020.findings-emnlp.139. ",
+        "bbox": [
+            116,
+            789,
+            882,
+            866
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Daniel Fried, Armen Aghajanyan, Jessy Lin, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, and Mike Lewis. Incoder: A generative model for code infilling and synthesis, 2022. URL https://arxiv.org/abs/2204.05999. ",
+        "bbox": [
+            116,
+            878,
+            882,
+            924
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, Shawn Presser, and Connor Leahy. The Pile: An 800GB dataset of diverse text for language modeling, 2020. ",
+        "bbox": [
+            114,
+            102,
+            883,
+            148
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé Iii, and Kate Crawford. Datasheets for datasets. Communications of the ACM, 64(12): 86–92, 2021. ",
+        "bbox": [
+            116,
+            159,
+            883,
+            204
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Sariel Har-Peled, Piotr Indyk, and Rajeev Motwani. Approximate nearest neighbor: Towards removing the curse of dimensionality. 2012. ",
+        "bbox": [
+            116,
+            214,
+            879,
+            246
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Danny Hernandez, Tom Brown, Tom Conerly, Nova DasSarma, Dawn Drain, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, Tom Henighan, Tristan Hume, et al. Scaling laws and interpretability of learning from repeated data. arXiv preprint arXiv:2205.10487, 2022. ",
+        "bbox": [
+            114,
+            255,
+            883,
+            301
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Hamel Husain, Ho-Hsiang Wu, Tiferet Gazit, Miltiadis Allamanis, and Marc Brockschmidt. CodeSearchNet challenge: Evaluating the state of semantic code search. arXiv preprint arXiv:1909.09436, 2019. ",
+        "bbox": [
+            116,
+            310,
+            880,
+            342
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Maliheh Izadi, Roberta Gismondi, and Georgios Gousios. Codefill: Multi-token code completion by jointly learning from structure and naming sequences. In Proceedings of the 44th International Conference on Software Engineering, ICSE ’22, pp. 401–412, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450392211. doi: 10.1145/3510003.3510172. URL https://doi.org/10.1145/ 3510003.3510172. ",
+        "bbox": [
+            114,
+            352,
+            883,
+            428
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Yacine Jernite, Huu Nguyen, Stella Biderman, Anna Rogers, Maraim Masoud, Valentin Danchev, Samson Tan, Alexandra Sasha Luccioni, Nishant Subramani, Isaac Johnson, Gerard Dupont, Jesse Dodge, Kyle Lo, Zeerak Talat, Dragomir Radev, Aaron Gokaslan, Somaieh Nikpoor, Peter Henderson, Rishi Bommasani, and Margaret Mitchell. Data governance in the age of large-scale data-driven language technology. In 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’22, pp. 2206–2222, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450393522. doi: 10.1145/3531146. 3534637. URL https://doi.org/10.1145/3531146.3534637. ",
+        "bbox": [
+            114,
+            438,
+            883,
+            545
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Aditya Kanade, Petros Maniatis, Gogul Balakrishnan, and Kensen Shi. Learning and evaluating contextual embedding of source code. In Proceedings of the 37th International Conference on Machine Learning, ICML’20. JMLR.org, 2020. ",
+        "bbox": [
+            116,
+            553,
+            883,
+            601
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Nikhil Kandpal, Eric Wallace, and Colin Raffel. Deduplicating training data mitigates privacy risks in language models. arXiv preprint arXiv:2202.06539, 2022. ",
+        "bbox": [
+            116,
+            609,
+            879,
+            641
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Heidy Khlaaf, Pamela Mishkin, Joshua Achiam, Gretchen Krueger, and Miles Brundage. A hazard analysis framework for code synthesis large language models. arXiv preprint arXiv:2207.14157, 2022. ",
+        "bbox": [
+            114,
+            650,
+            879,
+            683
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization. In Yoshua Bengio and Yann LeCun (eds.), 3rd International Conference on Learning Representations, ICLR 2015, San Diego, CA, USA, May 7-9, 2015, Conference Track Proceedings, 2015. URL http://arxiv.org/abs/1412.6980. ",
+        "bbox": [
+            114,
+            690,
+            883,
+            738
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Bradley M. Kuhn. If Software is My Copilot, Who Programmed My Software? https://sfconservancy. org/blog/2022/feb/03/github-copilot-copyleft-gpl/, 2022. ",
+        "bbox": [
+            114,
+            746,
+            875,
+            779
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Hugo Laurençon, Lucile Saulnier, Thomas Wang, Christopher Akiki, Albert Villanova del Moral, Teven Le Scao, Leandro Von Werra, Chenghao Mou, Eduardo González Ponferrada, Huu Nguyen, Jörg Frohberg, Mario Šaško, Quentin Lhoest, Angelina McMillan-Major, Gérard Dupont, Stella Biderman, Anna Rogers, Loubna Ben allal, Francesco De Toni, Giada Pistilli, Olivier Nguyen, Somaieh Nikpoor, Maraim Masoud, Pierre Colombo, Javier de la Rosa, Paulo Villegas, Tristan Thrush, Shayne Longpre, Sebastian Nagel, Leon Weber, Manuel Romero Muñoz, Jian Zhu, Daniel Van Strien, Zaid Alyafeai, Khalid Almubarak, Vu Minh Chien, Itziar Gonzalez-Dios, Aitor Soroa, Kyle Lo, Manan Dey, Pedro Ortiz Suarez, Aaron Gokaslan, Shamik Bose, David Ifeoluwa Adelani, Long Phan, Hieu Tran, Ian Yu, Suhas Pai, Jenny Chim, Violette Lepercq, Suzana Ilic, Margaret Mitchell, Sasha Luccioni, and Yacine Jernite. The bigscience ROOTS corpus: A 1.6TB composite multilingual dataset. In Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2022. URL https://openreview.net/forum?id= UoEw6KigkUn. ",
+        "bbox": [
+            117,
+            787,
+            883,
+            924
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            129,
+            103,
+            883,
+            148
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Katherine Lee, Daphne Ippolito, Andrew Nystrom, Chiyuan Zhang, Douglas Eck, Chris Callison-Burch, and Nicholas Carlini. Deduplicating training data makes language models better. arXiv preprint arXiv:2107.06499, 2021. ",
+        "bbox": [
+            117,
+            156,
+            883,
+            204
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Yujia Li, David Choi, Junyoung Chung, Nate Kushman, Julian Schrittwieser, Rémi Leblond, Tom Eccles, James Keeling, Felix Gimeno, Agustin Dal Lago, Thomas Hubert, Peter Choy, Cyprien de Masson d’Autume, Igor Babuschkin, Xinyun Chen, Po-Sen Huang, Johannes Welbl, Sven Gowal, Alexey Cherepanov, James Molloy, Daniel Mankowitz, Esme Sutherland Robson, Pushmeet Kohli, Nando de Freitas, Koray Kavukcuoglu, and Oriol Vinyals. Competition-level code generation with alphacode. arXiv preprint arXiv:2203.07814, 2022. ",
+        "bbox": [
+            114,
+            212,
+            883,
+            304
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Cristina V Lopes, Petr Maj, Pedro Martins, Vaibhav Saini, Di Yang, Jakub Zitny, Hitesh Sajnani, and Jan Vitek. Déjàvu: a map of code duplicates on github. Proceedings of the ACM on Programming Languages, 1(OOPSLA):1–28, 2017. ",
+        "bbox": [
+            114,
+            311,
+            883,
+            358
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Erik Nijkamp, Bo Pang, Hiroaki Hayashi, Lifu Tu, Huan Wang, Yingbo Zhou, Silvio Savarese, and Caiming Xiong. A conversational paradigm for program synthesis. arXiv preprint, 2022. ",
+        "bbox": [
+            119,
+            366,
+            882,
+            398
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "John A. Rothchild and Daniel Rothchild. Copyright Implications of the Use of Code Repositories to Train a Machine Learning Model. https://www.fsf.org/licensing/copilot/ copyright-implications-of-the-use-of-code-repositories-to-train-a-machine-learning-model, 2022. ",
+        "bbox": [
+            114,
+            406,
+            897,
+            467
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Baptiste Roziere, Marie-Anne Lachaux, Marc Szafraniec, and Guillaume Lample. Dobf: A deobfuscation pre-training objective for programming languages. arXiv preprint arXiv:2102.07492, 2021. ",
+        "bbox": [
+            111,
+            476,
+            880,
+            508
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared Casper, and Bryan Catanzaro. Megatron-lm: Training multi-billion parameter language models using model parallelism. arXiv preprint arXiv:1909.08053, 2019. ",
+        "bbox": [
+            114,
+            515,
+            885,
+            561
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Yue Wang, Weishi Wang, Shafiq Joty, and Steven C.H. Hoi. CodeT5: Identifier-aware unified pre-trained encoder-decoder models for code understanding and generation. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pp. 8696–8708, Online and Punta Cana, Dominican Republic, November 2021. Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main. 685. URL https://aclanthology.org/2021.emnlp-main.685. ",
+        "bbox": [
+            114,
+            570,
+            883,
+            647
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Frank F. Xu, Uri Alon, Graham Neubig, and Vincent Josua Hellendoorn. A systematic evaluation of large language models of code. In Proceedings of the 6th ACM SIGPLAN International Symposium on Machine Programming, MAPS 2022, pp. 1–10, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450392730. doi: 10.1145/3520312.3534862. URL https://doi.org/10.1145/ 3520312.3534862. ",
+        "bbox": [
+            114,
+            655,
+            883,
+            731
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi Victoria Lin, Todor Mihaylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. Opt: Open pre-trained transformer language models, 2022. ",
+        "bbox": [
+            116,
+            739,
+            882,
+            803
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "A Permissive Licenses ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            829,
+            328,
+            847
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "For the experiments presented in the paper, we use the following SPDX identifiers for our permissive license dataset: ",
+        "bbox": [
+            112,
+            862,
+            879,
+            892
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "• MIT   \n• MIT-feh   \n• Apache-2.0   \n• BSD-3-Clause   \n• BSD-3-Clause-Clear   \n• BSD-3-Clause-No-Nuclear-License-2014   \n• BSD-2-Clause   \n• CC0-1.0   \n• EPL-1.0   \n• MPL-2.0   \n• Unlicense   \n• ISC   \n• Artistic-2.0   \n• deprecated_LGPL-3.0+   \n• deprecated_LGPL-2.1+   \n• ECL-2.0   \n• SHL-0.51   \n• MPL-2.0-no-copyleft-exception ",
+        "bbox": [
+            155,
+            101,
+            459,
+            547
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "After running all experiments, it was brought to our attention that licenses such as MPL, LGPL, and EPL were erroneously labeled as permissive when they are in fact weak copyleft licenses. We have removed these weak copyleft license files and will release the updated version of The Stack. The weak copyleft-licensed data is only a small part of the overall dataset (below $0 . 5 \\%$ for the Python subset), hence we expect the experimental findings of the paper to remain unchanged. In the next section, we describe how we updated The Stack. ",
+        "bbox": [
+            114,
+            564,
+            882,
+            655
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "B The Stack v1.1 ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            672,
+            289,
+            691
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "For the Stack v1.1, we rely on the Blue Oak Council $^ { 1 6 }$ to classify the licenses. The new classification process results in 193 permissive licenses (which we list, for completeness, at the end of this section). The Stack v1.1 also includes more programming languages. We used the following list of programming language extensions https://gist.github.com/ppisarczyk/43962d06686722d26d176fad46879d41 and obtained data for 370 programming languages. We show the updated statistics for the 30 popular programming languages in Table 7. In general, we find that the amount of data increased for most programming languages. Specifically, we see a large increase in data for C# (128.37 GB vs 215.07 GB), Tex (4.65 GB vs 8.19 GB), and Markdown (164.61 GB vs 245.26 GB). On the other hand, we see a minor decrease in data for Go (118.37 GB vs 112.86 GB) and Rust (40.35 GB vs 39.85 GB). We release this updated version to the research community. ",
+        "bbox": [
+            114,
+            705,
+            883,
+            843
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• MIT • Apache-2.0 • BSD-3-Clause • Unlicense • CC0-1.0 • BSD-2-Clause • CC-BY-4.0 • CC-BY-3.0 • 0BSD • RSA-MD • WTFPL ",
+        "bbox": [
+            156,
+            862,
+            254,
+            902
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/aa97f828477d24cb825520f97e5b8cf84faafc82e56ffa46d20d208a947645ab.jpg",
+        "table_caption": [
+            "Table 7: An overview of the amount of data we collected for The Stack v1.1. We show the size and number of files for different splits of the data: the all-license, permissive license, and permissive license with neardeduplication. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>All-licenses</td><td></td><td>Permissive</td><td></td><td>Perm.+</td><td>near-dedup</td></tr><tr><td>Language</td><td>Size (GB)</td><td>Files (M)</td><td>Size (GB)</td><td>Files (M)</td><td>Size (GB)</td><td>Files (M)</td></tr><tr><td>Assembly</td><td>36.04</td><td>1.34</td><td>2.57</td><td>0.36</td><td>1.65</td><td>0.26</td></tr><tr><td>Batchfi le</td><td>31.05</td><td>2.82</td><td>1.06</td><td>0.44</td><td>0.33</td><td>0.28</td></tr><tr><td>C</td><td>1461.23</td><td>95.57</td><td>255.29</td><td>21.38</td><td>75.93</td><td>11.21</td></tr><tr><td>C++</td><td>644.28</td><td>105.96</td><td>215.07</td><td>14.82</td><td>65.97</td><td>7.60</td></tr><tr><td>C# CMake</td><td>1106.54</td><td>62.72</td><td>133.55</td><td>21.7</td><td>57.98</td><td>13.28</td></tr><tr><td></td><td>11.25</td><td>3.59</td><td>2.1</td><td>0.59</td><td>0.68</td><td>0.25</td></tr><tr><td>CSS Dockerfile</td><td>1040.53</td><td>50.47 3.74</td><td>150.2 1.9</td><td>5.89 1.27</td><td>34.86</td><td>3.59</td></tr><tr><td>FORTRAN</td><td>3.89</td><td>1.21</td><td>3.81</td><td>0.29</td><td>0.52</td><td>0.64</td></tr><tr><td></td><td>26.67</td><td>23.34</td><td>112.86</td><td>11.65</td><td>2.08</td><td>0.19</td></tr><tr><td>GO Haskell</td><td>271.92</td><td>2.06</td><td>5.85</td><td></td><td>32.01</td><td>5.89</td></tr><tr><td>HTML</td><td>15.79</td><td>267.81</td><td>812.73</td><td>0.8 35.6</td><td>2.75</td><td>0.58</td></tr><tr><td>Java</td><td>9491.23 1311.99</td><td>279.16</td><td>266.41</td><td>42.43</td><td>291.46</td><td>16.60</td></tr><tr><td></td><td>5820.23</td><td>209.51</td><td>496.22</td><td>40.11</td><td>112.82</td><td>25.12</td></tr><tr><td>Javascript Julia</td><td>21.75</td><td>0.88</td><td>3.4</td><td>0.48</td><td>166.24</td><td>25.43</td></tr><tr><td>Lua</td><td>88.39</td><td>5.18</td><td>7.09</td><td>0.93</td><td>1.75 3.77</td><td>0.33</td></tr><tr><td>Makefile</td><td>39.36</td><td>6.34</td><td>6.88</td><td>1.48</td><td>2.14</td><td>0.64</td></tr><tr><td>Markdown</td><td>706.8</td><td>135.69</td><td>245.26</td><td>40.75</td><td></td><td>0.80</td></tr><tr><td>Perl</td><td>49.21</td><td>2.74</td><td>7.08</td><td>0.83</td><td>95.84 2.99</td><td>25.66</td></tr><tr><td>PHP</td><td>779.66</td><td>115.53</td><td>185.79</td><td>34.85</td><td></td><td>0.48</td></tr><tr><td>PowerShell</td><td>13.26</td><td>1.39</td><td>3.42</td><td>0.53</td><td>89.46</td><td>22.63</td></tr><tr><td>Python</td><td>737.89</td><td>106.91</td><td>200.93</td><td>24.21</td><td>1.65 80.13</td><td>0.33 15.15</td></tr><tr><td>Ruby</td><td>78.63</td><td>30.74</td><td>25.95</td><td>7.21</td><td>9.78</td><td>4.46</td></tr><tr><td>Rust</td><td>78.97</td><td>6.3</td><td>39.85</td><td>3.06</td><td>12.92</td><td>1.68</td></tr><tr><td>Scala</td><td>28.37</td><td>6.06</td><td>15.56</td><td>2.79</td><td>6.06</td><td>1.61</td></tr><tr><td>Shell</td><td>71.56</td><td>14.01</td><td>9.07</td><td>3.77</td><td>4.07</td><td>2.54</td></tr><tr><td>SQL</td><td>1438.73</td><td>10.2</td><td>19.94</td><td>1.39</td><td>12.68</td><td>1.07</td></tr><tr><td>TeX</td><td>69.4</td><td>4.01</td><td>8.19</td><td>0.71</td><td>5.86</td><td>0.59</td></tr><tr><td>Typescript</td><td>4145.01</td><td>75.8</td><td>131.01</td><td>19.59</td><td>36.61</td><td>12.82</td></tr><tr><td>Visual Basic</td><td>28.57</td><td>1.97</td><td>3.81</td><td>0.4</td><td>1.71</td><td>0.19</td></tr><tr><td></td><td>29648.2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total</td><td></td><td>1633.05</td><td>3372.85</td><td>340.31</td><td>1212.7</td><td>201.90</td></tr></table>",
+        "bbox": [
+            174,
+            98,
+            828,
+            623
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            155,
+            696,
+            277,
+            924
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "V11 • ISC • ADSL • BSL-1.0 • Zlib • Artistic-2.0 • FTL • MS-PL • BSD-2-Clause-FreeBSD • FSFAP • BSD-Source-Code • Apache-1.1 • BSD-4-Clause • Ruby • Artistic-1.0 • MulanPSL-1.0 • BSD-1-Clause • X11 • CNRI-Python • Beerware • Condor-1.1 • PostgreSQL • CECILL-B • Intel • Vim • Naumen • OML • BSD-3-Clause-Clear • AML • PHP-3.01 • OpenSSL • PSF-2.0 • Xnet ",
+        "bbox": [
+            151,
+            113,
+            348,
+            921
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "P • BSD-3-Clause-LBNL • UPL-1.0 • AFL-3.0 • BlueOak-1.0.0 • Info-ZIP • BSD-4-Clause-UC • AAL • LPPL-1.3c • bzip2-1.0.6 • W3C • W3C-20150513 • AFL-1.1 • DOC • ICU • CC-BY-2.0 • curl • MTLL • OLDAP-2.2.1 • ECL-2.0 • Adobe-Glyph • CNRI-Python-GPL-Compatible • BSD-2-Clause-Patent • IJG • PHP-3.0 • ZPL-2.1 • MIT-advertising • NCSA • Fair • BSD-3-Clause-Attribution • OLDAP-2.3 • NLPL • BSD-3-Clause-Open-MPI ",
+        "bbox": [
+            151,
+            114,
+            408,
+            925
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "• ClArtistic   \n• Python-2.0   \n• NASA-1.3   \n• TCL   \n• Artistic-1.0-Perl   \n• blessing   \n• BSD-3-Clause-No-Nuclear-Warranty   \n• ImageMagick   \n• Net-SNMP   \n• Artistic-1.0-cl8   \n• OLDAP-2.5   \n• MIT-feh   \n• OLDAP-2.4   \n• MITNFA   \n• AFL-2.1   \n• libpng-2.0   \n• EFL-2.0   \n• OLDAP-2.7   \n• IBM-pibs   \n• libtiff   \n• OLDAP-2.8   \n• Cube   \n• Adobe-2006   \n• BSD-2-Clause-NetBSD   \n• zlib-acknowledgement   \n• OLDAP-2.6   \n• BSD-3-Clause-No-Nuclear-License-2014   \n• OLDAP-1.4   \n• Libpng   \n• MIT-CMU   \n• AFL-2.0   \n• JasPer-2.0   \n• LPL-1.02   \n• TCP-wrappers   \n• XFree86-1.1   \n• FSFUL   \n• OLDAP-1.3   \n• SGI-B-2.0   \n• NetCDF   \n• CNRI-Jython   \n• Zed   \n• ZPL-2.0   \n• AFL-1.2   \n• Apache-1.0   \n• CC-BY-1.0   \n• OLDAP-2.1   \n• OLDAP-1.2   \n• OLDAP-2.0   \n• NTP   \n• LPL-1.0   \n• AMPAS   \n• Barr   \n• mpich2   \n• ANTLR-PD   \n• Xerox   \n• Spencer-94   \n• AMDPLPA   \n• BSD-3-Clause-No-Nuclear-License   \n• HPND   \n• ECL-1.0   \n• MirOS   \n• Qhull   \n• ZPL-1.1   \n• TU-Berlin-2.0   \n• Spencer-86 • SMLNJ   \n• xinetd   \n• OLDAP-2.2.2   \n• OGTSL   \n• MIT-enna   \n• Font-exception-2.0   \n• FSFULLR   \n• TU-Berlin-1.0   \n• xpp   \n• NRL   \n• W3C-19980720   \n• EFL-1.0   \n• eGenix   \n• Unicode-DFS-2016   \n• SWL   \n• Spencer-99   \n• Plexus   \n• VSL-1.0   \n• Leptonica   \n• Unicode-DFS-2015   \n• Mup   \n• Giftware   \n• OLDAP-2.2   \n• APAFML   \n• NBPL-1.0   \n• OLDAP-1.1   \n• Entessa   \n• Multics   \n• Newsletr   \n• psutils   \n• bzip2-1.0.5   \n• Afmparse   \n• diffmark   \n• BSD-2-Clause-Views   \n• DSDP   \n• MIT-Modern-Variant   \n• ANTLR-PD-fallback   \n• Bahyph   \n• BSD-3-Clause-Modification   \n• BSD-4-Clause-Shortened   \n• HTMLTIDY   \n• MIT-open-group   \n• MulanPSL-2.0   \n• OLDAP-2.0.1   \n• Saxpath   \n• Borceux   \n• Crossword   \n• CrystalStacker   \n• Rdisc   \n• Wsuipa ",
+        "bbox": [
+            153,
+            106,
+            454,
+            922
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            153,
+            130,
+            431,
+            919
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            151,
+            113,
+            316,
+            924
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            153,
+            102,
+            372,
+            520
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "C Excluded file extensions ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            537,
+            364,
+            555
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Part of this list was taken from https://github.com/EleutherAI/github-downloader/blob/ 345e7c4cbb9e0dc8a0615fd995a08bf9d73b3fe6/download_repo_text.py ",
+        "bbox": [
+            116,
+            570,
+            879,
+            601
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "’apk’, ’app’, ’bin’, ’bmp’, ’bz2’, ’class’, ’csv’, ’dat’, ’db’, ’deb’, ’dll’, ’dylib’, ’egg’, ’eot’, ’exe’, ’gif’, ’gitignore’, ’glif’, ’gradle’, ’gz’, ’ico’, ’jar’, ’jpeg’, ’jpg’, ’lib’, ’lo’, ’lock’, ’log’, ’mp3’, ’mp4’, ’nar’, ’o’, ’ogg’, ’otf’, ’p’, ’pdb’, ’pdf’, ’png’, ’pickle’, ’pkl’, ’ppt’, ’pptx’, ’pyc’, ’pyd’, ’pyo’, ’rar’, ’rkt’, ’so’, ’ss’, ’svg’, ’tar’, ’tif’, ’tiff’, ’tsv’, ’ttf’, ’war’, ’wav’, ’webm’, ’woff’, ’woff2’, ’xz’, ’zip’, ’zst’ ",
+        "bbox": [
+            116,
+            608,
+            882,
+            669
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "D Included programming language extensions ",
+        "text_level": 1,
+        "bbox": [
+            116,
+            688,
+            539,
+            705
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This list of programming language extensions is taken from https://gist.github.com/ppisarczyk/ 43962d06686722d26d176fad46879d41. ",
+        "bbox": [
+            117,
+            719,
+            879,
+            750
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": ".abap .asc .ash .ampl .mod .g4 .apib .apl .dyalog .asp .asax .ascx .ashx .asmx .aspx .axd .dats .hats .sats .as .adb .ada .ads .agda .als .apacheconf .vhost .cls .applescript .scpt .arc .ino .asciidoc .adoc .asc .aj .asm .a51 .inc .nasm .aug .ahk .ahkl .au3 .awk .auk .gawk .mawk .nawk .bat .cmd .befunge .bison .bb .bb .decls .bmx .bsv .boo .b .bf .brs .bro .c .cats .h .idc .w .cs .cake .cshtml .csx .cpp .c++ .cc .cp .cxx .h .h++ .hh .hpp .hxx .inc .inl .ipp .tcc .tpp .c-objdump .chs .clp .cmake .cmake.in .cob .cbl .ccp .cobol .cpy .css .csv .capnp .mss .ceylon .chpl .ch .ck .cirru .clw .icl .dcl .click .clj .boot .cl2 .cljc .cljs .cljs.hl .cljscm .cljx .hic .coffee ._coffee .cake .cjsx .cson .iced .cfm .cfml .cfc .lisp .asd .cl .l .lsp .ny .podsl .sexp .cp .cps .cl .coq .v .cppobjdump .c++-objdump .c++objdump .cpp-objdump .cxx-objdump .creole .cr .feature .cu .cuh .cy .pyx .pxd .pxi .d .di .d-objdump .com .dm .zone .arpa .d .darcspatch .dpatch .dart .diff .patch .dockerfile .djs .dylan .dyl .intr .lid .E .ecl .eclxml .ecl .sch .brd .epj .e .ex .exs .elm .el .emacs .emacs.desktop .em .emberscript .erl .es .escript .hrl .xrl .yrl .fs .fsi .fsx .fx .flux .f90 .f .f03 .f08 .f77 .f95 .for .fpp .factor .fy .fancypack .fan .fs .for .eam.fs .fth .4th .f .for .forth .fr .frt .fs .ftl .fr .g .gco .gcode .gms .g .gap .gd .gi .tst .s .ms .gd .glsl .fp .frag .frg .fs .fsh .fshader .geo .geom .glslv .gshader .shader .vert .vrx .vsh .vshader .gml .kid .ebuild .eclass .po .pot .glf .gp .gnu .gnuplot .plot .plt .go .golo .gs .gst .gsx .vark .grace .gradle .gf .gml .graphql .dot .gv .man .1 .1in .1m .1x .2 .3 .3in .3m .3qt .3x .4 .5 .6 .7 .8 .9 .l .me .ms .n .rno .roff .groovy .grt .gtpl .gvy .gsp .hcl .tf .hlsl .fx .fxh .hlsli .html .htm .html.hl .inc .st .xht .xhtml .mustache .jinja .eex .erb .erb.deface .phtml .http .hh .php .haml .haml.deface .handlebars .hbs .hb .hs .hsc .hx .hxsl .hy .bf .pro .dlm .ipf .ini .cfg .prefs .pro .properties .irclog .weechatlog .idr .lidr .ni .i7x .iss .io .ik .thy .ijs .flex .jflex .json .geojson .lock .topojson .json5 .jsonld .jq .jsx .jade .j .java .jsp .js ._js .bones .es .es6 .frag .gs .jake .jsb .jscad .jsfl .jsm .jss .njs .pac .sjs .ssjs .sublime-build .sublime-commands .sublimecompletions .sublime-keymap .sublime-macro .sublime-menu .sublime-mousemap .sublime-project .sublimesettings .sublime-theme .sublime-workspace .sublime_metrics .sublime_session .xsjs .xsjslib .jl .ipynb .krl .sch .brd .kicad_pcb .kit .kt .ktm .kts .lfe .ll .lol .lsl .lslp .lvproj .lasso .las .lasso8 .lasso9 .ldml .latte .lean .hlean .less .l .lex .ly .ily .b .m .ld .lds .mod .liquid .lagda .litcoffee .lhs .ls ._ls .xm .x .xi .lgt .logtalk .lookml .ls .lua .fcgi .nse .pd_lua .rbxs .wlua .mumps .m .m4 .m4 .ms .mcr .mtml .muf .m .mak .d .mk .mkfile .mako .mao .md .markdown .mkd .mkdn .mkdown .ron .mask .mathematica .cdf .m .ma .mt .nb .nbp .wl .wlt .matlab .m .maxpat .maxhelp .maxproj .mxt .pat .mediawiki .wiki .m .moo .metal .minid .druby .duby .mir .mirah .mo .mod .mms .mmk .monkey .moo .moon .myt .ncl .nl .nsi .nsh .n .axs .axi .axs.erb .axi.erb .nlogo .nl .lisp .lsp .nginxconf .vhost .nim .nimrod .ninja .nit .nix .nu .numpy .numpyw .numsc .ml .eliom .eliomi .ml4 .mli .mll .mly .objdump .m .h .mm .j .sj .omgrofl .opa .opal .cl .opencl .p .cls .scad .org .ox .oxh .oxo .oxygene .oz .pwn .inc .php .aw .ctp .fcgi .inc .php3 .php4 .php5 .phps .phpt .pls .pck .pkb .pks .plb .plsql .sql .sql .pov .inc .pan .psc .parrot .pasm .pir .pas .dfm .dpr .inc .lpr .pp .pl .al .cgi .fcgi .perl .ph .plx .pm .pod .psgi .t .6pl .6pm .nqp .p6 .p6l .p6m .pl .pl6 .pm .pm6 .t .pkl .l .pig .pike .pmod .pod .pogo .pony .ps .eps .ps1 .psd1 .psm1 .pde .pl .pro .prolog .yap .spin .proto .asc .pub .pp .pd .pb .pbi .purs .py .bzl .cgi .fcgi .gyp .lmi .pyde .pyp .pyt .pyw .rpy .tac .wsgi .xpy .pytb .qml .qbs .pro .pri .r .rd .rsx .raml .rdoc .rbbas .rbfrm .rbmnu .rbres .rbtbar .rbuistate .rhtml .rmd .rkt .rktd .rktl .scrbl .rl .raw .reb .r .r2 .r3 .rebol .red .reds .cw .rpy .rs .rsh .robot .rg .rb .builder .fcgi .gemspec .god .irbrc .jbuilder .mspec .pluginspec .podspec .rabl .rake .rbuild .rbw .rbx .ru .ruby .thor .watchr .rs .rs.in .sas .scss .smt2 .smt .sparql .rq .sqf .hqf .sql .cql .ddl .inc .prc .tab .udf .viw .sql .db2 .ston .svg .sage .sagews .sls .sass .scala .sbt .sc .scaml .scm .sld .sls .sps .ss .sci .sce .tst .self .sh .bash .bats .cgi .command .fcgi .ksh .sh.in .tmux .tool .zsh .sh-session .shen .sl .slim .smali .st .cs .tpl .sp .inc .sma .nut .stan .ML .fun .sig .sml .do .ado .doh .ihlp .mata .matah .sthlp .styl .sc .scd .swift .sv .svh .vh .toml .txl .tcl .adp .tm .tcsh .csh .tex .aux .bbx .bib .cbx .cls .dtx .ins .lbx .ltx .mkii .mkiv .mkvi .sty .toc .tea .t .txt .fr .nb .ncl .no .textile .thrift .t .tu .ttl .twig .ts .tsx .upc .anim .asset .mat .meta .prefab .unity .uno .uc .ur .urs .vcl .vhdl .vhd .vhf .vhi .vho .vhs .vht .vhw .vala .vapi .v .veo .vim .vb .bas .cls .frm .frx .vba .vbhtml .vbs .volt .vue .owl .webidl .x10 .xc .xml .ant .axml .ccxml .clixml .cproject .csl .csproj .ct .dita .ditamap .ditaval .dll.config .dotsettings .filters .fsproj .fxml .glade .gml .grxml .iml .ivy .jelly .jsproj .kml .launch .mdpolicy .mm .mod .mxml .nproj .nuspec .odd .osm .plist .pluginspec .props .ps1xml .psc1 .pt .rdf .rss .scxml .srdf .storyboard .stTheme .sublime-snippet .targets .tmCommand .tml .tmLanguage .tmPreferences .tmSnippet .tmTheme .ts .tsx .ui .urdf .ux .vbproj .vcxproj .vssettings .vxml .wsdl .wsf .wxi .wxl .wxs .x3d .xacro .xaml .xib .xlf .xliff .xmi .xml.dist .xproj .xsd .xul .zcml .xsp-config .xsp.metadata .xpl .xproc .xquery .xq .xql .xqm .xqy .xs .xslt .xsl .xojo_code .xojo_menu .xojo_report .xojo_script .xojo_toolbar .xojo_window .xtend .yml .reek .rviz .sublime-syntax .syntax .yaml .yaml-tmlanguage .yang .y .yacc .yy .zep .zimpl .zmpl .zpl .desktop .desktop.in .ec .eh .edn .fish .mu .nc .ooc .rst .rest .rest.txt .rst.txt .wisp .prg .ch .prw ",
+        "bbox": [
+            114,
+            757,
+            882,
+            924
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            95,
+            882,
+            734
+        ],
+        "page_idx": 26
+    }
+]
