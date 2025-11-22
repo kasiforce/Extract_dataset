@@ -39,6 +39,8 @@ jobs:
           pip install arxiv
           pip install requests
           pip install pyyaml
+          pip install PyMuPDF
+          pip install tabulate
 
       - name: Run daily arxiv 
         run: |
