@@ -55,10 +55,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Github Action Automatic Update Arxiv Papers"
           files: |
-#            papers/
             results/
             papers_metadata.jsonl
-#            process_state.txt
+
           rebase: 'true'
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}
