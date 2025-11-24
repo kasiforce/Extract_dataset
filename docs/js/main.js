@@ -205,11 +205,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // 计算各个领域的数量
         const categoryCounts = {
             'all': statusFilteredPapers.length,
-            'Computer Vision': 0,
-            'Natural Language Processing': 0,
-            'Machine Learning': 0,
-            'Robotics': 0,
-            'Multimodal': 0
+            'Code Completion': 0,
+            'Code Editing': 0,
+            'Code Debug': 0,
+            'Code Summarization': 0,
+            'Code Prompting': 0,
+            'Code Alignment': 0,
+            'Code Translation': 0,
+            'Code Testing': 0,
+            'Code Pre-Training': 0,
+            'Code Instruction-Tuning': 0
         };
 
         statusFilteredPapers.forEach(paper => {
@@ -411,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Benchmark button clicked:', this.dataset.benchmark);
             benchmarkBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            benchmarkCategory = this.dataset.benchmark;
+            currentBenchmark = this.dataset.benchmark;
             filterAndSortPapers();
         });
     });
