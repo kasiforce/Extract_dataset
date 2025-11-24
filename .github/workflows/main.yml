@@ -11,7 +11,9 @@ env:
 
   GITHUB_USER_NAME: kasiforce # your github id
   GITHUB_USER_EMAIL: 2819407652@qq.com # your email address
-  
+  MY_API_KEY: ${{ secrets.MY_API_KEY }}
+  DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+
 permissions:
   contents: write 
   
@@ -45,8 +47,7 @@ jobs:
       - name: Run daily arxiv 
         run: |
           python run.py
-        env:
-          MY_API_KEY: ${{ secrets.MY_API_KEY }}
+          
           
       - name: Push new arxiv-daily
         uses: github-actions-x/commit@v2.9
@@ -54,9 +55,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Github Action Automatic Update Arxiv Papers"
           files: |
-            papers/
+#            papers/
+            results/
             papers_metadata.jsonl
-            process_state.txt
+#            process_state.txt
           rebase: 'true'
           name: ${{ env.GITHUB_USER_NAME }}
           email: ${{ env.GITHUB_USER_EMAIL }}
