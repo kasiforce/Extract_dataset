@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const monthBtns = document.querySelectorAll('.month-btn');
     const statusBtns = document.querySelectorAll('.status-btn');
     const categoryBtns = document.querySelectorAll('.category-btn');
+    const benchmarkBtns = document.querySelectorAll('.benchmark-btn');
     const sortBtns = document.querySelectorAll('.sort-btn');
     const searchInput = document.getElementById('searchInput');
     const exportBtn = document.getElementById('exportBtn');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         monthBtns: monthBtns.length,
         statusBtns: statusBtns.length,
         categoryBtns: categoryBtns.length,
+        benchmarkBtns: benchmarkBtns.length,
         sortBtns: sortBtns.length,
         searchInput: !!searchInput,
         exportBtn: !!exportBtn,
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentMonth = 'all';  // 当前选中的月份
     let currentStatus = 'all';
     let currentCategory = 'all';
+    let currentBenchmark = 'all';
     let currentSort = 'date-desc';
     let searchTerm = '';
     let filteredPapers = [];
@@ -230,19 +233,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 筛选和排序论文
     function filterAndSortPapers() {
-        console.log('Filtering papers:', { currentStatus, currentCategory, searchTerm, currentSort });
+        console.log('Filtering papers:', { currentStatus, currentCategory, currentBenchmark, searchTerm, currentSort });
 
         // 筛选
         filteredPapers = allPapersData.filter(paper => {
             const status = paper.conference ? 'published' : 'preprint';
             const tags = paper.tag || [];
+            const benchmark = paper.benchmark ? 'benchmark' : 'non-benchmark';
             const text = `${paper.title} ${paper.authors} ${paper.abstract}`.toLowerCase();
 
             const matchStatus = currentStatus === 'all' || status === currentStatus;
             const matchCategory = currentCategory === 'all' || tags.includes(currentCategory);
+            const matchBenchmark = currentBenchmark === 'all' || benchmark === currentBenchmark;
             const matchSearch = searchTerm === '' || text.includes(searchTerm);
 
-            return matchStatus && matchCategory && matchSearch;
+            return matchStatus && matchCategory && matchBenchmark && matchSearch;
         });
 
         console.log(`Filtered to ${filteredPapers.length} papers`);
@@ -396,6 +401,17 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentCategory = this.dataset.category;
+            filterAndSortPapers();
+        });
+    });
+    
+    // benchmark筛选
+    benchmarkBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            console.log('Benchmark button clicked:', this.dataset.benchmark);
+            benchmarkBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            benchmarkCategory = this.dataset.benchmark;
             filterAndSortPapers();
         });
     });

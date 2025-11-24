@@ -67,15 +67,20 @@ def convert_all_pdfs_to_text(pdf_source_folder: Path, text_output_folder: Path):
 
     print("\n--- 所有 PDF 处理完毕！ ---")
 
-if __name__ == "__main__":
+
+def run_convert():
     script_path = Path(__file__).resolve()
-    project_root = script_path.parent 
-    
-    pdf_source_folder = project_root / "papers_pdf_source"
+    project_root = script_path.parent
+
+    pdf_source_folder = project_root / "papers"
     text_output_folder = project_root / "new_papers_info"
-    
+
     if not pdf_source_folder.exists():
         print(f"错误：未找到PDF源文件夹: {pdf_source_folder}")
         print("请在项目根目录创建 'papers_pdf_source' 文件夹，并把你所有的PDF论文放进去。")
     else:
         convert_all_pdfs_to_text(pdf_source_folder, text_output_folder)
+
+
+if __name__ == "__main__":
+    run_convert()

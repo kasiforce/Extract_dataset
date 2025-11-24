@@ -167,7 +167,7 @@ def load_existing_json_db(json_path: Path) -> (List[Dict[str, Any]], Set[str]):
 
 
 # --- 3. 主程序 ---
-def main():
+def standardize_dataset():
     try:
         script_path = Path(__file__).resolve()
         project_root = script_path.parent
@@ -275,4 +275,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    standardize_dataset()

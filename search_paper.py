@@ -8,6 +8,7 @@ from datetime import datetime
 from gpt import call_chatgpt
 from utils import save_last_position, load_last_position
 import requests
+
 logging.basicConfig(format='[%(asctime)s %(levelname)s] %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
                     level=logging.INFO)
@@ -60,32 +61,49 @@ class PaperSearch:
 
     def load_config(self, config_path: str) -> dict:
         """加载配置文件"""
-        with open(config_path, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
+        try:
+            with open(config_path, 'r', encoding='utf-8') as f:
+                return yaml.safe_load(f)
+        except Exception as e:
+            logging.error(f"读取文件 {config_path} 失败: {e}")
 
     def get_recent_paper(self, file_path):
-        """读取papers_metadata.jsonl文件从头到指定位置的内容"""
-        last_position = load_last_position()
-        current_position = 0
-
-        with open(file_path, 'r', encoding='utf-8') as f:
-            while current_position < last_position:
-                line = f.readline()
-                if not line:  # 文件结束
-                    break
-
-                current_position = f.tell()  # 获取当前文件位置
-
-                # 如果读取这行后超过目标位置，说明这行不完整
-                if current_position > last_position:
-                    break
-
-                try:
-                    item = json.loads(line.strip())
-                    self.paper.append(item['id'])
-                except json.JSONDecodeError:
-                    print(f"警告：无法解析JSON行: {line}")
-                    continue
+        try:
+            if not os.path.exists(file_path):
+                return
+            with open(file_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    try:
+                        item = json.loads(line.strip())
+                        self.paper.append(item['id'])
+                    except json.JSONDecodeError:
+                        print(f"警告：无法解析JSON行: {line}")
+                        continue
+        except Exception as e:
+            logging.error(f"读取文件 {file_path} 失败: {e}")
+    # def get_recent_paper(self, file_path):
+    #     """读取papers_metadata.jsonl文件从头到指定位置的内容"""
+    #     last_position = load_last_position()
+    #     current_position = 0
+    #
+    #     with open(file_path, 'r', encoding='utf-8') as f:
+    #         while current_position < last_position:
+    #             line = f.readline().strip()
+    #             if not line:  # 文件结束
+    #                 break
+    #
+    #             current_position = f.tell()  # 获取当前文件位置
+    #
+    #             # 如果读取这行后超过目标位置，说明这行不完整
+    #             if current_position > last_position:
+    #                 break
+    #
+    #             try:
+    #                 item = json.loads(line.strip())
+    #                 self.paper.append(item['id'])
+    #             except json.JSONDecodeError:
+    #                 print(f"警告：无法解析JSON行: {line}")
+    #                 continue
 
     def get_authors(self, authors, first_author=False):
         output = str()
@@ -210,6 +228,7 @@ class PaperSearch:
                 'download_time': download_time,  # 下载时间
             }
 
+
             # 以追加模式写入JSONL文件
             with open(jsonl_file, 'a', encoding='utf-8') as f:
                 # 将字典转换为JSON字符串并写入文件，末尾添加换行符
@@ -274,40 +293,40 @@ class PaperSearch:
         system_prompt = f"""
         You are an expert in LLM4SE (Large Language Models for Software Engineering).
         Your task is to analyze the provided academic paper's title and abstract to identify the research problem addressed and whether the paper proposes a new code capability evaluation benchmark.
-    
+
         Step 1: Analyze the research problem of the paper and determine if it is related to LLM4SE. If not related, set topic to null;
         If related, determine which field the paper belongs to from: {self.config['topic']}. If the paper's research field doesn't belong to any of these, please summarize a new field.
-    
+
         Step 2: Determine whether the paper proposes a new dataset (benchmark).
-        
+
         Notice:
         1. If a paper cannot be categorized into any of the provided research field, assign it a new field that is both high-dimensional and conceptually aligned with the given fields.
         2. When determining whether a paper introduces a new benchmark, ensure that the benchmark is originally proposed in that paper—not merely a new method evaluated on an existing benchmark.
-        
+
         Return output strictly in the specified JSON format, only return the JSON object, without any explanations.
-    
+
         **Required JSON structure:**
         {{
           "topic": (which field the paper's research content belongs to),
           "benchmark": (true if the paper proposes a new benchmark, otherwise false)
         }}
-        
+
         Example 1:
         Input:
         GenSIaC: Toward Security-Aware Infrastructure-as-Code Generation with Large Language Models
         In recent years, Infrastructure as Code (IaC) has emerged as a critical approach for managing and provisioning IT infrastructure through code and automation. IaC enables organizations to create scalable and consistent environments, effectively managing servers and development settings. However, the growing complexity of cloud infrastructures has led to an increased risk of misconfigurations and security vulnerabilities in IaC scripts. To address this problem, this paper investigates the potential of Large Language Models (LLMs) in generating security-aware IaC code, avoiding misconfigurations introduced by developers and administrators. While LLMs have made significant progress in natural language processing and code generation, their ability to generate secure IaC scripts remains unclear. This paper addresses two major problems: 1) the lack of understanding of security weaknesses in IaC scripts generated by LLMs, and 2) the absence of techniques for enhancing security in generating IaC code with LLMs. To assess the extent to which LLMs contain security knowledge, we first conduct a comprehensive evaluation of base LLMs in recognizing major IaC security weaknesses during the generation and inspection of IaC code. Then, we propose GenSIaC, an instruction fine-tuning dataset designed to improve LLMs' ability to recognize potential security weaknesses. Leveraging GenSIaC, we fine-tune LLMs and instruct models to generate security-aware IaC code. Our evaluation demonstrates that our models achieve substantially improved performance in recognizing and preventing IaC security misconfigurations, e.g., boosting the F1-score from 0.303 to 0.858. Additionally, we perform ablation studies and explore GenSIaC's generalizability to other LLMs and its cross-language capabilities.
-        
+
         Output:
         {{
           "topic": Code Instruction-Tuning,
           "benchmark": true
         }}
-        
+
         Example 2:
         Input:
         Beyond Accuracy: Behavioral Dynamics of Agentic Multi-Hunk Repair
         Automated program repair has traditionally focused on single-hunk defects, overlooking multi-hunk bugs that are prevalent in real-world systems. Repairing these bugs requires coordinated edits across multiple, disjoint code regions, posing substantially greater challenges. We present the first systematic study of LLM-driven coding agents (Claude Code, Codex, Gemini-cli, and Qwen Code) on this task. We evaluate these agents on 372 multi-hunk bugs from the Hunk4J dataset, analyzing 1,488 repair trajectories using fine-grained metrics that capture localization, repair accuracy, regression behavior, and operational dynamics. Results reveal substantial variation: repair accuracy ranges from 25.8% (Qwen Code) to 93.3% (Claude Code) and consistently declines with increasing bug dispersion and complexity. High-performing agents demonstrate superior semantic consistency, achieving positive regression reduction, whereas lower-performing agents often introduce new test failures. Notably, agents do not fail fast; failed repairs consume substantially more resources (39%-343% more tokens) and require longer execution time (43%-427%). Additionally, we developed Maple to provide agents with repository-level context. Empirical results show that Maple improves the repair accuracy of Gemini-cli by 30% through enhanced localization. By analyzing fine-grained metrics and trajectory-level analysis, this study moves beyond accuracy to explain how coding agents localize, reason, and act during multi-hunk repair.
-        
+
         Output:
         {{
           "topic": Code Debug,
@@ -482,6 +501,11 @@ class PaperSearch:
             success_download = self.get_daily_papers(query=cate, max_results=max_results,
                                                      download_dir=download_papers_path, jsonl_file=papers_metadata_path)
             logging.info(f"Download {success_download} new papers")
+
+        # 保存新的文件位置
+        # new_position = os.path.getsize(papers_metadata_path)
+        # save_last_position(new_position)
+
         logging.info(f"GET daily papers end")
 
 

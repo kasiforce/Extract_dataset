@@ -69,7 +69,9 @@ class HTMLGenerator:
                 'month': year_month,
                 'count': len(papers),
                 'published_count': sum(1 for p in papers if p.get('conference')),
-                'preprint_count': sum(1 for p in papers if not p.get('conference'))
+                'preprint_count': sum(1 for p in papers if not p.get('conference')),
+                'benchmark_count': sum(1 for p in papers if p.get('benchmark')),
+                'non-benchmark_count': sum(1 for p in papers if not p.get('benchmark'))
             })
 
         with open(data_dir / "index.json", 'w', encoding='utf-8') as f:
@@ -92,6 +94,8 @@ class HTMLGenerator:
         # 计算各分类数量
         published_count = sum(1 for p in self.papers if p.get('conference'))
         preprint_count = sum(1 for p in self.papers if not p.get('conference'))
+        benchmark_count = sum(1 for p in self.papers if p.get('benchmark'))
+        non_benchmark_count = sum(1 for p in self.papers if not p.get('benchmark'))
         test_count = sum(1 for p in self.papers if 'Code Testing' in p.get('tag', []))
         translate_count = sum(1 for p in self.papers if 'Code Translation' in p.get('tag', []))
         edit_count = sum(1 for p in self.papers if 'Code Editing' in p.get('tag', []))
@@ -151,6 +155,14 @@ class HTMLGenerator:
                     <button class="filter-btn category-btn" data-category="Code Testing">Code Testing ({test_count})</button>
                     <button class="filter-btn category-btn" data-category="Code Pre-Training">Code Pre-Training ({pretrain_count})</button>
                     <button class="filter-btn category-btn" data-category="Code Instruction-Tuning">Code Instruction-Tuning ({tune_count})</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">📊 benchmark：</label>
+                <div class="filters benchmark-filters">
+                    <button class="filter-btn benchmark-btn active" data-benchmark="all">全部 ({len(self.papers)})</button>
+                    <button class="filter-btn benchmark-btn" data-benchmark="benchmark">benchmark ({benchmark_count})</button>
+                    <button class="filter-btn benchmark-btn" data-benchmark="non-benchmark">non-benchmark ({non_benchmark_count})</button>
                 </div>
             </div>
             <div class="filter-group">
@@ -807,6 +819,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const monthBtns = document.querySelectorAll('.month-btn');
     const statusBtns = document.querySelectorAll('.status-btn');
     const categoryBtns = document.querySelectorAll('.category-btn');
+    const benchmarkBtns = document.querySelectorAll('.benchmark-btn');
     const sortBtns = document.querySelectorAll('.sort-btn');
     const searchInput = document.getElementById('searchInput');
     const exportBtn = document.getElementById('exportBtn');
@@ -820,6 +833,7 @@ document.addEventListener('DOMContentLoaded', function() {
         monthBtns: monthBtns.length,
         statusBtns: statusBtns.length,
         categoryBtns: categoryBtns.length,
+        benchmarkBtns: benchmarkBtns.length,
         sortBtns: sortBtns.length,
         searchInput: !!searchInput,
         exportBtn: !!exportBtn,
@@ -834,6 +848,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentMonth = 'all';  // 当前选中的月份
     let currentStatus = 'all';
     let currentCategory = 'all';
+    let currentBenchmark = 'all';
     let currentSort = 'date-desc';
     let searchTerm = '';
     let filteredPapers = [];
@@ -1031,19 +1046,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 筛选和排序论文
     function filterAndSortPapers() {
-        console.log('Filtering papers:', { currentStatus, currentCategory, searchTerm, currentSort });
+        console.log('Filtering papers:', { currentStatus, currentCategory, currentBenchmark, searchTerm, currentSort });
 
         // 筛选
         filteredPapers = allPapersData.filter(paper => {
             const status = paper.conference ? 'published' : 'preprint';
             const tags = paper.tag || [];
+            const benchmark = paper.benchmark ? 'benchmark' : 'non-benchmark';
             const text = `${paper.title} ${paper.authors} ${paper.abstract}`.toLowerCase();
 
             const matchStatus = currentStatus === 'all' || status === currentStatus;
             const matchCategory = currentCategory === 'all' || tags.includes(currentCategory);
+            const matchBenchmark = currentBenchmark === 'all' || benchmark === currentBenchmark;
             const matchSearch = searchTerm === '' || text.includes(searchTerm);
 
-            return matchStatus && matchCategory && matchSearch;
+            return matchStatus && matchCategory && matchBenchmark && matchSearch;
         });
 
         console.log(`Filtered to ${filteredPapers.length} papers`);
@@ -1197,6 +1214,17 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentCategory = this.dataset.category;
+            filterAndSortPapers();
+        });
+    });
+    
+    // benchmark筛选
+    benchmarkBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            console.log('Benchmark button clicked:', this.dataset.benchmark);
+            benchmarkBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            benchmarkCategory = this.dataset.benchmark;
             filterAndSortPapers();
         });
     });

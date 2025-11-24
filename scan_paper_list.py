@@ -17,7 +17,7 @@ def scan_paper_jsonl(paper_search):
     target_dir = os.path.dirname(paper_jsonl)
 
     # 创建临时文件
-    with NamedTemporaryFile(mode='w', delete=False, suffix='.jsonl',
+    with NamedTemporaryFile(mode='a', delete=False, suffix='.jsonl',
                             dir=target_dir, encoding='utf-8') as temp_file:
         temp_path = temp_file.name
 
@@ -33,19 +33,19 @@ def scan_paper_jsonl(paper_search):
                 new_lines = []
                 for line in f:
                     line = line.strip()
+                    print(line)
                     if line:
                         new_lines.append(line)
 
                 for line in new_lines:
+                    if not line:
+                        continue
                     data = json.loads(line)
-                    if "title" in data:
-                        title = data['title']
-                        # 清理标题，移除可能影响搜索的字符
-                        clean_title = title.replace('"', '').replace("'", "").replace(":", "")
-                        query = f"ti:{clean_title}"
+                    if "id" in data:
+                        id = data['id']
                         client = arxiv.Client()
                         search_engine = arxiv.Search(
-                            query=query,
+                            query=id,
                             sort_by=arxiv.SortCriterion.Relevance,
                             max_results=1
                         )
@@ -62,6 +62,7 @@ def scan_paper_jsonl(paper_search):
 
                                 # 判断论文是否为LLM4SE
                                 paper_title = result.title
+                                print(paper_title)
                                 paper_abstract = result.summary
                                 content = paper_title + '\n' + paper_abstract
                                 system_prompt, user_prompt = paper_search.build_benchmark_finder_prompt(content)
@@ -69,12 +70,13 @@ def scan_paper_jsonl(paper_search):
                                     {"role": "system", "content": system_prompt},
                                     {"role": "user", "content": user_prompt}
                                 ]
-
+                                # print(messages)
                                 resp = call_chatgpt(messages)
-
+                                print(resp)
                                 if resp['topic']:
                                     # 下载PDF文件
-                                    pdf_path = paper_search.download_paper_pdf(result, paper_search.config['download_papers_path'])
+                                    pdf_path = paper_search.download_paper_pdf(result, paper_search.config[
+                                        'download_papers_path'])
 
                                     # 保存元数据到jsonl
                                     # 提取论文的基本信息
@@ -87,7 +89,8 @@ def scan_paper_jsonl(paper_search):
                                     publish_time = result.published.date()
                                     update_time = result.updated.date()
                                     comment = result.comment if result.comment else None
-                                    journal_ref = result.journal_ref if hasattr(result, 'journal_ref') and result.journal_ref else None
+                                    journal_ref = result.journal_ref if hasattr(result,
+                                                                                'journal_ref') and result.journal_ref else None
                                     conference = paper_search.extract_venue_from_journal_ref(journal_ref) or \
                                                  paper_search.extract_venue_from_comment(comment)
 
@@ -113,22 +116,31 @@ def scan_paper_jsonl(paper_search):
                                     }
 
                                     temp_file.write(json.dumps(paper_metadata, ensure_ascii=False) + '\n')
+                                    temp_file.flush()
+                                    current_position = temp_file.tell()
+                                    save_last_position(current_position)
 
                             except Exception as e:
                                 print(f"处理{result.get_short_id()}论文时出错: {e}")
-                                temp_file.write(line)
+                                temp_file.write(line + '\n')
+                                temp_file.flush()
                     else:
                         # 如果原行没有title，原样写入
-                        temp_file.write(line)
+                        temp_file.write(line + '\n')
+                        temp_file.flush()
 
+            # new_position = temp_file.tell()
+            # save_last_position(new_position)
             # 关闭临时文件
             temp_file.close()
             # 用临时文件替换原文件
             os.replace(temp_path, paper_jsonl)
 
-            # 保存新的文件位置
-            new_position = os.path.getsize(paper_jsonl)
-            save_last_position(new_position)
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+            #
+            # position = os.path.getsize(paper_jsonl)
+            # save_last_position(position)
 
         except Exception as e:
             # 如果出错，删除临时文件
@@ -136,3 +148,9 @@ def scan_paper_jsonl(paper_search):
             print(f"处理文件时出错: {e}")
 
     print("--- 扫描结束 ---")
+
+
+if __name__ == "__main__":
+    config_path = "config.yaml"
+    search = PaperSearch(config_path)
+    scan_paper_jsonl(search)
