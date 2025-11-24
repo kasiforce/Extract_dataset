@@ -44,6 +44,7 @@ jobs:
           pip install PyMuPDF
           pip install tabulate
           pip install openai
+          pip install pandas
 
       - name: Run daily arxiv 
         run: |
