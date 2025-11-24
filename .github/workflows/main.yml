@@ -43,6 +43,7 @@ jobs:
           pip install pyyaml
           pip install PyMuPDF
           pip install tabulate
+          pip install openai
 
       - name: Run daily arxiv 
         run: |
