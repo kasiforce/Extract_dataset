@@ -58,6 +58,7 @@ jobs:
           commit-message: "Github Action Automatic Update Arxiv Papers"
           files: |
             results/
+            docs/
             papers_metadata.jsonl
 
           rebase: 'true'
