@@ -309,10 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // 更新benchmark按钮的数量
-        updateBenchmarkButtonCounts();
+        //updateBenchmarkButtonCounts();
 
         // 更新研究领域按钮的数量
-        // updateCategoryButtonCounts();
+        updateCategoryButtonCounts();
+        updateBenchmarkButtonCounts();
 
         // 更新显示
         if (resultsCount) {
