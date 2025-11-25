@@ -142,6 +142,14 @@ class HTMLGenerator:
                 </div>
             </div>
             <div class="filter-group">
+                <label class="filter-label">📊 benchmark：</label>
+                <div class="filters benchmark-filters">
+                    <button class="filter-btn benchmark-btn active" data-benchmark="all">全部 ({len(self.papers)})</button>
+                    <button class="filter-btn benchmark-btn" data-benchmark="benchmark">benchmark ({benchmark_count})</button>
+                    <button class="filter-btn benchmark-btn" data-benchmark="non-benchmark">non-benchmark ({non_benchmark_count})</button>
+                </div>
+            </div>
+            <div class="filter-group">
                 <label class="filter-label">🏷️ 研究领域：</label>
                 <div class="filters category-filters">
                     <button class="filter-btn category-btn active" data-category="all">全部 ({len(self.papers)})</button>
@@ -155,14 +163,6 @@ class HTMLGenerator:
                     <button class="filter-btn category-btn" data-category="Code Testing">Code Testing ({test_count})</button>
                     <button class="filter-btn category-btn" data-category="Code Pre-Training">Code Pre-Training ({pretrain_count})</button>
                     <button class="filter-btn category-btn" data-category="Code Instruction-Tuning">Code Instruction-Tuning ({tune_count})</button>
-                </div>
-            </div>
-            <div class="filter-group">
-                <label class="filter-label">📊 benchmark：</label>
-                <div class="filters benchmark-filters">
-                    <button class="filter-btn benchmark-btn active" data-benchmark="all">全部 ({len(self.papers)})</button>
-                    <button class="filter-btn benchmark-btn" data-benchmark="benchmark">benchmark ({benchmark_count})</button>
-                    <button class="filter-btn benchmark-btn" data-benchmark="non-benchmark">non-benchmark ({non_benchmark_count})</button>
                 </div>
             </div>
             <div class="filter-group">
@@ -194,7 +194,7 @@ class HTMLGenerator:
 
     <footer>
         <div class="container">
-            <p>© 2025 DailyPaper | 数据来源: ArXiv | <a href="https://github.com/yourusername/DailyPaper" target="_blank">GitHub</a></p>
+            <p>© 2025 DailyPaper | 数据来源: ArXiv | <a href="https://github.com/SYSUSELab/DailyLLM4SEPaper" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
@@ -1007,12 +1007,51 @@ document.addEventListener('DOMContentLoaded', function() {
         return { class: badgeClass, text: conference };
     }
 
+    // 更新benchmark按钮的数量
+    function updateBenchmarkButtonCounts() {
+        // 先筛选出符合当前状态的论文
+        const statusFilteredPapers = allPapersData.filter(paper => {
+            const status = paper.conference ? 'published' : 'preprint';
+            return currentStatus === 'all' || status === currentStatus;
+        });
+
+        // 计算各个领域的数量
+        const benchmarkCounts = {
+            'all': statusFilteredPapers.length,
+            'benchmark': 0,
+            'non-benchmark': 0,
+        };
+
+        statusFilteredPapers.forEach(paper => {
+            if (paper.benchmark) {
+                benchmarkCounts['benchmark']++;
+            }
+            else {
+                benchmarkCounts['non-benchmark']++;
+            }
+        });
+
+        // 更新按钮文本
+        benchmarkBtns.forEach(btn => {
+            const benchmark = btn.dataset.benchmark;
+            const displayName = benchmark === 'all' ? '全部' : 
+                               benchmark === 'benchmark' ? 'benchmark' : 'non-benchmark';
+            const count = benchmarkCounts[benchmark] || 0;
+            btn.textContent = `${displayName} (${count})`;
+        });
+    }
+
     // 更新研究领域按钮的数量
     function updateCategoryButtonCounts() {
         // 先筛选出符合当前状态的论文
         const statusFilteredPapers = allPapersData.filter(paper => {
             const status = paper.conference ? 'published' : 'preprint';
-            return currentStatus === 'all' || status === currentStatus;
+            const benchmark = paper.benchmark ? 'benchmark' : 'non-benchmark';
+
+            const matchStatus = currentStatus === 'all' || status === currentStatus;
+            const matchBenchmark = currentBenchmark === 'all' || benchmark === currentBenchmark;
+
+            return matchStatus && matchBenchmark;
         });
 
         // 计算各个领域的数量
@@ -1081,6 +1120,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return dateA - dateB;
             }
         });
+
+        // 更新benchmark按钮的数量
+        updateBenchmarkButtonCounts();
 
         // 更新研究领域按钮的数量
         updateCategoryButtonCounts();
@@ -1222,7 +1264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             filterAndSortPapers();
         });
     });
-    
+
     // benchmark筛选
     benchmarkBtns.forEach(btn => {
         btn.addEventListener('click', function() {
