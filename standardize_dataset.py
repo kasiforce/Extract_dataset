@@ -177,9 +177,9 @@ def main():
     results_folder = project_root / "results"
     
     # 输入文件：提取脚本的输出
-    input_csv_path = results_folder / "benchmarks_database_1113.csv"
+    input_csv_path = results_folder / "benchmarks_database_1125.csv"
     # 输出文件：本脚本的最终产物 (JSON)
-    output_json_path = results_folder / "benchmarks_database_1113_normalized.json"
+    output_json_path = results_folder / "benchmarks_database_1125_normalized.json"
 
     print(f"读取原始CSV: {input_csv_path}")
     print(f"写入/更新JSON: {output_json_path}")
