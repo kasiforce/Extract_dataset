@@ -194,12 +194,51 @@ document.addEventListener('DOMContentLoaded', function() {
         return { class: badgeClass, text: conference };
     }
 
+    // 更新benchmark按钮的数量
+    function updateBenchmarkButtonCounts() {
+        // 先筛选出符合当前状态的论文
+        const statusFilteredPapers = allPapersData.filter(paper => {
+            const status = paper.conference ? 'published' : 'preprint';
+            return currentStatus === 'all' || status === currentStatus;
+        });
+
+        // 计算各个领域的数量
+        const benchmarkCounts = {
+            'all': statusFilteredPapers.length,
+            'benchmark': 0,
+            'non-benchmark': 0,
+        };
+
+        statusFilteredPapers.forEach(paper => {
+            if (paper.benchmark) {
+                benchmarkCounts['benchmark']++;
+            }
+            else {
+                benchmarkCounts['non-benchmark']++;
+            }
+        });
+
+        // 更新按钮文本
+        benchmarkBtns.forEach(btn => {
+            const benchmark = btn.dataset.benchmark;
+            const displayName = benchmark === 'all' ? '全部' : 
+                               benchmark === 'benchmark' ? 'benchmark' : 'non-benchmark';
+            const count = benchmarkCounts[benchmark] || 0;
+            btn.textContent = `${displayName} (${count})`;
+        });
+    }
+
     // 更新研究领域按钮的数量
     function updateCategoryButtonCounts() {
         // 先筛选出符合当前状态的论文
         const statusFilteredPapers = allPapersData.filter(paper => {
             const status = paper.conference ? 'published' : 'preprint';
-            return currentStatus === 'all' || status === currentStatus;
+            const benchmark = paper.benchmark ? 'benchmark' : 'non-benchmark';
+
+            const matchStatus = currentStatus === 'all' || status === currentStatus;
+            const matchBenchmark = currentBenchmark === 'all' || benchmark === currentBenchmark;
+
+            return matchStatus && matchBenchmark;
         });
 
         // 计算各个领域的数量
@@ -268,6 +307,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return dateA - dateB;
             }
         });
+
+        // 更新benchmark按钮的数量
+        updateBenchmarkButtonCounts();
 
         // 更新研究领域按钮的数量
         updateCategoryButtonCounts();
@@ -409,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
             filterAndSortPapers();
         });
     });
-    
+
     // benchmark筛选
     benchmarkBtns.forEach(btn => {
         btn.addEventListener('click', function() {
