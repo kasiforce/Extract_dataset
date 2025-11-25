@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateBenchmarkButtonCounts();
 
         // 更新研究领域按钮的数量
-        updateCategoryButtonCounts();
+        // updateCategoryButtonCounts();
 
         // 更新显示
         if (resultsCount) {
