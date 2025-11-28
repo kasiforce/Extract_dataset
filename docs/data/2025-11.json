@@ -624,5 +624,30 @@
     "published": "2025-11-25",
     "update_time": "2025-11-25",
     "download_time": "2025-11-27 00:55:36"
+  },
+  {
+    "id": "2511.21382",
+    "title": "Large Language Models for Unit Test Generation: Achievements, Challenges, and the Road Ahead",
+    "abstract": "Unit testing is an essential yet laborious technique for verifying software and mitigating regression risks. Although classic automated methods effectively explore program structures, they often lack the semantic information required to produce realistic inputs and assertions. Large Language Models (LLMs) address this limitation by utilizing by leveraging their data-driven knowledge of code semantics and programming patterns. To analyze the state of the art in this domain, we conducted a systematic literature review of 115 publications published between May 2021 and August 2025. We propose a unified taxonomy based on the unit test generation lifecycle that treats LLMs as stochastic generators requiring systematic engineering constraints. This framework analyzes the literature regarding core generative strategies and a set of enhancement techniques ranging from pre-generation context enrichment to post-generation quality assurance. Our analysis reveals that prompt engineering has emerged as the dominant utilization strategy and accounts for 89% of the studies due to its flexibility. We find that iterative validation and repair loops have become the standard mechanism to ensure robust usability and lead to significant improvements in compilation and execution pass rates. However, critical challenges remain regarding the weak fault detection capabilities of generated tests and the lack of standardized evaluation benchmarks. We conclude with a roadmap for future research that emphasizes the progression towards autonomous testing agents and hybrid systems combining LLMs with traditional software engineering tools. This survey provides researchers and practitioners with a comprehensive perspective on converting the potential of LLMs into industrial-grade testing solutions.",
+    "arxiv_url": "https://arxiv.org/abs/2511.21382",
+    "authors": [
+      "Bei Chu",
+      "Yang Feng",
+      "Kui Liu",
+      "Zifan Nan",
+      "Zhaoqiang Guo",
+      "Baowen Xu"
+    ],
+    "first_author": "Bei Chu",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.21382v1",
+    "published": "2025-11-26",
+    "update_time": "2025-11-26",
+    "download_time": "2025-11-28 00:54:27"
   }
 ]
