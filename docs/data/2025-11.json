@@ -673,5 +673,34 @@
     "published": "2025-11-26",
     "update_time": "2025-11-26",
     "download_time": "2025-11-29 00:55:02"
+  },
+  {
+    "id": "2511.21197",
+    "title": "Bug Detective and Quality Coach: Developers' Mental Models of AI-Assisted IDE Tools",
+    "abstract": "AI-assisted tools support developers in performing cognitively demanding tasks such as bug detection and code readability assessment. Despite the advancements in the technical characteristics of these tools, little is known about how developers mentally model them and how mismatches affect trust, control, and adoption. We conducted six co-design workshops with 58 developers to elicit their mental models about AI-assisted bug detection and readability features. It emerged that developers conceive bug detection tools as \\textit{bug detectives}, which warn users only in case of critical issues, guaranteeing transparency, actionable feedback, and confidence cues. Readability assessment tools, on the other hand, are envisioned as \\textit{quality coaches}, which provide contextual, personalized, and progressive guidance. Trust, in both tasks, depends on the clarity of explanations, timing, and user control. A set of design principles for Human-Centered AI in IDEs has been distilled, aiming to balance disruption with support, conciseness with depth, and automation with human agency.",
+    "arxiv_url": "https://arxiv.org/abs/2511.21197",
+    "authors": [
+      "Paolo Buono",
+      "Mary Cerullo",
+      "Stefano Cirillo",
+      "Giuseppe Desolda",
+      "Francesco Greco",
+      "Emanuela Guglielmi",
+      "Grazia Margarella",
+      "Giuseppe Polese",
+      "Simone Scalabrino",
+      "Cesare Tucci"
+    ],
+    "first_author": "Paolo Buono",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.21197v1",
+    "published": "2025-11-26",
+    "update_time": "2025-11-26",
+    "download_time": "2025-11-30 01:03:31"
   }
 ]
