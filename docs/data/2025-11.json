@@ -702,5 +702,28 @@
     "published": "2025-11-26",
     "update_time": "2025-11-26",
     "download_time": "2025-11-30 01:03:31"
+  },
+  {
+    "id": "2511.21509",
+    "title": "SV-LIB 1.0: A Standard Exchange Format for Software-Verification Tasks",
+    "abstract": "In the past two decades, significant research and development effort went into the development of verification tools for individual languages, such asC, C++, and Java. Many of the used verification approaches are in fact language-agnostic and it would be beneficial for the technology transfer to allow for using the implementations also for other programming and modeling languages. To address the problem, we propose SV-LIB, an exchange format and intermediate language for software-verification tasks, including programs, specifications, and verification witnesses. SV-LIBis based on well-known concepts from imperative programming languages and uses SMT-LIB to represent expressions and sorts used in the program. This makes it easy to parse and to build into existing infrastructure, since many verification tools are based on SMT solvers already. Furthermore, SV-LIBdefines a witness format for both correct and incorrect SV-LIB programs, together with means for specifying witness-validation tasks. This makes it possible both to implement independent witness validators and to reuse some verifiers also as validators for witnesses. This paper presents version 1.0 of the SV-LIBformat, including its design goals, the syntax, and informal semantics. Formal semantics and further extensions to concurrency are planned for future versions.",
+    "arxiv_url": "https://arxiv.org/abs/2511.21509",
+    "authors": [
+      "Dirk Beyer",
+      "Gidon Ernst",
+      "Martin Jonáš",
+      "Marian Lingsch-Rosenfeld"
+    ],
+    "first_author": "Dirk Beyer",
+    "primary_category": "cs.PL",
+    "tag": [
+      "Code Verification"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2511.21509v1",
+    "published": "2025-11-26",
+    "update_time": "2025-11-26",
+    "download_time": "2025-12-01 01:07:41"
   }
 ]
