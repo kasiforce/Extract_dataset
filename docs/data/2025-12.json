@@ -23,5 +23,27 @@
     "published": "2025-12-01",
     "update_time": "2025-12-01",
     "download_time": "2025-12-03 00:57:19"
+  },
+  {
+    "id": "2512.02953",
+    "title": "The Evolutionary Ecology of Software: Constraints, Innovation, and the AI Disruption",
+    "abstract": "This chapter investigates the evolutionary ecology of software, focusing on the symbiotic relationship between software and innovation. An interplay between constraints, tinkering, and frequency-dependent selection drives the complex evolutionary trajectories of these socio-technological systems. Our approach integrates agent-based modeling and case studies, drawing on complex network analysis and evolutionary theory to explore how software evolves under the competing forces of novelty generation and imitation. By examining the evolution of programming languages and their impact on developer practices, we illustrate how technological artifacts co-evolve with and shape societal norms, cultural dynamics, and human interactions. This ecological perspective also informs our analysis of the emerging role of AI-driven development tools in software evolution. While large language models (LLMs) provide unprecedented access to information, their widespread adoption introduces new evolutionary pressures that may contribute to cultural stagnation, much like the decline of diversity in past software ecosystems. Understanding the evolutionary pressures introduced by AI-mediated software production is critical for anticipating broader patterns of cultural change, technological adaptation, and the future of software innovation.",
+    "arxiv_url": "https://arxiv.org/abs/2512.02953",
+    "authors": [
+      "Sergi Valverde",
+      "Blai Vidiella",
+      "Salva Duran-Nebreda"
+    ],
+    "first_author": "Sergi Valverde",
+    "primary_category": "cs.SE",
+    "tag": [
+      "AI-mediated Software Evolution"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.02953v1",
+    "published": "2025-12-02",
+    "update_time": "2025-12-02",
+    "download_time": "2025-12-04 00:57:36"
   }
 ]
