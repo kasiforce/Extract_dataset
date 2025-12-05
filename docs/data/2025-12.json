@@ -45,5 +45,30 @@
     "published": "2025-12-02",
     "update_time": "2025-12-02",
     "download_time": "2025-12-04 00:57:36"
+  },
+  {
+    "id": "2512.03421",
+    "title": "Exploring the Potential and Limitations of Large Language Models for Novice Program Fault Localization",
+    "abstract": "Novice programmers often face challenges in fault localization due to their limited experience and understanding of programming syntax and logic. Traditional methods like Spectrum-Based Fault Localization (SBFL) and Mutation-Based Fault Localization (MBFL) help identify faults but often lack the ability to understand code context, making them less effective for beginners. In recent years, Large Language Models (LLMs) have shown promise in overcoming these limitations by utilizing their ability to understand program syntax and semantics. LLM-based fault localization provides more accurate and context-aware results than traditional techniques. This study evaluates six closed-source and seven open-source LLMs using the Codeflaws, Condefects, and BugT datasets, with BugT being a newly constructed dataset specifically designed to mitigate data leakage concerns. Advanced models with reasoning capabilities, such as OpenAI o3 and DeepSeekR1, achieve superior accuracy with minimal reliance on prompt engineering. In contrast, models without reasoning capabilities, like GPT-4, require carefully designed prompts to maintain performance. While LLMs perform well in simple fault localization, their accuracy decreases as problem difficulty increases, though top models maintain robust performance in the BugT dataset. Over-reasoning is another challenge, where some models generate excessive explanations that hinder fault localization clarity. Additionally, the computational cost of deploying LLMs remains a significant barrier for real-time debugging. LLM's explanations demonstrate significant value for novice programmer assistance, with one-year experience participants consistently rating them highly. Our findings demonstrate the potential of LLMs to improve debugging efficiency while stressing the need for further refinement in their reasoning and computational efficiency for practical adoption.",
+    "arxiv_url": "https://arxiv.org/abs/2512.03421",
+    "authors": [
+      "Hexiang Xu",
+      "Hengyuan Liu",
+      "Yonghao Wu",
+      "Xiaolan Kang",
+      "Xiang Chen",
+      "Yong Liu"
+    ],
+    "first_author": "Hexiang Xu",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": "publication in The Journal of Systems & Software",
+    "pdf_url": "https://arxiv.org/pdf/2512.03421v1",
+    "published": "2025-12-03",
+    "update_time": "2025-12-03",
+    "download_time": "2025-12-05 00:58:23"
   }
 ]
