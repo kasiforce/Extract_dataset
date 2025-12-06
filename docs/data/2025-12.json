@@ -70,5 +70,31 @@
     "published": "2025-12-03",
     "update_time": "2025-12-03",
     "download_time": "2025-12-05 00:58:23"
+  },
+  {
+    "id": "2512.05073",
+    "title": "David vs. Goliath: Can Small Models Win Big with Agentic AI in Hardware Design?",
+    "abstract": "Large Language Model(LLM) inference demands massive compute and energy, making domain-specific tasks expensive and unsustainable. As foundation models keep scaling, we ask: Is bigger always better for hardware design? Our work tests this by evaluating Small Language Models coupled with a curated agentic AI framework on NVIDIA's Comprehensive Verilog Design Problems(CVDP) benchmark. Results show that agentic workflows: through task decomposition, iterative feedback, and correction - not only unlock near-LLM performance at a fraction of the cost but also create learning opportunities for agents, paving the way for efficient, adaptive solutions in complex design tasks.",
+    "arxiv_url": "https://arxiv.org/abs/2512.05073",
+    "authors": [
+      "Shashwat Shankar",
+      "Subhranshu Pandey",
+      "Innocent Dengkhw Mochahari",
+      "Bhabesh Mali",
+      "Animesh Basak Chowdhury",
+      "Sukanta Bhattacharjee",
+      "Chandan Karfa"
+    ],
+    "first_author": "Shashwat Shankar",
+    "primary_category": "cs.LG",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.05073v1",
+    "published": "2025-12-04",
+    "update_time": "2025-12-04",
+    "download_time": "2025-12-06 00:55:11"
   }
 ]
