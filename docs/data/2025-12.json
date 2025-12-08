@@ -121,5 +121,27 @@
     "published": "2025-12-04",
     "update_time": "2025-12-04",
     "download_time": "2025-12-07 01:03:43"
+  },
+  {
+    "id": "2512.04673",
+    "title": "Cross-Task Benchmarking and Evaluation of General-Purpose and Code-Specific Large Language Models",
+    "abstract": "Large Language Models (LLMs) have revolutionized both general natural language processing and domain-specific applications such as code synthesis, legal reasoning, and finance. However, while prior studies have explored individual model capabilities, a systematic cross-domain comparison that unifies linguistic, reasoning, and code understanding abilities remains underexplored. In this work, we present a comprehensive evaluation of five general-purpose and three code-specific state-of-the-art LLMs across six diverse benchmarks encompassing linguistic competence, mathematical reasoning, and trustworthiness. Additionally, we analyze model behavior on the CoNaLa dataset for code explanation, comparing natural language and code-specialized LLMs. Our findings reveal that models optimized for code (e.g., CodeLLaMA variants) exhibit strong reasoning and syntactic precision, that even for non-coding tasks can show measurable performance gains, in contrast to general-purpose models like Mistral-7B and Llama-3-8B.",
+    "arxiv_url": "https://arxiv.org/abs/2512.04673",
+    "authors": [
+      "Gunjan Das",
+      "Paheli Bhattacharya",
+      "Rishabh Gupta"
+    ],
+    "first_author": "Gunjan Das",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Cross-Task Benchmarking and Evaluation"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.04673v1",
+    "published": "2025-12-04",
+    "update_time": "2025-12-04",
+    "download_time": "2025-12-08 00:58:57"
   }
 ]
