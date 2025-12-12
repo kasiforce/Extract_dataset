@@ -219,5 +219,29 @@
     "published": "2025-12-09",
     "update_time": "2025-12-09",
     "download_time": "2025-12-11 00:59:49"
+  },
+  {
+    "id": "2512.09679",
+    "title": "Understanding Chain-of-Thought Effectiveness in Code Generation: An Empirical and Information-Theoretic Analysis",
+    "abstract": "Large language models (LLMs) achieve strong performance on code generation, but the mechanisms by which Chain-of-Thought (CoT) prompting helps remain unclear. We present a systematic empirical and information-theoretic study of CoT effectiveness in neural code generation, evaluating five paradigms (Zero-Shot, Zero-Shot CoT, Self-Planning, Structured CoT, Reasoning-CoT) across six Python benchmarks, a multilingual benchmark with 12 programming languages, and six models from 7B to 480B parameters, using conditional mutual information $I(Y;C|X)$ as a conceptual lens. Our results show that externally guided CoT consistently outperforms direct generation, with structured methods improving Pass@1 by 5--12\\% on average while using substantially fewer tokens than reflective reasoning, and that CoT benefits depend on language type systems and model capacity. We further find that reasoning \\emph{quality} is critical: high-quality structured CoT from strong generators yields significantly higher accuracy than lightweight alternatives with the same template, whereas naive Zero-Shot CoT can even degrade performance. These findings provide practical guidance for choosing CoT strategies based on model capacity, language characteristics, and task complexity.",
+    "arxiv_url": "https://arxiv.org/abs/2512.09679",
+    "authors": [
+      "Naizhu Jin",
+      "Zhong Li",
+      "Guang Yang",
+      "Tian Zhang",
+      "Qingkai Zeng"
+    ],
+    "first_author": "Naizhu Jin",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.09679v1",
+    "published": "2025-12-10",
+    "update_time": "2025-12-10",
+    "download_time": "2025-12-12 00:59:30"
   }
 ]
