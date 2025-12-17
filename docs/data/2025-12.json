@@ -337,5 +337,30 @@
     "published": "2025-12-12",
     "update_time": "2025-12-12",
     "download_time": "2025-12-16 01:00:01"
+  },
+  {
+    "id": "2512.13515",
+    "title": "Fine-tuned LLM-based Code Migration Framework",
+    "abstract": "The study presents the outcomes of research and experimental validation in the domain of automated codebase migration, with a focus on addressing challenges in transitioning SQL-based systems. The proposed method for migration essentially appears as a framework that leverages the best aspects of traditional software engineering techniques and provides an iterative, scalable, precise and efficient solution for modern database transformations. The central piece of the approach is the integration of a fine-tuned Large Language Model to address critical issues in SQL code conversion, such as syntax mapping, resolving discrepancies between Oracle PL/SQL and PostgreSQL, and optimising database elements such as stored procedures, triggers, views, and overall database logic. Thus, the method involves a trade-off between fine-tuning and prompt engineering. Special attention is given to a fine-tuning approach, which enhances the adaptability and compatibility with migration requirements across the entire database. According to the achieved results, fine-tuning plays a very important role. The study employs targeted evaluation methodologies along with computational metrics to measure the success of iterative conversion cycles. Core innovations include automated SQL feature detection, semi-supervised error analysis and integration of Subject Matter Experts feedback within a systematic migration workflow. The methodology achieves significant reductions in Syntax Error Rates, enhances feature alignment throughout migration iterations, and leverages dataset sampling to ensure continual improvement. By embedding GAI into the migration process, the framework facilitates precise feature mapping, semi-automated error resolution, and data-driven optimisation loops, improving workflow efficiency.",
+    "arxiv_url": "https://arxiv.org/abs/2512.13515",
+    "authors": [
+      "Oleg Grynets",
+      "Vasyl Lyashkevych",
+      "Dmytro Baran",
+      "Maksym Orliansky",
+      "Taras Zelenyy",
+      "Markiian Leshchyshyn"
+    ],
+    "first_author": "Oleg Grynets",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Translation"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.13515v1",
+    "published": "2025-12-15",
+    "update_time": "2025-12-15",
+    "download_time": "2025-12-17 00:55:40"
   }
 ]
