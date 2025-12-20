@@ -454,5 +454,27 @@
     "published": "2025-12-17",
     "update_time": "2025-12-17",
     "download_time": "2025-12-19 00:59:23"
+  },
+  {
+    "id": "2512.16790",
+    "title": "Inside Out: Uncovering How Comment Internalization Steers LLMs for Better or Worse",
+    "abstract": "While comments are non-functional elements of source code, Large Language Models (LLM) frequently rely on them to perform Software Engineering (SE) tasks. Yet, where in the model this reliance resides, and how it affects performance, remains poorly understood. We present the first concept-level interpretability study of LLMs in SE, analyzing three tasks - code completion, translation, and refinement - through the lens of internal comment representation. Using Concept Activation Vectors (CAV), we show that LLMs not only internalize comments as distinct latent concepts but also differentiate between subtypes such as Javadocs, inline, and multiline comments. By systematically activating and deactivating these concepts in the LLMs' embedding space, we observed significant, model-specific, and task-dependent shifts in performance ranging from -90% to +67%. Finally, we conducted a controlled experiment using the same set of code inputs, prompting LLMs to perform 10 distinct SE tasks while measuring the activation of the comment concept within their latent representations. We found that code summarization consistently triggered the strongest activation of comment concepts, whereas code completion elicited the weakest sensitivity. These results open a new direction for building SE tools and models that reason about and manipulate internal concept representations rather than relying solely on surface-level input.",
+    "arxiv_url": "https://arxiv.org/abs/2512.16790",
+    "authors": [
+      "Aaron Imani",
+      "Mohammad Moshirpour",
+      "Iftekhar Ahmed"
+    ],
+    "first_author": "Aaron Imani",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Interpretability"
+    ],
+    "benchmark": false,
+    "conference": "ICSE",
+    "pdf_url": "https://arxiv.org/pdf/2512.16790v1",
+    "published": "2025-12-18",
+    "update_time": "2025-12-18",
+    "download_time": "2025-12-20 00:56:12"
   }
 ]
