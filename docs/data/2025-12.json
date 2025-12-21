@@ -476,5 +476,27 @@
     "published": "2025-12-18",
     "update_time": "2025-12-18",
     "download_time": "2025-12-20 00:56:12"
+  },
+  {
+    "id": "2512.16741",
+    "title": "An Empirical Study of the Realism of Mutants in Deep Learning",
+    "abstract": "Mutation analysis is a well-established technique for assessing test quality in the traditional software development paradigm by injecting artificial faults into programs. Its application to deep learning (DL) has expanded beyond classical testing to support tasks such as fault localization, repair, data generation, and model robustness evaluation. The core assumption is that mutants behave similarly to real faults, an assumption well established in traditional software systems but largely unverified for DL.   This study presents the first empirical comparison of pre-training and post-training mutation approaches in DL with respect to realism. We introduce a statistical framework to quantify their coupling strength and behavioral similarity to real faults using publicly available bugs datasets: CleanML, DeepFD, DeepLocalize, and defect4ML. Mutants are generated using state-of-the-art tools representing both approaches.   Results show that pre-training mutants exhibit consistently stronger coupling and higher behavioral similarity to real faults than post-training mutants, indicating greater realism. However, the substantial computational cost of pre-training mutation underscores the need for more effective post-training operators that match or exceed the realism demonstrated by pre-training mutants.",
+    "arxiv_url": "https://arxiv.org/abs/2512.16741",
+    "authors": [
+      "Zaheed Ahmed",
+      "Philip Makedonski",
+      "Jens Grabowski"
+    ],
+    "first_author": "Zaheed Ahmed",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.16741v1",
+    "published": "2025-12-18",
+    "update_time": "2025-12-18",
+    "download_time": "2025-12-21 01:03:33"
   }
 ]
