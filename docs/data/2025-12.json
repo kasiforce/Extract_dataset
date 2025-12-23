@@ -524,5 +524,26 @@
     "published": "2025-12-18",
     "update_time": "2025-12-18",
     "download_time": "2025-12-22 01:02:53"
+  },
+  {
+    "id": "2512.17814",
+    "title": "LLM-based Behaviour Driven Development for Hardware Design",
+    "abstract": "Test and verification are essential activities in hardware and system design, but their complexity grows significantly with increasing system sizes. While Behavior Driven Development (BDD) has proven effective in software engineering, it is not yet well established in hardware design, and its practical use remains limited. One contributing factor is the manual effort required to derive precise behavioral scenarios from textual specifications.   Recent advances in Large Language Models (LLMs) offer new opportunities to automate this step. In this paper, we investigate the use of LLM-based techniques to support BDD in the context of hardware design.",
+    "arxiv_url": "https://arxiv.org/abs/2512.17814",
+    "authors": [
+      "Rolf Drechsler",
+      "Qian Liu"
+    ],
+    "first_author": "Rolf Drechsler",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.17814v1",
+    "published": "2025-12-19",
+    "update_time": "2025-12-19",
+    "download_time": "2025-12-23 00:59:13"
   }
 ]
