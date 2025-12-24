@@ -545,5 +545,28 @@
     "published": "2025-12-19",
     "update_time": "2025-12-19",
     "download_time": "2025-12-23 00:59:13"
+  },
+  {
+    "id": "2512.19644",
+    "title": "More code, less validation: Risk factors for over-reliance on AI coding tools among scientists",
+    "abstract": "Programming is essential to modern scientific research, yet most scientists report inadequate training for the software development their work demands. Generative AI tools capable of code generation may support scientific programmers, but user studies indicate risks of over-reliance, particularly among inexperienced users. We surveyed 868 scientists who program, examining adoption patterns, tool preferences, and factors associated with perceived productivity. Adoption is highest among students and less experienced programmers, with variation across fields. Scientific programmers overwhelmingly prefer general-purpose conversational interfaces like ChatGPT over developer-specific tools. Both inexperience and limited use of development practices (like testing, code review, and version control) are associated with greater perceived productivity-but these factors interact, suggesting formal practices may partially compensate for inexperience. The strongest predictor of perceived productivity is the number of lines of generated code typically accepted at once. These findings suggest scientific programmers using generative AI may gauge productivity by code generation rather than validation, raising concerns about research code integrity.",
+    "arxiv_url": "https://arxiv.org/abs/2512.19644",
+    "authors": [
+      "Gabrielle O'Brien",
+      "Alexis Parker",
+      "Nasir Eisty",
+      "Jeffrey Carver"
+    ],
+    "first_author": "Gabrielle O'Brien",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.19644v1",
+    "published": "2025-12-22",
+    "update_time": "2025-12-22",
+    "download_time": "2025-12-24 00:58:43"
   }
 ]
