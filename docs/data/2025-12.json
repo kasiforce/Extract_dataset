@@ -568,5 +568,34 @@
     "published": "2025-12-22",
     "update_time": "2025-12-22",
     "download_time": "2025-12-24 00:58:43"
+  },
+  {
+    "id": "2512.20482",
+    "title": "SweRank+: Multilingual, Multi-Turn Code Ranking for Software Issue Localization",
+    "abstract": "Maintaining large-scale, multilingual codebases hinges on accurately localizing issues, which requires mapping natural-language error descriptions to the relevant functions that need to be modified. However, existing ranking approaches are often Python-centric and perform a single-pass search over the codebase. This work introduces SweRank+, a framework that couples SweRankMulti, a cross-lingual code ranking tool, with SweRankAgent, an agentic search setup, for iterative, multi-turn reasoning over the code repository. SweRankMulti comprises a code embedding retriever and a listwise LLM reranker, and is trained using a carefully curated large-scale issue localization dataset spanning multiple popular programming languages. SweRankAgent adopts an agentic search loop that moves beyond single-shot localization with a memory buffer to reason and accumulate relevant localization candidates over multiple turns. Our experiments on issue localization benchmarks spanning various languages demonstrate new state-of-the-art performance with SweRankMulti, while SweRankAgent further improves localization over single-pass ranking.",
+    "arxiv_url": "https://arxiv.org/abs/2512.20482",
+    "authors": [
+      "Revanth Gangi Reddy",
+      "Ye Liu",
+      "Wenting Zhao",
+      "JaeHyeok Doo",
+      "Tarun Suresh",
+      "Daniel Lee",
+      "Caiming Xiong",
+      "Yingbo Zhou",
+      "Semih Yavuz",
+      "Shafiq Joty"
+    ],
+    "first_author": "Revanth Gangi Reddy",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.20482v1",
+    "published": "2025-12-23",
+    "update_time": "2025-12-23",
+    "download_time": "2025-12-25 00:59:23"
   }
 ]
