@@ -695,5 +695,28 @@
     "published": "2025-12-24",
     "update_time": "2025-12-24",
     "download_time": "2025-12-29 01:04:48"
+  },
+  {
+    "id": "2512.22113",
+    "title": "Agentic Structured Graph Traversal for Root Cause Analysis of Code-related Incidents in Cloud Applications",
+    "abstract": "Cloud incidents pose major operational challenges in production, with unresolved production cloud incidents cost on average over $2M per hour. Prior research identifies code- and configuration-related issues as the predominant category of root causes in cloud incidents. This paper introduces PRAXIS, an orchestrator that manages and deploys an agentic workflow for diagnosing code- and configuration-caused cloud incidents. PRAXIS employs an LLM-driven structured traversal over two types of graph: (1) a service dependency graph (SDG) that captures microservice-level dependencies; and (2) a hammock-block program dependence graph (PDG) that captures code-level dependencies for each microservice. Together, these graphs encode microservice- and code-level dependencies and the LLM acts as a traversal policy over these graphs, moving between services and code dependencies to localize and explain failures. Compared to state-of-the-art ReAct baselines, PRAXIS improves RCA accuracy by up to 3.1x while reducing token consumption by 3.8x. PRAXIS is demonstrated on a set of 30 comprehensive real-world incidents that is being compiled into an RCA benchmark.",
+    "arxiv_url": "https://arxiv.org/abs/2512.22113",
+    "authors": [
+      "Shengkun Cui",
+      "Rahul Krishna",
+      "Saurabh Jha",
+      "Ravishankar K. Iyer"
+    ],
+    "first_author": "Shengkun Cui",
+    "primary_category": "cs.DC",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.22113v1",
+    "published": "2025-12-26",
+    "update_time": "2025-12-26",
+    "download_time": "2025-12-30 00:59:44"
   }
 ]
