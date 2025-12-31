@@ -718,5 +718,28 @@
     "published": "2025-12-26",
     "update_time": "2025-12-26",
     "download_time": "2025-12-30 00:59:44"
+  },
+  {
+    "id": "2512.23327",
+    "title": "An Empirical Study of Generative AI Adoption in Software Engineering",
+    "abstract": "Context. GenAI tools are being increasingly adopted by practitioners in SE, promising support for several SE activities. Despite increasing adoption, we still lack empirical evidence on how GenAI is used in practice, the benefits it provides, the challenges it introduces, and its broader organizational and societal implications. Objective. This study aims to provide an overview of the status of GenAI adoption in SE. It investigates the status of GenAI adoption, associated benefits and challenges, institutionalization of tools and techniques, and anticipated long term impacts on SE professionals and the community. Results. The results indicate a wide adoption of GenAI tools and how they are deeply integrated into daily SE work, particularly for implementation, verification and validation, personal assistance, and maintenance-related tasks. Practitioners report substantial benefits, most notably reduction in cycle time, quality improvements, enhanced support in knowledge work, and productivity gains. However, objective measurement of productivity and quality remains limited in practice. Significant challenges persist, including incorrect or unreliable outputs, prompt engineering difficulties, validation overhead, security and privacy concerns, and risks of overreliance. Institutionalization of tools and techniques seems to be common, but it varies considerably, with a strong focus on tool access and less emphasis on training and governance. Practitioners expect GenAI to redefine rather than replace their roles, while expressing moderate concern about job market contraction and skill shifts.",
+    "arxiv_url": "https://arxiv.org/abs/2512.23327",
+    "authors": [
+      "Görkem Giray",
+      "Onur Demirörs",
+      "Marcos Kalinowski",
+      "Daniel Mendez"
+    ],
+    "first_author": "Görkem Giray",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Human Factors in LLM4SE"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.23327v1",
+    "published": "2025-12-29",
+    "update_time": "2025-12-29",
+    "download_time": "2025-12-31 01:07:00"
   }
 ]
