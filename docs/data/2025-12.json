@@ -761,5 +761,31 @@
     "published": "2025-12-29",
     "update_time": "2025-12-29",
     "download_time": "2026-01-01 01:08:37"
+  },
+  {
+    "id": "2512.24858",
+    "title": "Feature Slice Matching for Precise Bug Detection",
+    "abstract": "Measuring the function similarity to detect bugs is effective, but the statements unrelated to the bugs can impede the performance due to the noise interference. Suppressing the noise interference in existing works does not manage the tough job, i.e., eliminating the noise in the targets. In this paper, we propose MATUS to mitigate the target noise for precise bug detection based on similarity measurement. Feature slices are extracted from both the buggy query and the targets to represent the semantic feature of (potential) bug logics. In particular, MATUS guides the target slicing with the prior knowledge from the buggy code, in an end-to-end way to pinpoint the slicing criterion in the targets. All feature slices are embedded and compared based on the vector similarity. Buggy candidates are audited to confirm unknown bugs in the targets. Experiments show that MATUS holds advantages in bug detection for real-world projects with acceptable efficiency. In total, MATUS has spotted 31 unknown bugs in the Linux kernel. All of them have been confirmed by the kernel developers, and 11 have been assigned CVEs.",
+    "arxiv_url": "https://arxiv.org/abs/2512.24858",
+    "authors": [
+      "Ke Ma",
+      "Jianjun Huang",
+      "Wei You",
+      "Bin Liang",
+      "Jingzheng Wu",
+      "Yanjun Wu",
+      "Yuanjun Gong"
+    ],
+    "first_author": "Ke Ma",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": "FSE2026",
+    "pdf_url": "https://arxiv.org/pdf/2512.24858v1",
+    "published": "2025-12-31",
+    "update_time": "2025-12-31",
+    "download_time": "2026-01-02 01:01:14"
   }
 ]
