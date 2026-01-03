@@ -787,5 +787,28 @@
     "published": "2025-12-31",
     "update_time": "2025-12-31",
     "download_time": "2026-01-02 01:01:14"
+  },
+  {
+    "id": "2512.24636",
+    "title": "How Do Agentic AI Systems Deal With Software Energy Concerns? A Pull Request-Based Study",
+    "abstract": "As Software Engineering enters its new era (SE 3.0), AI coding agents increasingly automate software development workflows. However, it remains unclear how exactly these agents recognize and address software energy concerns-an issue growing in importance due to large-scale data centers, energy-hungry language models, and battery-constrained devices. In this paper, we examined the energy awareness of agent-authored pull requests (PRs) using a publicly available dataset. We identified 216 energy-explicit PRs and conducted a thematic analysis, deriving a taxonomy of energy-aware work. Our further analysis of the applied optimization techniques shows that most align with established research recommendations. Although building and running these agents is highly energy intensive, encouragingly, the results indicate that they exhibit energy awareness when generating software artifacts. However, optimization-related PRs are accepted less frequently than others, largely due to their negative impact on maintainability.",
+    "arxiv_url": "https://arxiv.org/abs/2512.24636",
+    "authors": [
+      "Tanjum Motin Mitul",
+      "Md. Masud Mazumder",
+      "Md Nahidul Islam Opu",
+      "Shaiful Chowdhury"
+    ],
+    "first_author": "Tanjum Motin Mitul",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Alignment"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2512.24636v1",
+    "published": "2025-12-31",
+    "update_time": "2025-12-31",
+    "download_time": "2026-01-03 00:58:30"
   }
 ]
