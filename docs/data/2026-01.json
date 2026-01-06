@@ -1,0 +1,28 @@
+[
+  {
+    "id": "2601.00753",
+    "title": "Early-Stage Prediction of Review Effort in AI-Generated Pull Requests",
+    "abstract": "As autonomous AI agents transition from code completion tools to full-fledged teammates capable of opening pull requests (PRs) at scale, software maintainers face a new challenge: not just reviewing code, but managing complex interaction loops with non-human contributors. This paradigm shift raises a critical question: can we predict which agent-generated PRs will consume excessive review effort before any human interaction begins?   Analyzing 33,707 agent-authored PRs from the AIDev dataset across 2,807 repositories, we uncover a striking two-regime behavioral pattern that fundamentally distinguishes autonomous agents from human developers. The first regime, representing 28.3 percent of all PRs, consists of instant merges (less than 1 minute), reflecting success on narrow automation tasks. The second regime involves iterative review cycles where agents frequently stall or abandon refinement (ghosting).   We propose a Circuit Breaker triage model that predicts high-review-effort PRs (top 20 percent) at creation time using only static structural features. A LightGBM model achieves AUC 0.957 on a temporal split, while semantic text features (TF-IDF, CodeBERT) provide negligible predictive value. At a 20 percent review budget, the model intercepts 69 percent of total review effort, enabling zero-latency governance.   Our findings challenge prevailing assumptions in AI-assisted code review: review burden is dictated by what agents touch, not what they say, highlighting the need for structural governance mechanisms in human-AI collaboration.",
+    "arxiv_url": "https://arxiv.org/abs/2601.00753",
+    "authors": [
+      "Dao Sy Duy Minh",
+      "Huynh Trung Kiet",
+      "Tran Chi Nguyen",
+      "Nguyen Lam Phu Quy",
+      "Phu Hoa Pham",
+      "Nguyen Dinh Ha Duong",
+      "Truong Bao Tran"
+    ],
+    "first_author": "Dao Sy Duy Minh",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Review Triage"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.00753v1",
+    "published": "2026-01-02",
+    "update_time": "2026-01-02",
+    "download_time": "2026-01-06 01:00:51"
+  }
+]
