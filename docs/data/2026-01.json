@@ -49,5 +49,25 @@
     "published": "2026-01-05",
     "update_time": "2026-01-05",
     "download_time": "2026-01-07 01:01:26"
+  },
+  {
+    "id": "2601.02971",
+    "title": "Few-shot learning for security bug report identification",
+    "abstract": "Security bug reports require prompt identification to minimize the window of vulnerability in software systems. Traditional machine learning (ML) techniques for classifying bug reports to identify security bug reports rely heavily on large amounts of labeled data. However, datasets for security bug reports are often scarce in practice, leading to poor model performance and limited applicability in real-world settings. In this study, we propose a few-shot learning-based technique to effectively identify security bug reports using limited labeled data. We employ SetFit, a state-of-the-art few-shot learning framework that combines sentence transformers with contrastive learning and parameter-efficient fine-tuning. The model is trained on a small labeled dataset of bug reports and is evaluated on its ability to classify these reports as either security-related or non-security-related. Our approach achieves an AUC of 0.865, at best, outperforming traditional ML techniques (baselines) for all of the evaluated datasets. This highlights the potential of SetFit to effectively identify security bug reports. SetFit-based few-shot learning offers a promising alternative to traditional ML techniques to identify security bug reports. The approach enables efficient model development with minimal annotation effort, making it highly suitable for scenarios where labeled data is scarce.",
+    "arxiv_url": "https://arxiv.org/abs/2601.02971",
+    "authors": [
+      "Muhammad Laiq"
+    ],
+    "first_author": "Muhammad Laiq",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Bug Report Classification"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.02971v1",
+    "published": "2026-01-06",
+    "update_time": "2026-01-06",
+    "download_time": "2026-01-08 01:01:06"
   }
 ]
