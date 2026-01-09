@@ -69,5 +69,28 @@
     "published": "2026-01-06",
     "update_time": "2026-01-06",
     "download_time": "2026-01-08 01:01:06"
+  },
+  {
+    "id": "2601.03988",
+    "title": "Using Small Language Models to Reverse-Engineer Machine Learning Pipelines Structures",
+    "abstract": "Background: Extracting the stages that structure Machine Learning (ML) pipelines from source code is key for gaining a deeper understanding of data science practices. However, the diversity caused by the constant evolution of the ML ecosystem (e.g., algorithms, libraries, datasets) makes this task challenging. Existing approaches either depend on non-scalable, manual labeling, or on ML classifiers that do not properly support the diversity of the domain. These limitations highlight the need for more flexible and reliable solutions.   Objective: We evaluate whether Small Language Models (SLMs) can leverage their code understanding and classification abilities to address these limitations, and subsequently how they can advance our understanding of data science practices.   Method: We conduct a confirmatory study based on two reference works selected for their relevance regarding current state-of-the-art's limitations. First, we compare several SLMs using Cochran's Q test. The best-performing model is then evaluated against the reference studies using two distinct McNemar's tests. We further analyze how variations in taxonomy definitions affect performance through an additional Cochran's Q test. Finally, a goodness-of-fit analysis is conducted using Pearson's chi-squared tests to compare our insights on data science practices with those from prior studies.",
+    "arxiv_url": "https://arxiv.org/abs/2601.03988",
+    "authors": [
+      "Nicolas Lacroix",
+      "Mireille Blay-Fornarino",
+      "Sébastien Mosser",
+      "Frederic Precioso"
+    ],
+    "first_author": "Nicolas Lacroix",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Summarization"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.03988v1",
+    "published": "2026-01-07",
+    "update_time": "2026-01-07",
+    "download_time": "2026-01-09 01:02:06"
   }
 ]
