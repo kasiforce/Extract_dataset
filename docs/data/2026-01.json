@@ -143,5 +143,26 @@
     "published": "2026-01-08",
     "update_time": "2026-01-08",
     "download_time": "2026-01-11 01:07:14"
+  },
+  {
+    "id": "2601.04556",
+    "title": "4D-ARE: Bridging the Attribution Gap in LLM Agent Requirements Engineering",
+    "abstract": "We deployed an LLM agent with ReAct reasoning and full data access. It executed flawlessly, yet when asked \"Why is completion rate 80%?\", it returned metrics instead of causal explanation. The agent knew how to reason but we had not specified what to reason about. This reflects a gap: runtime reasoning frameworks (ReAct, Chain-of-Thought) have transformed LLM agents, but design-time specification--determining what domain knowledge agents need--remains under-explored. We propose 4D-ARE (4-Dimensional Attribution-Driven Agent Requirements Engineering), a preliminary methodology for specifying attribution-driven agents. The core insight: decision-makers seek attribution, not answers. Attribution concerns organize into four dimensions (Results -> Process -> Support -> Long-term), motivated by Pearl's causal hierarchy. The framework operationalizes through five layers producing artifacts that compile directly to system prompts. We demonstrate the methodology through an industrial pilot deployment in financial services. 4D-ARE addresses what agents should reason about, complementing runtime frameworks that address how. We hypothesize systematic specification amplifies the power of these foundational advances. This paper presents a methodological proposal with preliminary industrial validation; rigorous empirical evaluation is planned for future work.",
+    "arxiv_url": "https://arxiv.org/abs/2601.04556",
+    "authors": [
+      "Bo Yu",
+      "Lei Zhao"
+    ],
+    "first_author": "Bo Yu",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.04556v1",
+    "published": "2026-01-08",
+    "update_time": "2026-01-08",
+    "download_time": "2026-01-12 01:04:09"
   }
 ]
