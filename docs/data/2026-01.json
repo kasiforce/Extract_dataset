@@ -164,5 +164,31 @@
     "published": "2026-01-08",
     "update_time": "2026-01-08",
     "download_time": "2026-01-12 01:04:09"
+  },
+  {
+    "id": "2601.05827",
+    "title": "SSR: Safeguarding Staking Rewards by Defining and Detecting Logical Defects in DeFi Staking",
+    "abstract": "Decentralized Finance (DeFi) staking is one of the most prominent applications within the DeFi ecosystem, where DeFi projects enable users to stake tokens on the platform and reward participants with additional tokens. However, logical defects in DeFi staking could enable attackers to claim unwarranted rewards by manipulating reward amounts, repeatedly claiming rewards, or engaging in other malicious actions. To mitigate these threats, we conducted the first study focused on defining and detecting logical defects in DeFi staking. Through the analysis of 64 security incidents and 144 audit reports, we identified six distinct types of logical defects, each accompanied by detailed descriptions and code examples. Building on this empirical research, we developed SSR (Safeguarding Staking Reward), a static analysis tool designed to detect logical defects in DeFi staking contracts. SSR utilizes a large language model (LLM) to extract fundamental information about staking logic and constructs a DeFi staking model. It then identifies logical defects by analyzing the model and the associated semantic features. We constructed a ground truth dataset based on known security incidents and audit reports to evaluate the effectiveness of SSR. The results indicate that SSR achieves an overall precision of 92.31%, a recall of 87.92%, and an F1-score of 88.85%. Additionally, to assess the prevalence of logical defects in real-world smart contracts, we compiled a large-scale dataset of 15,992 DeFi staking contracts. SSR detected that 3,557 (22.24%) of these contracts contained at least one logical defect.",
+    "arxiv_url": "https://arxiv.org/abs/2601.05827",
+    "authors": [
+      "Zewei Lin",
+      "Jiachi Chen",
+      "Jingwen Zhang",
+      "Zexu Wang",
+      "Yuming Feng",
+      "Weizhe Zhang",
+      "Zibin Zheng"
+    ],
+    "first_author": "Zewei Lin",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.05827v1",
+    "published": "2026-01-09",
+    "update_time": "2026-01-09",
+    "download_time": "2026-01-13 00:57:09"
   }
 ]
