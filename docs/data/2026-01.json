@@ -190,5 +190,26 @@
     "published": "2026-01-09",
     "update_time": "2026-01-09",
     "download_time": "2026-01-13 00:57:09"
+  },
+  {
+    "id": "2601.07786",
+    "title": "\"TODO: Fix the Mess Gemini Created\": Towards Understanding GenAI-Induced Self-Admitted Technical Debt",
+    "abstract": "As large language models (LLMs) such as ChatGPT, Copilot, Claude, and Gemini become integrated into software development workflows, developers increasingly leave traces of AI involvement in their code comments. Among these, some comments explicitly acknowledge both the use of generative AI and the presence of technical shortcomings. Analyzing 6,540 LLM-referencing code comments from public Python and JavaScript-based GitHub repositories (November 2022-July 2025), we identified 81 that also self-admit technical debt(SATD). Developers most often describe postponed testing, incomplete adaptation, and limited understanding of AI-generated code, suggesting that AI assistance affects both when and why technical debt emerges. We term GenAI-Induced Self-admitted Technical debt (GIST) as a proposed conceptual lens to describe recurring cases where developers incorporate AI-generated code while explicitly expressing uncertainty about its behavior or correctness.",
+    "arxiv_url": "https://arxiv.org/abs/2601.07786",
+    "authors": [
+      "Abdullah Al Mujahid",
+      "Mia Mohammad Imran"
+    ],
+    "first_author": "Abdullah Al Mujahid",
+    "primary_category": "cs.SE",
+    "tag": [
+      "AI-Augmented Software Maintenance"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.07786v1",
+    "published": "2026-01-12",
+    "update_time": "2026-01-12",
+    "download_time": "2026-01-14 01:03:04"
   }
 ]
