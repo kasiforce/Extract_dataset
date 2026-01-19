@@ -317,5 +317,28 @@
     "published": "2026-01-15",
     "update_time": "2026-01-15",
     "download_time": "2026-01-18 01:06:06"
+  },
+  {
+    "id": "2601.10253",
+    "title": "Developer Interaction Patterns with Proactive AI: A Five-Day Field Study",
+    "abstract": "Current in-IDE AI coding tools typically rely on time-consuming manual prompting and context management, whereas proactive alternatives that anticipate developer needs without explicit invocation remain underexplored. Understanding when humans are receptive to such proactive AI assistance during their daily work remains an open question in human-AI interaction research. We address this gap through a field study of proactive AI assistance in professional developer workflows. We present a five-day in-the-wild study with 15 developers who interacted with a proactive feature of an AI assistant integrated into a production-grade IDE that offers code quality suggestions based on in-IDE developer activity. We examined 229 AI interventions across 5,732 interaction points to understand how proactive suggestions are received across workflow stages, how developers experience them, and their perceived impact. Our findings reveal systematic patterns in human receptivity to proactive suggestions: interventions at workflow boundaries (e.g., post-commit) achieved 52% engagement rates, while mid-task interventions (e.g., on declined edit) were dismissed 62% of the time. Notably, well-timed proactive suggestions required significantly less interpretation time than reactive suggestions (45.4s versus 101.4s, W = 109.00, r = 0.533, p = 0.0016), indicating enhanced cognitive alignment. This study provides actionable implications for designing proactive coding assistants, including how to time interventions, align them with developer context, and strike a balance between AI agency and user control in production IDEs.",
+    "arxiv_url": "https://arxiv.org/abs/2601.10253",
+    "authors": [
+      "Nadine Kuo",
+      "Agnia Sergeyuk",
+      "Valerie Chen",
+      "Maliheh Izadi"
+    ],
+    "first_author": "Nadine Kuo",
+    "primary_category": "cs.HC",
+    "tag": [
+      "Code Alignment"
+    ],
+    "benchmark": false,
+    "conference": "IUI'26",
+    "pdf_url": "https://arxiv.org/pdf/2601.10253v1",
+    "published": "2026-01-15",
+    "update_time": "2026-01-15",
+    "download_time": "2026-01-19 01:05:46"
   }
 ]
