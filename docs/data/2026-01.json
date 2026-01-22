@@ -396,5 +396,34 @@
     "published": "2026-01-16",
     "update_time": "2026-01-16",
     "download_time": "2026-01-21 01:03:12"
+  },
+  {
+    "id": "2601.13943",
+    "title": "RepoGenesis: Benchmarking End-to-End Microservice Generation from Readme to Repository",
+    "abstract": "Large language models and agents have achieved remarkable progress in code generation. However, existing benchmarks focus on isolated function/class-level generation (e.g., ClassEval) or modifications to existing codebases (e.g., SWE-Bench), neglecting complete microservice repository generation that reflects real-world 0-to-1 development workflows. To bridge this gap, we introduce RepoGenesis, the first multilingual benchmark for repository-level end-to-end web microservice generation, comprising 106 repositories (60 Python, 46 Java) across 18 domains and 11 frameworks, with 1,258 API endpoints and 2,335 test cases verified through a \"review-rebuttal\" quality assurance process. We evaluate open-source agents (e.g., DeepCode) and commercial IDEs (e.g., Cursor) using Pass@1, API Coverage (AC), and Deployment Success Rate (DSR). Results reveal that despite high AC (up to 73.91%) and DSR (up to 100%), the best-performing system achieves only 23.67% Pass@1 on Python and 21.45% on Java, exposing deficiencies in architectural coherence, dependency management, and cross-file consistency. Notably, GenesisAgent-8B, fine-tuned on RepoGenesis (train), achieves performance comparable to GPT-5 mini, demonstrating the quality of RepoGenesis for advancing microservice generation. We release our benchmark at https://github.com/pzy2000/RepoGenesis.",
+    "arxiv_url": "https://arxiv.org/abs/2601.13943",
+    "authors": [
+      "Zhiyuan Peng",
+      "Xin Yin",
+      "Pu Zhao",
+      "Fangkai Yang",
+      "Lu Wang",
+      "Ran Jia",
+      "Xu Chen",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ],
+    "first_author": "Zhiyuan Peng",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Completion"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.13943v1",
+    "published": "2026-01-20",
+    "update_time": "2026-01-20",
+    "download_time": "2026-01-22 01:02:40"
   }
 ]
