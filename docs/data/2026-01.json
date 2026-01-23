@@ -425,5 +425,29 @@
     "published": "2026-01-20",
     "update_time": "2026-01-20",
     "download_time": "2026-01-22 01:02:40"
+  },
+  {
+    "id": "2601.15232",
+    "title": "When Agents Fail: A Comprehensive Study of Bugs in LLM Agents with Automated Labeling",
+    "abstract": "Large Language Models (LLMs) have revolutionized intelligent application development. While standalone LLMs cannot perform any actions, LLM agents address the limitation by integrating tools. However, debugging LLM agents is difficult and costly as the field is still in it's early stage and the community is underdeveloped. To understand the bugs encountered during agent development, we present the first comprehensive study of bug types, root causes, and effects in LLM agent-based software. We collected and analyzed 1,187 bug-related posts and code snippets from Stack Overflow, GitHub, and Hugging Face forums, focused on LLM agents built with seven widely used LLM frameworks as well as custom implementations. For a deeper analysis, we have also studied the component where the bug occurred, along with the programming language and framework. This study also investigates the feasibility of automating bug identification. For that, we have built a ReAct agent named BugReAct, equipped with adequate external tools to determine whether it can detect and annotate the bugs in our dataset. According to our study, we found that BugReAct equipped with Gemini 2.5 Flash achieved a remarkable performance in annotating bug characteristics with an average cost of 0.01 USD per post/code snippet.",
+    "arxiv_url": "https://arxiv.org/abs/2601.15232",
+    "authors": [
+      "Niful Islam",
+      "Ragib Shahriar Ayon",
+      "Deepak George Thomas",
+      "Shibbir Ahmed",
+      "Mohammad Wardat"
+    ],
+    "first_author": "Niful Islam",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": true,
+    "conference": "A version of this paper has been submitted to ACM Transactions on Software Engin...",
+    "pdf_url": "https://arxiv.org/pdf/2601.15232v1",
+    "published": "2026-01-21",
+    "update_time": "2026-01-21",
+    "download_time": "2026-01-23 01:02:39"
   }
 ]
