@@ -547,5 +547,31 @@
     "published": "2026-01-23",
     "update_time": "2026-01-23",
     "download_time": "2026-01-27 01:05:16"
+  },
+  {
+    "id": "2601.18749",
+    "title": "Let's Make Every Pull Request Meaningful: An Empirical Analysis of Developer and Agentic Pull Requests",
+    "abstract": "The automatic generation of pull requests (PRs) using AI agents has become increasingly common. Although AI-generated PRs are fast and easy to create, their merge rates have been reported to be lower than those created by humans. In this study, we conduct a large-scale empirical analysis of 40,214 PRs collected from the AIDev dataset. We extract 64 features across six families and fit statistical regression models to compare PR merge outcomes for human and agentic PRs, as well as across three AI agents. Our results show that submitter attributes dominate merge outcomes for both groups, while review-related features exhibit contrasting effects between human and agentic PRs. The findings of this study provide insights into improving PR quality through human-AI collaboration.",
+    "arxiv_url": "https://arxiv.org/abs/2601.18749",
+    "authors": [
+      "Haruhiko Yoshioka",
+      "Takahiro Monno",
+      "Haruka Tokumasu",
+      "Taiki Wakamatsu",
+      "Yuki Ota",
+      "Nimmi Weeraddana",
+      "Kenichi Matsumoto"
+    ],
+    "first_author": "Haruhiko Yoshioka",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Review and Human-AI Collaboration"
+    ],
+    "benchmark": false,
+    "conference": "publication in the 23rd International Conference on Mining Software Repositories (MSR '26) :",
+    "pdf_url": "https://arxiv.org/pdf/2601.18749v1",
+    "published": "2026-01-26",
+    "update_time": "2026-01-26",
+    "download_time": "2026-01-28 01:01:56"
   }
 ]
