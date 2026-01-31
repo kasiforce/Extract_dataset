@@ -620,5 +620,31 @@
     "published": "2026-01-28",
     "update_time": "2026-01-28",
     "download_time": "2026-01-30 01:10:28"
+  },
+  {
+    "id": "2601.22136",
+    "title": "StepShield: When, Not Whether to Intervene on Rogue Agents",
+    "abstract": "Existing agent safety benchmarks report binary accuracy, conflating early intervention with post-mortem analysis. A detector that flags a violation at step 8 enables intervention; one that reports it at step 48 provides only forensic value. This distinction is critical, yet current benchmarks cannot measure it. We introduce StepShield, the first benchmark to evaluate when violations are detected, not just whether. StepShield contains 9,213 code agent trajectories, including 1,278 meticulously annotated training pairs and a 7,935-trajectory test set with a realistic 8.1% rogue rate. Rogue behaviors are grounded in real-world security incidents across six categories. We propose three novel temporal metrics: Early Intervention Rate (EIR), Intervention Gap, and Tokens Saved. Surprisingly, our evaluation reveals that an LLM-based judge achieves 59% EIR while a static analyzer achieves only 26%, a 2.3x performance gap that is entirely invisible to standard accuracy metrics. We further show that early detection has direct economic benefits: our cascaded HybridGuard detector reduces monitoring costs by 75% and projects to $108M in cumulative savings over five years at enterprise scale. By shifting the focus of evaluation from whether to when, StepShield provides a new foundation for building safer and more economically viable AI agents. The code and data are released under an Apache 2.0 license.",
+    "arxiv_url": "https://arxiv.org/abs/2601.22136",
+    "authors": [
+      "Gloria Felicia",
+      "Michael Eniolade",
+      "Jinfeng He",
+      "Zitha Sasindran",
+      "Hemant Kumar",
+      "Milan Hussain Angati",
+      "Sandeep Bandarupalli"
+    ],
+    "first_author": "Gloria Felicia",
+    "primary_category": "cs.LG",
+    "tag": [
+      "Code Alignment"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.22136v1",
+    "published": "2026-01-29",
+    "update_time": "2026-01-29",
+    "download_time": "2026-01-31 01:07:41"
   }
 ]
