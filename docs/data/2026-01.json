@@ -694,5 +694,30 @@
     "published": "2026-01-29",
     "update_time": "2026-01-29",
     "download_time": "2026-02-02 01:14:54"
+  },
+  {
+    "id": "2601.23257",
+    "title": "Outcome-Conditioned Reasoning Distillation for Resolving Software Issues",
+    "abstract": "Software issue resolution in large repositories is a long-range decision process: choices made during localization shape the space of viable edits, and missteps can compound into incorrect patches. Despite this, many LLM-based repair pipelines still operate in a reset-and-solve manner, producing fresh reasoning for every new issue instead of carrying forward what worked in past fixes. This is wasteful because repositories routinely contain earlier issues with overlapping structure, failure modes, or constraints, where prior repair experience could provide useful guidance. Existing approaches typically harvest this signal through forward-time trial procedures, such as repeated refinement or search, incurring high inference cost while still risking divergence from the eventual correct patch. We present an Outcome-Conditioned Reasoning Distillation(O-CRD) framework that uses resolved in-repository issues with verified patches as supervision. Starting from a historical fix, the method reconstructs a stage-wise repair trace backward from the verified outcome, then reuses the distilled guidance at inference time to steer file/function localization and patch synthesis, without fine-tuning or online search. On SWE-Bench Lite, this approach increases Pass@1 by 10.4% with GPT-4o, 8.6% with DeepSeek-V3, and 10.3% with GPT-5, indicating that outcome-conditioned reuse of verified repairs can replace costly forward exploration for software issue resolution.",
+    "arxiv_url": "https://arxiv.org/abs/2601.23257",
+    "authors": [
+      "Chenglin Li",
+      "Yisen Xu",
+      "Zehao Wang",
+      "Shin Hwei Tan",
+      "Tse-Hsun",
+      "Chen"
+    ],
+    "first_author": "Chenglin Li",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Debug"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2601.23257v1",
+    "published": "2026-01-30",
+    "update_time": "2026-01-30",
+    "download_time": "2026-02-03 01:15:12"
   }
 ]
