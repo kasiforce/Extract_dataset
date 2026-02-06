@@ -60,5 +60,32 @@
     "published": "2026-02-03",
     "update_time": "2026-02-03",
     "download_time": "2026-02-05 01:10:34"
+  },
+  {
+    "id": "2602.04726",
+    "title": "Supporting software engineering tasks with agentic AI: Demonstration on document retrieval and test scenario generation",
+    "abstract": "The introduction of large language models ignited great retooling and rethinking of the software development models. The ensuing response of software engineering research yielded a massive body of tools and approaches. In this paper, we join the hassle by introducing agentic AI solutions for two tasks. First, we developed a solution for automatic test scenario generation from a detailed requirements description. This approach relies on specialized worker agents forming a star topology with the supervisor agent in the middle. We demonstrate its capabilities on a real-world example. Second, we developed an agentic AI solution for the document retrieval task in the context of software engineering documents. Our solution enables performing various use cases on a body of documents related to the development of a single software, including search, question answering, tracking changes, and large document summarization. In this case, each use case is handled by a dedicated LLM-based agent, which performs all subtasks related to the corresponding use case. We conclude by hinting at the future perspectives of our line of research.",
+    "arxiv_url": "https://arxiv.org/abs/2602.04726",
+    "authors": [
+      "Marian Kica",
+      "Lukas Radosky",
+      "David Slivka",
+      "Karin Kubinova",
+      "Daniel Dovhun",
+      "Tomas Uhercik",
+      "Erik Bircak",
+      "Ivan Polasek"
+    ],
+    "first_author": "Marian Kica",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": "International Conference on Artificial Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2602.04726v1",
+    "published": "2026-02-04",
+    "update_time": "2026-02-04",
+    "download_time": "2026-02-06 01:10:48"
   }
 ]
