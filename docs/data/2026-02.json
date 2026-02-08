@@ -87,5 +87,33 @@
     "published": "2026-02-04",
     "update_time": "2026-02-04",
     "download_time": "2026-02-06 01:10:48"
+  },
+  {
+    "id": "2602.05891",
+    "title": "When Elo Lies: Hidden Biases in Codeforces-Based Evaluation of Large Language Models",
+    "abstract": "As Large Language Models (LLMs) achieve breakthroughs in complex reasoning, Codeforces-based Elo ratings have emerged as a prominent metric for evaluating competitive programming capabilities. However, these ratings are often reported without critical experimental details, leading to significant discrepancies illustrated by recent reports where the score of the same model version fluctuated by nearly 500 points. This paper presents a systematic empirical study on the hidden factors biasing Elo evaluations: (1) the temporal ordering of submissions, (2) contest difficulty selection, and (3) run to run stochastic variability of LLMs. Utilizing a controlled benchmark of 37 recent Codeforces contests and 13,691 generated test cases, we demonstrate that Elo scores are highly sensitive to these parameters. Our findings reveal that varying submission orders can shift scores by 394 points, while contest selection can cause differences of up to 1,122 points for the same model. Run to run performance exhibits substantial instability, with a maximum difference of 349 points in mean scores observed when evaluating identical contests. We conclude that direct Elo comparisons are unreliable and potentially misleading without strict standardization and transparent reporting of experimental settings.",
+    "arxiv_url": "https://arxiv.org/abs/2602.05891",
+    "authors": [
+      "Shenyu Zheng",
+      "Ximing Dong",
+      "Xiaoshuang Liu",
+      "Gustavo Oliva",
+      "Chong Chun Yong",
+      "Dayi Lin",
+      "Boyuan Chen",
+      "Shaowei Wang",
+      "Ahmed E. Hassan"
+    ],
+    "first_author": "Shenyu Zheng",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.05891v1",
+    "published": "2026-02-05",
+    "update_time": "2026-02-05",
+    "download_time": "2026-02-08 01:45:38"
   }
 ]
