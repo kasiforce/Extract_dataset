@@ -165,5 +165,28 @@
     "published": "2026-02-06",
     "update_time": "2026-02-06",
     "download_time": "2026-02-10 01:25:15"
+  },
+  {
+    "id": "2602.08915",
+    "title": "Comparing AI Coding Agents: A Task-Stratified Analysis of Pull Request Acceptance",
+    "abstract": "The rapid adoption of AI-powered coding assistants is transforming software development practices, yet systematic comparisons of their effectiveness across different task types and over time remain limited. This paper presents an empirical study comparing five popular agents (OpenAI Codex, GitHub Copilot, Devin, Cursor, and Claude Code), analyzing 7,156 pull requests (PRs) from the AIDev dataset. Temporal trend analysis reveals heterogeneous evolution patterns: Devin exhibits the only consistent positive trend in acceptance rate (+0.77% per week over 32 weeks), whereas other agents remain largely stable. Our analysis suggests that the PR task type is a dominant factor influencing acceptance rates: documentation tasks achieve 82.1% acceptance compared to 66.1% for new features - a 16 percentage point gap that exceeds typical inter-agent variance for most tasks. OpenAI Codex achieves consistently high acceptance rates across all nine task categories (59.6%-88.6%), with stratified Chi-square tests confirming statistically significant advantages over other agents in several task categories. However, no single agent performs best across all task types: Claude Code leads in documentation (92.3%) and features (72.6%), while Cursor excels in fix tasks (80.4%).",
+    "arxiv_url": "https://arxiv.org/abs/2602.08915",
+    "authors": [
+      "Giovanni Pinna",
+      "Jingzhi Gong",
+      "David Williams",
+      "Federica Sarro"
+    ],
+    "first_author": "Giovanni Pinna",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Editing"
+    ],
+    "benchmark": false,
+    "conference": "MSR'26 Mining Challenge Track",
+    "pdf_url": "https://arxiv.org/pdf/2602.08915v1",
+    "published": "2026-02-09",
+    "update_time": "2026-02-09",
+    "download_time": "2026-02-11 01:23:20"
   }
 ]
