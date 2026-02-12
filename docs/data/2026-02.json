@@ -188,5 +188,26 @@
     "published": "2026-02-09",
     "update_time": "2026-02-09",
     "download_time": "2026-02-11 01:23:20"
+  },
+  {
+    "id": "2602.10046",
+    "title": "Artisan: Agentic Artifact Evaluation",
+    "abstract": "Artifact evaluation has become standard practice in the software engineering community to ensure the reproducibility of research results. However, the current manual process is labor-intensive, and hence, done only as a one-time assessment for a subset of all papers. To support the artifact evaluation effort, we present Artisan, an automated LLM agent for reproducing research results given a paper and its artifact. The approach is enabled by two key contributions: First, we frame the reproduction problem as a code generation task where the goal is to generate a reproduction script that, when executed, reproduces the results reported in a paper. Unlike prior work on automatically reproducing research results in other domains, this formulation allows for running the script independently of the agent and for assessing the reproduction process at a fine-grained level. Second, we design automated judging mechanism that guides the agent toward the expected results without revealing them and that prevent trivial solutions, such as simply copying checked-in results. To evaluate Artisan, we introduce Artisan-Bench, the first benchmark assessing the ability to generate reproduction scripts and the first benchmark for automated artifact evaluation in software engineering. Artisan-Bench comprises 60 tasks derived from 23 software engineering papers, covering different research areas and programming languages. We validate all tasks in Artisan-Bench for reproducibility to ensure that the tasks are feasible. Our experiments show that Artisan is effective, producing 44/60 reproduction scripts and outperforming the best available baseline, a vanilla LLM agent (mini-swe-agent), by 3.14$\\times$ in terms of reproduction scripts generated while taking $0.45 and 48 minutes, on average per task. Artisan also helped uncover 20 new errors in either the paper or artifact.",
+    "arxiv_url": "https://arxiv.org/abs/2602.10046",
+    "authors": [
+      "Doehyun Baek",
+      "Michael Pradel"
+    ],
+    "first_author": "Doehyun Baek",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.10046v1",
+    "published": "2026-02-10",
+    "update_time": "2026-02-10",
+    "download_time": "2026-02-12 01:16:12"
   }
 ]
