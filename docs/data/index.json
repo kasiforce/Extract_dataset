@@ -1,11 +1,11 @@
 [
   {
     "month": "2026-02",
-    "count": 9,
-    "published_count": 2,
+    "count": 10,
+    "published_count": 3,
     "preprint_count": 7,
     "benchmark_count": 3,
-    "non-benchmark_count": 6
+    "non-benchmark_count": 7
   },
   {
     "month": "2026-01",
