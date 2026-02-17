@@ -304,5 +304,28 @@
     "published": "2026-02-12",
     "update_time": "2026-02-12",
     "download_time": "2026-02-16 01:16:04"
+  },
+  {
+    "id": "2602.13072",
+    "title": "Automated Testing of Task-based Chatbots: How Far Are We?",
+    "abstract": "Task-based chatbots are software, typically embedded in real-world applications, that assist users in completing tasks through a conversational interface. As chatbots are gaining popularity, effectively assessing their quality has become crucial. Whereas traditional testing techniques fail to systematically exercise the conversational space of chatbots, several approaches specifically targeting chatbots have emerged from both industry and research. Although these techniques have shown advancements over the years, they still exhibit limitations, such as simplicity of the generated test scenarios and weakness in implemented oracles. In this paper, we conduct a confirmatory study to investigate such limitations by evaluating the effectiveness of state-of-the-art chatbot testing techniques on a curated selection of task-based chatbots from GitHub, developed using the most popular commercial and open-source platforms.",
+    "arxiv_url": "https://arxiv.org/abs/2602.13072",
+    "authors": [
+      "Diego Clerissi",
+      "Elena Masserini",
+      "Daniela Micucci",
+      "Leonardo Mariani"
+    ],
+    "first_author": "Diego Clerissi",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": "23rd International Conference on Mining Software Repositories (MSR) 2026 - Registered Reports",
+    "pdf_url": "https://arxiv.org/pdf/2602.13072v1",
+    "published": "2026-02-13",
+    "update_time": "2026-02-13",
+    "download_time": "2026-02-17 01:14:51"
   }
 ]
