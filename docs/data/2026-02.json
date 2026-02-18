@@ -327,5 +327,30 @@
     "published": "2026-02-13",
     "update_time": "2026-02-13",
     "download_time": "2026-02-17 01:14:51"
+  },
+  {
+    "id": "2602.14922",
+    "title": "ReusStdFlow: A Standardized Reusability Framework for Dynamic Workflow Construction in Agentic AI",
+    "abstract": "To address the ``reusability dilemma'' and structural hallucinations in enterprise Agentic AI,this paper proposes ReusStdFlow, a framework centered on a novel ``Extraction-Storage-Construction'' paradigm. The framework deconstructs heterogeneous, platform-specific Domain Specific Languages (DSLs) into standardized, modular workflow segments. It employs a dual knowledge architecture-integrating graph and vector databases-to facilitate synergistic retrieval of both topological structures and functional semantics. Finally, workflows are intelligently assembled using a retrieval-augmented generation (RAG) strategy. Tested on 200 real-world n8n workflows, the system achieves over 90% accuracy in both extraction and construction. This framework provides a standardized solution for the automated reorganization and efficient reuse of enterprise digital assets.",
+    "arxiv_url": "https://arxiv.org/abs/2602.14922",
+    "authors": [
+      "Gaoyang Zhang",
+      "Shanghong Zou",
+      "Yafang Wang",
+      "He Zhang",
+      "Ruohua Xu",
+      "Feng Zhao"
+    ],
+    "first_author": "Gaoyang Zhang",
+    "primary_category": "cs.AI",
+    "tag": [
+      "Code Translation"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.14922v1",
+    "published": "2026-02-16",
+    "update_time": "2026-02-16",
+    "download_time": "2026-02-18 01:17:15"
   }
 ]
