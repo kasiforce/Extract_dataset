@@ -352,5 +352,26 @@
     "published": "2026-02-16",
     "update_time": "2026-02-16",
     "download_time": "2026-02-18 01:17:15"
+  },
+  {
+    "id": "2602.15761",
+    "title": "A Differential Fuzzing-Based Evaluation of Functional Equivalence in LLM-Generated Code Refactorings",
+    "abstract": "With the rapid adoption of large language models (LLMs) in automated code refactoring, assessing and ensuring functional equivalence between LLM-generated refactoring and the original implementation becomes critical. While prior work typically relies on predefined test cases to evaluate correctness, in this work, we leverage differential fuzzing to check functional equivalence in LLM-generated code refactorings. Unlike test-based evaluation, a differential fuzzing-based equivalence checker needs no predefined test cases and can explore a much larger input space by executing and comparing thousands of automatically generated test inputs. In a large-scale evaluation of six LLMs (CodeLlama, Codestral, StarChat2, Qwen-2.5, Olmo-3, and GPT-4o) across three datasets and two refactoring types, we find that LLMs show a non-trivial tendency to alter program semantics, producing 19-35% functionally non-equivalent refactorings. Our experiments further demonstrate that about 21% of these non-equivalent refactorings remain undetected by the existing test suites of the three evaluated datasets. Collectively, the findings of this study imply that reliance on existing tests might overestimate functional equivalence in LLM-generated code refactorings, which remain prone to semantic divergence.",
+    "arxiv_url": "https://arxiv.org/abs/2602.15761",
+    "authors": [
+      "Simantika Bhattacharjee Dristi",
+      "Matthew B. Dwyer"
+    ],
+    "first_author": "Simantika Bhattacharjee Dristi",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Testing"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.15761v1",
+    "published": "2026-02-17",
+    "update_time": "2026-02-17",
+    "download_time": "2026-02-19 01:16:11"
   }
 ]
