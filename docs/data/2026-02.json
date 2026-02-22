@@ -422,5 +422,28 @@
     "published": "2026-02-19",
     "update_time": "2026-02-19",
     "download_time": "2026-02-21 01:09:54"
+  },
+  {
+    "id": "2602.17183",
+    "title": "Robustness and Reasoning Fidelity of Large Language Models in Long-Context Code Question Answering",
+    "abstract": "Large language models (LLMs) increasingly assist software engineering tasks that require reasoning over long code contexts, yet their robustness under varying input conditions remains unclear. We conduct a systematic study of long-context code question answering using controlled ablations that test sensitivity to answer format, distractors, and context scale. Extending LongCodeBench Python dataset with new COBOL and Java question-answer sets, we evaluate state-of-the-art models under three settings: (i) shuffled multiple-choice options, (ii) open-ended questions and (iii) needle-in-a-haystack contexts containing relevant and adversarially irrelevant information. Results show substantial performance drops in both shuffled multiple-choice options and open-ended questions, and brittle behavior in the presence of irrelevant cues. Our findings highlight limitations of current long-context evaluations and provide a broader benchmark for assessing code reasoning in both legacy and modern systems.",
+    "arxiv_url": "https://arxiv.org/abs/2602.17183",
+    "authors": [
+      "Kishan Maharaj",
+      "Nandakishore Menon",
+      "Ashita Saxena",
+      "Srikanth Tamilselvam"
+    ],
+    "first_author": "Kishan Maharaj",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Reasoning"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.17183v1",
+    "published": "2026-02-19",
+    "update_time": "2026-02-19",
+    "download_time": "2026-02-22 01:16:06"
   }
 ]
