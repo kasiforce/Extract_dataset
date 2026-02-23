@@ -445,5 +445,28 @@
     "published": "2026-02-19",
     "update_time": "2026-02-19",
     "download_time": "2026-02-22 01:16:06"
+  },
+  {
+    "id": "2602.17091",
+    "title": "What to Cut? Predicting Unnecessary Methods in Agentic Code Generation",
+    "abstract": "Agentic Coding, powered by autonomous agents such as GitHub Copilot and Cursor, enables developers to generate code, tests, and pull requests from natural language instructions alone. While this accelerates implementation, it produces larger volumes of code per pull request, shifting the burden from implementers to reviewers. In practice, a notable portion of AI-generated code is eventually deleted during review, yet reviewers must still examine such code before deciding to remove it. No prior work has explored methods to help reviewers efficiently identify code that will be removed.In this paper, we propose a prediction model that identifies functions likely to be deleted during PR review. Our results show that functions deleted for different reasons exhibit distinct characteristics, and our model achieves an AUC of 87.1%. These findings suggest that predictive approaches can help reviewers prioritize their efforts on essential code.",
+    "arxiv_url": "https://arxiv.org/abs/2602.17091",
+    "authors": [
+      "Kan Watanabe",
+      "Tatsuya Shirai",
+      "Yutaro Kashiwa",
+      "Hajimu Iida"
+    ],
+    "first_author": "Kan Watanabe",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Review"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.17091v1",
+    "published": "2026-02-19",
+    "update_time": "2026-02-19",
+    "download_time": "2026-02-23 01:15:40"
   }
 ]
