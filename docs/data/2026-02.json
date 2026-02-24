@@ -468,5 +468,28 @@
     "published": "2026-02-19",
     "update_time": "2026-02-19",
     "download_time": "2026-02-23 01:15:40"
+  },
+  {
+    "id": "2602.18307",
+    "title": "VeriSoftBench: Repository-Scale Formal Verification Benchmarks for Lean",
+    "abstract": "Large language models have achieved striking results in interactive theorem proving, particularly in Lean. However, most benchmarks for LLM-based proof automation are drawn from mathematics in the Mathlib ecosystem, whereas proofs in software verification are developed inside definition-rich codebases with substantial project-specific libraries. We introduce VeriSoftBench, a benchmark of 500 Lean 4 proof obligations drawn from open-source formal-methods developments and packaged to preserve realistic repository context and cross-file dependencies. Our evaluation of frontier LLMs and specialized provers yields three observations. First, provers tuned for Mathlib-style mathematics transfer poorly to this repository-centric setting. Second, success is strongly correlated with transitive repository dependence: tasks whose proofs draw on large, multi-hop dependency closures are less likely to be solved. Third, providing curated context restricted to a proof's dependency closure improves performance relative to exposing the full repository, but nevertheless leaves substantial room for improvement. Our benchmark and evaluation suite are released at https://github.com/utopia-group/VeriSoftBench.",
+    "arxiv_url": "https://arxiv.org/abs/2602.18307",
+    "authors": [
+      "Yutong Xin",
+      "Qiaochu Chen",
+      "Greg Durrett",
+      "Işil Dillig"
+    ],
+    "first_author": "Yutong Xin",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Formal Verification"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2602.18307v1",
+    "published": "2026-02-20",
+    "update_time": "2026-02-20",
+    "download_time": "2026-02-24 01:13:27"
   }
 ]
