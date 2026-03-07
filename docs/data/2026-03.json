@@ -76,5 +76,27 @@
     "published": "2026-03-04",
     "update_time": "2026-03-04",
     "download_time": "2026-03-06 01:17:48"
+  },
+  {
+    "id": "2603.05278",
+    "title": "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models",
+    "abstract": "Large language models (LLMs) can be used to support software development tasks, e.g., through code completion or code generation. However, their effectiveness drops significantly when considering less popular programming languages such as domain-specific languages (DSLs). In this paper, we propose a generic framework for evaluating the capabilities of LLMs generating DSL code from textual specifications. The generated code is assessed from the perspectives of well-formedness and correctness. This framework is applied to a particular type of DSL, constraint languages, focusing our experiments on OCL and Alloy and comparing their results to those achieved for Python, a popular general-purpose programming language. Experimental results show that, in general, LLMs have better performance for Python than for OCL and Alloy. LLMs with smaller context windows such as open-source LLMs may be unable to generate constraint-related code, as this requires managing both the constraint and the domain model where it is defined. Moreover, some improvements to the code generation process such as code repair (asking an LLM to fix incorrect code) or multiple attempts (generating several candidates for each coding task) can improve the quality of the generated code. Meanwhile, other decisions like the choice of a prompt template have less impact. All these dimensions can be systematically analyzed using our evaluation framework, making it possible to decide the most effective way to set up code generation for a particular type of task.",
+    "arxiv_url": "https://arxiv.org/abs/2603.05278",
+    "authors": [
+      "David Delgado",
+      "Lola Burgueño",
+      "Robert Clarisó"
+    ],
+    "first_author": "David Delgado",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Completion"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2603.05278v1",
+    "published": "2026-03-05",
+    "update_time": "2026-03-05",
+    "download_time": "2026-03-07 01:09:21"
   }
 ]
