@@ -98,5 +98,27 @@
     "published": "2026-03-05",
     "update_time": "2026-03-05",
     "download_time": "2026-03-07 01:09:21"
+  },
+  {
+    "id": "2603.05250",
+    "title": "A Benchmarking Framework for Model Datasets",
+    "abstract": "Empirical and LLM-based research in model-driven engineering increasingly relies on datasets of software models, for instance, to train or evaluate machine learning techniques for modeling support. These datasets have a significant impact on solution performance; hence, they should be treated and assessed as first-class artifacts. However, such datasets are typically collected or created ad hoc and without guarantees of their quality for the specific task for which they are used. This limits the comparability of results between studies, obscures dataset quality and representativeness, and leads to weak reproducibility and potential bias. In this work, we propose a benchmarking framework for model datasets (i.e., benchmarking the dataset itself). Benchmarking datasets involves systematically measuring their quality, representativeness, and suitability for specific tasks. To this end, we propose a Benchmark Platform for MDE that provides a unified infrastructure for systematically assessing and comparing datasets of software models across languages and formats, using defined criteria and metrics.",
+    "arxiv_url": "https://arxiv.org/abs/2603.05250",
+    "authors": [
+      "Philipp-Lorenz Glaser",
+      "Lola Burgueño",
+      "Dominik Bork"
+    ],
+    "first_author": "Philipp-Lorenz Glaser",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Model Dataset Benchmarking"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2603.05250v1",
+    "published": "2026-03-05",
+    "update_time": "2026-03-05",
+    "download_time": "2026-03-08 01:14:28"
   }
 ]
