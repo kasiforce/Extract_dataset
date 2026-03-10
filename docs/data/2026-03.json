@@ -159,5 +159,29 @@
     "published": "2026-03-05",
     "update_time": "2026-03-05",
     "download_time": "2026-03-09 01:14:32"
+  },
+  {
+    "id": "2603.06358",
+    "title": "A Scalable Benchmark for Repository-Oriented Long-Horizon Conversational Context Management",
+    "abstract": "In recent years, large language models (LLMs) have advanced rapidly, substantially enhancing their code understanding and generation capabilities and giving rise to powerful code assistants. However, in practical repository development, excessively long-horizon conversational context may overwhelm models, causing the loss of critical information and degraded performance, thereby limiting the utility of code assistants. Existing context management methods proposed to mitigate this context dilemma primarily target general-purpose conversations, while repository-oriented solutions remain largely unexplored, which is largely due to the lack of reliable evaluation benchmarks. To bridge this gap, we present LoCoEval, the first long-horizon conversational context management benchmark tailored to repository-oriented development scenarios. Adhering to three key principles, LoCoEval is constructed via an LLM-driven pipeline that generates realistic and diverse repository-oriented conversations, capturing key interaction patterns such as iterative requirements, noisy input, and retrospective questions. We evaluate 7 baselines, including 4 representative context management methods, using 3 advanced backbone LLMs on LoCoEval. The results reveal substantial challenges faced by standalone LLMs and existing approaches, especially memory systems, in repository-oriented conversational scenarios. To address these limitations, we further propose an improved method integrating conversational and repository information into a unified memory, which outperforms all baselines (*Oracle* excluded) and demonstrates robustness. Additionally, we investigated the impact of various factors on method performance, providing actionable insights for future research.",
+    "arxiv_url": "https://arxiv.org/abs/2603.06358",
+    "authors": [
+      "Yang Liu",
+      "Li Zhang",
+      "Fang Liu",
+      "Ping Lin",
+      "Xinyi Li"
+    ],
+    "first_author": "Yang Liu",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Code Prompting"
+    ],
+    "benchmark": true,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2603.06358v1",
+    "published": "2026-03-06",
+    "update_time": "2026-03-06",
+    "download_time": "2026-03-10 01:08:29"
   }
 ]
