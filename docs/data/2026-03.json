@@ -209,5 +209,29 @@
     "published": "2026-03-09",
     "update_time": "2026-03-09",
     "download_time": "2026-03-11 01:09:05"
+  },
+  {
+    "id": "2603.10679",
+    "title": "From Education to Evidence: A Collaborative Practice Research Platform for AI-Integrated Agile Development",
+    "abstract": "Agile software development evolves so rapidly that research struggles to remain timely and transferable - an issue heightened by the swift adoption of generative AI and agentic tools. Earlier discussions highlight theory and time gaps, leading to results that often lack clear reuse conditions or arrive too late for practical decisions. This paper introduces a project-based, AI-integrated agile education platform as a collaborative research environment, positioned between controlled studies and real-world industry. The platform enables rapid inquiry through sprint rhythms, quality gates, and genuine stakeholder involvement. We present a framework specifying iteration structures, recurring events, and quality gates for AI-assisted engineering artifacts. Early results from several semesters - covering project pipeline, cohort growth, and stakeholder participation - show the platform's potential to generate practice-relevant evidence efficiently and with reusable context. Finally, we outline future steps to enhance governance and evidence capture.",
+    "arxiv_url": "https://arxiv.org/abs/2603.10679",
+    "authors": [
+      "Tobias Geger",
+      "Andreas Rausch",
+      "Ina Schiering",
+      "Frauke Stenzel",
+      "Stefan Wittek"
+    ],
+    "first_author": "Tobias Geger",
+    "primary_category": "cs.SE",
+    "tag": [
+      "AI-Integrated Software Engineering Practices"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2603.10679v1",
+    "published": "2026-03-11",
+    "update_time": "2026-03-11",
+    "download_time": "2026-03-12 01:06:56"
   }
 ]
