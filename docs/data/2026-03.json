@@ -233,5 +233,31 @@
     "published": "2026-03-11",
     "update_time": "2026-03-11",
     "download_time": "2026-03-12 01:06:56"
+  },
+  {
+    "id": "2603.11890",
+    "title": "QUARE: Multi-Agent Negotiation for Balancing Quality Attributes in Requirements Engineering",
+    "abstract": "Requirements engineering (RE) is critical to software success, yet automating it remains challenging because multiple, often conflicting quality attributes must be balanced while preserving stakeholder intent. Existing Large-Language-Model (LLM) approaches predominantly rely on monolithic reasoning or implicit aggregation, limiting their ability to systematically surface and resolve cross-quality conflicts. We present QUARE (Quality-Aware Requirements Engineering), a multi-agent framework that formulates requirements analysis as structured negotiation among five quality-specialized agents (Safety, Efficiency, Green, Trustworthiness, and Responsibility), coordinated by a dedicated orchestrator. QUARE introduces a dialectical negotiation protocol that explicitly exposes inter-quality conflicts and resolves them through iterative proposal, critique, and synthesis. Negotiated outcomes are transformed into structurally sound KAOS goal models via topology validation and verified against industry standards through retrieval-augmented generation (RAG). We evaluate QUARE on five case studies drawn from established RE benchmarks (MARE, iReDev) and an industrial autonomous-driving specification, spanning safety-critical, financial, and information-system domains. Results show that QUARE achieves 98.2% compliance coverage (+105% over both baselines), 94.9% semantic preservation (+2.3 percentage points over the best baseline), and high verifiability (4.96/5.0), while generating 25-43% more requirements than existing multi-agent RE frameworks. These findings suggest that effective RE automation depends less on model scale than on principled architectural decomposition, explicit interaction protocols, and automated verification.",
+    "arxiv_url": "https://arxiv.org/abs/2603.11890",
+    "authors": [
+      "Haowei Cheng",
+      "Milhan Kim",
+      "Foutse Khomh",
+      "Teeradaj Racharak",
+      "Nobukazu Yoshioka",
+      "Naoyasu Ubayashi",
+      "Hironori Washizaki"
+    ],
+    "first_author": "Haowei Cheng",
+    "primary_category": "cs.SE",
+    "tag": [
+      "Requirements Engineering"
+    ],
+    "benchmark": false,
+    "conference": null,
+    "pdf_url": "https://arxiv.org/pdf/2603.11890v1",
+    "published": "2026-03-12",
+    "update_time": "2026-03-12",
+    "download_time": "2026-03-13 01:12:20"
   }
 ]
